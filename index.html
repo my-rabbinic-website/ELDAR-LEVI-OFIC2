@@ -28,12 +28,20 @@
                             400: '#d1a056',
                             500: '#c5a059',
                             600: '#b38728',
+                            700: '#8a651b',
                         },
                         navy: {
                             800: '#1a1f2c',
                             900: '#0a0f1a',
                             950: '#050810',
                         }
+                    },
+                    backgroundImage: {
+                       'parchment': "url('https://www.transparenttextures.com/patterns/parchment.png')",
+                       'dark-pattern': "url('https://www.transparenttextures.com/patterns/black-linen.png')"
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -110,6 +118,41 @@
             margin: 0 auto;
             opacity: 0.3;
         }
+        
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Timeline Styles */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(197, 160, 89, 0.3);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line { left: 20px; }
+        }
+        
+        /* Checkmark List Style */
+        .check-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 10px;
+        }
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #c5a059;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 book-texture">
@@ -123,6 +166,11 @@
         </div>
     </div>
 
+    <!-- Floating Action Button (Mobile) -->
+    <a href="tel:0528219928" class="fixed bottom-6 left-6 z-50 lg:hidden bg-gold-500 text-navy-950 p-4 rounded-full shadow-2xl animate-pulse-slow border border-white/20">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-[1000] transition-all duration-500 py-4 px-6 md:px-12">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -131,15 +179,16 @@
                     <span class="gold-text-shine">הרב אלדר לוי</span>
                 </div>
                 <div class="hidden sm:block h-6 w-[1px] bg-gold-500/30"></div>
-                <div class="hidden sm:block text-[11px] font-bold text-gold-600">טוען רבני | כושר לדיינות</div>
+                <div class="hidden sm:block text-[11px] font-bold text-gold-600">טוען רבני | דיין מוסמך | מ.ר. 2123</div>
             </div>
 
             <div class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest">
                 <a href="#about" class="hover:text-gold-500 transition-colors">אודות</a>
+                <a href="#advantage" class="hover:text-gold-500 transition-colors">היתרון</a>
                 <a href="#services" class="hover:text-gold-500 transition-colors">התמחויות</a>
-                <a href="#method" class="hover:text-gold-500 transition-colors">השיטה</a>
+                <a href="#comparison" class="hover:text-gold-500 transition-colors">השוואה</a>
+                <a href="#timeline" class="hover:text-gold-500 transition-colors">התהליך</a>
                 <a href="#cases" class="hover:text-gold-500 transition-colors">תיקים</a>
-                <a href="#articles" class="hover:text-gold-500 transition-colors">מאמרים</a>
                 <a href="#testimonials" class="hover:text-gold-500 transition-colors">המלצות</a>
                 <a href="#contact" class="bg-gold-500 text-navy-950 px-6 py-2.5 rounded-sm hover:shadow-lg transition-all">יצירת קשר</a>
             </div>
@@ -157,8 +206,8 @@
         </button>
         <a href="#about" class="serif text-3xl text-white">אודות</a>
         <a href="#services" class="serif text-3xl text-white">תחומי עיסוק</a>
-        <a href="#method" class="serif text-3xl text-white">הדרך שלנו</a>
-        <a href="#lexicon" class="serif text-3xl text-white">מילון הלכתי</a>
+        <a href="#comparison" class="serif text-3xl text-white">היתרון שלנו</a>
+        <a href="#timeline" class="serif text-3xl text-white">המסע המשותף</a>
         <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4">פגישת יעוץ</a>
     </div>
 
@@ -188,6 +237,30 @@
         </div>
     </section>
 
+    <!-- Statistics Bar -->
+    <section class="bg-navy-900 border-b border-gold-500/10 py-12 relative z-30">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-x-reverse divide-gold-500/10">
+                <div data-aos="fade-up">
+                    <div class="text-4xl font-serif text-gold-500 mb-2">15+</div>
+                    <div class="text-xs uppercase tracking-widest text-slate-400">שנות ניסיון בהלכה</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-serif text-gold-500 mb-2">2123</div>
+                    <div class="text-xs uppercase tracking-widest text-slate-400">מס' רישיון טוען רבני</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-serif text-gold-500 mb-2">∞</div>
+                    <div class="text-xs uppercase tracking-widest text-slate-400">מחויבות ללקוח</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-serif text-gold-500 mb-2">95%</div>
+                    <div class="text-xs uppercase tracking-widest text-slate-400">הצלחה בגישורים</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Vision Section -->
     <section id="vision" class="py-24 bg-white dark:bg-navy-900 border-b border-gold-500/10">
         <div class="container mx-auto px-6 text-center">
@@ -203,6 +276,37 @@
                 <div data-aos="fade-up" data-aos-delay="200">
                     <div class="serif text-4xl text-gold-500 mb-4 italic">דיסקרטיות</div>
                     <p class="text-slate-500 dark:text-slate-400 font-light leading-relaxed">נאמנות מוחלטת ללקוח תוך שמירה על צנעת הפרט וערכי המוסר היהודי בשיא הרגישות.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Torah Foundation -->
+    <section class="py-24 bg-navy-950 border-b border-gold-500/10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="serif text-4xl text-white mb-6">יסודות הפסיקה</h2>
+                <div class="w-24 h-[1px] bg-gold-500 mx-auto opacity-50"></div>
+                <p class="mt-6 text-slate-400 max-w-2xl mx-auto">משפטנו נשען על אדני התורה וההלכה, תוך התמחות ספציפית בחלקי השולחן ערוך הרלוונטיים.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-card p-10 relative overflow-hidden group" data-aos="fade-right">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-bl-full transition-transform group-hover:scale-150"></div>
+                    <h3 class="serif text-3xl text-gold-500 mb-4">אבן העזר</h3>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">
+                        חלק השולחן ערוך העוסק בדיני אישות, נישואין וגירושין. אנו מעמיקים בסימנים העוסקים בכתובה, מזונות, ומורדת, כדי להבטיח את זכויות הלקוח בבית הדין.
+                    </p>
+                    <span class="text-xs font-bold text-white uppercase tracking-widest border-b border-gold-500 pb-1">מומחיות בגיטין וקידושין</span>
+                </div>
+                
+                <div class="glass-card p-10 relative overflow-hidden group" data-aos="fade-left">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/5 rounded-bl-full transition-transform group-hover:scale-150"></div>
+                    <h3 class="serif text-3xl text-gold-500 mb-4">חושן משפט</h3>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">
+                        חלק השולחן ערוך העוסק בדיני ממונות, דיינים וטוענים. שליטה בחלק זה היא קריטית לניהול בוררויות עסקיות, סכסוכי ירושה ודיני שכנים.
+                    </p>
+                    <span class="text-xs font-bold text-white uppercase tracking-widest border-b border-gold-500 pb-1">מומחיות בנזיקין וחוזים</span>
                 </div>
             </div>
         </div>
@@ -238,7 +342,90 @@
         </div>
     </section>
 
-    <!-- Methodology Section (New) -->
+    <!-- The Advantage Section -->
+    <section id="advantage" class="py-24 bg-navy-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 rounded-full blur-[100px]"></div>
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="serif text-4xl text-white mb-6">היתרון האסטרטגי</h2>
+                <div class="w-24 h-[1px] bg-gold-500 mx-auto opacity-50"></div>
+                <p class="mt-6 text-slate-400 max-w-2xl mx-auto">בבית הדין, השפה היא ארמית וההיגיון הוא תלמודי. רק מי ששוחה בים התלמוד יכול לנווט את הספינה לחוף מבטחים.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-navy-950 p-8 border border-gold-500/10 hover:border-gold-500/40 transition-all group" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center text-gold-500 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="serif text-xl text-white mb-3">שפת בית הדין</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">היכולת לנסח כתבי טענות בשפה הלכתית מדויקת ("לשון הקודש" של הדיינים) יוצרת אמון מיידי וקשב רב יותר.</p>
+                </div>
+                
+                <div class="bg-navy-950 p-8 border border-gold-500/10 hover:border-gold-500/40 transition-all group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center text-gold-500 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="serif text-xl text-white mb-3">צפי אסטרטגי</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">הבנה עמוקה של איך דיין חושב מאפשרת לנו לצפות את השאלות שיעלו בדיון ולהכין מראש תשובות ומקורות.</p>
+                </div>
+
+                <div class="bg-navy-950 p-8 border border-gold-500/10 hover:border-gold-500/40 transition-all group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center text-gold-500 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21v-8a2 2 0 012-2h14a2 2 0 012 2v8M3 21h18M3 21l8-8 8 8M3 11l9-9 9 9"></path></svg>
+                    </div>
+                    <h3 class="serif text-xl text-white mb-3">פתרונות יצירתיים</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">ההלכה רחבה מני ים. היכרות עם ספרות השו"ת (שאלות ותשובות) לדורותיה מאפשרת למצוא תקדימים.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Comparison Section (Advocate vs Lawyer) -->
+    <section id="comparison" class="py-24 bg-white dark:bg-navy-900 border-t border-gold-500/10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-gold-600 font-bold tracking-[0.4em] text-[10px] uppercase">למה דווקא טוען רבני?</span>
+                <h2 class="serif text-4xl mt-4 text-navy-950 dark:text-white">ההבדל הדק שעושה את ההבדל</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">בבית הדין הרבני, הכללים שונים מאשר בבית המשפט האזרחי. הנה הסיבה למה המומחיות שלנו קריטית להצלחה שלכם.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-slate-50 dark:bg-navy-800 p-8 rounded border border-slate-200 dark:border-slate-700 opacity-70">
+                    <h3 class="serif text-2xl text-slate-500 mb-6">עורך דין רגיל</h3>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li class="flex items-start gap-3"><span class="text-red-400">✕</span> מכיר את החוק האזרחי, אך לא את דקויות ההלכה.</li>
+                        <li class="flex items-start gap-3"><span class="text-red-400">✕</span> משתמש בטרמינולוגיה משפטית שזרה לדיינים.</li>
+                        <li class="flex items-start gap-3"><span class="text-red-400">✕</span> עלול להעלות טיעונים שנתפסים כ"מקוממים" בבית הדין.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-navy-950 p-8 rounded border-2 border-gold-500 relative shadow-2xl transform scale-105">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-navy-950 text-xs font-bold px-3 py-1 uppercase">הבחירה המנצחת</div>
+                    <h3 class="serif text-2xl text-gold-500 mb-6">טוען רבני מוסמך</h3>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-start gap-3"><span class="text-gold-500">✓</span> חי ונושם את השולחן ערוך והפסיקה העדכנית.</li>
+                        <li class="flex items-start gap-3"><span class="text-gold-500">✓</span> דובר את "שפת הקודש" של הדיינים ויוצר כימיה.</li>
+                        <li class="flex items-start gap-3"><span class="text-gold-500">✓</span> יודע אילו טיעונים הלכתיים יכריעו את הכף לטובתכם.</li>
+                        <li class="flex items-start gap-3"><span class="text-gold-500">✓</span> מבין את הניואנסים התרבותיים והקהילתיים.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="py-32 parallax-section relative bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1507842217121-ad58641eb203?q=80&w=2070');">
+        <div class="absolute inset-0 bg-navy-950/80"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center" data-aos="zoom-in">
+            <h2 class="serif text-5xl md:text-7xl text-white mb-8 font-bold">"צדק צדק תרדוף"</h2>
+            <p class="text-gold-200 text-xl md:text-2xl font-light italic max-w-3xl mx-auto leading-relaxed">
+                "שלא תאמר איש פלוני עשיר הוא, בן גדולים הוא, איך אביישנו ואראה בבושתו? ושלא תאמר איש פלוני עני הוא... אטה בדינו. לכך נאמר: צדק צדק תרדוף."
+            </p>
+            <div class="mt-8 text-gold-500 font-bold tracking-widest text-sm uppercase">— רש"י על דברים ט"ז</div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
     <section id="method" class="py-24 bg-navy-950 relative border-y border-gold-500/10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -270,50 +457,150 @@
         </div>
     </section>
 
-    <!-- Services Grid (Expanded) -->
-    <section id="services" class="py-24 bg-white dark:bg-navy-900">
+    <!-- Client Journey Timeline -->
+    <section id="timeline" class="py-24 bg-white dark:bg-navy-900 overflow-hidden relative">
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-gold-600 font-bold tracking-[0.4em] text-[10px] uppercase">התהליך שלך איתנו</span>
+                <h2 class="serif text-5xl mt-4 text-navy-950 dark:text-white">המסע המשותף</h2>
+            </div>
+
+            <div class="relative">
+                <div class="timeline-line h-full"></div>
+                <!-- Steps (Existing code kept as is, visually structured) -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-16 group">
+                    <div class="md:w-5/12 text-center md:text-left mb-6 md:mb-0" data-aos="fade-right">
+                        <h3 class="text-2xl font-serif text-gold-600 mb-2">1. פגישת אבחון וייעוץ</h3>
+                        <p class="text-slate-500 font-light text-sm">ניתוח מעמיק של המקרה, הבנת הצרכים והמטרות.</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-navy-950 border-2 border-gold-500 flex items-center justify-center text-gold-500 font-bold text-xs relative z-20 shadow-lg">1</div>
+                    <div class="md:w-5/12"></div>
+                </div>
+                <div class="relative z-10 flex flex-col md:flex-row-reverse items-center justify-between mb-16 group">
+                    <div class="md:w-5/12 text-center md:text-right mb-6 md:mb-0" data-aos="fade-left">
+                        <h3 class="text-2xl font-serif text-gold-600 mb-2">2. בניית תיק ואסטרטגיה</h3>
+                        <p class="text-slate-500 font-light text-sm">איסוף מסמכים, גיבוש טענות הלכתיות מנצחות.</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-navy-950 border-2 border-gold-500 flex items-center justify-center text-gold-500 font-bold text-xs relative z-20 shadow-lg">2</div>
+                    <div class="md:w-5/12"></div>
+                </div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-16 group">
+                    <div class="md:w-5/12 text-center md:text-left mb-6 md:mb-0" data-aos="fade-right">
+                        <h3 class="text-2xl font-serif text-gold-600 mb-2">3. ייצוג וניהול משא ומתן</h3>
+                        <p class="text-slate-500 font-light text-sm">הופעה בבית הדין, חקירות וסיכומים.</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-navy-950 border-2 border-gold-500 flex items-center justify-center text-gold-500 font-bold text-xs relative z-20 shadow-lg">3</div>
+                    <div class="md:w-5/12"></div>
+                </div>
+                <div class="relative z-10 flex flex-col md:flex-row-reverse items-center justify-between group">
+                    <div class="md:w-5/12 text-center md:text-right mb-6 md:mb-0" data-aos="fade-left">
+                        <h3 class="text-2xl font-serif text-gold-600 mb-2">4. סגירת מעגל וביצוע</h3>
+                        <p class="text-slate-500 font-light text-sm">וידוא ביצוע ההחלטות וסגירת התיק לשביעות רצונך.</p>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-navy-950 border-2 border-gold-500 flex items-center justify-center text-gold-500 font-bold text-xs relative z-20 shadow-lg">4</div>
+                    <div class="md:w-5/12"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 bg-navy-950 border-t border-gold-500/5">
         <div class="container mx-auto px-6 md:px-12">
             <div class="text-center mb-16" data-aos="fade-up">
                 <span class="text-gold-600 font-bold tracking-[0.4em] text-[10px] uppercase">התמחויות המשרד</span>
-                <h2 class="serif text-5xl mt-4 text-navy-950 dark:text-white">תחומי פסיקה וייצוג</h2>
+                <h2 class="serif text-5xl mt-4 text-white">תחומי פסיקה וייצוג</h2>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="glass-card p-10 hover:border-gold-500 transition-all group bg-navy-950">
+                <!-- Services Cards -->
+                <div class="glass-card p-10 hover:border-gold-500 transition-all group bg-navy-900">
                     <h3 class="serif text-3xl mb-6 text-gold-500">אבן העזר - אישות</h3>
                     <p class="text-slate-400 font-light leading-relaxed mb-8">ניהול הליכי גירושין מורכבים, תביעות כתובה, בירור מעמד אישי ומזונות.</p>
-                    <ul class="text-xs space-y-3 text-slate-500 font-bold uppercase tracking-tighter">
-                        <li>• ייצוג בסידור גט</li>
-                        <li>• שלום בית</li>
-                        <li>• משמורת והסדרי ראייה</li>
+                    <ul class="text-xs space-y-3 text-slate-500 font-bold uppercase tracking-tighter check-list">
+                        <li>ייצוג בסידור גט</li>
+                        <li>שלום בית</li>
+                        <li>משמורת והסדרי ראייה</li>
                     </ul>
                 </div>
-                <!-- Service 2 -->
-                <div class="glass-card p-10 hover:border-gold-500 transition-all group bg-navy-950">
+                <div class="glass-card p-10 hover:border-gold-500 transition-all group bg-navy-900">
                     <h3 class="serif text-3xl mb-6 text-gold-500">חושן משפט - ממונות</h3>
                     <p class="text-slate-400 font-light leading-relaxed mb-8">סכסוכים עסקיים, דיני שכנים ושותפויות. בוררות עסקית לפי דין תורה.</p>
-                    <ul class="text-xs space-y-3 text-slate-500 font-bold uppercase tracking-tighter">
-                        <li>• בוררויות עסקיות</li>
-                        <li>• פירוק שותפויות</li>
-                        <li>• דיני נזיקין</li>
+                    <ul class="text-xs space-y-3 text-slate-500 font-bold uppercase tracking-tighter check-list">
+                        <li>בוררויות עסקיות</li>
+                        <li>פירוק שותפויות</li>
+                        <li>דיני נזיקין</li>
                     </ul>
                 </div>
-                <!-- Service 3 -->
-                <div class="glass-card p-10 hover:border-gold-500 transition-all group bg-navy-950">
+                <div class="glass-card p-10 hover:border-gold-500 transition-all group bg-navy-900">
                     <h3 class="serif text-3xl mb-6 text-gold-500">ירושות וצוואות</h3>
                     <p class="text-slate-400 font-light leading-relaxed mb-8">עריכת צוואות המשלבות תוקף הלכתי עם תוקף חוקי אזרחי.</p>
-                    <ul class="text-xs space-y-3 text-slate-500 font-bold uppercase tracking-tighter">
-                        <li>• צוואות הלכתיות</li>
-                        <li>• ניהול עזבונות</li>
-                        <li>• התנגדות לצוואה</li>
+                    <ul class="text-xs space-y-3 text-slate-500 font-bold uppercase tracking-tighter check-list">
+                        <li>צוואות הלכתיות</li>
+                        <li>ניהול עזבונות</li>
+                        <li>התנגדות לצוואה</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Studies (New) -->
+    <!-- NEW: Focus on Arbitration (Borrerut) -->
+    <section id="arbitration" class="py-24 bg-gold-50 dark:bg-navy-950 relative border-t border-gold-500/10">
+        <div class="container mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="text-gold-600 font-bold text-xs uppercase tracking-widest mb-2 block">פתרון סכסוכים חכם</span>
+                <h2 class="serif text-4xl md:text-5xl text-navy-950 dark:text-white mb-6">בוררות עסקית מהירה</h2>
+                <p class="text-slate-500 leading-relaxed mb-6">
+                    במציאות העסקית של ימינו, זמן הוא כסף. סחבת משפטית בבתי המשפט האזרחיים יכולה למוטט עסקים ושותפויות. בוררות על פי דין תורה מציעה אלטרנטיבה מהירה, יעילה ודיסקרטית.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <h4 class="font-bold text-navy-900 dark:text-gold-500 mb-2">מהירות</h4>
+                        <p class="text-xs text-slate-500">סיום תיקים בתוך שבועות או חודשים ספורים, ולא שנים.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 dark:text-gold-500 mb-2">דיסקרטיות</h4>
+                        <p class="text-xs text-slate-500">ההליך חסוי לחלוטין ומונע נזק תדמיתי לעסק.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 dark:text-gold-500 mb-2">עלות</h4>
+                        <p class="text-xs text-slate-500">חיסכון משמעותי בהוצאות משפט מתמשכות.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-navy-900 dark:text-gold-500 mb-2">תוקף חוקי</h4>
+                        <p class="text-xs text-slate-500">פסק הבורר ניתן לאכיפה בהוצאה לפועל כפסק דין לכל דבר.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <div class="absolute -inset-4 bg-gold-500/20 rounded-sm rotate-2"></div>
+                <div class="relative bg-white dark:bg-navy-900 p-8 rounded-sm shadow-xl border border-gold-500/20">
+                    <h4 class="serif text-2xl mb-4 text-center">הליך בוררות לדוגמא</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-slate-50 dark:bg-navy-950 p-3 rounded">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold text-xs">1</div>
+                            <span class="text-sm font-bold">חתימה על שטר בוררות מחייב</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-slate-50 dark:bg-navy-950 p-3 rounded">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold text-xs">2</div>
+                            <span class="text-sm font-bold">ישיבת שמיעת טענות וראיות</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-slate-50 dark:bg-navy-950 p-3 rounded">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold text-xs">3</div>
+                            <span class="text-sm font-bold">חקירת דרישה ובירור ההלכה</span>
+                        </div>
+                        <div class="flex items-center gap-4 bg-slate-50 dark:bg-navy-950 p-3 rounded">
+                            <div class="w-8 h-8 rounded-full bg-gold-500 text-white flex items-center justify-center font-bold text-xs">4</div>
+                            <span class="text-sm font-bold">מתן פסק דין מנומק וסופי</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
     <section id="cases" class="py-24 bg-navy-950 border-t border-gold-500/10">
         <div class="container mx-auto px-6 md:px-12">
             <h2 class="serif text-4xl text-white mb-12 text-center">תיקים מהשטח</h2>
@@ -336,7 +623,7 @@
         </div>
     </section>
 
-    <!-- Halachic Lexicon (New Interactive) -->
+    <!-- Halachic Lexicon -->
     <section id="lexicon" class="py-24 bg-white dark:bg-navy-900">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-12">
@@ -371,6 +658,47 @@
                         התחייבות התלויה בתנאי שצד אחד בטוח שלא יתקיים (כמו קנס מוגזם). בהלכה יש בעיה באכיפתה, ונדרש ניסוח "דלא כאסמכתא".
                     </div>
                 </details>
+                <details class="group bg-slate-50 dark:bg-navy-950 border border-gold-500/20 p-4 rounded cursor-pointer">
+                    <summary class="flex justify-between items-center font-serif text-lg text-navy-900 dark:text-white list-none outline-none">
+                        שטר בוררות
+                        <span class="text-gold-500 transition-transform group-open:rotate-180">▼</span>
+                    </summary>
+                    <div class="mt-4 text-slate-500 font-light text-sm leading-relaxed">
+                        הסכם עליו חותמים הצדדים לפני תחילת דיון בפני בורר או בית דין לממונות. חתימה זו קריטית כדי לתת תוקף חוקי לפסק הדין ולאפשר את אכיפתו בהוצאה לפועל.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Myths vs Reality Section -->
+    <section id="myths" class="py-24 bg-navy-900 relative">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="serif text-3xl md:text-4xl text-white mb-6">מיתוסים מול מציאות בבית הדין</h2>
+                <p class="text-slate-400 text-sm">התפיסה הציבורית לגבי בתי הדין לא תמיד תואמת את המציאות ההלכתית.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-navy-950 p-8 border border-gold-500/10 rounded-sm">
+                    <div class="text-red-400 font-bold text-xs uppercase mb-2">מיתוס</div>
+                    <h4 class="text-white font-serif text-xl mb-4">"בבית הדין האישה תמיד מפסידה"</h4>
+                    <div class="h-[1px] bg-white/10 w-full mb-4"></div>
+                    <div class="text-green-400 font-bold text-xs uppercase mb-2">המציאות</div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        ההלכה מגנה על זכויות האישה באופן נרחב, כולל זכות למדור, מזונות אישה (שאינם קיימים באזרחי), וכתובה. ייצוג נכון יכול להפוך את בית הדין לזירה המועדפת לאישה.
+                    </p>
+                </div>
+                
+                <div class="bg-navy-950 p-8 border border-gold-500/10 rounded-sm">
+                    <div class="text-red-400 font-bold text-xs uppercase mb-2">מיתוס</div>
+                    <h4 class="text-white font-serif text-xl mb-4">"דין תורה מיושן ולא רלוונטי לעסקים"</h4>
+                    <div class="h-[1px] bg-white/10 w-full mb-4"></div>
+                    <div class="text-green-400 font-bold text-xs uppercase mb-2">המציאות</div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        חושן משפט מתעדכן כל העת ע"י פוסקים המכירים את המציאות המסחרית. בוררות תורנית היא לעיתים קרובות יעילה, חכמה וגמישה יותר מהליך משפטי פורמלי ונוקשה.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -464,8 +792,8 @@
         </div>
     </section>
 
-    <!-- FAQ Section (New) -->
-    <section id="faq" class="py-24 bg-navy-950">
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-navy-950 border-t border-gold-500/10">
         <div class="container mx-auto px-6 max-w-4xl">
             <h2 class="serif text-4xl text-white text-center mb-12">שאלות נפוצות</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -477,37 +805,75 @@
                     <h4 class="text-gold-500 font-bold mb-2">מה ההבדל בין עו"ד לטוען רבני?</h4>
                     <p class="text-slate-400 text-sm">טוען רבני מתמחה בדין העברי ובשפה ההלכתית של בתי הדין הרבניים, יתרון קריטי כאשר הדיינים פוסקים לפי שולחן ערוך.</p>
                 </div>
+                <div class="bg-navy-900 border border-gold-500/20 p-6 rounded-sm">
+                    <h4 class="text-gold-500 font-bold mb-2">כמה זמן אורך הליך גירושין?</h4>
+                    <p class="text-slate-400 text-sm">הזמן משתנה בהתאם למורכבות התיק. בהסכמה, ניתן לסיים תוך שבועות. בסכסוך, אנו פועלים לקידום מהיר ע"י אסטרטגיה חדה.</p>
+                </div>
+                <div class="bg-navy-900 border border-gold-500/20 p-6 rounded-sm">
+                    <h4 class="text-gold-500 font-bold mb-2">האם ניתן לערוך צוואה הלכתית מחייבת?</h4>
+                    <p class="text-slate-400 text-sm">בהחלט. אנו עורכים צוואות המשלבות נוסח הלכתי ("מתנה מחיים") ונוסח חוקי, המונעות התנגדויות עתידיות ומקיימות את רצון המצווה.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethical Code -->
+    <section class="py-24 bg-gold-50 dark:bg-navy-950 relative border-t border-gold-500/10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="serif text-3xl md:text-4xl text-navy-950 dark:text-white mb-12">הקוד האתי שלנו</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-gold-500/10 rounded-full flex items-center justify-center text-gold-600 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">שקיפות מלאה</h4>
+                    <p class="text-sm text-slate-500">שיקוף אמיתי של סיכויי התיק ללא הבטחות שווא.</p>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-gold-500/10 rounded-full flex items-center justify-center text-gold-600 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">חיסיון מוחלט</h4>
+                    <p class="text-sm text-slate-500">שמירה קנאית על פרטיות הלקוח וסודותיו.</p>
+                </div>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-gold-500/10 rounded-full flex items-center justify-center text-gold-600 mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">זמינות ורגישות</h4>
+                    <p class="text-sm text-slate-500">אוזן קשבת וליווי אישי גם ברגעים הקשים.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Forms & Links Section -->
-    <section id="forms" class="py-24 bg-gold-50 dark:bg-navy-950">
+    <section id="forms" class="py-24 bg-navy-950">
         <div class="container mx-auto px-6 md:px-12">
             <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="serif text-5xl mb-6 italic">טפסים וקישורים</h2>
-                <p class="text-slate-500">לנוחיותכם, ריכזנו טפסים חיוניים להגשת תביעות בבית הדין.</p>
+                <h2 class="serif text-5xl mb-6 italic text-white">טפסים וקישורים</h2>
+                <p class="text-slate-400">לנוחיותכם, ריכזנו טפסים חיוניים להגשת תביעות בבית הדין.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="https://www.gov.il/he/service/claim_to_divorce" target="_blank" class="bg-white dark:bg-navy-900 p-8 rounded shadow-sm border border-slate-100 hover:border-gold-500 transition-all flex flex-col justify-between">
+                <a href="https://www.gov.il/he/service/claim_to_divorce" target="_blank" class="bg-navy-900 p-8 rounded shadow-sm border border-gold-500/20 hover:border-gold-500 transition-all flex flex-col justify-between">
                     <div class="text-xs font-black text-gold-600 mb-2">גירושין</div>
-                    <div class="font-bold text-lg mb-4 italic serif">פתיחת תיק גירושין</div>
+                    <div class="font-bold text-lg mb-4 italic serif text-white">פתיחת תיק גירושין</div>
                     <div class="text-gold-500 flex items-center gap-2 text-xs font-bold">קישור רשמי <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></div>
                 </a>
-                <a href="#" class="bg-white dark:bg-navy-900 p-8 rounded shadow-sm border border-slate-100 hover:border-gold-500 transition-all flex flex-col justify-between">
+                <a href="#" class="bg-navy-900 p-8 rounded shadow-sm border border-gold-500/20 hover:border-gold-500 transition-all flex flex-col justify-between">
                     <div class="text-xs font-black text-gold-600 mb-2">ממונות</div>
-                    <div class="font-bold text-lg mb-4 italic serif">שטר בוררות</div>
+                    <div class="font-bold text-lg mb-4 italic serif text-white">שטר בוררות</div>
                     <div class="text-gold-500 flex items-center gap-2 text-xs font-bold">הורדת קובץ <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg></div>
                 </a>
-                <a href="mailto:Tifarteha@gmail.com?subject=בקשת טופס צוואה" class="bg-white dark:bg-navy-900 p-8 rounded shadow-sm border border-slate-100 hover:border-gold-500 transition-all flex flex-col justify-between">
+                <a href="mailto:Tifarteha@gmail.com?subject=בקשת טופס צוואה" class="bg-navy-900 p-8 rounded shadow-sm border border-gold-500/20 hover:border-gold-500 transition-all flex flex-col justify-between">
                     <div class="text-xs font-black text-gold-600 mb-2">צוואות</div>
-                    <div class="font-bold text-lg mb-4 italic serif">נוסח צוואה הלכתית</div>
+                    <div class="font-bold text-lg mb-4 italic serif text-white">נוסח צוואה הלכתית</div>
                     <div class="text-gold-500 flex items-center gap-2 text-xs font-bold">בקשה במייל <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
                 </a>
-                <a href="https://www.gov.il/he/Departments/rabbinical_courts" target="_blank" class="bg-white dark:bg-navy-900 p-8 rounded shadow-sm border border-slate-100 hover:border-gold-500 transition-all flex flex-col justify-between">
+                <a href="https://www.gov.il/he/Departments/rabbinical_courts" target="_blank" class="bg-navy-900 p-8 rounded shadow-sm border border-gold-500/20 hover:border-gold-500 transition-all flex flex-col justify-between">
                     <div class="text-xs font-black text-gold-600 mb-2">מידע</div>
-                    <div class="font-bold text-lg mb-4 italic serif">אתר בתי הדין</div>
+                    <div class="font-bold text-lg mb-4 italic serif text-white">אתר בתי הדין</div>
                     <div class="text-gold-500 flex items-center gap-2 text-xs font-bold">כניסה לאתר <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></div>
                 </a>
             </div>
@@ -621,5 +987,4 @@
     </script>
 </body>
 </html>
-
 
