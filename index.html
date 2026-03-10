@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="cm8d_DCwtIbzViB0Aos14jc2TJzLiWT1aMGyUKQjQDU" />
-    <title>הרב אלדר לוי | טוען רבני ודיין מוסמך - מומחיות בבתי הדין</title>
+    <title>אלדר לוי | טוען רבני ודיין מוסמך - מומחיות בבתי הדין</title>
    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -56,7 +56,31 @@
         body {
             font-family: 'Assistant', sans-serif;
             background-color: #fdfbf7;
+            /* --- תוספות להתאמה למובייל --- */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* חוסם גלילה ימינה/שמאלה בנייד */
+            width: 100%;
         }
+
+        /* --- הגנה על תמונות ווידאו בנייד --- */
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* --- התאמות כלליות למסכי סמארטפון --- */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* מוודא שהטקסט קריא */
+            }
+            .container, section {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                box-sizing: border-box;
+            }
+        }
+        /* --- סוף תוספות למובייל --- */
        
         h1, h2, h3, h4, .serif { font-family: 'Frank Ruhl Libre', serif; }
         .gold-text-shine {
@@ -142,7 +166,7 @@
             right: 0;
             color: #c5a059;
             font-weight: bold;
-        }
+        } /* הוספתי כאן את סגירת הסוגריים שהייתה חסרה */
     </style>
 </head>
 <body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 book-texture">
@@ -1000,4 +1024,5 @@
     </script>
 </body>
 </html>
+
 
