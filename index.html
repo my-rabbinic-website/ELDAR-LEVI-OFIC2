@@ -264,7 +264,7 @@
        
         <div class="container mx-auto px-6 md:px-12 relative z-20">
             <div class="max-w-4xl" data-aos="fade-up" data-aos-duration="1200">
-                <span class="inline-block text-gold-500 text-sm font-bold tracking-[0.4em] mb-6 uppercase">מומחיות • צדק • אמת</span>
+                <span class="inline-block text-gold-500 text-sm font-bold tracking-[0.4em] mb-6 uppercase">דיני משפחה וירושה -ייצוג ויעוץ | מומחיות בבתי הדין הרבניים</span>
                 <h1 class="serif text-5xl md:text-8xl text-white leading-tight mb-8">
                     ניווט תורני בנתיבי <br><span class="gold-text-shine italic font-light">ההלכה והדין</span>
                 </h1>
@@ -287,8 +287,8 @@
                     <div class="text-xs uppercase tracking-widest text-slate-400">שנות ניסיון בהלכה</div>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl font-serif text-gold-500 mb-2">+1200</div>
-                    <div class="text-xs uppercase tracking-widest text-slate-400">לקוחות מרוצים</div>
+                    <div class="text-4xl font-serif text-gold-500 mb-2">1200+</div>
+                    <div class="text-xs uppercase tracking-widest text-slate-400">סגירת תיקים</div>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200">
                     <div class="text-4xl font-serif text-gold-500 mb-2">100%</div>
@@ -995,25 +995,52 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-white dark:bg-navy-900 p-10 shadow-2xl rounded border-t-4 border-gold-500" data-aos="fade-left">
-                <form action="https://formspree.io/f/xoqgygjr" method="POST" class="space-y-8">
-                    <h4 class="serif text-3xl mb-4 italic">פנייה דיסקרטית</h4>
-                    <div>
-                        <input type="text" name="name" required placeholder="שם מלא" class="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-gold-500 transition-all text-lg font-light">
+
+            <div class="glass-card p-12 rounded-[3rem] relative" data-aos="fade-left">
+                <form id="premium-form" action="https://formspree.io/f/xoqgygjr" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase font-bold tracking-widest text-gold-600 mr-2">שם פרטי ומשפחה</label>
+                            <input type="text" name="name" required class="w-full bg-slate-100 dark:bg-navy-950 border-none p-5 rounded-2xl focus:ring-2 focus:ring-gold-400 outline-none transition-all dark:text-white">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase font-bold tracking-widest text-gold-600 mr-2">מספר טלפון</label>
+                            <input type="tel" name="phone" required class="w-full bg-slate-100 dark:bg-navy-950 border-none p-5 rounded-2xl focus:ring-2 focus:ring-gold-400 outline-none transition-all dark:text-white">
+                        </div>
                     </div>
-                    <div>
-                        <input type="tel" name="phone" required placeholder="טלפון לחזרה" class="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-gold-500 transition-all text-lg font-light">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold tracking-widest text-gold-600 mr-2">מהות הפנייה</label>
+                        <select name="type" class="w-full bg-slate-100 dark:bg-navy-950 border-none p-5 rounded-2xl focus:ring-2 focus:ring-gold-400 outline-none transition-all dark:text-white appearance-none">
+                            <option value="גישור ושלום בית">גישור ושלום בית</option>
+                            <option value="גירושין ומשפחה">גירושין ומשפחה</option>
+                            <option value="הסכם גירושין והסכמי ממון">הסכם גירושין והסכמי ממון</option>
+                            <option value="מזונות ילדים ואשה">מזונות ילדים ואשה</option>
+                            <option value="צווי הגנה, עיכוב יציאה ועוד">צווי הגנה, עיכוב יציאה ועוד</option>
+                            <option value="הסדרי שהות">הסדרי שהות</option>
+                            <option value="דיני ממונות">דיני ממונות</option>
+                            <option value="צוואות וירושות">צוואות וירושות</option>                     
+                            <option value="אחר">אחר</option>
+                        </select>
                     </div>
-                    <div>
-                        <textarea name="message" rows="4" placeholder="תמצית המקרה (דיסקרטיות מובטחת)" class="w-full bg-transparent border-b border-slate-200 py-4 outline-none focus:border-gold-500 transition-all text-lg font-light resize-none"></textarea>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold tracking-widest text-gold-600 mr-2">הודעה אישית</label>
+                        <textarea name="message" rows="4" class="w-full bg-slate-100 dark:bg-navy-950 border-none p-5 rounded-2xl focus:ring-2 focus:ring-gold-400 outline-none transition-all dark:text-white"></textarea>
                     </div>
-                    <button type="submit" class="btn-luxury w-full bg-navy-950 text-gold-500 py-6 font-bold uppercase tracking-widest shadow-xl">שליחת הודעה</button>
+                    <button type="submit" id="submit-btn" class="w-full btn-premium premium-gradient text-navy-950 font-black py-6 rounded-2xl text-xl shadow-2xl transition-all">
+                        שלחו פנייה כעת
+                    </button>
                 </form>
+                
+                <div id="form-success" class="hidden absolute inset-0 bg-white dark:bg-navy-900 rounded-[3rem] flex-col items-center justify-center text-center p-10 z-20">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">✓</div>
+                    <h4 class="text-3xl font-bold mb-4 dark:text-white">הבקשה התקבלה</h4>
+                    <p class="text-slate-500">צוות המשרד יחזור אליכם בהקדם (למקרה דחוף נא להתקשר).</p>
+                    <button onclick="location.reload()" class="mt-8 text-gold-600 font-bold underline">שלח הודעה נוספת</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Link Section (Requested) -->
     <section class="py-16 bg-navy-900 border-t border-gold-500/20">
         <div class="container mx-auto px-6 text-center">
             <h3 class="serif text-3xl text-white mb-8">פיענוח קורות חיים</h3>
@@ -1024,7 +1051,7 @@
                         <div class="text-right">
                             <span class="text-xs font-bold text-gold-500 uppercase tracking-widest mb-2 block">סרטון מומלץ</span>
                             <h4 class="serif text-2xl text-white mb-2 group-hover:text-gold-400 transition-colors">פרופיל אישי - הסמכות פעילויות ועוד</h4>
-                            <p class="text-slate-400 text-sm">ניתוח מסמך קורות חיים תוך הצגת ההסמכות והחיבורים</p>
+                            <p class="text-slate-400 text-sm">ניתוח מסמך קורות חיים תוך הצגת הסמכות וחיבורים</p>
                         </div>
                         <div class="flex items-center gap-3 text-white border border-white/20 px-6 py-3 rounded-full group-hover:bg-gold-500 group-hover:text-navy-950 group-hover:border-transparent transition-all">
                             <span>לצפייה ביוטיוב</span>
@@ -1036,7 +1063,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-navy-950 py-20 border-t border-gold-500/10">
         <div class="container mx-auto px-6 text-center">
             <div class="serif text-4xl gold-text-shine mb-4 italic">הרב אלדר לוי</div>
@@ -1054,32 +1080,63 @@
            
             <div class="text-[10px] text-slate-700 max-w-2xl mx-auto italic leading-loose">
                 &copy; 2024 כל הזכויות שמורות למשרד הרב אלדר לוי. המשרד פועל לפי דין תורה וכללי האתיקה. <br>
-                המידע באתר אינו מהווה תחליף לייעוץ הלכתי או משפטי פרטני.
+                המידע באתר אינו מהווה תחליף לייעוץ הלכתי פרטני.
             </div>
         </div>
     </footer>
+
     <script>
-        AOS.init({ duration: 1000, once: true });
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            setTimeout(() => {
-                loader.classList.add('opacity-0');
-                setTimeout(() => loader.style.display = 'none', 1000);
-            }, 800);
-        });
+        // AOS initialization
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ duration: 1000, once: true });
+        }
+
+        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('bg-white/95', window.scrollY > 50);
-            navbar.classList.toggle('dark:bg-navy-950/95', window.scrollY > 50);
-            navbar.classList.toggle('shadow-xl', window.scrollY > 50);
-            navbar.classList.toggle('py-2', window.scrollY > 50);
+            if(navbar) {
+                navbar.classList.toggle('bg-white/95', window.scrollY > 50);
+                navbar.classList.toggle('dark:bg-navy-950/95', window.scrollY > 50);
+                navbar.classList.toggle('shadow-xl', window.scrollY > 50);
+                navbar.classList.toggle('py-2', window.scrollY > 50);
+            }
         });
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuToggle.onclick = () => mobileMenu.classList.add('mobile-menu-active');
-        menuClose.onclick = () => mobileMenu.classList.remove('mobile-menu-active');
-        mobileMenu.onclick = (e) => { if(e.target.tagName === 'A') mobileMenu.classList.remove('mobile-menu-active'); };
+   
+        // Form Logic with Formspree
+        const contactForm = document.getElementById('premium-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = document.getElementById('submit-btn');
+                const successMsg = document.getElementById('form-success');
+                
+                btn.disabled = true;
+                btn.innerText = "שולח...";
+
+                const formData = new FormData(this);
+                
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        successMsg.classList.remove('hidden');
+                        successMsg.classList.add('flex');
+                        this.reset();
+                    } else {
+                        throw new Error();
+                    }
+                } catch (err) {
+                    alert("תקלה זמנית בשליחה. נא להתקשר ישירות או לשלוח הודעת אימייל. תודה:)");
+                } finally {
+                    btn.disabled = false;
+                    btn.innerText = "שלחו פנייה כעת";
+                }
+            });
+        }
     </script>
 </body>
 </html>
