@@ -95,7 +95,15 @@
             max-width: 100%;
             height: auto;
         }
-       
+         /* כותרות זורמות - מבטיח שכל כותרת תהיה מושלמת בכל מסך */
+        h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; }
+        h2 { font-size: clamp(1.8rem, 4vw, 3.5rem); line-height: 1.2; }
+        h3 { font-size: clamp(1.4rem, 2.5vw, 2.2rem); }
+
+        .max-site-width {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
         h1, h2, h3, h4, .serif { font-family: 'Frank Ruhl Libre', serif; }
         .gold-text-shine {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
