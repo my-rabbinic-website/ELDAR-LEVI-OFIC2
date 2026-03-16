@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-site-verification" content="cm8d_DCwtIbzViB0Aos14jc2TJzLiWT1aMGyUKQjQDU" />
     <title>הרב אלדר לוי | טוען רבני ודיין מוסמך</title>   
     
     <!-- Meta Tags -->
-    <meta name="description" content="אלדר לוי, טוען רבני מוסמך, מומחה בייצוג בבתי הדין. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר.">
-    <meta name="keywords" content="אלדר לוי, טוען רבני, גישור, בית דין, דיני משפחה, ממונות">
+    <meta name="description" content="אלדר לוי, טוען רבני ומומחה בייצוג בבתי הדין. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר עבורכם. התקשרו: 052-8219928">
+    <meta name="keywords" content="אלדר לוי, טוען רבני, גישור, דיני משפחה, בית דין, הסכמי ממון">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="הרב אלדר לוי - טוען רבני ודיין מוסמך">
+    <meta property="og:description" content="ייצוג משפטי מקצועי בבתי הדין, דיני משפחה, ממונות וירושה.">
+    <meta property="og:url" content="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
 
     <!-- Fonts & CSS Frameworks -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "הרב אלדר לוי - טוען רבני",
+      "description": "ייצוג בבתי הדין הרבניים ובדיני ממונות.",
+      "url": "https://r-mediator.co.il/",
+      "telephone": "052-8219928",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "ישראל"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 
     <script>
         tailwind.config = {
@@ -133,7 +156,7 @@
             <!-- Desktop Links -->
             <div class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest">
                 <a href="#about" class="hover:text-gold-500 transition-colors">אודות</a>
-                <a href="#services" class="hover:text-gold-500 transition-colors">התמחויות</a>
+                <a href="#articles" class="hover:text-gold-500 transition-colors">מאמרים</a>
                 <a href="#testimonials" class="hover:text-gold-500 transition-colors">המלצות</a>
                 <a href="#contact" class="bg-gold-500 text-navy-950 px-6 py-2.5 rounded-sm hover:bg-gold-600 transition-all btn-luxury">יצירת קשר</a>
             </div>
@@ -151,15 +174,16 @@
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
         <a href="#about" class="serif text-3xl text-white mobile-link">אודות</a>
-        <a href="#services" class="serif text-3xl text-white mobile-link">תחומי עיסוק</a>
-        <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4 rounded-sm mobile-link">פגישת יעוץ</a>
+        <a href="#articles" class="serif text-3xl text-white mobile-link">מאמרים</a>
+        <a href="#testimonials" class="serif text-3xl text-white mobile-link">המלצות</a>
+        <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4 rounded-sm mobile-link">יצירת קשר</a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Loader
+        // Loader logic
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
             setTimeout(() => {
@@ -182,9 +206,9 @@
         window.onscroll = () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('py-2', 'shadow-lg');
+                nav.classList.add('py-2', 'shadow-lg', 'bg-white/95', 'dark:bg-navy-950/95');
             } else {
-                nav.classList.remove('py-2', 'shadow-lg');
+                nav.classList.remove('py-2', 'shadow-lg', 'bg-white/95', 'dark:bg-navy-950/95');
             }
         };
     </script>
