@@ -8,7 +8,7 @@
     
     <!-- Meta Tags -->
     <meta name="description" content="אלדר לוי, טוען רבני ומומחה בייצוג בבתי הדין. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר עבורכם. התקשרו: 052-8219928">
-    <meta name="keywords" content="אלדר לוי, טוען רבני, גישור, דיני משפחה, בית דין, הסכמי ממון">
+    <meta name="keywords" content="אלדר לוי, טוען רבני, גישור, דיני משפחה, בית דין, הסכמי ממון, בוררות">
 
     <!-- Open Graph -->
     <meta property="og:title" content="הרב אלדר לוי - טוען רבני ודיין מוסמך">
@@ -19,23 +19,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LegalService",
-      "name": "הרב אלדר לוי - טוען רבני",
-      "description": "ייצוג בבתי הדין הרבניים ובדיני ממונות.",
-      "url": "https://r-mediator.co.il/",
-      "telephone": "052-8219928",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "ישראל"
-      },
-      "priceRange": "$$"
-    }
-    </script>
 
     <script>
         tailwind.config = {
@@ -130,8 +113,8 @@
 
     <!-- Preloader -->
     <div id="loader" class="fixed inset-0 z-[2000] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-700">
-        <div class="serif text-4xl gold-text-shine mb-4 tracking-widest text-center">הרב אלדר לוי</div>
-        <div class="text-[10px] text-white/40 uppercase tracking-[0.5em] mb-8">טוען רבני • דיין מוסמך</div>
+        <div class="serif text-4xl gold-text-shine mb-4 tracking-widest text-center px-4">הרב אלדר לוי</div>
+        <div class="text-[10px] text-white/40 uppercase tracking-[0.5em] mb-8 text-center px-4">טוען רבני • דיין מוסמך</div>
         <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
             <div class="absolute inset-0 bg-gold-500 animate-progress"></div>
         </div>
@@ -150,12 +133,15 @@
                     <span class="gold-text-shine">הרב אלדר לוי</span>
                 </div>
                 <div class="hidden md:block h-6 w-[1px] bg-gold-500/20"></div>
-                <div class="hidden md:block text-[11px] font-bold text-gold-600 uppercase tracking-tighter">ייצוג • ייעוץ • גישור</div>
+                <div class="hidden md:block text-[11px] font-bold text-gold-600 uppercase tracking-tighter">טוען רבני • דיין מוסמך</div>
             </div>
 
             <!-- Desktop Links -->
-            <div class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest">
+            <div class="hidden lg:flex items-center gap-6 text-[11px] font-bold uppercase tracking-widest">
                 <a href="#about" class="hover:text-gold-500 transition-colors">אודות</a>
+                <a href="#specialties" class="hover:text-gold-500 transition-colors">התמחויות</a>
+                <a href="#arbitration" class="hover:text-gold-500 transition-colors">בוררות</a>
+                <a href="#lectures" class="hover:text-gold-500 transition-colors">הרצאות</a>
                 <a href="#articles" class="hover:text-gold-500 transition-colors">מאמרים</a>
                 <a href="#testimonials" class="hover:text-gold-500 transition-colors">המלצות</a>
                 <a href="#contact" class="bg-gold-500 text-navy-950 px-6 py-2.5 rounded-sm hover:bg-gold-600 transition-all btn-luxury">יצירת קשר</a>
@@ -169,14 +155,18 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[1500] bg-navy-950 translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8">
+    <div id="mobile-menu" class="fixed inset-0 z-[1500] bg-navy-950 translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-6 text-center">
         <button id="menu-close" class="absolute top-8 right-8 text-gold-500">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
+        <div class="text-[10px] text-gold-500/50 tracking-[0.3em] uppercase mb-4">תפריט ניווט</div>
         <a href="#about" class="serif text-3xl text-white mobile-link">אודות</a>
+        <a href="#specialties" class="serif text-3xl text-white mobile-link">התמחויות</a>
+        <a href="#arbitration" class="serif text-3xl text-white mobile-link">בוררות</a>
+        <a href="#lectures" class="serif text-3xl text-white mobile-link">הרצאות</a>
         <a href="#articles" class="serif text-3xl text-white mobile-link">מאמרים</a>
         <a href="#testimonials" class="serif text-3xl text-white mobile-link">המלצות</a>
-        <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4 rounded-sm mobile-link">יצירת קשר</a>
+        <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4 rounded-sm mobile-link mt-4">יצירת קשר</a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
