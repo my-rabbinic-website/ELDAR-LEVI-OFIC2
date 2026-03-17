@@ -2,24 +2,44 @@
 <html lang="he" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="google-site-verification" content="cm8d_DCwtIbzViB0Aos14jc2TJzLiWT1aMGyUKQjQDU" />
-    <title>הרב אלדר לוי | טוען רבני ודיין מוסמך</title>   
-    
-    <!-- Meta Tags -->
-    <meta name="description" content="הרב אלדר לוי, טוען רבני ומומחה בייצוג בבתי הדין. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר עבורכם. התקשרו: 052-8219928">
-    <meta name="keywords" content="אלדר לוי, טוען רבני, גישור, דיני משפחה, בית דין, הסכמי ממון, בוררות">
+    <title>הרב אלדר לוי | טוען רבני ודיין מוסמך - מומחיות בבתי הדין</title>   
+    <meta name="description" content="אלדר לוי, טוען רבני ומגשר, מומחה בייצוג בבתי הדין הרבניים בדיני משפחה, גירושין, ממונות וירושות. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר עבורכם. התקשרו: 052-8219928">
+    <meta name="keywords" content="אלדר לוי, טוען רבני, מגשר, גירושין, בית דין רבני, דיני משפחה, הסכם ממון, צוואות, ירושות">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="הרב אלדר לוי - טוען רבני ודיין מוסמך">
-    <meta property="og:description" content="ייצוג משפטי מקצועי בבתי הדין, דיני משפחה, ממונות וירושה.">
+    <!-- Open Graph (לשיתוף ברשתות חברתיות) -->
+    <meta property="og:title" content="הרב אלדר לוי - טוען רבני מגשר ודיין מוסמך">
+    <meta property="og:description" content="ייצוג משפטי בבתי הדין הרבניים, דיני משפחה, ממונות וירושה.">
     <meta property="og:url" content="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
+    <meta property="og:type" content="website">
 
-    <!-- Fonts & CSS Frameworks -->
+    <!-- Preconnect להאצת טעינת פונטים -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "הרב אלדר לוי - טוען רבני ומגשר",
+      "description": "ייצוג בבתי דין רבניים, דיני משפחה, גירושין, ירושות וממונות.",
+      "url": "https://r-mediator.co.il/",
+      "telephone": "052-8219928",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "ישראל"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+    
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -31,20 +51,20 @@
                     },
                     colors: {
                         gold: {
-                            50: '#fdfbf7',
-                            400: '#d1a056',
-                            500: '#c5a059',
-                            600: '#b38728',
+                            50: '#fdfbf7', 100: '#f7f0e1', 200: '#eddcb9', 300: '#dfc085',
+                            400: '#d1a056', 500: '#c5a059', 600: '#b38728', 700: '#8a651b',
                         },
                         navy: {
-                            800: '#1a1f2c',
-                            900: '#0a0f1a',
-                            950: '#050810',
+                            800: '#1a1f2c', 900: '#0a0f1a', 950: '#050810',
                         }
+                    },
+                    backgroundImage: {
+                       'parchment': "url('https://www.transparenttextures.com/patterns/parchment.png')",
+                       'dark-pattern': "url('https://www.transparenttextures.com/patterns/black-linen.png')"
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'progress': 'progress 2s ease-in-out infinite',
+                        'progress': 'progress 2s ease-in-out infinite'
                     },
                     keyframes: {
                         progress: {
@@ -56,7 +76,6 @@
             }
         }
     </script>
-
     <style>
         :root {
             --gold-primary: #c5a059;
@@ -65,12 +84,20 @@
         
         body {
             font-family: 'Assistant', sans-serif;
-            overflow-x: hidden;
+            background-color: #fdfbf7;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; 
             width: 100%;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, .serif { font-family: 'Frank Ruhl Libre', serif; }
+        img, video, iframe, canvas {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h1, h2, h3, h4, .serif { font-family: 'Frank Ruhl Libre', serif; }
 
         .gold-text-shine {
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
@@ -82,49 +109,65 @@
 
         @keyframes shine { to { background-position: 200% center; } }
 
-        .book-texture {
-            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
+        .book-texture { background-image: url('https://www.transparenttextures.com/patterns/parchment.png'); }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-right: 4px solid #c5a059;
             transition: all 0.4s ease;
         }
         
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            transform: translateY(-5px);
-        }
+        .dark .testimonial-card { background: #0a0f1a; }
 
         .btn-luxury {
             position: relative;
+            z-index: 1;
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
             overflow: hidden;
-            transition: all 0.4s ease;
+            letter-spacing: 0.05em;
         }
-
-        .btn-luxury::after {
+        
+        .btn-luxury::before {
             content: '';
             position: absolute;
             top: 0; left: -100%; width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        .btn-luxury:hover::before { left: 100%; }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c5a059, transparent);
+            width: 80%;
+            margin: 0 auto;
+            opacity: 0.3;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%; top: 0; bottom: 0; width: 1px;
+            background: rgba(197, 160, 89, 0.3);
+            transform: translateX(-50%);
         }
 
-        .btn-luxury:hover::after { left: 100%; }
+        @media (max-width: 768px) {
+            .timeline-line { left: 20px; }
+        }
         
-        /* Custom Checkmark for lists */
         .check-list li {
             position: relative;
-            padding-right: 30px;
+            padding-right: 25px;
+            margin-bottom: 10px;
         }
+
         .check-list li::before {
             content: '✓';
             position: absolute;
@@ -134,68 +177,94 @@
         }
     </style>
 </head>
-
 <body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 book-texture">
-
-    <!-- Preloader -->
-    <div id="loader" class="fixed inset-0 z-[2000] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-700">
+    
+    <!-- Preloader עם הגדרת העלמות מהירה יותר (duration-500 במקום 1000) -->
+    <div id="loader" class="fixed inset-0 z-[2000] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-500">
         <div class="serif text-4xl gold-text-shine mb-4 tracking-widest text-center px-4">הרב אלדר לוי</div>
-        <div class="text-[10px] text-white/40 uppercase tracking-[0.5em] mb-8 text-center px-4">טוען רבני • דיין מוסמך</div>
+        <div class="text-[10px] text-white/40 uppercase tracking-[0.5em] mb-8 text-center px-4">משרד טוען רבני • בעל כושר לדיינות</div>
         <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
             <div class="absolute inset-0 bg-gold-500 animate-progress"></div>
         </div>
     </div>
 
-    <!-- Floating Contact (Mobile) -->
-    <a href="tel:0528219928" class="fixed bottom-6 left-6 z-50 lg:hidden bg-gold-500 text-navy-950 p-4 rounded-full shadow-2xl animate-pulse-slow">
+    <!-- Floating Action Button -->
+    <a href="tel:0528219928" class="fixed bottom-6 left-6 z-50 lg:hidden bg-gold-500 text-navy-950 p-4 rounded-full shadow-2xl animate-pulse-slow border border-white/20">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
     </a>
 
-       <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-[1000] transition-all duration-500 py-4 md:py-6 px-6 md:px-12 backdrop-blur-[2px] border-b border-white/5">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-[1000] transition-all duration-500 py-4 px-6 md:px-12 bg-gold-50/90 dark:bg-navy-950/90 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo(0,0)">
-                <div class="serif text-2xl md:text-3xl font-bold dark:text-white relative">
+            <div class="flex items-center gap-4">
+                <div class="serif text-xl sm:text-2xl font-bold dark:text-white">
                     <span class="gold-text-shine">הרב אלדר לוי</span>
-                    <div class="absolute -bottom-2 right-0 w-1/2 h-[2px] bg-gold-500 transition-all duration-300 group-hover:w-full"></div>
                 </div>
-                <div class="hidden md:block h-8 w-[1px] bg-gold-500/30"></div>
-                <div class="hidden md:flex flex-col justify-center">
-                    <span class="text-[13px] font-bold text-white tracking-wide leading-tight">טוען רבני | דיין מוסמך</span>
-                    <span class="text-[10px] text-gold-500 uppercase tracking-widest leading-tight">רישיון מ.ר. 2123</span>
-                </div>
+                <div class="hidden sm:block h-6 w-[1px] bg-gold-500/30"></div>
+                <div class="hidden sm:block text-[11px] font-bold text-gold-600">דיני משפחה - ייצוג וייעוץ</div>
             </div>
-            <div class="hidden lg:flex items-center gap-10 text-[12px] font-bold uppercase tracking-widest text-slate-300">
-                <a href="#about" class="hover:text-gold-500 transition-colors relative group py-2">אודות<span class="absolute bottom-0 right-0 w-0 h-[1px] bg-gold-500 transition-all duration-300 group-hover:w-full"></span></a>
-                <a href="#services" class="hover:text-gold-500 transition-colors relative group py-2">התמחויות<span class="absolute bottom-0 right-0 w-0 h-[1px] bg-gold-500 transition-all duration-300 group-hover:w-full"></span></a>
-                <a href="#arbitration" class="hover:text-gold-500 transition-colors relative group py-2">בוררות<span class="absolute bottom-0 right-0 w-0 h-[1px] bg-gold-500 transition-all duration-300 group-hover:w-full"></span></a>
-                <a href="#strategy" class="hover:text-gold-500 transition-colors relative group py-2">אסטרטגיה<span class="absolute bottom-0 right-0 w-0 h-[1px] bg-gold-500 transition-all duration-300 group-hover:w-full"></span></a>
-                <a href="#collaborations" class="hover:text-gold-500 transition-colors relative group py-2 text-gold-400">לעורכי דין<span class="absolute bottom-0 right-0 w-0 h-[1px] bg-gold-500 transition-all duration-300 group-hover:w-full"></span></a>
-                <a href="#contact" class="btn-luxury bg-gold-gradient-bg text-navy-950 px-8 py-3 rounded-sm font-bold shadow-[0_0_25px_rgba(197,160,89,0.3)] hover:shadow-[0_0_35px_rgba(197,160,89,0.5)] transform hover:-translate-y-0.5 border border-gold-400">צור קשר</a>
+            <div class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest">
+                <a href="#about" class="hover:text-gold-500 transition-colors">אודות</a>
+                <a href="#advantage" class="hover:text-gold-500 transition-colors">היתרון</a>
+                <a href="#services" class="hover:text-gold-500 transition-colors">התמחויות</a>
+                <a href="#comparison" class="hover:text-gold-500 transition-colors">השוואה</a>
+                <a href="#timeline" class="hover:text-gold-500 transition-colors">התהליך</a>
+                <a href="#cases" class="hover:text-gold-500 transition-colors">תיקים</a>
+                <a href="#testimonials" class="hover:text-gold-500 transition-colors">המלצות</a>
+                <a href="#contact" class="bg-gold-500 text-navy-950 px-6 py-2.5 rounded-sm hover:shadow-lg transition-all">יצירת קשר</a>
             </div>
-            <button id="menu-toggle" class="lg:hidden text-gold-500 p-2 hover:bg-white/5 rounded transition-colors border border-gold-500/30">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <button id="menu-toggle" class="lg:hidden text-gold-600 p-2 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[1500] bg-navy-950/98 backdrop-blur-2xl translate-x-full transition-transform duration-500 lg:hidden flex flex-col items-center justify-center gap-8">
-        <button id="menu-close" class="absolute top-8 right-8 text-gold-500 p-2 border border-gold-500/30 rounded-full hover:bg-gold-500/10 transition-colors">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <div id="mobile-menu" class="fixed inset-0 z-[1500] bg-navy-950 translate-x-full transition-transform duration-500 lg:hidden flex flex-col items-center justify-center gap-8 text-center px-4">
+        <button id="menu-close" class="absolute top-8 right-8 text-gold-500 p-2 focus:outline-none">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <div class="text-center mb-4">
-            <div class="serif text-3xl text-gold-500 mb-1">הרב אלדר לוי</div>
-            <div class="text-xs text-slate-400 uppercase tracking-widest">משרד טוען רבני ודיינות</div>
-        </div>
-        <div class="w-16 h-[1px] bg-gold-500/30 mb-4"></div>
-        <a href="#about" class="serif text-2xl text-white hover:text-gold-500 transition-colors mobile-link">אודות המשרד</a>
-        <a href="#services" class="serif text-2xl text-white hover:text-gold-500 transition-colors mobile-link">תחומי עיסוק</a>
-        <a href="#arbitration" class="serif text-2xl text-white hover:text-gold-500 transition-colors mobile-link">בוררות עסקית</a>
-        <a href="#strategy" class="serif text-2xl text-white hover:text-gold-500 transition-colors mobile-link">אסטרטגיה</a>
-        <a href="#collaborations" class="serif text-2xl text-gold-400 hover:text-gold-200 transition-colors mobile-link">שיתופי פעולה</a>
-        <a href="#contact" class="mt-8 serif text-xl text-navy-950 bg-gold-500 px-10 py-4 rounded-sm font-bold shadow-2xl mobile-link">תיאום פגישת יעוץ</a>
+        <div class="text-[11px] font-bold text-gold-600 mb-4 tracking-widest">טוען רבני | דיין מוסמך</div>
+        <a href="#about" class="serif text-3xl text-white mobile-link">אודות</a>
+        <a href="#services" class="serif text-3xl text-white mobile-link">תחומי עיסוק</a>
+        <a href="#comparison" class="serif text-3xl text-white mobile-link">היתרון שלנו</a>
+        <a href="#timeline" class="serif text-3xl text-white mobile-link">המסע המשותף</a>
+        <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4 mt-4 mobile-link rounded-sm">פגישת יעוץ</a>
     </div>
+
+    <!-- סקריפטים מתוקנים -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // טיפול במסך טעינה - מוסתר כמעט באופן מיידי עם סיום בניית ה-DOM
+            const loader = document.getElementById('loader');
+            if(loader) {
+                // חצי שנייה בלבד כדי לאפשר ל-Tailwind לחשב את העיצוב הראשוני
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500); // אנימציית העלמות קצרה יותר (0.5 שניות במקום 1 שניה)
+                }, 300); // המתנה קצרה מאוד במקום 1.2 שניות
+            }
+
+            // תפעול תפריט נייד
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            const toggleMenu = (open) => {
+                mobileMenu.classList.toggle('translate-x-full', !open);
+                document.body.style.overflow = open ? 'hidden' : '';
+            };
+
+            if(menuToggle) menuToggle.addEventListener('click', () => toggleMenu(true));
+            if(menuClose) menuClose.addEventListener('click', () => toggleMenu(false));
+            mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+        });
+    </script>
+</body>
+</html>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
