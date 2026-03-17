@@ -3,21 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="google-site-verification" content="cm8d_DCwtIbzViB0Aos14jc2TJzLiWT1aMGyUKQjQDU" />
     <title>הרב אלדר לוי | טוען רבני ודיין מוסמך</title>   
     
-    <!-- Meta Tags -->
-    <meta name="description" content="הרב אלדר לוי, טוען רבני ומומחה בייצוג בבתי הדין. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר עבורכם. התקשרו: 052-8219928">
-    <meta name="keywords" content="אלדר לוי, טוען רבני, גישור, דיני משפחה, בית דין, הסכמי ממון, בוררות">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="הרב אלדר לוי - טוען רבני ודיין מוסמך">
-    <meta property="og:description" content="ייצוג משפטי מקצועי בבתי הדין, דיני משפחה, ממונות וירושה.">
-    <meta property="og:url" content="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
-
-    <!-- Fonts & CSS Frameworks -->
+    <meta name="description" content="הרב אלדר לוי, טוען רבני ומומחה בייצוג בבתי הדין. ליווי מקצועי, נחוש ורגיש להשגת התוצאה הטובה ביותר עבורכם.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <script>
@@ -30,27 +21,15 @@
                         serif: ['Frank Ruhl Libre', 'serif'],
                     },
                     colors: {
-                        gold: {
-                            50: '#fdfbf7',
-                            400: '#d1a056',
-                            500: '#c5a059',
-                            600: '#b38728',
-                        },
-                        navy: {
-                            800: '#1a1f2c',
-                            900: '#0a0f1a',
-                            950: '#050810',
-                        }
+                        gold: { 50: '#fdfbf7', 400: '#d1a056', 500: '#c5a059', 600: '#b38728' },
+                        navy: { 800: '#1a1f2c', 900: '#0a0f1a', 950: '#050810' }
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'progress': 'progress 2s ease-in-out infinite',
                     },
                     keyframes: {
-                        progress: {
-                            '0%': { transform: 'translateX(-100%)' },
-                            '100%': { transform: 'translateX(100%)' }
-                        }
+                        progress: { '0%': { transform: 'translateX(-100%)' }, '100%': { transform: 'translateX(100%)' } }
                     }
                 }
             }
@@ -58,18 +37,7 @@
     </script>
 
     <style>
-        :root {
-            --gold-primary: #c5a059;
-            --navy-deep: #050810;
-        }
-        
-        body {
-            font-family: 'Assistant', sans-serif;
-            overflow-x: hidden;
-            width: 100%;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        body { font-family: 'Assistant', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         h1, h2, h3, .serif { font-family: 'Frank Ruhl Libre', serif; }
 
         .gold-text-shine {
@@ -79,77 +47,155 @@
             background-size: 200% auto;
             animation: shine 4s linear infinite;
         }
-
         @keyframes shine { to { background-position: 200% center; } }
-
-        .book-texture {
-            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(197, 160, 89, 0.15);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(197, 160, 89, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
-        .btn-luxury {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .btn-luxury::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-luxury:hover::after { left: 100%; }
-        
-        /* Custom Checkmark for lists */
-        .check-list li {
-            position: relative;
-            padding-right: 30px;
-        }
-        .check-list li::before {
-            content: '✓';
-            position: absolute;
-            right: 0;
-            color: #c5a059;
-            font-weight: bold;
-        }
+        .nav-link-active { color: #c5a059; position: relative; }
+        .nav-link-active::after { content: ''; position: absolute; bottom: -4px; right: 0; width: 100%; height: 2px; background: #c5a059; }
     </style>
 </head>
 
-<body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 book-texture">
+<body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500">
 
-    <!-- Preloader -->
     <div id="loader" class="fixed inset-0 z-[2000] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-700">
-        <div class="serif text-4xl gold-text-shine mb-4 tracking-widest text-center px-4">הרב אלדר לוי</div>
-        <div class="text-[10px] text-white/40 uppercase tracking-[0.5em] mb-8 text-center px-4">טוען רבני • דיין מוסמך</div>
+        <div class="serif text-4xl gold-text-shine mb-4 tracking-widest text-center">הרב אלדר לוי</div>
         <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
             <div class="absolute inset-0 bg-gold-500 animate-progress"></div>
         </div>
     </div>
 
-    <!-- Floating Contact (Mobile) -->
-    <a href="tel:0528219928" class="fixed bottom-6 left-6 z-50 lg:hidden bg-gold-500 text-navy-950 p-4 rounded-full shadow-2xl animate-pulse-slow">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
+    <nav id="navbar" class="fixed top-0 w-full z-[1000] transition-all duration-500 py-4 px-6 md:px-12 bg-white/80 dark:bg-navy-950/80 backdrop-blur-md border-b border-gold-500/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="#" class="serif text-2xl font-bold gold-text-shine">הרב אלדר לוי</a>
+                <div class="hidden md:block h-6 w-[1px] bg-gold-500/20 mx-2"></div>
+                <div class="hidden md:block text-[11px] font-bold text-gold-600 uppercase tracking-tighter">טוען רבני • דיין מוסמך</div>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-8 text-[13px] font-bold uppercase tracking-widest">
+                <a href="#about" class="hover:text-gold-500 transition-colors">אודות</a>
+                <a href="#specialties" class="hover:text-gold-500 transition-colors">התמחויות</a>
+                <a href="#contact" class="bg-gold-500 text-navy-950 px-6 py-2 rounded-sm hover:bg-gold-600 transition-all font-bold">יצירת קשר</a>
+            </div>
+
+            <button id="menu-toggle" aria-label="תפריט" class="lg:hidden text-gold-600 p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[1500] bg-navy-950 translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8 text-center">
+        <button id="menu-close" class="absolute top-8 right-8 text-gold-500 p-2">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#about" class="serif text-3xl text-white hover:text-gold-500 transition-colors">אודות</a>
+        <a href="#specialties" class="serif text-3xl text-white hover:text-gold-500 transition-colors">התמחויות</a>
+        <a href="#contact" class="serif text-3xl text-gold-500 border border-gold-500/30 px-10 py-4 rounded-sm font-bold">יצירת קשר</a>
+    </div>
+
+    <main>
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 bg-navy-950">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-40" alt="רקע משפטי">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
+                <div class="max-w-4xl">
+                    <span class="inline-block text-gold-500 text-sm font-bold tracking-[0.4em] mb-6 uppercase border-r-4 border-gold-500 pr-4">משרד טוען רבני | דיין מוסמך</span>
+                    <h1 class="serif text-5xl md:text-8xl text-white leading-tight mb-8">ניווט תורני בנתיבי <br><span class="gold-text-shine italic font-light">ההלכה והדין</span></h1>
+                    <p class="text-slate-300 text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-2xl">ליווי משפטי-הלכתי המשלב עומק עיוני בשולחן ערוך עם ניסיון מעשי מוכח בבתי הדין.</p>
+                    <div class="flex flex-wrap gap-6">
+                        <a href="tel:0528219928" class="bg-gold-500 text-navy-950 px-10 py-5 font-bold rounded-sm shadow-xl hover:bg-gold-600 transition-all transform hover:-translate-y-1">שיחת ייעוץ ראשונית</a>
+                        <a href="#contact" class="border border-white/30 text-white px-10 py-5 font-bold rounded-sm hover:bg-white/10 transition-all">לשליחת פנייה</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specialties" class="py-32 bg-navy-900 border-t border-gold-500/10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="serif text-4xl md:text-6xl text-white mb-6">יסודות הפסיקה</h2>
+                    <div class="w-24 h-1 bg-gold-500 mx-auto opacity-70"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="glass-card p-12 rounded-sm" data-aos="fade-left">
+                        <h3 class="serif text-4xl text-gold-500 mb-6 italic">אבן העזר</h3>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-8">התמחות מעמיקה בדיני אישות, נישואין וגירושין. ייצוג נחוש בתיקי כתובה, מזונות והסדרי שהות על פי דעת תורה.</p>
+                        <ul class="text-gold-400 space-y-3 font-semibold">
+                            <li>• סידור גיטין וקידושין</li>
+                            <li>• תביעות כתובה ומזונות</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card p-12 rounded-sm" data-aos="fade-right">
+                        <h3 class="serif text-4xl text-gold-500 mb-6 italic">חושן משפט</h3>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-8">ניהול סכסוכי ממונות, ירושות ובוררויות עסקיות. שליטה מוחלטת בהלכות דיינים ודיני ראיות בבית הדין.</p>
+                        <ul class="text-gold-400 space-y-3 font-semibold">
+                            <li>• בוררות ודיני ממונות</li>
+                            <li>• צוואות וירושות כהלכה</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Loader Toggle
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 700);
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-toggle');
+        const closeBtn = document.getElementById('menu-close');
+        const menu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMenu = () => {
+            menu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        };
+
+        closeBtn.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-2xl');
+            } else {
+                nav.classList.remove('py-2', 'shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
 
     <!-- Header / Nav -->
     <nav id="navbar" class="fixed top-0 w-full z-[1000] transition-all duration-500 py-4 px-6 md:px-12 bg-white/80 dark:bg-navy-950/80 nav-blur border-b border-gold-500/10">
