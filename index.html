@@ -14,31 +14,14 @@
     <meta property="og:url" content="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
     <meta property="og:type" content="website">
 
-    <!-- Preconnect להאצת טעינת פונטים -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <!-- Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = { theme: { extend: {} } };
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LegalService",
-      "name": "הרב אלדר לוי - טוען רבני ומגשר",
-      "description": "ייצוג בבתי דין רבניים, דיני משפחה, גירושין, ירושות וממונות.",
-      "url": "https://r-mediator.co.il/",
-      "telephone": "052-8219928",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "ישראל"
-      },
-      "priceRange": "$$"
-    }
-    </script>
     
     <script>
         tailwind.config = {
@@ -48,28 +31,43 @@
                     fontFamily: {
                         sans: ['Assistant', 'sans-serif'],
                         serif: ['Frank Ruhl Libre', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
                     },
                     colors: {
                         gold: {
-                            50: '#fdfbf7', 100: '#f7f0e1', 200: '#eddcb9', 300: '#dfc085',
-                            400: '#d1a056', 500: '#c5a059', 600: '#b38728', 700: '#8a651b',
+                            50: '#fdfbf7',
+                            100: '#f7f0e1',
+                            200: '#eddcb9',
+                            300: '#dfc085',
+                            400: '#d1a056',
+                            500: '#c5a059',
+                            600: '#b38728',
+                            700: '#8a651b',
+                            800: '#704e16',
                         },
                         navy: {
-                            800: '#1a1f2c', 900: '#0a0f1a', 950: '#050810',
+                            800: '#1a1f2c',
+                            900: '#0a0f1a',
+                            950: '#050810',
                         }
                     },
                     backgroundImage: {
                        'parchment': "url('https://www.transparenttextures.com/patterns/parchment.png')",
-                       'dark-pattern': "url('https://www.transparenttextures.com/patterns/black-linen.png')"
+                       'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                       'luxury-gradient': 'linear-gradient(135deg, #0a0f1a 0%, #1a1f2c 100%)',
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'progress': 'progress 2s ease-in-out infinite'
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s infinite',
                     },
                     keyframes: {
-                        progress: {
-                            '0%': { transform: 'translateX(-100%)' },
-                            '100%': { transform: 'translateX(100%)' }
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        shimmer: {
+                            '100%': { transform: 'translateX(100%)' },
                         }
                     }
                 }
@@ -81,99 +79,174 @@
             --gold-primary: #c5a059;
             --navy-deep: #050810;
         }
-        
+       
         body {
             font-family: 'Assistant', sans-serif;
             background-color: #fdfbf7;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; 
-            width: 100%;
-            -webkit-font-smoothing: antialiased;
+        }
+       
+        h1, h2, h3, h4, .serif { font-family: 'Frank Ruhl Libre', serif; }
+        
+        /* Realistic Gold Text Effect */
+        .gold-text-shine {
+            background: linear-gradient(to bottom, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #ffecb3 40%, #3a2c0f 78%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            color: #c5a059; /* Fallback */
+            font-weight: 700;
         }
 
-        img, video, iframe, canvas {
-            max-width: 100%;
-            height: auto;
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fcf6ba, #aa771c);
+        }
+
+        /* Noise Texture Overlay for Premium Feel */
+        .texture-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 40;
+        }
+
+        .book-texture {
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
         }
         
-        h1, h2, h3, h4, .serif { font-family: 'Frank Ruhl Libre', serif; }
-
-        .gold-text-shine {
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fcf6ba, #bf953f);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: shine 4s linear infinite;
-        }
-
-        @keyframes shine { to { background-position: 200% center; } }
-
-        .book-texture { background-image: url('https://www.transparenttextures.com/patterns/parchment.png'); }
-
+        /* Advanced Glassmorphism */
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
-
+        
         .testimonial-card {
             background: white;
             border-right: 4px solid #c5a059;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
         }
-        
-        .dark .testimonial-card { background: #0a0f1a; }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -5px rgba(197, 160, 89, 0.2);
+        }
+       
+        .dark .testimonial-card {
+            background: #0a0f1a;
+            border-color: #b38728;
+        }
 
+        /* Luxury Button */
         .btn-luxury {
             position: relative;
             z-index: 1;
-            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 0.5s ease;
             overflow: hidden;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
         }
-        
-        .btn-luxury::before {
+        .btn-luxury::after {
             content: '';
             position: absolute;
-            top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: all 0.6s ease;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
             z-index: -1;
         }
-        .btn-luxury:hover::before { left: 100%; }
-
+        .btn-luxury:hover::after {
+            left: 100%;
+            transition: 0.7s;
+        }
+        
+        /* Accordion Animation */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+        
+        .mobile-menu-active { transform: translateX(0) !important; }
+        
         .section-divider {
             height: 1px;
             background: linear-gradient(to right, transparent, #c5a059, transparent);
-            width: 80%;
+            width: 60%;
             margin: 0 auto;
-            opacity: 0.3;
+            opacity: 0.4;
+        }
+       
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         
-        .timeline-line {
-            position: absolute;
-            left: 50%; top: 0; bottom: 0; width: 1px;
-            background: rgba(197, 160, 89, 0.3);
-            transform: translateX(-50%);
+        /* Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(to right, #b38728, #fcf6ba, #b38728);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s;
+            box-shadow: 0 0 10px #b38728;
         }
 
+        /* Timeline Styles */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #c5a059, transparent);
+            transform: translateX(-50%);
+        }
         @media (max-width: 768px) {
             .timeline-line { left: 20px; }
         }
-        
-        .check-list li {
-            position: relative;
-            padding-right: 25px;
-            margin-bottom: 10px;
-        }
+       
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050810; }
+        ::-webkit-scrollbar-thumb { background: #c5a059; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b38728; }
 
-        .check-list li::before {
-            content: '✓';
+        /* Floating Widgets */
+        .floating-widget {
+            position: fixed;
+            bottom: 24px;
+            z-index: 50;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .floating-widget:hover { transform: scale(1.1); }
+        
+        /* Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+        .video-container iframe {
             position: absolute;
-            right: 0;
-            color: #c5a059;
-            font-weight: bold;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
