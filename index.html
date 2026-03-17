@@ -177,21 +177,38 @@
         }
     </style>
 </head>
-<body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 book-texture">
+<body class="bg-gold-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 transition-colors duration-500 book-texture overflow-x-hidden selection:bg-gold-500 selection:text-white">
     
-    <!-- Preloader עם הגדרת העלמות מהירה יותר (duration-500 במקום 1000) -->
-    <div id="loader" class="fixed inset-0 z-[2000] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-500">
-        <div class="serif text-4xl gold-text-shine mb-4 tracking-widest text-center px-4">הרב אלדר לוי</div>
-        <div class="text-[10px] text-white/40 uppercase tracking-[0.5em] mb-8 text-center px-4">משרד טוען רבני • בעל כושר לדיינות</div>
+    <!-- Texture Overlay -->
+    <div class="texture-overlay"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Preloader -->
+    <div id="loader" class="fixed inset-0 z-[2000] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-1000">
+        <div class="relative">
+            <div class="absolute -inset-4 bg-gold-500/20 blur-xl rounded-full"></div>
+            <div class="serif text-5xl md:text-6xl gold-text-shine mb-6 tracking-widest relative z-10 text-center">הרב אלדר לוי</div>
+        </div>
+        <div class="text-xs text-gold-200 uppercase tracking-[0.6em] mb-10 border-b border-gold-500/30 pb-2 text-center">עוצמה הלכתית • יושרה מקצועית</div>
         <div class="w-48 h-[1px] bg-white/10 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gold-500 animate-progress"></div>
+            <div class="absolute inset-0 bg-gold-500 -translate-x-full animate-[shimmer_1.5s_infinite]"></div>
         </div>
     </div>
 
-    <!-- Floating Action Button -->
-    <a href="tel:0528219928" class="fixed bottom-6 left-6 z-50 lg:hidden bg-gold-500 text-navy-950 p-4 rounded-full shadow-2xl animate-pulse-slow border border-white/20">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
+    <!-- Floating Actions (Phone Only) -->
+    <div class="fixed bottom-6 left-6 z-50 flex flex-col gap-4">
+        <a href="tel:0528219928" class="floating-widget bg-gold-500 text-navy-950 p-4 rounded-full shadow-[0_0_20px_rgba(197,160,89,0.6)] flex items-center justify-center group mb-4 border border-white/20">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span class="absolute left-full ml-4 bg-navy-900 text-gold-500 font-bold text-xs px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-gold-500 shadow-xl">חיוג ישיר לרב</span>
+        </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 z-40 bg-navy-900/90 backdrop-blur text-gold-500 p-3 rounded-full shadow-lg border border-gold-500/30 opacity-0 translate-y-10 transition-all duration-500 hover:bg-navy-950 hover:border-gold-500 hover:scale-110">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-[1000] transition-all duration-500 py-4 px-6 md:px-12 bg-gold-50/90 dark:bg-navy-950/90 backdrop-blur-sm">
