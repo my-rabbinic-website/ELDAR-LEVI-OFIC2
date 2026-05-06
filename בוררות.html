@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>הרב אלדר לוי | דיין מוסמך ובורר - פתרון סכסוכים ודיני ממונות</title>   
+    <meta name="description" content="פתרון סכסוכים עסקיים ופרטיים בהליך בוררות מהיר, יעיל ודיסקרטי. פסק בורר בעל תוקף משפטי אזרחי הניתן לאכיפה בהוצאה לפועל.">
+    
+    <!-- Scripts & Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#0A0A0A',
+                        darker: '#050505',
+                        cream: '#F5F5DC'
+                    },
+                    fontFamily: {
+                        sans: ['Assistant', 'sans-serif'],
+                        serif: ['Assistant', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap');
+        
+        body { font-family: 'Assistant', sans-serif; }
+        
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F5E6A2 50%, #B8860B 100%); }
+        .gold-text-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F5E6A2 50%, #B8860B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-mesh { background-color: #0A0A0A; background-image: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.05) 0px, transparent 50%); }
+        
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(212, 175, 55, 0.1); }
+        .glass-dark { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(212, 175, 55, 0.2); }
+        
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(to left, #D4AF37, #F5E6A2); z-index: 9999; width: 0%; transition: width 0.1s; }
+
+        .hover-gold:hover { color: #D4AF37; transition: 0.3s ease; }
+        
+        .hero-shape { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
+        
+        .particle { pointer-events: none; }
+    </style>
+</head>
+<body class="bg-mesh text-gray-200 overflow-x-hidden">
+
+    <!-- Scroll Progress -->
+    <div id="progressBar" class="scroll-progress"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[10000] bg-dark flex items-center justify-center transition-opacity duration-700">
+        <div class="relative">
+            <div class="w-24 h-24 border-2 border-gold/20 rounded-full animate-spin"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-gold font-bold">AL</div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="fixed bottom-24 left-6 z-[90] w-12 h-12 glass-dark text-gold rounded-full opacity-0 translate-y-10 transition-all duration-500 hover:scale-110 flex items-center justify-center">
+        <i class="fas fa-chevron-up text-xl"></i>
+    </button>
+
+    <!-- Header -->
+    <header id="mainHeader" class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 gold-gradient rounded-lg flex items-center justify-center shadow-lg shadow-gold/20">
+                    <span class="text-dark font-black text-xl">AL</span>
+                </div>
+                <div class="hidden sm:block">
+                    <h1 class="text-white font-bold tracking-tight text-lg leading-none">הרב אלדר לוי</h1>
+                    <p class="text-gold text-xs font-medium uppercase tracking-widest mt-1">דיין ובורר מוסמך</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide">
+                <a href="#about" class="hover-gold transition-all">אודות הבורר</a>
+                <a href="#services" class="hover-gold transition-all">תחומי בוררות</a>
+                <a href="#strategy" class="hover-gold transition-all">הליך הבוררות</a>
+                <a href="#faq" class="hover-gold transition-all">שאלות ותשובות</a>
+                <a href="#contact" class="gold-gradient text-dark px-6 py-2.5 rounded-full shadow-lg shadow-gold/20 hover:scale-105 transition-all">פנייה לבוררות</a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <button id="menuBtn" class="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none">
+                <span id="line1" class="w-6 h-0.5 bg-gold transition-all"></span>
+                <span id="line2" class="w-6 h-0.5 bg-gold transition-all"></span>
+                <span id="line3" class="w-6 h-0.5 bg-gold transition-all"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 bg-darker/98 backdrop-blur-2xl translate-x-full transition-transform duration-500 md:hidden flex flex-col items-center justify-center gap-8">
+        <a href="#about" class="mobile-link text-3xl font-bold hover:text-gold transition-colors">אודות הבורר</a>
+        <a href="#services" class="mobile-link text-3xl font-bold hover:text-gold transition-colors">תחומי בוררות</a>
+        <a href="#strategy" class="mobile-link text-3xl font-bold hover:text-gold transition-colors">הליך הבוררות</a>
+        <a href="#contact" class="mobile-link gold-gradient text-dark px-10 py-4 rounded-full font-black text-xl">פנייה לבוררות</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div id="particles" class="absolute inset-0 opacity-30 pointer-events-none"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                    <div class="md:w-3/5 text-center md:text-right" data-aos="fade-left">
+                        <span class="inline-block px-4 py-1.5 rounded-full glass text-gold text-sm font-bold mb-6 tracking-widest uppercase">הליך בוררות חוקי, מהיר ומוסכם</span>
+                        <h2 class="text-5xl lg:text-7xl font-black text-white leading-tight mb-8">
+                            פתרון סכסוכים אזרחיים<br>
+                            <span class="gold-text-gradient">בעלי תוקף משפטי מלא</span>
+                        </h2>
+                        <p class="text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
+                            נקלעתם לסכסוך כספי או עסקי? במקום לנהל תביעות ארוכות ויקרות בבתי המשפט, אני מזמין אתכם להליך בוררות מהיר, דיסקרטי ומקצועי. פסק הבוררות שלי מוגש לאישור בית המשפט, <strong class="text-white">ומשם מקבל תוקף מלא לאכיפה בהוצאה לפועל</strong>.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="#contact" class="gold-gradient px-10 py-4 rounded-full text-dark font-black text-lg shadow-2xl shadow-gold/30 hover:scale-105 transition-all flex items-center justify-center gap-2">
+                                <i class="fas fa-file-signature"></i>
+                                תיאום ישיבת בוררות
+                            </a>
+                            <a href="#strategy" class="glass px-10 py-4 rounded-full text-white font-bold text-lg hover:bg-white/10 transition-all border border-gold/30">
+                                איך ההליך עובד?
+                            </a>
+                        </div>
+                    </div>
+          </section> 
+
+        <!-- About Section -->
+          <section id="about" class="py-24 relative">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <div class="relative">
+                            <i class="fas fa-quote-right text-gold/10 text-9xl absolute -top-12 -right-8"></i>
+                            <h3 class="text-gold font-black tracking-widest mb-4 uppercase">אודות הבורר</h3>
+                            <h4 class="text-4xl font-bold text-white mb-8">הכרעה מקצועית שחוסכת לכם שנים של דיונים</h4>
+                            <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+                                <p>הליך משפטי אזרחי יכול להיגרר על פני שנים ארוכות ולעלות הון תועפות. כדיין ובורר מוסמך, אני מציע לכם <strong class="text-white">חלופה יעילה, מהירה וחוקית</strong> לפתרון מחלוקות.</p>
+                                <p>כאשר שני צדדים בוחרים לגשת אליי לבוררות, אני בוחן את הראיות, החוזים והטענות באופן אובייקטיבי, מעמיק ויסודי. ההכרעה שמתקבלת אינה בגדר "המלצה" – אלא פסק דין חלוט. עם אישור בית המשפט, ניתן לגשת ישירות ללשכת ההוצאה לפועל למימוש זכויותיכם.</p>
+                                <div class="bg-gold/10 p-4 border-r-4 border-gold rounded-l-lg italic text-gold">
+                                    "מטרת הבוררות היא להגיע לחקר האמת ולספק צדק מהיר, באווירה מכובדת ועניינית."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-right">
+                        <div class="glass p-8 rounded-2xl hover:border-gold/50 transition-all">
+                            <i class="fas fa-balance-scale text-gold text-3xl mb-4"></i>
+                            <h5 class="text-white font-bold mb-2">אובייקטיביות מלאה</h5>
+                            <p class="text-sm">שמיעת הצדדים ללא משוא פנים וללא דעות קדומות.</p>
+                        </div>
+                        <div class="glass p-8 rounded-2xl hover:border-gold/50 transition-all">
+                            <i class="fas fa-file-contract text-gold text-3xl mb-4"></i>
+                            <h5 class="text-white font-bold mb-2">חוקיות הפסק</h5>
+                            <p class="text-sm">הקפדה על כללי הצדק הטבעי לאישור מובטח בבית משפט.</p>
+                        </div>
+                        <div class="glass p-8 rounded-2xl hover:border-gold/50 transition-all">
+                            <i class="fas fa-clock text-gold text-3xl mb-4"></i>
+                            <h5 class="text-white font-bold mb-2">זמני הכרעה קצרים</h5>
+                            <p class="text-sm">קיצור בירוקרטיה והגעה למסקנות תוך שבועות בודדים.</p>
+                        </div>
+                        <div class="glass p-8 rounded-2xl hover:border-gold/50 transition-all">
+                            <i class="fas fa-handshake text-gold text-3xl mb-4"></i>
+                            <h5 class="text-white font-bold mb-2">אווירה עסקית</h5>
+                            <p class="text-sm">ניהול הליך שמכבד את כל הצדדים ומאפשר חזרה לשגרה.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-darker/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h3 class="text-gold font-black tracking-widest mb-4 uppercase">באילו מקרים אני מכריע?</h3>
+                    <h4 class="text-4xl lg:text-5xl font-bold text-white mb-6">תחומי הבוררות המרכזיים</h4>
+                    <p class="text-gray-400 max-w-2xl mx-auto">מענה משפטי-מוסכם לסכסוכים עסקיים, חוזיים ואזרחיים.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="group glass p-8 rounded-3xl hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 gold-gradient rounded-2xl flex items-center justify-center text-dark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h5 class="text-2xl font-bold text-white mb-4">סכסוכים עסקיים ושותפויות</h5>
+                        <ul class="text-gray-400 space-y-3 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> פירוק שותפויות עסקיות</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> סכסוכי בעלי מניות</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> הערכת וחלוקת נכסי חברה</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="group glass p-8 rounded-3xl hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 gold-gradient rounded-2xl flex items-center justify-center text-dark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h5 class="text-2xl font-bold text-white mb-4">נזקי ממון והפרת חוזים</h5>
+                        <ul class="text-gray-400 space-y-3 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> תביעות על אי-קיום חוזה</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> סכסוכי ספקים ולקוחות (כולל קבלנים)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> השבת כספים ותביעות נזיקין עקיפים</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="group glass p-8 rounded-3xl hover:bg-gold/5 transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 gold-gradient rounded-2xl flex items-center justify-center text-dark text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h5 class="text-2xl font-bold text-white mb-4">סכסוכי נדל"ן ושכירות</h5>
+                        <ul class="text-gray-400 space-y-3 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> מחלוקות שכירות, פינוי ותשלומים</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> סכסוכי גבולות ופגיעה בנכסים שכנים</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-gold text-xs"></i> פירוק שיתוף במקרקעין</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy / Timeline Section -->
+        <section id="strategy" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h3 class="text-gold font-black tracking-widest mb-4 uppercase">שלב אחר שלב</h3>
+                    <h4 class="text-4xl font-bold text-white mb-6">כיצד עובד הליך הבוררות?</h4>
+                </div>
+                
+                <div class="max-w-4xl mx-auto relative">
+                    <div class="absolute right-1/2 top-0 bottom-0 w-0.5 bg-gold/20 hidden md:block"></div>
+                    
+                    <div class="flex flex-col gap-12">
+                        <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up">
+                            <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                                <h6 class="text-gold font-bold text-xl mb-2">שלב 1: חתימה על שטר בוררות</h6>
+                                <p class="text-gray-400">שני הצדדים מסכימים למסור את ההכרעה לבורר וחותמים על מסמך מחייב המעניק סמכות משפטית להליך.</p>
+                            </div>
+                            <div class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center text-dark font-black z-10 my-4 md:my-0">1</div>
+                            <div class="md:w-1/2 md:pl-12"></div>
+                        </div>
+
+                        <div class="relative flex flex-col md:flex-row-reverse items-center" data-aos="fade-up">
+                            <div class="md:w-1/2 md:pl-12 text-center md:text-left">
+                                <h6 class="text-gold font-bold text-xl mb-2">שלב 2: הגשת ראיות ושמיעת עדויות</h6>
+                                <p class="text-gray-400">קיום ישיבת בוררות (או מספר ישיבות קצרות) באווירה מכובדת, בהן כל צד מציג את טענותיו, החוזים והראיות שברשותו.</p>
+                            </div>
+                            <div class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center text-dark font-black z-10 my-4 md:my-0">2</div>
+                            <div class="md:w-1/2 md:pr-12"></div>
+                        </div>
+
+                        <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-up">
+                            <div class="md:w-1/2 md:pr-12 text-center md:text-right">
+                                <h6 class="text-gold font-bold text-xl mb-2">שלב 3: פסק בורר ואכיפה</h6>
+                                <p class="text-gray-400">מתן פסק מנומק וסופי. הפסק מוגש לבית המשפט לקבלת אישור, ולאחריו ניתן לדרוש ביצוע ואף להפעיל הוצאה לפועל (הוצל"פ) במקרה של אי-תשלום.</p>
+                            </div>
+                            <div class="w-10 h-10 gold-gradient rounded-full flex items-center justify-center text-dark font-black z-10 my-4 md:my-0">3</div>
+                            <div class="md:w-1/2 md:pl-12"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 glass-dark">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h3 class="text-gold font-black tracking-widest mb-4 uppercase">שאלות נפוצות</h3>
+                    <h4 class="text-3xl font-bold text-white mb-6">מידע חשוב לפני שמתחילים</h4>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="group glass p-6 rounded-2xl cursor-pointer" open>
+                        <summary class="flex justify-between items-center text-white font-bold text-lg list-none">
+                            האם פסק הבוררות באמת תקף כמו בית משפט?
+                            <i class="fas fa-chevron-down text-gold group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            לחלוטין כן. לפי חוק הבוררות, לאחר שפסק הבורר מוגש ומקבל אישור מבית משפט (הליך פרוצדורלי פשוט), הוא בעל מעמד חוקי זהה לפסק דין שניתן על ידי שופט, וניתן לאכוף אותו במלואו באמצעות לשכת ההוצאה לפועל (הוצל"פ).
+                        </p>
+                    </details>
+
+                    <details class="group glass p-6 rounded-2xl cursor-pointer">
+                        <summary class="flex justify-between items-center text-white font-bold text-lg list-none">
+                            האם ניתן להכריח את הצד השני להגיע לבוררות?
+                            <i class="fas fa-chevron-down text-gold group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            ככלל, הליך בוררות דורש הסכמה של שני הצדדים. עם זאת, במקרים רבים חוזים עסקיים או מסחריים מכילים מראש "תניית בוררות" המחייבת את הצדדים לפתור סכסוכים אצל בורר במקרה של מחלוקת. במידה ואין סעיף כזה, נדרשת חתימה משותפת על שטר בוררות.
+                        </p>
+                    </details>
+
+                    <details class="group glass p-6 rounded-2xl cursor-pointer">
+                        <summary class="flex justify-between items-center text-white font-bold text-lg list-none">
+                            מה היתרון המרכזי של בוררות על פני תביעה אזרחית?
+                            <i class="fas fa-chevron-down text-gold group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-gray-400 leading-relaxed">
+                            היתרונות הם עצומים: זמן (חודשים ספורים לעומת שנים בבית משפט), חיסכון בהוצאות שכר טרחה מתמשכות, דיסקרטיות מלאה (פסקי בוררות לא מתפרסמים במאגרי מידע פומביים), וגמישות בקביעת זמני הדיונים.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative">
+            <div class="container mx-auto px-6">
+                <div class="glass-dark rounded-[3rem] overflow-hidden border border-gold/30">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="lg:w-1/2 p-12 lg:p-20 bg-gold/5">
+                            <h3 class="text-4xl font-black text-white mb-8">מסיימים את הסכסוך בהקדם</h3>
+                            <p class="text-gray-400 mb-12 text-lg">מעוניינים לשים את המחלוקת מאחוריכם עם הכרעה חוקית ברורה? השאירו פרטים להערכת המקרה ותיאום ישיבת בוררות ראשונה.</p>
+                            
+                            <div class="space-y-8">
+                                <div class="flex items-center gap-6">
+                                    <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-gold"><i class="fas fa-phone-alt"></i></div>
+                                    <div>
+                                        <div class="text-xs text-gold font-bold uppercase tracking-widest">תיאום ובירורים</div>
+                                        <div class="text-xl font-bold text-white">052-8219928</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-gold"><i class="fas fa-envelope"></i></div>
+                                    <div>
+                                        <div class="text-xs text-gold font-bold uppercase tracking-widest">לשליחת חומרים</div>
+                                        <div class="text-xl font-bold text-white">tifarteha@gmail.com</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-gold"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div>
+                                        <div class="text-xs text-gold font-bold uppercase tracking-widest">מקום הדיונים</div>
+                                        <div class="text-xl font-bold text-white">נתיבות / דרום (בתיאום מראש)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lg:w-1/2 p-12 lg:p-20">
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-bold text-gold mb-2">שם מלא / שם העסק</label>
+                                        <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-gold outline-none transition-all text-white" placeholder="הקלידו שם">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-bold text-gold mb-2">טלפון לחזרה</label>
+                                        <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-gold outline-none transition-all text-white" placeholder="050-0000000">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gold mb-2">סוג הסכסוך</label>
+                                    <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-gold outline-none transition-all text-white">
+                                        <option class="bg-dark">סכסוך עסקי / שותפות</option>
+                                        <option class="bg-dark">נזקי ממון והשבת כספים</option>
+                                        <option class="bg-dark">הפרת חוזים / סכסוך קבלן</option>
+                                        <option class="bg-dark">סכסוך נדל"ן ושכירות</option>
+                                        <option class="bg-dark">אחר</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gold mb-2">תקציר פרטי המקרה</label>
+                                    <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-gold outline-none transition-all text-white" placeholder="תארו בקצרה את מהות המחלוקת..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full gold-gradient py-5 rounded-xl text-dark font-black text-xl shadow-xl shadow-gold/20 hover:scale-[1.02] transition-all">
+                                    שליחת פנייה לבוררות
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 gold-gradient rounded flex items-center justify-center text-dark font-black text-sm">AL</div>
+                    <span class="text-white font-bold">הרב אלדר לוי - דיין ובורר מוסמך</span>
+                </div>
+                
+                <div class="flex gap-6 text-2xl">
+                    <a href="#" class="hover:text-gold transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-gold transition-colors"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="hover:text-gold transition-colors"><i class="fas fa-phone"></i></a>
+                </div>
+                
+                <p class="text-gray-500 text-sm">© 2024 כל הזכויות שמורות לדיין הרב אלדר לוי. פתרון סכסוכים מקצועי.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp -->
+    <a href="https://wa.me/972500000000" class="fixed bottom-6 left-6 z-[90] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({ duration: 1000, once: true, offset: 50 });
+
+        // Scroll Progress
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Header Scroll Effect
+            const header = document.getElementById('mainHeader');
+            if (winScroll > 50) {
+                header.classList.add('glass-dark', 'py-3');
+                header.classList.remove('py-6');
+            } else {
+                header.classList.remove('glass-dark', 'py-3');
+                header.classList.add('py-6');
+            }
+            
+            // Back to top button
+            const btt = document.getElementById('backToTop');
+            if(winScroll > 400) {
+                btt.classList.replace('opacity-0', 'opacity-100');
+                btt.classList.replace('translate-y-10', 'translate-y-0');
+            } else {
+                btt.classList.replace('opacity-100', 'opacity-0');
+                btt.classList.replace('translate-y-0', 'translate-y-10');
+            }
+        };
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')];
+        let menuOpen = false;
+
+        menuBtn.onclick = () => {
+            menuOpen = !menuOpen;
+            if(menuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+                lines[0].classList.add('rotate-45', 'translate-y-2');
+                lines[1].classList.add('opacity-0');
+                lines[2].classList.add('-rotate-45', '-translate-y-2');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+                lines[0].classList.remove('rotate-45', 'translate-y-2');
+                lines[1].classList.remove('opacity-0');
+                lines[2].classList.remove('-rotate-45', '-translate-y-2');
+                document.body.style.overflow = '';
+            }
+        };
+
+        // Close menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.onclick = () => {
+                menuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+                lines.forEach(l => l.classList.remove('rotate-45', 'translate-y-2', 'opacity-0', '-rotate-45', '-translate-y-2'));
+            }
+        });
+
+        // Back to top click
+        document.getElementById('backToTop').onclick = () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for(let i=0; i<30; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle absolute w-1 h-1 bg-gold/40 rounded-full';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.top = Math.random() * 100 + '%';
+                p.style.animation = `float ${5 + Math.random()*10}s infinite ease-in-out`;
+                container.appendChild(p);
+            }
+        }
+        
+        // CSS Keyframes injection
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0) translateX(0); }
+                50% { transform: translateY(-50px) translateX(20px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => document.getElementById('preloader').remove(), 700);
+            }, 500);
+            createParticles();
+        };
+    </script>
+</body>
+</html>
