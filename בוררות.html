@@ -16,7 +16,7 @@
     <meta name="keywords" content="בורר, בוררות, דיין, פתרון סכסוכים, סכסוך עסקי, דיני ממונות, בוררות עסקית, הרב אלדר לוי, פסק בורר, הליך בוררות, הוצאה לפועל">
     <meta name="author" content="הרב אלדר לוי">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בוררות" /> <!-- Replace with actual domain -->
+    <link rel="canonical" href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בוררות" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
     
     <!-- Open Graph / Social -->
@@ -66,19 +66,19 @@
                         gold: {
                             DEFAULT: '#D4AF37',
                             light: '#F5E6A2',
-                            dark: '#996515', // כהה יותר ועשיר יותר
+                            dark: '#996515',
                             muted: '#C5A059'
                         },
                         dark: {
                             DEFAULT: '#0A0A0A',
-                            deeper: '#030303', // עמוק יותר
+                            deeper: '#030303',
                             light: '#141414',
                             surface: '#1A1A1A'
                         }
                     },
                     fontFamily: {
                         sans: ['Assistant', 'system-ui', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'] // הוספת גופן יוקרתי לכותרות
+                        serif: ['Playfair Display', 'serif']
                     },
                     boxShadow: {
                         'gold-glow': '0 0 25px rgba(212, 175, 55, 0.15)',
@@ -152,7 +152,7 @@
         }
         
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; } /* צר יותר במובייל */
+        ::-webkit-scrollbar { width: 6px; } 
         @media (min-width: 768px) { ::-webkit-scrollbar { width: 8px; } }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
@@ -160,7 +160,7 @@
 
         .particle { pointer-events: none; position: absolute; border-radius: 50%; background: rgba(212, 175, 55, 0.4); }
         
-        /* סגנון פרטי שאלות ותשובות (Details/Summary) */
+        /* סגנון פרטי שאלות ותשובות */
         details > summary { list-style: none; outline: none; }
         details > summary::-webkit-details-marker { display: none; }
         
@@ -192,7 +192,7 @@
     <div id="progressBar" class="scroll-progress"></div>
 
     <!-- Header -->
-    <header id="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="fixed top-0 w-full z-50 transition-all duration-500 py-4 md:py-6 border-b border-transparent">
+    <header id="header" class="fixed top-0 w-full z-50 transition-all duration-500 py-4 md:py-6 border-b border-transparent">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl flex justify-between items-center">
             <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-4 group">
                 <div class="w-10 h-10 md:w-12 md:h-12 gold-gradient rounded-full flex items-center justify-center shadow-gold-glow group-hover:shadow-gold-glow-lg transition-all duration-500 relative">
@@ -207,6 +207,7 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-8 xl:gap-10 text-sm font-medium tracking-wide">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all after:duration-300">האתר בבנייה-</a>
                 <a href="#about" class="text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all after:duration-300">אודות הבורר</a>
                 <a href="#services" class="text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all after:duration-300">תחומי בוררות</a>
                 <a href="#strategy" class="text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all after:duration-300">הליך הבוררות</a>
@@ -225,7 +226,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenu" class="fixed inset-0 z-[55] bg-dark-deeper/98 backdrop-blur-2xl translate-x-full transition-transform duration-500 lg:hidden flex flex-col items-center justify-center gap-8 px-4">
-        <a href="#about" class="mobile-link text-2xl sm:text-3xl font-bold text-gray-200 hover:text-gold transition-colors">אודות</a>
+        <a href="#about" class="mobile-link text-2xl sm:text-3xl font-bold text-gray-200 hover:text-gold transition-colors">אודות-הדף עודנו בבנייה-</a>
         <a href="#services" class="mobile-link text-2xl sm:text-3xl font-bold text-gray-200 hover:text-gold transition-colors">תחומי בוררות</a>
         <a href="#strategy" class="mobile-link text-2xl sm:text-3xl font-bold text-gray-200 hover:text-gold transition-colors">הליך הבוררות</a>
         <a href="#faq" class="mobile-link text-2xl sm:text-3xl font-bold text-gray-200 hover:text-gold transition-colors">שאלות נפוצות</a>
@@ -437,7 +438,7 @@
                             </li>
                         </ul>
                     </div>
-
+                    
                     <!-- Service 3 -->
                     <div class="glass p-10 rounded-[2.5rem] hover:-translate-y-3 transition-all duration-500 border border-white/5 hover:border-gold/40 hover:shadow-gold-glow group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
@@ -851,11 +852,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Fixed WhatsApp -->
-    <a href="https://wa.me/972528219928" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[90] w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl md:text-4xl shadow-lg shadow-[#25D366]/30 hover:scale-110 hover:shadow-2xl transition-all" aria-label="שלח הודעת וואטסאפ">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
