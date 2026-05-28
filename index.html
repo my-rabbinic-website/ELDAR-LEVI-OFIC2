@@ -64,9 +64,17 @@
       "priceRange": "$$$",
       "description": "משרד בוטיק המתמחה בייצוג אסטרטגי בדיני משפחה, גירושין וכל היוצא בזה. ניהול הליכים בבתי הדין, בוררות וירושות על ידי הרב אלדר לוי, טוען רבני ודיין מוסמך.",
       "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "נתיבות",
-        "addressCountry": "ישראל"
+      "@type": "PostalAddress",
+      "streetAddress": "יצחק שמיר 15",
+      "addressLocality": "נתיבות",
+      "addressRegion": "מחוז הדרום",
+      "postalCode": "8776100",
+      "addressCountry": "IL"
+      },
+      "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.416667,
+      "longitude": 34.583333
       },
       "areaServed": [
         { "@type": "City", "name": "נתיבות" },
@@ -159,7 +167,7 @@
     }
     </script>
 
-    <!-- Performance Hints ------->
+    <!-- Performance Hints --------------------------------------------------------------->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -351,22 +359,23 @@
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
     <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1 bg-dark/50 z-[100]" aria-hidden="true">
-        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_10px_rgba(212,175,55,0.8)]"></div>
+    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-[1px] bg-dark/95 z-[100]" aria-hidden="true">
+        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(212,175,55,0.9)]"></div>
     </div>
 
-    <!-- Preloader -->
+    <!-- Image Preloader -->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
-        <div class="relative w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-8">
-            <span class="text-dark text-4xl font-black transform -rotate-45 font-heebo">E</span>
+        <!-- מסגרת לתמונה עם אנימציית הילה -->
+        <div class="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border border-gold/40 p-1 animate-image-glow mb-8 bg-dark/50 backdrop-blur-md">
+            <img src="https://www.h-lapoal.co.il/wp-content/uploads/2014/08/15456279_s.jpg" alt="טוען..." class="w-full h-full object-cover rounded-full filter brightness-90 contrast-125 transition-all duration-700 hover:scale-105 hover:brightness-100">
         </div>
-        <div class="text-gold text-sm tracking-widest uppercase font-bold animate-bounce text-center px-4">צדק צדק תרדוף...</div>
+        <div class="text-white/40 text-[10px] tracking-ultra uppercase font-light text-center px-4 animate-pulse-slow">צדק צדק תרדוף...</div>
     </div>
 
     <!-- Animated Background Blobs -->
     <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
-        <div class="absolute top-0 -left-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/10 rounded-full mix-blend-screen filter blur-[80px] md:blur-[100px] animate-blob"></div>
-        <div class="absolute top-1/2 -right-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/5 rounded-full mix-blend-screen filter blur-[80px] md:blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute top-0 -left-1/4 w-[500px] h-[500px] bg-gold/[0.03] rounded-full mix-blend-screen filter blur-[150px] animate-blob"></div>
+        <div class="absolute top-1/2 -right-1/4 w-[500px] h-[500px] bg-gold/[0.02] rounded-full mix-blend-screen filter blur-[150px] animate-blob" style="animation-delay: 5s;"></div>
     </div>
     
         <!-- Header / Navbar -->
