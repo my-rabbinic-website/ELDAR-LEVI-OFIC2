@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- EMBEDDED FAVICONS -->
+    <link rel="icon" href="https://img.youtube.com/vi/dou5806oQi8/hqdefault.jpg" sizes="32x32" />
+    <link rel="icon" href="https://img.youtube.com/vi/dou5806oQi8/hqdefault.jpg" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://img.youtube.com/vi/dou5806oQi8/hqdefault.jpg" />
+    
+    <title>שיעורים והרצאות | הרב אלדר לוי - דיין וטוען רבני</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;800&family=Frank+Ruhl+Libre:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Assistant', 'sans-serif'], 
+                        serif: ['Frank Ruhl Libre', 'serif'] 
+                    },
+                    colors: { 
+                        brand: { 
+                            gold: '#D4AF37',      /* Classic Elegant Gold */
+                            darkGold: '#AA882E',
+                            lightGold: '#F9E596',
+                            bg: '#050505',        /* Deep Premium Black */
+                            surface: '#111111',   /* Slightly lighter black for elements */
+                            text: '#E5E5E5',
+                            muted: '#888888'
+                        } 
+                    },
+                    boxShadow: { 
+                        'gold-glow': '0 0 40px -10px rgba(212,175,55,0.15)',
+                        'gold-glow-hover': '0 0 50px -5px rgba(212,175,55,0.3)'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            background-color: #050505; 
+            color: #E5E5E5; 
+            overflow-x: hidden; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+        
+        /* Premium Dark Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+        .gold-text-gradient { 
+            background: linear-gradient(to left, #D4AF37, #F9E596, #D4AF37); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-size: 200% auto;
+        }
+        
+        /* Subtle elegant noise */
+        .bg-noise { position: relative; z-index: 0; }
+        .bg-noise::before {
+            content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Soft ambient top light */
+        .hero-glow {
+            position: absolute;
+            top: 0; left: 50%; transform: translateX(-50%);
+            width: 100vw; height: 600px;
+            background: radial-gradient(ellipse at top, rgba(212,175,55,0.08) 0%, rgba(5,5,5,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .masonry-grid { column-count: 1; column-gap: 1.5rem; }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; column-gap: 2rem; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; column-gap: 2.5rem; } }
+
+        .gallery-item {
+            break-inside: avoid; margin-bottom: 1.5rem; position: relative; cursor: pointer; 
+            border-radius: 0.5rem; overflow: hidden; 
+            border: 1px solid rgba(255,255,255,0.05); 
+            background: #111;
+            transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 0; transform: translateY(20px);
+        }
+        @media (min-width: 640px) {
+            .gallery-item { margin-bottom: 2.5rem; }
+        }
+        
+        @media (hover: hover) {
+            .gallery-item:hover { 
+                border-color: rgba(212,175,55,0.4);
+                box-shadow: 0 15px 40px -10px rgba(0,0,0,0.8), 0 0 30px -5px rgba(212,175,55,0.15);
+                transform: translateY(-5px);
+            }
+            .gallery-item:hover img { transform: scale(1.05); opacity: 0.8; }
+            .gallery-item:hover .overlay { opacity: 1; }
+            .gallery-item:hover .play-icon { 
+                background: rgba(212,175,55,1); 
+                transform: translate(-50%, -50%) scale(1.05);
+                box-shadow: 0 0 20px rgba(212,175,55,0.4);
+            }
+        }
+        
+        .gallery-item img { 
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.7s ease; 
+            width: 100%; display: block; 
+            opacity: 0.9;
+        }
+
+        .gallery-item .overlay { 
+            position: absolute; inset: 0; 
+            background: linear-gradient(to top, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.4) 40%, transparent 100%); 
+            opacity: 0; transition: all 0.6s ease; display: flex; flex-direction: column; justify-content: flex-end; 
+            padding: 2rem; pointer-events: none;
+        }
+        
+        /* Mobile fallback for overlay */
+        @media (hover: none) {
+            .gallery-item .overlay { opacity: 1; background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 50%); padding: 1.5rem; }
+        }
+
+        .play-icon { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            width: 64px; height: 64px; 
+            background: rgba(17,17,17,0.7); 
+            border: 1px solid rgba(212,175,55,0.5);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: white; z-index: 20;
+            backdrop-filter: blur(8px); transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            pointer-events: none;
+        }
+
+        #lightbox { 
+            display: none; position: fixed; inset: 0; z-index: 1000; 
+            background: rgba(0,0,0,0.98);
+            align-items: center; justify-content: center; opacity: 0; transition: opacity 0.5s ease;
+        }
+        #lightbox.active { display: flex; opacity: 1; }
+        
+        .lightbox-close-btn {
+            position: absolute; top: 1.5rem; left: 1.5rem; padding: 0.75rem; 
+            color: rgba(255,255,255,0.5); z-index: 1010; 
+            transition: all 0.3s ease;
+        }
+        .lightbox-close-btn:hover { color: #D4AF37; transform: rotate(90deg); }
+        
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        body.lightbox-open { overflow: hidden; position: fixed; width: 100%; }
+
+        /* Minimalist Filter buttons */
+        .filter-btn { 
+            position: relative; 
+            color: #888;
+            transition: color 0.4s ease;
+        }
+        .filter-btn::after {
+            content: ''; position: absolute; bottom: -4px; left: 50%; width: 0; height: 2px;
+            background: #D4AF37; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            transform: translateX(-50%);
+        }
+        .filter-btn:hover { color: #E5E5E5; }
+        .filter-btn.active { color: #D4AF37; font-weight: 600; }
+        .filter-btn.active::after { width: 100%; }
+    </style>
+</head>
+<body class="antialiased bg-noise selection:bg-brand-gold selection:text-black">
+
+    <div class="hero-glow"></div>
+
+    <header class="py-5 text-center bg-brand-bg/80 backdrop-blur-xl sticky top-0 z-50 border-b border-white/5 transition-all duration-500">
+        <h1 class="text-2xl md:text-3xl font-serif font-light tracking-widest flex items-center justify-center gap-3 text-white">
+            <span class="w-8 h-[1px] bg-brand-gold/50 hidden sm:block"></span>
+            הרב אלדר לוי <span class="text-brand-gold font-bold">דיין וטוען רבני</span>
+            <span class="w-8 h-[1px] bg-brand-gold/50 hidden sm:block"></span>
+        </h1>
+    </header>
+
+    <section class="pt-24 pb-12 md:pt-32 md:pb-20 px-4 text-center relative" data-aos="fade-up" data-aos-duration="1200">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-block text-brand-gold font-sans font-semibold uppercase tracking-[0.3em] md:tracking-[0.4em] text-xs mb-6 opacity-80">
+                Premium Portfolio
+            </span>
+            <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light text-white mb-6 md:mb-8 leading-tight">
+                    שיעורין והרצאות <br/>  
+                <span class="font-bold gold-text-gradient italic">דיני משפחה וממונות</span>
+            </h2>
+            <div class="w-24 h-[1px] bg-brand-gold/30 mx-auto mb-8"></div>
+            <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto font-light leading-relaxed px-4">
+                הדף נמצא כעת בהליכי בנייה - בינתיים לאווירה המרוממת ולקטעים הנבחרים של <span class="text-brand-lightGold">'מקהלת מלכות'</span>.
+            </p>
+        </div>
+    </section>
+
+    <section class="sticky top-[73px] md:top-[76px] z-40 mb-12 md:mb-20 px-4 flex justify-center w-full" data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+        <div class="bg-brand-surface/80 backdrop-blur-xl border border-white/10 px-6 py-3 md:px-10 md:py-4 rounded-full shadow-2xl flex gap-6 md:gap-10 overflow-x-auto no-scrollbar max-w-full touch-pan-x">
+            <button onclick="filterGallery('all', this)" class="filter-btn active whitespace-nowrap text-sm md:text-base font-sans tracking-wide">הכל</button>
+            <button onclick="filterGallery('cat1', this)" class="filter-btn whitespace-nowrap text-sm md:text-base font-sans tracking-wide">קטגוריה א'</button>
+            <button onclick="filterGallery('cat2', this)" class="filter-btn whitespace-nowrap text-sm md:text-base font-sans tracking-wide">קטגוריה ב'</button>
+        </div>
+    </section>
+
+    <main class="max-w-[1600px] mx-auto px-4 md:px-8 pb-20 md:pb-32">
+        <div id="gallery-container" class="masonry-grid transition-opacity duration-700">
+            <!-- JS Content -->
+        </div>
+    </main>
+    
+    <footer class="bg-[#020202] text-center py-16 md:py-24 border-t border-white/5 relative overflow-hidden">
+        <div class="relative z-10 flex flex-col items-center justify-center">
+            <h2 class="text-3xl font-serif text-white mb-3 font-light tracking-wider">ייעוץ ויצוג <span class="text-brand-gold font-bold">בבתי הדין </span></h2>
+            <p class="text-brand-muted text-sm font-light mb-8 tracking-wide">מקצועיות. יסודיות. אמינות.</p>
+            <div class="w-12 h-[1px] bg-brand-gold/40 mb-8"></div>
+            <p class="text-[#555] text-xs tracking-[0.2em] uppercase font-sans">&copy; 2024 כל הזכויות שמורות</p>
+        </div>
+    </footer>
+
+    <div id="lightbox" onclick="if(event.target === this) closeLightbox()">
+        <button onclick="closeLightbox()" class="lightbox-close-btn" aria-label="Close">
+            <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="w-full h-full max-w-7xl p-0 md:p-12 flex flex-col items-center justify-center">
+            <div id="lightbox-media" class="w-full aspect-video bg-[#050505] overflow-hidden shadow-2xl ring-1 ring-white/10 flex items-center justify-center relative">
+                <!-- Loader -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div class="w-12 h-12 border-[3px] border-white/10 border-t-brand-gold rounded-full animate-spin"></div>
+                </div>
+            </div>
+            <div class="mt-8 text-center px-4 max-w-3xl">
+                <h3 id="lightbox-title" class="text-2xl md:text-3xl font-serif font-light mb-3 text-white tracking-wide"></h3>
+                <p id="lightbox-desc" class="text-brand-gold text-sm md:text-base font-light tracking-wider uppercase"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const galleryData = [
+            { id: 5, type: 'video', category: 'cat1', span: 'aspect-video', title: 'שירת הלוויים', desc: 'קליפ מוזיקלי מרגש', url: 'https://youtu.be/Rfee22TYUcE?si=zu06ZWF-UMsOnZNM' },
+            { id: 1, type: 'video', category: 'cat1', span: 'aspect-video', title: 'אירוע השקה מרכזי', desc: 'תיעוד חי מהשטח', url: 'https://youtu.be/pDTv1BAoRFI' },
+            { id: 6, type: 'video', category: 'cat2', span: 'aspect-square', title: 'הכנות לאירוע', desc: 'הצצה בלעדית', url: 'https://youtu.be/ItkuZs27-ZE?si=_MOJhD-TmOXQ4dkF' },
+            { id: 2, type: 'video', category: 'cat2', span: 'aspect-square', title: 'תהליך עבודה מקצועי', desc: 'מאחורי הקלעים של ההפקה', url: 'https://youtu.be/vO78oDri2nY' },
+            { id: 3, type: 'video', category: 'cat1', span: 'aspect-[4/3]', title: 'כנס שנתי', desc: 'רגעים נבחרים מהערב', url: 'https://youtu.be/dou5806oQi8' },
+            { id: 4, type: 'video', category: 'cat2', span: 'aspect-[3/4]', title: 'צילום אומנותי', desc: 'דיוק ואיכות בכל פרט', url: 'https://youtu.be/98zbfdwHEl4?si=L6zC2HZiev7pIstb' },
+            { id: 7, type: 'video', category: 'cat1', span: 'aspect-video', title: 'ביצוע חי מרטיט', desc: 'מתוך אירוע מיוחד', url: 'https://youtu.be/Qn8hQnMbKL4?si=7XJOm0MamFNsf6Y8' },
+            { id: 8, type: 'video', category: 'cat2', span: 'aspect-square', title: 'מאחורי הקלעים', desc: 'רגעים של קסם', url: 'https://youtu.be/Fq5DyGd869g?si=yVTol52cHjpa4zo-' },
+            { id: 9, type: 'video', category: 'cat1', span: 'aspect-[4/3]', title: 'חופה מרגשת', desc: 'ליווי מוזיקלי מושלם', url: 'https://youtu.be/lvPpswQ0omo?si=lyCb8uZ-fht0NWxi' },
+            { id: 10, type: 'video', category: 'cat2', span: 'aspect-video', title: 'שמחת בית השואבה', desc: 'התלהבות ושמחה', url: 'https://youtu.be/FwbFZsK_g8c?si=HuS975DGoNvt7iRo' },
+            { id: 11, type: 'video', category: 'cat1', span: 'aspect-square', title: 'כנס יוקרתי', desc: 'אווירה מרוממת', url: 'https://youtu.be/CPxmKBmPfRI?si=f4MWW2I1_fUWKBk6' },
+            { id: 12, type: 'video', category: 'cat2', span: 'aspect-[4/3]', title: 'הופעה פומבית', desc: 'קהל נלהב', url: 'https://youtu.be/MLC07iA97tc?si=qH5iKpMhun03IGQN' },
+            { id: 13, type: 'video', category: 'cat1', span: 'aspect-video', title: 'רגע של השראה', desc: 'שירה שעולה מהלב', url: 'https://youtu.be/nx0QRYZCP8Q?si=XnWba0yS-KEFw3WJ' },
+            { id: 14, type: 'video', category: 'cat2', span: 'aspect-square', title: 'סיום מרשים', desc: 'אקורד סיום עוצמתי', url: 'https://youtu.be/2hDMEHALpfk?si=HnjThrNjlvEflZoN' }
+        ];
+
+        function getYoutubeId(url) {
+            const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+            const match = url.match(regExp);
+            return match ? match[1] : null;
+        }
+
+        function getYoutubeEmbedUrl(url) {
+            const videoId = getYoutubeId(url);
+            if (videoId) {
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&color=white&modestbranding=1`;
+            }
+            return url;
+        }
+
+        function getYoutubeThumbnail(url) {
+            const videoId = getYoutubeId(url);
+            if (videoId) {
+                return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`; 
+            }
+            return 'https://placehold.co/800x600/111111/D4AF37?text=Video';
+        }
+
+        function init() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ once: true, duration: 1200, offset: 50, easing: 'ease-out-cubic' });
+            }
+            renderGallery('all');
+        }
+
+        function renderGallery(filter) {
+            const container = document.getElementById('gallery-container');
+            container.style.opacity = '0';
+            
+            setTimeout(() => {
+                container.innerHTML = '';
+                const items = filter === 'all' ? galleryData : galleryData.filter(i => i.category === filter);
+                
+                items.forEach((item, index) => {
+                    const isVideo = item.type === 'video' || item.url.includes('youtu');
+                    const imgUrl = isVideo ? getYoutubeThumbnail(item.url) : item.url;
+                    
+                    const imgElement = `<img src="${imgUrl}" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${getYoutubeId(item.url)}/hqdefault.jpg';" class="w-full h-full object-cover" alt="${item.title}" loading="lazy">`;
+
+                    const html = `
+                        <div class="gallery-item ${item.span} group" onclick="openLightbox(${item.id})" style="animation-delay: ${index * 80}ms">
+                            ${imgElement}
+                            ${isVideo ? '<div class="play-icon"><svg class="w-6 h-6 md:w-8 md:h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>' : ''}
+                            <div class="overlay">
+                                <p class="text-brand-gold text-[10px] md:text-xs font-sans tracking-[0.2em] uppercase mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-100">${item.desc}</p>
+                                <h3 class="text-white font-serif font-light text-xl md:text-3xl transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 delay-150">${item.title}</h3>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', html);
+                });
+                
+                void container.offsetWidth;
+                
+                const newlyAddedItems = container.querySelectorAll('.gallery-item');
+                newlyAddedItems.forEach(el => el.classList.add('animate-fade-in'));
+                
+                container.style.opacity = '1';
+            }, 400);
+        }
+
+        function filterGallery(cat, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            renderGallery(cat);
+        }
+
+        let scrollPosition = 0;
+
+        function openLightbox(id) {
+            const item = galleryData.find(i => i.id === id);
+            if(!item) return;
+
+            const lb = document.getElementById('lightbox');
+            const media = document.getElementById('lightbox-media');
+            
+            document.getElementById('lightbox-title').innerText = item.title;
+            document.getElementById('lightbox-desc').innerText = item.desc;
+            
+            // Keep the loader inside media container, append iframe above it
+            const isVideo = item.type === 'video' || item.url.includes('youtu');
+            if (isVideo) {
+                media.innerHTML += `<iframe class="w-full h-full absolute inset-0 z-10" src="${getYoutubeEmbedUrl(item.url)}" allow="autoplay; fullscreen" frameborder="0" onload="this.style.opacity=1" style="opacity:0; transition: opacity 0.5s ease;"></iframe>`;
+            } else {
+                media.innerHTML += `<img src="${item.url}" class="w-full h-full object-contain absolute inset-0 z-10" onload="this.style.opacity=1" style="opacity:0; transition: opacity 0.5s ease;">`;
+            }
+            
+            lb.classList.add('active');
+            
+            scrollPosition = window.pageYOffset;
+            document.body.style.top = `-${scrollPosition}px`;
+            document.body.classList.add('lightbox-open');
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('active');
+            
+            setTimeout(() => {
+                // Keep only the loader div, remove iframe/img
+                const media = document.getElementById('lightbox-media');
+                while (media.childNodes.length > 1) {
+                    media.removeChild(media.lastChild);
+                }
+                
+                document.body.classList.remove('lightbox-open');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPosition);
+            }, 400);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
