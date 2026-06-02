@@ -166,8 +166,8 @@
       ]
     }
     </script>
-    
-    <!-- Performance Hints --->
+
+    <!-- Performance Hints ----->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -359,23 +359,22 @@
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
     <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-[1px] bg-dark/95 z-[100]" aria-hidden="true">
-        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 transition-all duration-300 ease-out shadow-[0_0_15px_rgba(212,175,55,0.9)]"></div>
+    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1 bg-dark/50 z-[100]" aria-hidden="true">
+        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_10px_rgba(212,175,55,0.8)]"></div>
     </div>
 
-    <!-- Image Preloader -->
+    <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
-        <!-- מסגרת לתמונה עם אנימציית הילה -->
-        <div class="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border border-gold/40 p-1 animate-image-glow mb-8 bg-dark/50 backdrop-blur-md">
-            <img src="https://www.h-lapoal.co.il/wp-content/uploads/2014/08/15456279_s.jpg" alt="טוען..." class="w-full h-full object-cover rounded-full filter brightness-90 contrast-125 transition-all duration-700 hover:scale-105 hover:brightness-100">
+        <div class="relative w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-8">
+            <span class="text-dark text-4xl font-black transform -rotate-45 font-heebo">E</span>
         </div>
-        <div class="text-white/40 text-[10px] tracking-ultra uppercase font-light text-center px-4 animate-pulse-slow">צדק צדק תרדוף...</div>
+        <div class="text-gold text-sm tracking-widest uppercase font-bold animate-bounce text-center px-4">צדק צדק תרדוף...</div>
     </div>
 
     <!-- Animated Background Blobs -->
     <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
-        <div class="absolute top-0 -left-1/4 w-[500px] h-[500px] bg-gold/[0.03] rounded-full mix-blend-screen filter blur-[150px] animate-blob"></div>
-        <div class="absolute top-1/2 -right-1/4 w-[500px] h-[500px] bg-gold/[0.02] rounded-full mix-blend-screen filter blur-[150px] animate-blob" style="animation-delay: 5s;"></div>
+        <div class="absolute top-0 -left-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/10 rounded-full mix-blend-screen filter blur-[80px] md:blur-[100px] animate-blob"></div>
+        <div class="absolute top-1/2 -right-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/5 rounded-full mix-blend-screen filter blur-[80px] md:blur-[100px] animate-blob" style="animation-delay: 2s;"></div>
     </div>
     
         <!-- Header / Navbar -->
@@ -411,7 +410,11 @@
                     <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/שיעורים" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
-                    שיעורים והרצאות
+                      שיעורים והרצאות
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#reviews" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                    המלצות
                     <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
                 </a>
             </nav>
@@ -445,13 +448,13 @@
         </nav>
         <div class="w-20 h-px bg-gold/30 my-2" aria-hidden="true"></div>
         <a href="#contact" class="mobile-link gold-gradient px-8 py-4 rounded-full text-dark font-black text-lg shadow-xl shadow-gold/20 w-[80%] max-w-xs text-center">
-            קבע פגישת ייעוץ
+            קבע פישת ייעוץ
         </a>
     </div>
 
     <main class="relative z-10">
 
-        <!-- Hero Section -->
+        <!-- Hero Section ------------------------>
         <section class="relative min-h-[100svh] md:min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
             <!-- Particles Background -->
             <div class="particles-container absolute inset-0 hidden md:block" id="particles" aria-hidden="true"></div>
@@ -721,81 +724,184 @@
                 </div>
             </div>
         </section>
+        
+<!-- Reviews Section -->
+<section id="reviews" class="py-16 md:py-24 bg-dark relative overflow-hidden">
+    <style>
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* הוספת מסכות צד לטשטוש עדין של הקצוות */
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            /* אנימציה חלקה - כיוון שפה מדובר בעברית (RTL) האנימציה זזה ימינה */
+            animation: scroll-rtl 25s linear infinite;
+        }
 
-        <!-- Reviews Section -->
-        <section id="reviews" class="py-16 md:py-24 bg-dark relative overflow-hidden">
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                    <div class="flex justify-center mb-4">
-                        <div class="bg-white/5 border border-white/10 px-4 md:px-5 py-1.5 md:py-2 rounded-full flex items-center gap-2 md:gap-3 shadow-lg backdrop-blur-sm">
-                            <span class="text-white font-bold text-xs md:text-sm">לקוחות מאומתים מגוגל</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-4 h-4 md:w-[18px] md:h-[18px]" aria-hidden="true"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-                        </div>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 heebo-font">אמת מארץ תצמח..<br><span class="gold-gradient-text">הקשיבו לתוצאות</span></h2>
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-rtl {
+            0% { transform: translateX(0); }
+            /* תזוזה של 50% בדיוק (כי הכפלנו את הכרטיסיות) פלוס חצי מהרווח */
+            100% { transform: translateX(calc(50% + 0.75rem)); } 
+        }
+
+        .review-card {
+            width: 320px;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 768px) {
+            .review-card {
+                width: 380px;
+            }
+        }
+    </style>
+
+    <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
+        <div class="text-center" data-aos="fade-up">
+            <div class="flex justify-center mb-4">
+                <div class="bg-white/5 border border-white/10 px-4 md:px-5 py-1.5 md:py-2 rounded-full flex items-center gap-2 md:gap-3 shadow-lg backdrop-blur-sm">
+                    <span class="text-white font-bold text-xs md:text-sm">לקוחות מאומתים מגוגל</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-4 h-4 md:w-[18px] md:h-[18px]" aria-hidden="true"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up">
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
-                            </div>
-                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הרב מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
-                        </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">מ.א</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 heebo-font">אמת מארץ תצמח..<br><span class="gold-gradient-text">הקשיבו לתוצאות</span></h2>
+        </div>
+    </div>
 
-                    <div class="glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] flex flex-col justify-between md:-translate-y-6 bg-gradient-to-b from-white/5 to-transparent relative" data-aos="fade-up" data-aos-delay="100">
-                        <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-gold/20" aria-hidden="true"></i>
-                            </div>
-                            <blockquote class="text-white/90 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר בכתובה ובהלכה, קיבלתי את מה שמגיע לי למרות שהבעל סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
+    <div class="carousel-container" dir="rtl">
+        <div class="carousel-track">
+            <!-- קבוצת כרטיסיות ראשונה -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/10">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">ש.כ</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
-                            </div>
-                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
                     </div>
-
-                    <div class="glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 mt-6 md:mt-0" data-aos="fade-up" data-aos-delay="200">
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
-                            </div>
-                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי וההלכתי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות של הלילה. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
-                        </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">א.ד</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
-                            </div>
-                        </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לאלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">מ.א</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] flex flex-col justify-between bg-gradient-to-b from-white/5 to-transparent relative">
+                <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-gold/20" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/90 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של אלדר בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">ש.כ</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי המטורף, אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">א.ד</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- קבוצת כרטיסיות שניה (שכפול מדויק ליצירת אפקט ה-Loop) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לאלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">מ.א</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] flex flex-col justify-between bg-gradient-to-b from-white/5 to-transparent relative" aria-hidden="true">
+                <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-gold/20"></i>
+                    </div>
+                    <blockquote class="text-white/90 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של אלדר בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/10">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">ש.כ</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי המטורף, אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">א.ד</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
         <!-- Articles Section -->
         <section id="articles" class="py-16 md:py-24 bg-[#0a0a0a] relative overflow-hidden">
             <div class="container mx-auto px-6 relative z-10">
@@ -1027,7 +1133,7 @@
                         <li><a href="#services" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">תביעות כתובה</a></li>
                         <li><a href="#services" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">דיני ממונות ובוררות</a></li>
                         <li><a href="#services" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">צוואות וירושות</a></li>
-                        <li><a href="https://my-rabbinic-website.github.io/safrut-tifarteha/שיעורים" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">שיעורים והרצאות</a></li>
+                        <li><a href="https://my-rabbinic-website.github.io/safrut-tifarteha/גלרייה" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">גלריית אירועים</a></li>
                     </ul>
                 </div>
                 <div class="col-span-2 sm:col-span-1">
@@ -1286,3 +1392,4 @@
     </script>
 </body>
 </html>
+
