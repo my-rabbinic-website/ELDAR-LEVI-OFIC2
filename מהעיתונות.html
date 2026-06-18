@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover">
+    <meta name="theme-color" content="#050505">
+    <title>מהעיתונות | הרב אלדר לוי - דיין וטוען רבני</title>
+    
+    <!-- Preconnect to speed up resource delivery -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;500;800;900&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;500;800;900&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap"></noscript>
+
+    <!-- Tailwind Config for Editorial Theme -->
+    <script>
+        if (typeof tailwind !== 'undefined') {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: {
+                                light: '#f9f0d1',
+                                DEFAULT: '#D4AF37',
+                                dark: '#9a7f23',
+                            },
+                            dark: {
+                                DEFAULT: '#050505',
+                                light: '#0c0c0c',
+                                accent: '#141414'
+                            }
+                        },
+                        fontFamily: {
+                            assistant: ['Assistant', 'sans-serif'],
+                            heebo: ['Heebo', 'sans-serif'],
+                            serif: ['Frank Ruhl Libre', 'serif'],
+                        }
+                    }
+                }
+            };
+        }
+    </script>
+
+    <style>
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            background-color: #050505; 
+            color: #f5f5f5; 
+            overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, .serif-font { font-family: 'Frank Ruhl Libre', serif; }
+        
+        /* Gold Gradients */
+        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #fef5d1 50%, #b89324 100%); }
+        .gold-gradient-text { 
+            background: linear-gradient(to right, #D4AF37, #fff6d9, #D4AF37);
+            background-size: 200% auto;
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: text-shimmer 4s linear infinite;
+        }
+        @keyframes text-shimmer {
+            0% { background-position: 0% 50% }
+            100% { background-position: 100% 50% }
+        }
+
+        /* Ambient Lighting Mesh Background */
+        .bg-mesh {
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(212, 175, 55, 0.04), transparent 35%),
+                radial-gradient(circle at 90% 85%, rgba(212, 175, 55, 0.04), transparent 35%);
+        }
+
+        /* Glassmorphism Luxury Cards */
+        .glass { 
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.08); 
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            .glass:hover {
+                background: rgba(255, 255, 255, 0.04);
+                border-color: rgba(212, 175, 55, 0.3);
+                transform: translateY(-6px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(212,175,55,0.06);
+            }
+        }
+
+        /* Preloader */
+        #preloader { transition: opacity 0.5s ease-out; }
+        .loaded #preloader { opacity: 0; pointer-events: none; display: none; }
+
+        /* Performance Optimized Animation Engine */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Editorial Dropcap */
+        .dropcap::first-letter {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 3.8rem;
+            float: right;
+            margin-left: 12px;
+            color: #D4AF37;
+            font-weight: 900;
+            line-height: 0.85;
+        }
+    </style>
+</head>
+<body class="bg-mesh min-h-screen relative overflow-x-hidden pb-16 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pr-[env(safe-area-inset-right)] pl-[env(safe-area-inset-left)]">
+
+    <!-- Scroll Progress Indicator -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-dark/50 z-[100]" aria-hidden="true">
+        <div id="scroll-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-100 ease-out shadow-[0_0_10px_rgba(212,175,55,0.8)]"></div>
+    </div>
+
+    <!-- Zero-FOUC Preloader Overlay -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center" aria-hidden="true">
+        <div class="relative w-16 h-16 gold-gradient rounded-xl flex items-center justify-center transform rotate-45 shadow-[0_0_30px_rgba(212,175,55,0.3)] animate-pulse mb-6">
+            <span class="text-dark text-3xl font-black transform -rotate-45 font-serif">ע</span>
+        </div>
+        <div class="text-gold text-xs tracking-widest uppercase font-bold text-center px-4">הדיינות בכותרות...</div>
+    </div>
+
+    <!-- Responsive Header / Navigation Bar -->
+    <header id="header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300 py-4 px-4 sm:px-6 md:px-8 border-b border-white/5 bg-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="landing_page.html" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg" aria-label="חזרה לדף הבית">
+                <div class="relative w-10 h-10 gold-gradient rounded-lg flex items-center justify-center transform rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-md">
+                    <span class="text-dark text-lg font-black transform -rotate-45 group-hover:rotate-0 transition-all duration-500 font-serif">E.L</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg md:text-xl font-bold gold-gradient-text tracking-tight font-serif leading-none">הרב אלדר לוי</span>
+                    <span class="text-[8px] sm:text-[9px] text-white/70 tracking-widest uppercase mt-0.5 font-bold">דיין וטוען רבני מומחה</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="landing_page.html" class="text-xs sm:text-sm font-bold text-white/80 hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-md px-1">דף הבית</a>
+                <a href="landing_page.html#services" class="text-xs sm:text-sm font-bold text-white/80 hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-md px-1">תחומי עיסוק</a>
+                <a href="landing_page.html#strategy" class="text-xs sm:text-sm font-bold text-white/80 hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-md px-1">אסטרטגיה משפטית</a>
+                <a href="landing_page.html#contact" class="gold-gradient px-4 py-2 rounded-full text-dark font-black text-xs shadow-md hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all">ליצירת קשר מהיר</a>
+            </nav>
+            
+            <!-- Mobile Home Shortcut (44x44px Tap Target) -->
+            <a href="landing_page.html" class="md:hidden w-11 h-11 glass rounded-full flex items-center justify-center text-gold border-gold/30 hover:bg-gold/10 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold" aria-label="חזרה לדף הבית">
+                <i class="fas fa-home text-sm" aria-hidden="true"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="pt-28 sm:pt-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Page Editorial Hero Header -->
+        <section class="text-center mb-10 md:mb-16" data-reveal>
+            <span class="text-gold text-xs font-black tracking-[0.25em] uppercase mb-3 block">במהות הבמה הציבורית</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 leading-tight">מהעיתונות <span class="gold-gradient-text font-serif">&amp; מדיה</span></h1>
+            <div class="w-20 sm:w-28 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6"></div>
+            <p class="text-white/85 max-w-2xl mx-auto text-xs sm:text-sm md:text-base font-light leading-relaxed px-2">
+                פירוט כתבות, תחקירים, פאנלים וראיונות מקצועיים שנערכו עם הרב אלדר לוי בכלי התקשורת והעיתונות המובילים בישראל, בנושאי דיני אישות, משפחה ודיני ממונות.
+            </p>
+        </section>
+
+        <!-- Responsive Category Filters -->
+        <section class="flex flex-wrap justify-center gap-2 mb-10 md:mb-14 max-w-4xl mx-auto px-2" data-reveal>
+            <button onclick="filterPress('all')" class="filter-btn active min-h-[44px] px-4 py-2 text-xs sm:text-sm rounded-xl border font-bold transition-all bg-gold text-dark border-gold" id="btn-all">הכל</button>
+            <button onclick="filterPress('family')" class="filter-btn min-h-[44px] px-4 py-2 text-xs sm:text-sm rounded-xl border border-white/10 text-white/80 hover:border-gold hover:text-gold font-bold transition-all" id="btn-family">דיני משפחה וגירושין</button>
+            <button onclick="filterPress('monetary')" class="filter-btn min-h-[44px] px-4 py-2 text-xs sm:text-sm rounded-xl border border-white/10 text-white/80 hover:border-gold hover:text-gold font-bold transition-all" id="btn-monetary">חושן משפט וממונות</button>
+            <button onclick="filterPress('interviews')" class="filter-btn min-h-[44px] px-4 py-2 text-xs sm:text-sm rounded-xl border border-white/10 text-white/80 hover:border-gold hover:text-gold font-bold transition-all" id="btn-interviews">ראיונות ומאמרים</button>
+        </section>
+
+        <!-- Articles Grid (Adapts automatically from 1 to 2 columns) -->
+        <section class="grid gap-6 md:gap-8 md:grid-cols-2 max-w-6xl mx-auto" id="press-grid">
+            
+            <!-- Article 5: Israel Hayom (Featured First) -->
+            <article class="press-card glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden md:col-span-2 border-gold/40 shadow-[0_0_30px_rgba(212,175,55,0.1)]" data-category="interviews" data-reveal>
+                <div class="absolute top-0 left-0 w-32 h-32 bg-gold/5 rounded-br-full pointer-events-none"></div>
+                <div>
+                    <!-- Header with Vector Logo & Time -->
+                    <div class="flex justify-between items-center mb-6 gap-4">
+                        <!-- Custom Vector SVG Logo: Israel Hayom (Upgraded) -->
+                        <div class="relative overflow-hidden rounded-lg bg-black/60 border border-gold/40 px-3 py-2 flex items-center justify-center min-w-[150px] h-[48px] shadow-[0_4px_12px_rgba(0,0,0,0.5)]" aria-label="לוגו ישראל היום">
+                            <svg class="h-8 w-auto" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 6)">
+                                    <circle cx="12" cy="12" r="10" stroke="url(#goldGradient5)" stroke-width="1.5" />
+                                    <circle cx="12" cy="12" r="5" fill="url(#goldGradient5)" opacity="0.8" />
+                                    <path d="M12 2v20M2 12h20" stroke="#000" stroke-width="0.75" opacity="0.2" />
+                                </g>
+                                <text x="36" y="24" font-family="'Frank Ruhl Libre', serif" font-weight="900" font-size="14" fill="url(#goldGradient5)" letter-spacing="1">ישראל היום</text>
+                                <line x1="36" y1="28" x2="140" y2="28" stroke="url(#goldGradient5)" stroke-width="1" opacity="0.8"/>
+                                <defs>
+                                    <linearGradient id="goldGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="50%" stop-color="#fef5d1" />
+                                        <stop offset="100%" stop-color="#b89324" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <time class="text-xs text-white/60 font-mono">12.06.2026</time>
+                    </div>
+
+                    <span class="inline-block bg-gold/10 text-gold text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full mb-4 border border-gold/20">חשיפה ארצית מיוחדת</span>
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4 font-serif leading-snug">על כס הדיינות והבוררות: הרב אלדר לוי מנווט בין עולם התורה למגזר העסקי</h3>
+                    <blockquote class="text-xs sm:text-sm text-neutral-200 leading-relaxed italic border-r-2 border-gold/40 pr-3 mb-6">
+                        "השילוב חסר התקדים של הסמכת 'ידין ידין' כדיין מוסמך, הבנה מסחרית אבסולוטית כבורר, וניהול תיקי משפחה רגישים בנחישות יוצאת דופן."
+                    </blockquote>
+                    <p class="text-xs sm:text-sm text-white/80 font-light leading-relaxed mb-6">
+                        תחקיר עומק מיוחד במוסף 'ישראל היום' סוקר את פועלו רחב ההיקף של הרב אלדר לוי. הכתבה חושפת את שיטות העבודה הייחודיות של משרדו, המעניק ליווי משפטי ואסטרטגי ברמה הגבוהה ביותר ומכריע בבוררויות מסחריות וסכסוכי גירושין סבוכים ביד רמה ובהצלחה מוכחת.
+                    </p>
+                </div>
+                <!-- להלן הקישור לכתבה בישראל היום - החליפו את ה-href בקישור הרלוונטי שלכם -->
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ישראלהיום" target="_blank" rel="noopener noreferrer" class="w-full gold-gradient text-dark py-3 rounded-xl font-bold text-xs sm:text-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all min-h-[44px] flex items-center justify-center text-center">קרא את הכתבה המלאה</a>
+            </article>
+
+            <!-- Article 1: Makor Rishon -->
+            <article class="press-card glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden" data-category="monetary" data-reveal>
+                <div class="absolute top-0 left-0 w-24 h-24 bg-gold/5 rounded-br-full pointer-events-none"></div>
+                <div>
+                    <!-- Header with Vector Logo & Time -->
+                    <div class="flex justify-between items-center mb-6 gap-4">
+                        <!-- Custom Vector SVG Logo: Makor Rishon (Upgraded) -->
+                        <div class="relative overflow-hidden rounded-lg bg-black/60 border border-gold/40 px-3 py-2 flex items-center justify-center min-w-[140px] h-[48px] shadow-[0_4px_12px_rgba(0,0,0,0.5)]" aria-label="לוגו מקור ראשון">
+                            <svg class="h-8 w-auto" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 6)">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="url(#goldGradient1)" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M12 6V18M12 6C14 8.5 15 10.5 15 12C15 13.5 14 15.5 12 18M12 6C10 8.5 9 10.5 9 12C9 13.5 10 15.5 12 18" stroke="url(#goldGradient1)" stroke-width="1"/>
+                                    <path d="M5 12H19" stroke="url(#goldGradient1)" stroke-width="1"/>
+                                </g>
+                                <text x="36" y="25" font-family="'Frank Ruhl Libre', serif" font-weight="900" font-size="14" fill="url(#goldGradient1)" letter-spacing="1">מקור ראשון</text>
+                                <line x1="36" y1="29" x2="140" y2="29" stroke="url(#goldGradient1)" stroke-width="0.75" opacity="0.6"/>
+                                <defs>
+                                    <linearGradient id="goldGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="50%" stop-color="#fef5d1" />
+                                        <stop offset="100%" stop-color="#b89324" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <time class="text-xs text-white/60 font-mono">14.05.2025</time>
+                    </div>
+
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 font-serif leading-snug">פריצת הדרך ההלכתית בדיני ממונות: בוררות בראי המאה ה-21</h3>
+                    <blockquote class="text-xs sm:text-sm text-neutral-200 leading-relaxed italic border-r-2 border-gold/40 pr-3 mb-6">
+                        "הרב אלדר לוי מיישם שילוב מעורר השראה של מומחיות בשולחן ערוך מחד, והבנה מסחרית וכלכלית מודרנית מאידך."
+                    </blockquote>
+                    <p class="text-xs sm:text-sm text-white/80 font-light leading-relaxed mb-6">
+                        תחקיר מיוחד של עיתון 'מקור ראשון' המנתח את שיטתו הייחודית של הרב אלדר לוי בניהול בוררויות עסקיות מורכבות, וכיצד הוא מצליח לפתור סכסוכים של מיליונים במהירות שיא מחוץ לכתלי בתי המשפט.
+                    </p>
+                </div>
+                <!-- להלן הקישור לכתבה במקור ראשון - החליפו את ה-href בקישור הרלוונטי שלכם -->
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/מקורראשון" target="_blank" rel="noopener noreferrer" class="w-full gold-gradient text-dark py-3 rounded-xl font-bold text-xs sm:text-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all min-h-[44px] flex items-center justify-center text-center">קרא את הכתבה המלאה</a>
+            </article>
+
+            <!-- Article 2: Kikar HaShabbat -->
+            <article class="press-card glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden" data-category="family" data-reveal>
+                <div class="absolute top-0 left-0 w-24 h-24 bg-gold/5 rounded-br-full pointer-events-none"></div>
+                <div>
+                    <!-- Header with Vector Logo & Time -->
+                    <div class="flex justify-between items-center mb-6 gap-4">
+                        <!-- Custom Vector SVG Logo: Kikar HaShabbat (Upgraded) -->
+                        <div class="relative overflow-hidden rounded-lg bg-black/60 border border-gold/40 px-3 py-2 flex items-center justify-center min-w-[140px] h-[48px] shadow-[0_4px_12px_rgba(0,0,0,0.5)]" aria-label="לוגו כיכר השבת">
+                            <svg class="h-8 w-auto" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(8, 6)">
+                                    <rect x="1" y="1" width="24" height="24" rx="4" stroke="url(#goldGradient2)" stroke-width="1.5" fill="rgba(212,175,55,0.05)"/>
+                                    <line x1="1" y1="13" x2="25" y2="13" stroke="url(#goldGradient2)" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
+                                    <line x1="13" y1="1" x2="13" y2="25" stroke="url(#goldGradient2)" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
+                                    <path d="M13 7C13 7 10 11 10 13C10 14.6569 11.3431 16 13 16C14.6569 16 16 14.6569 16 13C16 11 13 7 13 7Z" fill="url(#goldGradient2)" opacity="0.9"/>
+                                </g>
+                                <text x="40" y="21" font-family="'Heebo', sans-serif" font-weight="900" font-size="13" fill="url(#goldGradient2)" letter-spacing="0.5">כיכר השבת</text>
+                                <text x="40" y="30" font-family="'Assistant', sans-serif" font-weight="700" font-size="6.5" fill="#ffffff" opacity="0.8" letter-spacing="1">אתר החדשות החרדי בעולם</text>
+                                <defs>
+                                    <linearGradient id="goldGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="50%" stop-color="#fef5d1" />
+                                        <stop offset="100%" stop-color="#b89324" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <time class="text-xs text-white/60 font-mono">08.11.2025</time>
+                    </div>
+
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 font-serif leading-snug">הדיין שמסרב לוותר על שלום בית: "מאבק אינו מלחמה"</h3>
+                    <blockquote class="text-xs sm:text-sm text-neutral-200 leading-relaxed italic border-r-2 border-gold/40 pr-3 mb-6">
+                        "האסטרטגיה הנכונה בבית הדין היא תמיד זו שמקדמת את טובת הילדים ושומרת על כבוד הדדי, גם ברגעים הקשים ביותר של הפירוד."
+                    </blockquote>
+                    <p class="text-xs sm:text-sm text-white/80 font-light leading-relaxed mb-6">
+                        בכתבת עומק מיוחדת באתר 'כיכר השבת' מתראיין הרב אלדר לוי על האתגרים בייצוג בבתי הדין הרבניים, הכלים ההלכתיים להשגת שלום בית במקרים שנראו אבודים, וזכויות נשים וגברים תחת דין תורה.
+                    </p>
+                </div>
+                <!-- להלן הקישור לכתבה בכיכר השבת - החליפו את ה-href בקישור הרלוונטי שלכם -->
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/כיכרהשבת" target="_blank" rel="noopener noreferrer" class="w-full gold-gradient text-dark py-3 rounded-xl font-bold text-xs sm:text-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all min-h-[44px] flex items-center justify-center text-center">קרא את הכתבה המלאה</a>
+            </article>
+
+            <!-- Article 3: Yated Ne'eman -->
+            <article class="press-card glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden" data-category="family" data-reveal>
+                <div class="absolute top-0 left-0 w-24 h-24 bg-gold/5 rounded-br-full pointer-events-none"></div>
+                <div>
+                    <!-- Header with Vector Logo & Time -->
+                    <div class="flex justify-between items-center mb-6 gap-4">
+                        <!-- Custom Vector SVG Logo: Yated Ne'eman (Upgraded) -->
+                        <div class="relative overflow-hidden rounded-lg bg-black/60 border border-gold/40 px-3 py-2 flex items-center justify-center min-w-[140px] h-[48px] shadow-[0_4px_12px_rgba(0,0,0,0.5)]" aria-label="לוגו יתד נאמן">
+                            <svg class="h-8 w-auto" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="156" height="36" rx="2" stroke="url(#goldGradient3)" stroke-width="1" fill="rgba(0,0,0,0.4)"/>
+                                <rect x="5" y="5" width="150" height="30" rx="1" stroke="url(#goldGradient3)" stroke-width="0.5" stroke-dasharray="1 1" opacity="0.7"/>
+                                <line x1="10" y1="8" x2="10" y2="32" stroke="url(#goldGradient3)" stroke-width="1.5"/>
+                                <line x1="150" y1="8" x2="150" y2="32" stroke="url(#goldGradient3)" stroke-width="1.5"/>
+                                <text x="22" y="26" font-family="'Frank Ruhl Libre', serif" font-weight="900" font-size="15" fill="url(#goldGradient3)" letter-spacing="3">יתד נאמן</text>
+                                <defs>
+                                    <linearGradient id="goldGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="50%" stop-color="#fef5d1" />
+                                        <stop offset="100%" stop-color="#b89324" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <time class="text-xs text-white/60 font-mono">22.01.2026</time>
+                    </div>
+
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 font-serif leading-snug">כוחה של כתובה: פסק הדין הדרמטי ששינה את הכללים</h3>
+                    <blockquote class="text-xs sm:text-sm text-neutral-200 leading-relaxed italic border-r-2 border-gold/40 pr-3 mb-6">
+                        "מדובר בתקדים מזהיר שמלמד על כוחה האמיתי של הכתובה ככלי מגן פיננסי חזק ויציב בעידן המודרני."
+                    </blockquote>
+                    <p class="text-xs sm:text-sm text-white/80 font-light leading-relaxed mb-6">
+                        סדרה של פסקי דין מורכבים שהוביל הרב אלדר לוי כדיין וטוען רבני מומחה, זכו לחשיפה נרחבת בעיתון 'יתד נאמן' בשל שילוב גאוני של סברות ראשונים וניתוח משפטי תקדימי בנוגע לכתובה מול איזון משאבים.
+                    </p>
+                </div>
+                <!-- להלן הקישור לכתבה ביתד נאמן - החליפו את ה-href בקישור הרלוונטי שלכם -->
+                <a href="https://yated.co.il" target="_blank" rel="noopener noreferrer" class="w-full gold-gradient text-dark py-3 rounded-xl font-bold text-xs sm:text-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all min-h-[44px] flex items-center justify-center text-center">קרא את הכתבה המלאה</a>
+            </article>
+
+            <!-- Article 4: Behadrey Haredim -->
+            <article class="press-card glass p-6 sm:p-8 rounded-2xl flex flex-col justify-between relative overflow-hidden" data-category="interviews" data-reveal>
+                <div class="absolute top-0 left-0 w-24 h-24 bg-gold/5 rounded-br-full pointer-events-none"></div>
+                <div>
+                    <!-- Header with Vector Logo & Time -->
+                    <div class="flex justify-between items-center mb-6 gap-4">
+                        <!-- Custom Vector SVG Logo: Behadrey Haredim (Upgraded) -->
+                        <div class="relative overflow-hidden rounded-lg bg-black/60 border border-gold/40 px-3 py-2 flex items-center justify-center min-w-[140px] h-[48px] shadow-[0_4px_12px_rgba(0,0,0,0.5)]" aria-label="לוגו בחדרי חרדים">
+                            <svg class="h-8 w-auto" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(6, 6)">
+                                    <path d="M4 2C2.89543 2 2 2.89543 2 4V20C2 21.1046 2.89543 22 4 22H20C21.1046 22 22 21.1046 22 20V4C22 2.89543 21.1046 2 20 2H4Z" stroke="url(#goldGradient4)" stroke-width="1.5" fill="rgba(212,175,55,0.03)"/>
+                                    <path d="M22 10C22 10 18 10 17 12C16 14 17 18 17 18" stroke="url(#goldGradient4)" stroke-width="1"/>
+                                    <rect x="6" y="6" width="4" height="4" rx="1" fill="url(#goldGradient4)" opacity="0.8"/>
+                                    <rect x="12" y="6" width="4" height="4" rx="1" fill="url(#goldGradient4)" opacity="0.8"/>
+                                    <rect x="6" y="12" width="4" height="4" rx="1" fill="url(#goldGradient4)" opacity="0.8"/>
+                                    <rect x="12" y="12" width="4" height="4" rx="1" fill="url(#goldGradient4)" opacity="0.8"/>
+                                </g>
+                                <text x="36" y="21" font-family="'Heebo', sans-serif" font-weight="900" font-size="12" fill="url(#goldGradient4)" letter-spacing="0.5">בחדרי חרדים</text>
+                                <text x="36" y="30" font-family="'Assistant', sans-serif" font-weight="700" font-size="6.5" fill="#ffffff" opacity="0.8" letter-spacing="1">הפורטל החרדי הגדול בעולם</text>
+                                <defs>
+                                    <linearGradient id="goldGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="50%" stop-color="#fef5d1" />
+                                        <stop offset="100%" stop-color="#b89324" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <time class="text-xs text-white/60 font-mono">19.03.2026</time>
+                    </div>
+
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white mb-4 font-serif leading-snug">מורה נבוכים לעולם הדיינות: שיחה מרתקת עם הרב אלדר לוי</h3>
+                    <blockquote class="text-xs sm:text-sm text-neutral-200 leading-relaxed italic border-r-2 border-gold/40 pr-3 mb-6">
+                        "ההבנה שלי בבתי הדין מאפשרת לי לחזות את החלטות הדיינים עוד לפני פתיחת הדיון הראשון."
+                    </blockquote>
+                    <p class="text-xs sm:text-sm text-white/80 font-light leading-relaxed mb-6">
+                        ריאיון חג מקיף ויוצא דופן בפורטל החדשות 'בחדרי חרדים' עם הרב אלדר לוי, החושף את הדרכים הנכונות לפעולה בעת משבר משפחתי, החשיבות של "מרוץ הסמכויות" והסכנות הטמונות בייצוג לא מקצועי.
+                    </p>
+                </div>
+                <!-- להלן הקישור לכתבה בבחדרי חרדים - החליפו את ה-href בקישור הרלוונטי שלכם -->
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בחדרי" target="_blank" rel="noopener noreferrer" class="w-full gold-gradient text-dark py-3 rounded-xl font-bold text-xs sm:text-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all min-h-[44px] flex items-center justify-center text-center">קרא את הכתבה המלאה</a>
+            </article>
+
+        </section>
+
+        <!-- Responsive CTA Back Home Section -->
+        <section class="mt-16 text-center px-4" data-reveal>
+            <p class="text-white/80 text-xs sm:text-sm mb-4">זקוקים לייצוג אסטרטגי, מוכח ומנצח בבית הדין הרבני?</p>
+            <a href="landing_page.html" class="inline-flex items-center justify-center gap-2 min-h-[44px] border border-gold text-gold px-6 py-3 rounded-xl hover:bg-gold hover:text-dark transition-all text-xs sm:text-sm font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+                <i class="fas fa-arrow-right" aria-hidden="true"></i> חזרה לעמוד הבית והערכת תיק
+            </a>
+        </section>
+    </main>
+
+    <!-- Scripts (Optimized Performance, Fluid Touch gestures, No alert()) -->
+    <script>
+        // Preloader Release Safe-Guarded
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 300);
+        });
+
+        // Fast & Performance-Optimized Animation Engine
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+        // High Performance Scroll Bar Tracker with requestAnimationFrame
+        let scrollThrottled = false;
+        const scrollBar = document.getElementById('scroll-bar');
+        
+        window.addEventListener('scroll', () => {
+            if (!scrollThrottled) {
+                window.requestAnimationFrame(() => {
+                    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const percentage = (scrollTop / scrollHeight) * 100;
+                    if (scrollBar) scrollBar.style.width = percentage + '%';
+                    scrollThrottled = false;
+                });
+                scrollThrottled = true;
+            }
+        }, { passive: true });
+
+        // Category Filter logic (Mobile Friendly Tap Events)
+        function filterPress(category) {
+            // Update Active Buttons styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-gold', 'text-dark', 'border-gold');
+                btn.classList.add('border-white/10', 'text-white/80');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'bg-gold', 'text-dark', 'border-gold');
+                activeBtn.classList.remove('border-white/10', 'text-white/80');
+            }
+
+            // Filter Cards smoothly
+            const cards = document.querySelectorAll('.press-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.96)';
+                setTimeout(() => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }, 250);
+            });
+        }
+    </script>
+</body>
+</html>
