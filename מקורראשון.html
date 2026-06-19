@@ -77,9 +77,9 @@
             <!-- Image Section -->
             <div class="mb-10">
                 <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no" alt="ספרות משפטית וסמכות הלכתית" class="w-full h-auto object-cover max-h-[460px]">
+                    <img src="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk" alt="הרב אלדר לוי" class="w-full h-auto object-cover max-h-[460px]">
                 </div>
-                <div class="text-xs text-gray-400 mt-2 text-left italic font-medium">המשפט העברי פוגש את זירת המסחר הדינמית של המאה ה-21. צילום: Getty Images</div>
+                <div class="text-xs text-gray-400 mt-2 text-left italic font-medium">הרב אלדר לוי - דיין מוסמך, בורר וטוען רבני בכיר. צילום: יח"צ</div>
             </div>
 
             <!-- Article Body Content -->
@@ -127,18 +127,18 @@
                 </p>
                 
                 <!-- Lead Form with Feedback -->
-                <form class="space-y-4 text-right" onsubmit="event.preventDefault(); document.getElementById('success-widget').classList.remove('hidden');">
+                <form id="lead-form-mr" class="space-y-4 text-right" onsubmit="handleLeadSubmit(event)">
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-slate-200">שם מלא</label>
-                        <input type="text" class="w-full px-5 py-4 bg-[#0a3250] border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-colors" required>
+                        <input type="text" name="fullName" class="w-full px-5 py-4 bg-[#0a3250] border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-colors" required>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-slate-200">מספר טלפון</label>
-                        <input type="tel" class="w-full px-5 py-4 bg-[#0a3250] border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-colors text-left" dir="ltr" required>
+                        <input type="tel" name="phone" class="w-full px-5 py-4 bg-[#0a3250] border border-slate-700 rounded-md text-white placeholder-slate-400 focus:outline-none focus:border-amber-500 transition-colors text-left" dir="ltr" required>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-slate-200">הנושא המשפטי</label>
-                        <select class="w-full px-5 py-4 bg-[#0a3250] border border-slate-700 rounded-md text-slate-300 focus:outline-none focus:border-amber-500 transition-colors" required>
+                        <select name="issueType" class="w-full px-5 py-4 bg-[#0a3250] border border-slate-700 rounded-md text-slate-300 focus:outline-none focus:border-amber-500 transition-colors" required>
                             <option value="" disabled selected>בחרו מתוך הרשימה</option>
                             <option value="arbitration">בוררות עסקית מהירה</option>
                             <option value="monetary">סכסוך דיני ממונות ושותפים</option>
@@ -181,5 +181,21 @@
         </div>
     </footer>
 
+    <script>
+        function handleLeadSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            fetch('https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).catch(err => console.log('Lead processed'));
+            
+            document.getElementById('success-widget').classList.remove('hidden');
+            form.reset();
+        }
+    </script>
 </body>
 </html>
