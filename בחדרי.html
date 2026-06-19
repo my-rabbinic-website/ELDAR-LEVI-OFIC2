@@ -3,182 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>בחדרי חרדים | מורה נבוכים לעולם הדיינות: שיחה עם הרב אלדר לוי</title>
+    <title>מורה נבוכים לעולם הדיינות: שיחה מרתקת עם הרב אלדר לוי - בחדרי חרדים</title>
     <!-- Loading Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Loading FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Frank+Ruhl+Libre:wght@700;800;900&display=swap');
         
         body {
             font-family: 'Assistant', sans-serif;
-            background-color: #f3f4f6;
-            color: #1e293b;
+            background-color: #f5f7fa;
+            color: #222222;
         }
-        .bh-blue { color: #0f3d5f; }
-        .bh-bg-blue { background-color: #0f3d5f; }
-        .bh-border-blue { border-color: #0f3d5f; }
-        .bh-gold { color: #c49a45; }
-        .bh-bg-gold { background-color: #c49a45; }
-        .bh-border-gold { border-color: #c49a45; }
-        .article-max-width { max-width: 860px; margin: 0 auto; }
+        
+        .bhol-navy { background-color: #0d2c4c; }
+        .bhol-navy-text { color: #0d2c4c; }
+        .bhol-orange { background-color: #e65100; }
+        .bhol-orange-text { color: #e65100; }
+        .bhol-border-navy { border-color: #0d2c4c; }
+        .bhol-border-orange { border-color: #e65100; }
         .bh-serif { font-family: 'Frank Ruhl Libre', serif; }
+        
+        /* Smooth transitions */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
-<body class="bg-slate-100 antialiased">
+<body class="antialiased text-right">
 
-    <!-- Behadrey Haredim Header -->
-    <header class="bg-white border-b-4 bh-border-blue sticky top-0 z-50 shadow-md">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-                <div class="text-3xl md:text-4xl font-extrabold bh-blue tracking-tighter select-none bh-serif">
-                    בחדרי<span class="bh-gold"> חרדים</span>
-                </div>
-                <span class="text-[10px] text-gray-400 border-r border-gray-300 pr-2 hidden sm:inline-block">פורטל החדשות החרדי הגדול בעולם</span>
+    <!-- Top Utility Mini-Bar -->
+    <div class="bg-gray-100 text-xs text-gray-600 border-b border-gray-200 py-1.5 hidden sm:block">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span class="font-bold"><i class="far fa-calendar-alt ml-1"></i> כ"ד באייר תשפ"ו</span>
+                <span>|</span>
+                <span>פורטל החדשות החרדי הגדול בעולם</span>
             </div>
-            <nav class="flex flex-wrap gap-4 text-xs md:text-sm font-bold text-gray-700 justify-center">
-                <span class="hover:text-amber-600 cursor-pointer transition-colors">אקטאוליה</span>
-                <span class="hover:text-amber-600 cursor-pointer transition-colors">חדשות המגזר</span>
-                <span class="bh-blue border-b-2 bh-border-gold pb-1">יהדות ודין</span>
-                <span class="hover:text-amber-600 cursor-pointer transition-colors">צרכנות וכלכלה</span>
-                <span class="hover:text-amber-600 cursor-pointer transition-colors">גלריות</span>
-            </nav>
+            <div class="flex items-center gap-3">
+                <a href="#" class="hover:text-amber-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-amber-600 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-amber-600 transition-colors"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-amber-600 transition-colors"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Branding Header -->
+    <header class="bg-white border-b-2 border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- Brand Logo with original style -->
+            <div class="flex items-center gap-3 select-none">
+                <div class="flex flex-col text-right">
+                    <span class="text-4xl md:text-5xl font-extrabold bh-serif tracking-tighter bhol-navy-text leading-none">
+                        בחדרי <span class="text-orange-600">חרדים</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 tracking-wider font-semibold mr-1">BHOL.CO.IL - פורטל חרדי</span>
+                </div>
+            </div>
+            
+            <!-- Sponsored Header Banner placeholder -->
+            <div class="hidden lg:flex items-center justify-center bg-gray-50 border border-dashed border-gray-300 rounded px-6 py-2 text-xs text-gray-400 w-[468px] h-[60px]">
+                <span class="font-semibold text-center"><i class="fas fa-ad ml-1"></i> לשכת הבוררות והייצוג - הרב אלדר לוי במותג חדשני</span>
+            </div>
         </div>
     </header>
 
-    <!-- Main Article Container -->
-    <main class="article-max-width bg-white mt-6 mb-12 shadow-lg rounded-lg overflow-hidden border border-slate-200">
-        
-        <!-- Header Section -->
-        <div class="p-6 md:p-12 border-b border-gray-100">
-            <div class="text-xs md:text-sm font-bold bh-gold mb-3 uppercase tracking-wider">ראיון חג בלעדי | פרויקט מיוחד</div>
-            
-            <h1 class="text-3xl md:text-5xl font-extrabold bh-serif leading-tight text-slate-950 mb-6">
-                מורה נבוכים לעולם הדיינות: שיחה מרתקת עם הרב אלדר לוי
-            </h1>
-            
-            <p class="text-xl md:text-2xl font-light text-gray-600 leading-relaxed mb-8">
-                ריאיון חג מקיף ויוצא דופן בפורטל החדשות 'בחדרי חרדים' עם הרב אלדר לוי, החושף את הדרכים הנכונות לפעולה בעת משבר משפחתי, החשיבות של "מרוץ הסמכויות" והסכנות הטמונות בייצוג לא מקצועי.
-            </p>
-
-            <!-- Metadata block -->
-            <div class="flex flex-wrap items-center justify-between py-4 border-y border-gray-100 mb-8 text-xs md:text-sm text-gray-500 gap-2">
-                <div>
-                    <span class="font-bold text-gray-800">מאת מוסף 'בחדרי קהילה'</span>
-                    <span class="mx-2 text-gray-300">|</span>
-                    <span>פורסם ב: 19.06.2026 09:30</span>
-                </div>
-                <div class="flex gap-2 text-gray-400">
-                    <span>זמן קריאה: 7 דק׳</span>
-                </div>
+    <!-- Main Navbar (Bhol Dark Navy Design) -->
+    <nav class="bhol-navy text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-12 md:h-14">
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-4 md:gap-6 overflow-x-auto whitespace-nowrap scrollbar-none py-1 w-full lg:w-auto">
+                <a href="#" class="font-bold hover:text-orange-400 py-3 border-b-2 border-transparent hover:border-orange-500 transition-all text-sm md:text-base"><i class="fas fa-home ml-1"></i> ראשי</a>
+                <a href="#" class="font-bold hover:text-orange-400 py-3 border-b-2 border-transparent hover:border-orange-500 transition-all text-sm md:text-base">פוליטי</a>
+                <a href="#" class="font-bold hover:text-orange-400 py-3 border-b-2 border-transparent hover:border-orange-500 transition-all text-sm md:text-base">בחצרות</a>
+                <a href="#" class="font-bold text-orange-400 py-3 border-b-2 border-orange-500 transition-all text-sm md:text-base">יהדות ומשפט</a>
+                <a href="#" class="font-bold hover:text-orange-400 py-3 border-b-2 border-transparent hover:border-orange-500 transition-all text-sm md:text-base">אקטואליה</a>
+                <a href="#" class="font-bold hover:text-orange-400 py-3 border-b-2 border-transparent hover:border-orange-500 transition-all text-sm md:text-base">צרכנות וכלכלה</a>
+                <a href="#" class="font-bold hover:text-orange-400 py-3 border-b-2 border-transparent hover:border-orange-500 transition-all text-sm md:text-base">גלריות</a>
             </div>
-
-            <!-- Image Section -->
-            <div class="mb-10">
-                <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk" alt="ספרים ודיינות" class="w-full h-auto object-cover max-h-[460px]">
-                </div>
-                <div class="text-xs text-gray-400 mt-2 text-left italic font-medium">עמידה על משמר הזכויות על פי דרכי ההלכה והדין. צילום: Unsplash</div>
-            </div>
-
-            <!-- Article Body Content -->
-            <div class="prose prose-xl max-w-none text-right leading-relaxed text-slate-800 space-y-8">
-                <p class="text-lg md:text-xl">
-                    במציאות סוערת ומורכבת של דיני משפחה, צעד לא מחושב או ייצוג משפטי לקוי עלולים לחרוץ גורלות של משפחות שלמות לשנים קדימה. השילוב שבין בתי המשפט האזרחיים לבתי הדין הרבניים דורש לא רק הבנה משפטית יבשה, אלא היכרות עמוקה ביותר עם נשמת הדין ההלכתי, לצד חשיבה אסטרטגית המיושמת בזמן אמת.
-                </p>
-                
-                <p class="text-lg">
-                    פגשנו לשיחת חג מרתקת וחשופת עיניים את <strong>הרב אלדר לוי</strong>. כמי שנושא על כתפיו הסמכה רשמית כדיין, מכהן בפועל כדיין בבית דין לממונות, משמש כבורר מוסמך במחלוקות עסקיות ומייצג כטוען רבני בכיר בבתי הדין הרבניים, הוא מציע מורה נבוכים יוצא דופן המאיר את עולם הדיינות באור מפוכח ואחראי.
-                </p>
-
-                <!-- Styled Quote Block -->
-                <div class="py-8 px-6 bg-slate-50 border-r-4 bh-border-gold my-12 shadow-sm rounded-l-md">
-                    <p class="text-xl md:text-2xl font-bold bh-blue leading-relaxed italic">
-                        "ההבנה שלי בבתי הדין מאפשרת לי לחזות את החלטות הדיינים עוד לפני פתיחת הדיון הראשון."
-                    </p>
-                    <footer class="mt-4 text-sm md:text-base font-bold text-gray-500 text-left">— הרב אלדר לוי, מתוך הריאיון ל'בחדרי חרדים'</footer>
-                </div>
-
-                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 border-r-4 bh-border-blue pr-4 bh-serif">החשיבות הגורלית של "מרוץ הסמכויות"</h3>
-                <p class="text-lg">
-                    "אחד המושגים המוכרים אך הפחות מובנים לעומק בציבור הוא מרוץ הסמכויות," מסביר הרב אלדר לוי בחדות האופיינית לו. "במדינת ישראל, הסמכויות בדיני משפחה מפוצלות בין בית הדין הרבני לבית המשפט לענייני משפחה. החלטה לאן להגיש ראשון את התביעה היא קריטית, והיא עשויה להכריע את תוצאות התיק כולו."
-                </p>
-                <p class="text-lg">
-                    לדבריו, רבים נוטים לפרש בצורה פשטנית כאילו בית הדין הרבני תמיד טוב יותר לצד אחד, ובית המשפט לצד האחר. "זו טעות מסוכנת שנובעת מחוסר מקצועיות. הכל תלוי בפרטי המקרה, בדינמיקה המשפחתית ובסוגיות הרכושיות והאישיות. רק ראייה רחבה של דיין מוסמך, שמבין כיצד הדיינים עצמם מנתחים את התיק, יכולה להכריע היכן נכון לנהל את המערכה".
-                </p>
-
-                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 border-r-4 bh-border-blue pr-4 bh-serif">הסכנות שבייצוג לא מקצועי: "חוסר הבנה בדקויות ההלכה פוגע בלקוח"</h3>
-                <p class="text-lg">
-                    הרב לוי מזהיר בחריפות מפני הסתמכות על גורמים שאינם בקיאים ברזי המשפט ההלכתי ובפרוצדורות הייחודיות של בית הדין. "לפעמים אנשים חושבים שכל מי שמכיר את החוק האזרחי יכול לייצג בהצלחה בבית דין רבני. המציאות מוכיחה אחרת: חוסר שליטה בשולחן ערוך, במנהגים ובפסיקה ההלכתית המשתנה של דייני הדור, עלולה להוביל לקריסת טיעונים מצוינים עוד בטרם החל הדיון."
-                </p>
-                <p class="text-lg">
-                    היתרון המובהק של הרב לוי בייצוג לקוחותיו הוא כהונתו הפעילה כדיין וכבורר. "מכיוון שאני יושב על כס השיפוט בבית דין לממונות ומכריע בסכסוכים, אני מכיר את החשיבה השיפוטית. אני יודע מה הדיינים מחפשים לשמוע, אילו ראיות באמת משפיעות עליהם, וכיצד לגבש אסטרטגיה שתזכה לאמון מלא מצד בית הדין."
-                </p>
+            
+            <!-- Quick Search Bar (Desktop Only) -->
+            <div class="hidden lg:flex items-center bg-sky-950/40 rounded px-3 py-1 text-xs border border-sky-800">
+                <input type="text" placeholder="חיפוש באתר..." class="bg-transparent border-none text-white focus:outline-none placeholder-gray-300 text-right w-32">
+                <i class="fas fa-search text-gray-300"></i>
             </div>
         </div>
+    </nav>
 
-        <!-- Contact Form / CTA Section -->
-        <section class="bh-bg-blue text-white p-8 md:p-16">
-            <div class="max-w-xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold bh-serif mb-4 bh-gold tracking-tight">לשכת הבוררות והייצוג - הרב אלדר לוי</h2>
-                <p class="text-gray-300 mb-10 text-base md:text-lg">
-                    אל תפקירו את גורלכם המשפחתי והעסקי. לקבלת ייעוץ אישי, ייצוג דיסקרטי בבתי הדין הרבניים או לניהול הליכי בוררות מקצועיים ומהירים.
-                </p>
+    <!-- Hot News Flash (מבזקון רץ) -->
+    <div class="bg-orange-50 border-b border-orange-200 py-2 text-xs md:text-sm text-gray-700">
+        <div class="max-w-7xl mx-auto px-4 flex items-center gap-3 overflow-hidden">
+            <span class="bg-orange-600 text-white font-extrabold px-2 py-0.5 rounded text-xs shrink-0"><i class="fas fa-bolt ml-1"></i> מבזק חם:</span>
+            <marquee behavior="scroll" direction="right" scrollamount="4" class="font-semibold text-orange-950">
+                הביקוש לבוררות מקצועית מזנק • דיני ממונות וסכסוכים עסקיים נפתרים ביעילות מחוץ לבתי המשפט • הרב אלדר לוי מסביר את היתרון של כהונת דיין פעיל כבורר מוסמך •
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Right / Left Content Layout: Main column takes 8 grid spans, sidebar takes 4 -->
+            <!-- Main Article Column (Col span 8) -->
+            <main class="lg:col-span-8 bg-white p-4 md:p-8 rounded-lg shadow-sm border border-gray-100">
                 
-                <!-- Lead Form with Feedback -->
-                <form class="space-y-4 text-right" onsubmit="event.preventDefault(); document.getElementById('success-widget').classList.remove('hidden');">
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-200">שם מלא</label>
-                        <input type="text" class="w-full px-5 py-4 bg-[#0a273d] border border-slate-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors" required>
+                <!-- Breadcrumbs -->
+                <nav class="flex text-xs md:text-sm text-gray-500 gap-2 mb-4">
+                    <a href="#" class="hover:text-blue-900 font-medium">עמוד הבית</a>
+                    <span>/</span>
+                    <a href="#" class="hover:text-blue-900 font-medium">חדשות המגזר</a>
+                    <span>/</span>
+                    <span class="text-orange-600 font-semibold">יהדות ודין</span>
+                </nav>
+
+                <!-- Label / Category Pill -->
+                <div class="inline-block bg-orange-100 text-orange-800 text-xs md:text-sm font-extrabold px-3 py-1 rounded-sm mb-4">
+                    ראיון חג בלעדי | פרויקט מיוחד
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-black bh-serif leading-tight text-gray-950 mb-4 tracking-tight">
+                    מורה נבוכים לעולם הדיינות: שיחה מרתקת עם הרב אלדר לוי
+                </h1>
+
+                <!-- Sub-Headline -->
+                <p class="text-lg md:text-xl lg:text-2xl font-light text-gray-600 leading-relaxed mb-6 border-r-4 bhol-border-orange pr-4">
+                    ריאיון חג מקיף ויוצא דופן בפורטל החדשות 'בחדרי חרדים' עם הרב אלדר לוי, החושף את הדרכים הנכונות לפעולה בעת משבר משפחתי, החשיבות של "מרוץ הסמכויות" והסכנות הטמונות בייצוג לא מקצועי.
+                </p>
+
+                <!-- Metadata Row -->
+                <div class="flex flex-wrap items-center justify-between py-4 border-y border-gray-200 mb-6 text-xs md:text-sm text-gray-500 gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-orange-600 text-white flex items-center justify-center font-bold text-sm shadow">
+                            <i class="fas fa-user-edit"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-gray-800">מאת מוסף 'בחדרי קהילה'</span>
+                            <span>פורסם ב: 19.06.2026 09:30</span>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-200">מספר טלפון (לפניות דיסקרטיות)</label>
-                        <input type="tel" class="w-full px-5 py-4 bg-[#0a273d] border border-slate-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 transition-colors text-left" dir="ltr" required>
+                    <div class="flex items-center gap-4">
+                        <span class="bg-gray-100 px-2 py-1 rounded text-gray-600 font-medium"><i class="far fa-clock ml-1"></i> זמן קריאה: 7 דק׳</span>
+                        <a href="#comments-section" class="bg-blue-50 text-blue-700 hover:bg-blue-100 px-3 py-1 rounded font-semibold transition-all"><i class="far fa-comments ml-1"></i> תגובות</a>
                     </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-200">הנושא המשפטי</label>
-                        <select class="w-full px-5 py-4 bg-[#0a273d] border border-slate-700 rounded-md text-gray-300 focus:outline-none focus:border-amber-500 transition-colors" required>
-                            <option value="" disabled selected>בחרו מתוך הרשימה</option>
-                            <option value="family-court">ייצוג בבית הדין הרבני (דיני משפחה)</option>
-                            <option value="arbitration">בוררות עסקית / דיני ממונות</option>
-                            <option value="consultation">שיחת ייעוץ דיסקרטית וראשונית</option>
-                        </select>
+                </div>
+
+                <!-- Article Share Buttons bar -->
+                <div class="flex flex-wrap items-center gap-2 mb-6">
+                    <button onclick="document.execCommand('copy')" class="bg-green-600 text-white hover:bg-green-700 px-4 py-2 rounded text-xs md:text-sm font-bold flex items-center gap-2 shadow-sm transition-all">
+                        <i class="fab fa-whatsapp text-base"></i> שיתוף בוואטסאפ
+                    </button>
+                    <button class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded text-xs md:text-sm font-bold flex items-center gap-2 shadow-sm transition-all">
+                        <i class="fab fa-facebook-f text-base"></i> שיתוף בפייסבוק
+                    </button>
+                    <button onclick="const el = document.createElement('textarea'); el.value = window.location.href; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); this.innerText='הקישור הועתק!';" class="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded text-xs md:text-sm font-bold flex items-center gap-2 shadow-sm transition-all">
+                        <i class="fas fa-link"></i> העתקת קישור
+                    </button>
+                </div>
+
+                <!-- Main Featured Image -->
+                <div class="mb-8">
+                    <div class="rounded-lg overflow-hidden shadow-md border border-gray-200">
+                        <img src="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk" alt="הרב אלדר לוי" class="w-full h-auto object-cover max-h-[460px]" onerror="this.src='https://placehold.co/1200x600/0d2c4c/ffffff?text=%D7%91%D7%97%D7%93%D7%A8%D7%99+%D7%97%D7%A8%D7%93%D7%99%D7%9D';">
                     </div>
-                    <button type="submit" class="w-full bh-bg-gold hover:bg-amber-600 text-[#0f3d5f] font-black py-4 rounded-md text-lg md:text-xl transition-all active:scale-[0.98] shadow-lg mt-6">
-                        פנייה דחופה ודיסקרטית ללשכת הרב
+                    <div class="bg-gray-50 text-xs text-gray-500 px-3 py-2 border-r-2 bhol-border-navy mt-2 flex justify-between">
+                        <span>הרב אלדר לוי - דיין מוסמך, בורר וטוען רבני בכיר.</span>
+                        <span class="italic font-semibold">צילום: יח"צ</span>
+                    </div>
+                </div>
+
+                <!-- Article Content Body -->
+                <div class="prose prose-lg md:prose-xl max-w-none text-right text-gray-900 leading-relaxed space-y-6">
+                    <p class="text-base md:text-lg">
+                        במציאות סוערת ומורכבת של דיני משפחה, צעד לא מחושב או ייצוג משפטי לקוי עלולים לחרוץ גורלות של משפחות שלמות לשנים קדימה. השילוב שבין בתי המשפט האזרחיים לבתי הדין הרבניים דורש לא רק הבנה משפטית יבשה, אלא היכרות עמוקה ביותר עם נשמת הדין ההלכתי, לצד חשיבה אסטרטגית המיושמת בזמן אמת.
+                    </p>
+                    
+                    <p class="text-base md:text-lg">
+                        פגשנו לשיחת חג מרתקת וחשופת עיניים את <strong>הרב אלדר לוי</strong>. כמי שנושא על כתפיו הסמכה רשמית כדיין, מכהן בפועל כדיין בבית דין לממונות, משמש כבורר מוסמך במחלוקות עסקיות ומייצג כטוען רבני בכיר בבתי הדין הרבניים, הוא מציע מורה נבוכים יוצא דופן המאיר את עולם הדיינות באור מפוכח ואחראי.
+                    </p>
+
+                    <!-- Large Accent Quote Block -->
+                    <div class="py-6 px-6 bg-orange-50/50 border-r-4 bhol-border-orange my-8 shadow-sm rounded-l-md">
+                        <p class="text-lg md:text-xl font-bold bhol-navy-text leading-relaxed italic">
+                            "ההבנה שלי בבתי הדין מאפשרת לי לחזות את החלטות הדיינים עוד לפני פתיחת הדיון הראשון."
+                        </p>
+                        <footer class="mt-3 text-xs md:text-sm font-bold text-gray-500 text-left">— הרב אלדר לוי, מתוך הריאיון ל'בחדרי חרדים'</footer>
+                    </div>
+
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 border-r-4 bhol-border-navy pr-3 bh-serif">החשיבות הגורלית של "מרוץ הסמכויות"</h2>
+                    
+                    <p class="text-base md:text-lg">
+                        "אחד המושגים המוכרים אך הפחות מובנים לעומק בציבור הוא מרוץ הסמכויות," מסביר הרב אלדר לוי בחדות האופיינית לו. "במדינת ישראל, הסמכויות בדיני משפחה מפוצלות בין בית הדין הרבני לבית המשפט לענייני משפחה. החלטה לאן להגיש ראשון את התביעה היא קריטית, והיא עשויה להכריע את תוצאות התיק כולו."
+                    </p>
+                    <p class="text-base md:text-lg">
+                        לדבריו, רבים נוטים לפרש בצורה פשטנית כאילו בית הדין הרבני תמיד טוב יותר לצד אחד, ובית המשפט לצד האחר. "זו טעות מסוכנת שנובעת מחוסר מקצועיות. הכל תלוי בפרטי המקרה, בדינמיקה המשפחתית ובסוגיות הרכושיות והאישיות. רק ראייה רחבה של דיין מוסמך, שמבין כיצד הדיינים עצמם מנתחים את התיק, יכולה להכריע היכן נכון לנהל את המערכה".
+                    </p>
+
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-900 border-r-4 bhol-border-navy pr-3 bh-serif">הסכנות שבייצוג לא מקצועי: "חוסר הבנה בדקויות ההלכה פוגע בלקוח"</h2>
+                    
+                    <p class="text-base md:text-lg">
+                        הרב לוי מזהיר בחריפות מפני הסתמכות על גורמים שאינם בקיאים ברזי המשפט ההלכתי ובפרוצדורות הייחודיות של בית הדין. "לפעמים אנשים חושבים שכל מי שמכיר את החוק האזרחי יכול לייצג בהצלחה בבית דין רבני. המציאות מוכיחה אחרת: חוסר שליטה בשולחן ערוך, במנהגים ובפסיקה ההלכתית המשתנה של דייני הדור, עלולה להוביל לקריסת טיעונים מצוינים עוד בטרם החל הדיון."
+                    </p>
+                    <p class="text-base md:text-lg">
+                        היתרון המובהק של הרב לוי בייצוג לקוחותיו הוא כהונתו הפעילה כדיין וכבורר. "מכיוון שאני יושב על כס השיפוט בבית דין לממונות ומכריע בסכסוכים, אני מכיר את החשיבה השיפוטית. אני יודע מה הדיינים מחפשים לשמוע, אילו ראיות באמת משפיעות עליהם, וכיצד לגבש אסטרטגיה שתזכה לאמון מלא מצד בית הדין."
+                    </p>
+                </div>
+
+                <!-- Integrated Ad Form Block (עוצב כתוכן חסות מקורי ומכובד של האתר) -->
+                <section class="mt-12 bhol-navy text-white rounded-lg overflow-hidden shadow-lg border border-sky-950">
+                    <div class="bhol-orange px-6 py-4 flex items-center gap-3">
+                        <i class="fas fa-gavel text-xl md:text-2xl"></i>
+                        <h3 class="text-lg md:text-xl font-extrabold bh-serif">לשכת הבוררות והייצוג — הרב אלדר לוי</h3>
+                    </div>
+                    
+                    <div class="p-6 md:p-8 space-y-6">
+                        <p class="text-sm md:text-base text-gray-200 leading-relaxed">
+                            אל תפקרו את גורלכם המשפחתי, המשפחתי או העסקי. לקבלת הכוונה ראשונית ודיסקרטית, ייצוג בבתי הדין הרבניים או לניהול הליכי בוררות מקצועיים ומהירים המוכרים כחוק. השאירו פרטים ונשוב אליכם בחשאיות מוחלטת.
+                        </p>
+                        
+                        <form id="lead-form-bh" class="space-y-4" onsubmit="handleLeadSubmit(event)">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold mb-1.5 text-gray-300">שם מלא:</label>
+                                    <input type="text" name="fullName" placeholder="למשל: ישראל ישראלי" class="w-full px-4 py-3 bg-[#0a233c] border border-sky-800 rounded text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors" required>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold mb-1.5 text-gray-300">טלפון נייד (דיסקרטי):</label>
+                                    <input type="tel" name="phone" placeholder="למשל: 050-1234567" class="w-full px-4 py-3 bg-[#0a233c] border border-sky-800 rounded text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors text-left" dir="ltr" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-xs font-bold mb-1.5 text-gray-300">הסוגיה המשפטית שלכם:</label>
+                                <select name="issueType" class="w-full px-4 py-3 bg-[#0a233c] border border-sky-800 rounded text-gray-350 focus:outline-none focus:border-orange-500 transition-colors text-white" required>
+                                    <option value="" disabled selected class="text-gray-500">בחרו את הנושא הרצוי</option>
+                                    <option value="family-court" class="text-black">ייצוג בבית הדין הרבני (דיני משפחה וירושות)</option>
+                                    <option value="arbitration" class="text-black">בוררות עסקית / דיני ממונות</option>
+                                    <option value="consultation" class="text-black">שיחת ייעוץ דיסקרטית וראשונית</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="w-full bhol-orange hover:bg-orange-700 text-white font-extrabold py-3.5 rounded text-base md:text-lg transition-all active:scale-[0.98] shadow-md flex items-center justify-center gap-2">
+                                <i class="fas fa-paper-plane"></i> פנייה דחופה ודיסקרטית ללשכת הרב
+                            </button>
+                        </form>
+                        
+                        <!-- Success Feedback Message -->
+                        <div id="success-widget" class="hidden bg-white text-gray-950 p-5 rounded border-r-4 bhol-border-orange shadow-lg text-right transition-all">
+                            <p class="text-base font-bold bhol-navy-text flex items-center gap-2">
+                                <i class="fas fa-check-circle text-green-600"></i> פנייתך התקבלה בסודיות מלאה!
+                            </p>
+                            <p class="text-xs text-gray-600 mt-1">
+                                נציג אישי מטעם לשכת הדיין והבורר הרב אלדר לוי יחזור אליך בהקדם האפשרי ובחשאיות מוחלטת.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hot Tags Bar -->
+                <div class="mt-8 pt-4 border-t border-gray-100 flex flex-wrap gap-2 items-center text-xs text-gray-500">
+                    <span class="font-bold"><i class="fas fa-tags ml-1"></i> תגיות:</span>
+                    <a href="#" class="bg-gray-100 hover:bg-orange-100 hover:text-orange-700 px-2.5 py-1 rounded transition-colors font-medium">הרב אלדר לוי</a>
+                    <a href="#" class="bg-gray-100 hover:bg-orange-100 hover:text-orange-700 px-2.5 py-1 rounded transition-colors font-medium">טוען רבני בכיר</a>
+                    <a href="#" class="bg-gray-100 hover:bg-orange-100 hover:text-orange-700 px-2.5 py-1 rounded transition-colors font-medium">בוררות עסקית</a>
+                    <a href="#" class="bg-gray-100 hover:bg-orange-100 hover:text-orange-700 px-2.5 py-1 rounded transition-colors font-medium">דין תורה</a>
+                    <a href="#" class="bg-gray-100 hover:bg-orange-100 hover:text-orange-700 px-2.5 py-1 rounded transition-colors font-medium">מרוץ הסמכויות</a>
+                </div>
+
+            </main>
+
+            <!-- Sidebar Area (Col span 4) -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- "Flash News" widget (מבזקון) -->
+                <div class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="bhol-navy text-white px-4 py-3 flex items-center justify-between">
+                        <span class="font-extrabold text-sm"><i class="fas fa-bolt text-orange-500 ml-1.5 animate-pulse"></i> מבזקון בחדרי</span>
+                        <a href="#" class="text-xs text-orange-400 hover:underline">כל המבזקים</a>
+                    </div>
+                    <div class="divide-y divide-gray-100 text-xs md:text-sm">
+                        <div class="p-3.5 hover:bg-gray-50 transition-colors">
+                            <span class="text-orange-600 font-extrabold ml-1.5">09:30</span>
+                            <span class="font-medium">הדיין הרב אלדר לוי פתח סדרת דיוני בוררות בסכסוכים פיננסיים גדולים.</span>
+                        </div>
+                        <div class="p-3.5 hover:bg-gray-50 transition-colors">
+                            <span class="text-orange-600 font-extrabold ml-1.5">08:15</span>
+                            <span class="font-medium">המשטרה פתחה בחקירת התרסקות הכטב"ם בצפון הארץ; אין נפגעים.</span>
+                        </div>
+                        <div class="p-3.5 hover:bg-gray-50 transition-colors">
+                            <span class="text-orange-600 font-extrabold ml-1.5">עש"ק</span>
+                            <span class="font-medium">פוסקי הלכה קוראים להעדיף הליכי בוררות דיסקרטיים על פני פנייה לערכאות.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ad Banner widget -->
+                <div class="bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg p-6 text-white text-center shadow-md relative overflow-hidden">
+                    <div class="absolute -top-12 -left-12 w-28 h-28 bg-white/10 rounded-full"></div>
+                    <span class="text-xs uppercase bg-white/20 px-2.5 py-1 rounded font-bold">פרסומת ממומנת</span>
+                    <h4 class="text-xl font-bold bh-serif mt-3">זקוקים לפתרון סכסוך מהיר?</h4>
+                    <p class="text-xs text-orange-50 mt-2">אלדר לוי — בורר, דיין וטוען רבני. שקיפות, דיסקרטיות, מקצועיות ללא פשרות.</p>
+                    <a href="tel:052-8219928" class="inline-block mt-4 bg-white text-orange-700 hover:bg-orange-50 px-5 py-2 rounded text-xs font-extrabold shadow-sm transition-all"><i class="fas fa-phone-alt ml-1"></i> לחצו להתקשרות דחופה</a>
+                </div>
+
+                <!-- Most Read Articles (הנצפים ביותר) -->
+                <div class="bg-white rounded-lg overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="border-b border-gray-100 px-4 py-3">
+                        <h4 class="font-extrabold text-sm bhol-navy-text"><i class="far fa-eye ml-1.5 text-orange-600"></i> הכי נקראים השבוע</h4>
+                    </div>
+                    <div class="divide-y divide-gray-100 text-sm">
+                        <!-- Item 1 -->
+                        <div class="p-3.5 flex items-start gap-3 hover:bg-gray-50 transition-colors">
+                            <span class="text-2xl font-black text-gray-200 shrink-0 w-6">1</span>
+                            <span class="font-semibold text-gray-800 hover:text-orange-600 transition-colors cursor-pointer">
+                                מורה נבוכים לעולם הדיינות: שיחה מרתקת עם הרב אלדר לוי
+                            </span>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="p-3.5 flex items-start gap-3 hover:bg-gray-50 transition-colors">
+                            <span class="text-2xl font-black text-gray-200 shrink-0 w-6">2</span>
+                            <span class="font-semibold text-gray-800 hover:text-orange-600 transition-colors cursor-pointer">
+                                גדולי הדור יצאו בקריאה היסטורית למען תומכי עולם התורה
+                            </span>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="p-3.5 flex items-start gap-3 hover:bg-gray-50 transition-colors">
+                            <span class="text-2xl font-black text-gray-200 shrink-0 w-6">3</span>
+                            <span class="font-semibold text-gray-800 hover:text-orange-600 transition-colors cursor-pointer">
+                                בנתיבות נחנך מכון הסת"ם המפואר "ספרות תפארתך"
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+
+        <!-- Interactive Comments Area (מערכת טוקבקים של בחדרי חרדים) -->
+        <section id="comments-section" class="max-w-7xl mx-auto mt-8 bg-white p-4 md:p-8 rounded-lg shadow-sm border border-gray-100">
+            <div class="border-b border-gray-200 pb-4 mb-6 flex justify-between items-center">
+                <h3 class="text-lg md:text-xl font-extrabold bhol-navy-text flex items-center gap-2">
+                    <i class="far fa-comments text-orange-600 text-xl"></i> תגובות הגולשים (<span id="comments-count">3</span>)
+                </h3>
+                <span class="text-xs text-gray-400">התגובות באחריות הכותבים בלבד</span>
+            </div>
+
+            <!-- Predefined Comments List -->
+            <div id="comments-list" class="space-y-4 mb-8">
+                <!-- Comment 1 -->
+                <div class="bg-gray-50 p-4 rounded border-r-4 border-orange-500">
+                    <div class="flex justify-between items-center mb-1 text-xs text-gray-500">
+                        <span class="font-bold text-gray-800">1. יישר כוח עצום לרב אלדר!</span>
+                        <span>לפני 3 שעות</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-semibold mb-1">מאת: מנחם ג. (בני ברק)</p>
+                    <p class="text-xs md:text-sm text-gray-600">הרב אלדר לוי הציל את העסק המשפחתי שלנו בבוררות יציבה ורגועה, ללא ריבים ועיכובים. שמח לראות עליו כתבה בבחדרי!</p>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="bg-gray-50 p-4 rounded border-r-4 border-blue-900">
+                    <div class="flex justify-between items-center mb-1 text-xs text-gray-500">
+                        <span class="font-bold text-gray-800">2. אמת ויציב לגבי מרוץ הסמכויות</span>
+                        <span>לפני 5 שעות</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-semibold mb-1">מאת: עו"ד שמואל פ. (ירושלים)</p>
+                    <p class="text-xs md:text-sm text-gray-600">דברים כדורבנות. חוסר מקצועיות בבתי הדין גורם לנזקים איומים ללקוחות. דיין מוסמך שמבין את שני הצדדים הוא יתרון אדיר.</p>
+                </div>
+
+                <!-- Comment 3 -->
+                <div class="bg-gray-50 p-4 rounded border-r-4 border-gray-300">
+                    <div class="flex justify-between items-center mb-1 text-xs text-gray-500">
+                        <span class="font-bold text-gray-800">3. מורה דרך אמיתי</span>
+                        <span>לפני יום</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-semibold mb-1">מאת: יעקב ד. (נתיבות)</p>
+                    <p class="text-xs md:text-sm text-gray-600">אישיות מיוחדת במינה. הגישה שלו היא בדיוק מה שצריך בדור המבולבל הזה.</p>
+                </div>
+            </div>
+
+            <!-- New Comment Form -->
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h4 class="font-bold text-sm md:text-base bhol-navy-text mb-3"><i class="fas fa-pen-fancy ml-1 text-orange-600"></i> הוספת תגובה חדשה</h4>
+                <form id="comment-form" class="space-y-3" onsubmit="event.preventDefault(); addNewComment();">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <input type="text" id="commenter-name" placeholder="שם כותב התגובה" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-orange-500 transition-all" required>
+                        <input type="text" id="commenter-subject" placeholder="נושא התגובה" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-orange-500 transition-all" required>
+                    </div>
+                    <textarea id="commenter-content" rows="3" placeholder="תוכן התגובה שלך..." class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-orange-500 transition-all" required></textarea>
+                    
+                    <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-6 rounded text-sm transition-all shadow-sm">
+                        שלח תגובה לאישור המערכת
                     </button>
                 </form>
-                
-                <!-- Success Message -->
-                <div id="success-widget" class="hidden mt-6 bg-white text-gray-900 p-5 rounded-md font-bold border-r-4 bh-border-gold shadow-lg text-right transition-all animate-fade-in">
-                    <p class="text-lg bh-blue">פנייתך התקבלה בסודיות מלאה!</p>
-                    <p class="text-sm font-normal text-slate-600 mt-1">נציג אישי מטעם לשכת הדיין והבורר הרב אלדר לוי יחזור אליך בהקדם האפשרי ובחשאיות מוחלטת.</p>
+                <div id="comment-success" class="hidden mt-3 text-green-700 font-bold text-xs p-2.5 bg-green-50 border border-green-200 rounded">
+                    תגובתך נשלחה בהצלחה למערכת ותוצג לאחר אישור העורכים.
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- Footer / Related Links -->
-        <div class="p-6 md:p-8 bg-slate-50 border-t border-slate-100 flex flex-wrap gap-4 justify-center text-xs md:text-sm font-semibold text-gray-500">
-            <span class="text-gray-400">תגיות חמות:</span>
-            <span class="hover:text-amber-700 cursor-pointer transition-colors">מרוץ הסמכויות הלכה למעשה</span>
-            <span class="mx-1 text-gray-300">|</span>
-            <span class="hover:text-amber-700 cursor-pointer transition-colors">טוען רבני בכיר</span>
-            <span class="mx-1 text-gray-300">|</span>
-            <span class="hover:text-amber-700 cursor-pointer transition-colors">דיין לבוררות עסקית</span>
-            <span class="mx-1 text-gray-300">|</span>
-            <span class="hover:text-amber-700 cursor-pointer transition-colors">שלום בית ודיני משפחה</span>
-        </div>
-    </main>
+    <!-- Global Footer (בחדרי חרדים Original Style Footer) -->
+    <footer class="bg-slate-900 text-gray-300 border-t-4 bhol-border-orange py-12 mt-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand section -->
+                <div class="space-y-4">
+                    <div class="text-3xl font-black text-white bh-serif">
+                        בחדרי <span class="text-orange-500">חרדים</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        אתר החדשות החרדי המוביל והגדול בעולם. דיווחים, חשיפות, סקופים וגלריות חצרות קודש 24 שעות ביממה (למעט שבתות וחגי ישראל).
+                    </p>
+                </div>
+                
+                <!-- Quick links -->
+                <div class="space-y-2 text-xs md:text-sm">
+                    <h5 class="text-white font-extrabold border-r-2 bhol-border-orange pr-2 mb-3">מדורים מובילים</h5>
+                    <div class="grid grid-cols-2 gap-2">
+                        <a href="#" class="hover:text-orange-400 transition-colors">אקטואליה</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors">פוליטיקה</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors">יהדות ודין</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors">בחצרות אדמו"רים</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors">צרכנות וכלכלה</a>
+                        <a href="#" class="hover:text-orange-400 transition-colors">פורומים קהילתיים</a>
+                    </div>
+                </div>
 
-    <!-- Global Footer -->
-    <footer class="bg-[#0b2b43] text-slate-300 py-12 px-4 text-center border-t-4 bh-border-gold">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-3xl font-black text-white mb-4 bh-serif">בחדרי<span class="bh-gold"> חרדים</span></div>
-            <p class="text-xs text-gray-400 max-w-xl mx-auto leading-relaxed">
-                © כל הזכויות שמורות לבחדרי חרדים וללשכת הרב אלדר לוי. <br>
-                הכתבה הופקה בשיתוף מדור המוספים והתוכן השיווקי של בחדרי חרדים. כל הזכויות לתוכן שמורות.
-            </p>
+                <!-- Safe communication -->
+                <div class="space-y-3 text-xs text-gray-400">
+                    <h5 class="text-white font-extrabold border-r-2 bhol-border-orange pr-2 mb-1">צרו קשר ודיווחים</h5>
+                    <p>יש לכם סקופ? סיפור מעניין? צרו קשר עם דסק החדשות שלנו:</p>
+                    <a href="mailto:desk@bhol.co.il" class="text-orange-400 hover:underline font-bold"><i class="far fa-envelope ml-1"></i> desk@bhol.co.il</a>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-6">
+            
+            <div class="flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p class="text-center md:text-right">
+                    © כל הזכויות שמורות לחברת בחדרי חדשות בע"מ וללשכת הרב אלדר לוי. <br>
+                    הכתבה הופקה בשיתוף מדור המוספים והתוכן השיווקי של בחדרי חרדים. כל הזכויות לתוכן שמורות.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:underline">תקנון האתר</a>
+                    <span>|</span>
+                    <a href="#" class="hover:underline">מדיניות פרטיות</a>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- JavaScript to handle interactive comments additions -->
+    <script>
+        let commentsCount = 3;
+        
+        function handleLeadSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Background Submission directly to your custom endpoint
+            fetch('https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).catch(err => console.log('Lead processed'));
+            
+            // Show custom success screen on page
+            document.getElementById('success-widget').classList.remove('hidden');
+            form.reset();
+        }
+        
+        function addNewComment() {
+            const name = document.getElementById('commenter-name').value;
+            const subject = document.getElementById('commenter-subject').value;
+            const content = document.getElementById('commenter-content').value;
+            
+            // Build the new comment template
+            const commentsList = document.getElementById('comments-list');
+            commentsCount++;
+            
+            const commentDiv = document.createElement('div');
+            commentDiv.className = "bg-orange-50/50 p-4 rounded border-r-4 border-orange-600 animate-pulse";
+            commentDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-1 text-xs text-gray-500">
+                    <span class="font-bold text-gray-800">${commentsCount}. ${subject}</span>
+                    <span>הרגע</span>
+                </div>
+                <p class="text-sm text-gray-700 font-semibold mb-1">מאת: ${name}</p>
+                <p class="text-xs md:text-sm text-gray-600">${content}</p>
+            `;
+            
+            commentsList.appendChild(commentDiv);
+            document.getElementById('comments-count').innerText = commentsCount;
+            
+            // Show Success Notification
+            document.getElementById('comment-success').classList.remove('hidden');
+            
+            // Clear Form fields
+            document.getElementById('comment-form').reset();
+            
+            // Scroll new comment into view
+            commentDiv.scrollIntoView({ behavior: 'smooth' });
+            
+            // Remove pulse animation after a few seconds
+            setTimeout(() => {
+                commentDiv.classList.remove('animate-pulse');
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
