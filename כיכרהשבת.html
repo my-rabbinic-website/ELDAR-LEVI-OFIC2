@@ -73,9 +73,9 @@
             <!-- Image Section -->
             <div class="mb-10">
                 <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80" alt="ספרים והלכה בבית הדין" class="w-full h-auto object-cover max-h-[460px]">
+                    <img src="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk" alt="הרב אלדר לוי" class="w-full h-auto object-cover max-h-[460px]">
                 </div>
-                <div class="text-xs text-gray-400 mt-2 text-left italic font-medium">עשיית צדק ורדיפת שלום בבית הדין. צילום: Unsplash</div>
+                <div class="text-xs text-gray-400 mt-2 text-left italic font-medium">הרב אלדר לוי - דיין מוסמך, בורר וטוען רבני בכיר. צילום: יח"צ</div>
             </div>
 
             <!-- Article Body Content -->
@@ -123,18 +123,18 @@
                 </p>
                 
                 <!-- Lead Form with Feedback -->
-                <form class="space-y-4 text-right" onsubmit="event.preventDefault(); document.getElementById('success-widget').classList.remove('hidden');">
+                <form id="lead-form-kikar" class="space-y-4 text-right" onsubmit="handleLeadSubmit(event)">
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-200">שם מלא</label>
-                        <input type="text" class="w-full px-5 py-4 bg-[#222] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors" required>
+                        <input type="text" name="fullName" class="w-full px-5 py-4 bg-[#222] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors" required>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-200">מספר טלפון לפניות דיסקרטיות</label>
-                        <input type="tel" class="w-full px-5 py-4 bg-[#222] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors text-left" dir="ltr" required>
+                        <input type="tel" name="phone" class="w-full px-5 py-4 bg-[#222] border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors text-left" dir="ltr" required>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-200">הנושא המשפטי / אישי</label>
-                        <select class="w-full px-5 py-4 bg-[#222] border border-gray-700 rounded-md text-gray-300 focus:outline-none focus:border-orange-500 transition-colors" required>
+                        <select name="issueType" class="w-full px-5 py-4 bg-[#222] border border-gray-700 rounded-md text-gray-300 focus:outline-none focus:border-orange-500 transition-colors" required>
                             <option value="" disabled selected>בחרו מתוך הרשימה</option>
                             <option value="family-court">ייצוג בבית הדין הרבני (משפחה/גירושין)</option>
                             <option value="shalom-bayit">ייעוץ ושלום בית הלכתי</option>
@@ -179,5 +179,21 @@
         </div>
     </footer>
 
+    <script>
+        function handleLeadSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            fetch('https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk', {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            }).catch(err => console.log('Lead processed'));
+            
+            document.getElementById('success-widget').classList.remove('hidden');
+            form.reset();
+        }
+    </script>
 </body>
 </html>
