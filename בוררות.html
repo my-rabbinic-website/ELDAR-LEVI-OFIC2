@@ -1,495 +1,318 @@
-import React, { useState } from 'react';
-import { BookOpen, Scale, ScrollText, Library, FileText, Bookmark, Printer, ChevronLeft } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מזונות ילדים - בירור הלכתי</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;900&family=Assistant:wght@200;400;700&family=Noto+Serif+Hebrew:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper-bg: #fdfcf8;
+            --ink-color: #1a1a1a;
+            --gold-accent: #b08d57;
+            --border-color: #e2e2e2;
+        }
 
-const App = () => {
-  const [activeChapter, setActiveChapter] = useState('intro');
+        body {
+            background-color: #d1d1d1;
+            font-family: 'Frank Ruhl Libre', serif;
+            color: var(--ink-color);
+            line-height: 1.6;
+        }
 
-  const styles = `
-    @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Assistant:wght@300;400;600;700&family=David+Libre:wght@400;500;700&display=swap');
+        .page {
+            background-color: var(--paper-bg);
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 60px 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            border: 1px solid #c0c0c0;
+        }
 
-    :root {
-      --bg-exterior: #2c2520; /* רקע שולחן עור כהה */
-      --paper: #fbf8f1; /* נייר קלף חם */
-      --ink: #2b1f1a; /* דיו חום-שחור עמוק */
-      --red-accent: #7a1f1f; /* בורדו עתיק לספרי קודש */
-      --gold-accent: #c49d57; /* זהב מסורתי */
-    }
+        /* Header Decor */
+        .page-header {
+            text-align: center;
+            border-bottom: 2px double var(--gold-accent);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
 
-    body {
-      background-color: var(--bg-exterior);
-      background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
-      margin: 0;
-      padding: 0;
-      font-family: 'Frank Ruhl Libre', serif;
-      color: var(--ink);
-    }
+        .book-title {
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            color: var(--gold-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
 
-    ::selection {
-      background-color: var(--gold-accent);
-      color: #fff;
-    }
+        .chapter-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 10px 0;
+            color: var(--ink-color);
+        }
 
-    .font-torah { font-family: 'Frank Ruhl Libre', serif; }
-    .font-iyun { font-family: 'David Libre', serif; }
-    .font-modern { font-family: 'Assistant', sans-serif; }
+        /* Section Headings */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
 
-    /* מסגרת הספר - מותאמת מובייל ודסקטופ */
-    .book-wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      background: var(--paper);
-    }
+        .section-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--ink-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            margin-left: 15px;
+        }
 
-    @media (min-width: 1024px) {
-      .book-wrapper {
-        flex-direction: row;
-        margin: 40px auto;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-    }
+        .section-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--gold-accent);
+            flex-grow: 1;
+        }
 
-    /* תפריט צד / עליון (רספונסיבי) */
-    .sidebar {
-      background: #1e1815;
-      color: #e5e0d5;
-      border-bottom: 3px solid var(--gold-accent);
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: row;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 15px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold-accent) transparent;
-    }
+        /* Content Blocks */
+        .halacha-block {
+            margin-bottom: 25px;
+            padding-right: 20px;
+            border-right: 3px solid var(--gold-accent);
+        }
 
-    @media (min-width: 1024px) {
-      .sidebar {
-        width: 300px;
-        flex-direction: column;
-        border-bottom: none;
-        border-left: 3px solid var(--gold-accent);
-        padding: 40px 20px;
-        overflow-x: visible;
-        white-space: normal;
-      }
-    }
+        .label {
+            font-weight: 700;
+            color: #555;
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
 
-    .sidebar::-webkit-scrollbar { height: 4px; }
-    .sidebar::-webkit-scrollbar-thumb { background: var(--gold-accent); border-radius: 4px; }
+        /* Table Design */
+        .halacha-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: 'Assistant', sans-serif;
+            font-size: 1.1rem;
+        }
 
-    .nav-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 20px;
-      margin: 0 5px;
-      border-radius: 4px;
-      font-family: 'Assistant', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.3s;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
+        .halacha-table th {
+            background-color: var(--ink-color);
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
 
-    @media (min-width: 1024px) {
-      .nav-item {
-        width: 100%;
-        margin: 0 0 10px 0;
-        font-size: 1.1rem;
-      }
-    }
+        .halacha-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: center;
+        }
 
-    .nav-item:hover {
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(196, 157, 87, 0.3);
-    }
+        .halacha-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
-    .nav-item.active {
-      background: var(--gold-accent);
-      color: #1e1815;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+        /* Biurim (Bottom Section) */
+        .biurim-section {
+            margin-top: 60px;
+            border-top: 1px solid #000;
+            padding-top: 20px;
+            font-size: 0.95rem;
+        }
 
-    /* דף הספר העיקרי */
-    .page-content {
-      background: var(--paper);
-      flex-grow: 1;
-      padding: 25px 20px;
-      position: relative;
-      min-height: 100vh;
-      background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
-    }
+        .biurim-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.3em;
+        }
 
-    @media (min-width: 768px) {
-      .page-content { padding: 50px 60px; }
-    }
+        .biur-text {
+            column-count: 2;
+            column-gap: 30px;
+            text-align: justify;
+        }
 
-    /* מסגרת תורנית פנימית (דמוי וילנא) */
-    .vilna-border {
-      border: 4px double rgba(196, 157, 87, 0.4);
-      padding: 20px;
-      height: 100%;
-    }
+        .dropcap {
+            font-size: 2.5rem;
+            float: right;
+            line-height: 1;
+            padding-left: 8px;
+            font-weight: 700;
+        }
 
-    @media (min-width: 768px) {
-      .vilna-border { padding: 40px; border-width: 6px; }
-    }
+        .note-ref {
+            vertical-align: super;
+            font-size: 0.7rem;
+            color: var(--gold-accent);
+            font-weight: 700;
+        }
 
-    /* מבנה הטקסט התורני */
-    .main-title {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--red-accent);
-      text-align: center;
-      margin-bottom: 10px;
-      line-height: 1.1;
-      text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-    }
+        /* Kahana Section */
+        .kahana-box {
+            background-color: #f0f4f8;
+            border: 1px solid #c1d1e1;
+            padding: 25px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
 
-    @media (min-width: 768px) {
-      .main-title { font-size: 3.5rem; }
-    }
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; margin: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
 
-    .sub-title {
-      text-align: center;
-      font-size: 1.1rem;
-      color: var(--ink);
-      border-top: 1px solid var(--gold-accent);
-      border-bottom: 1px solid var(--gold-accent);
-      display: inline-block;
-      padding: 5px 20px;
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
+    <div class="page shadow-2xl">
+        <!-- כותרת הספר והפרק -->
+        <div class="page-header">
+            <div class="book-title" data-he="יורו משפטיך">יורו משפטיך</div>
+            <h1 class="chapter-title">מזונות ילדים</h1>
+        </div>
 
-    @media (min-width: 768px) {
-      .sub-title { font-size: 1.4rem; padding: 5px 40px; }
-    }
+        <!-- סימן א' -->
+        <div class="section-header">
+            <div class="section-number">א</div>
+            <div class="section-text">חיוב האב במזונות קטני קטנים (עד גיל 6)</div>
+        </div>
 
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--ink);
-      margin: 40px 0 20px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      line-height: 1.3;
-    }
-    
-    @media (min-width: 768px) {
-      .section-title { font-size: 2rem; gap: 15px; }
-    }
+        <div class="halacha-block">
+            <span class="label">מקור הדין:</span>
+            <p>מבואר בגמרא (כתובות סה:) ופסקו הרמב"ם (הל' אישות יב, יד) והשו"ע (אה"ע עא, א), שחייב האב במזונות בניו ובנותיו עד שיהיו בני שש. </p>
+        </div>
 
-    .section-title::before {
-      content: '❖';
-      color: var(--gold-accent);
-      font-size: 1.2rem;
-    }
+        <div class="halacha-block">
+            <span class="label">טעם הדין:</span>
+            <p>חיוב זה אינו מדין צדקה גרידא, אלא תקנת חכמים מיוחדת (תקנת אושא), וכפו אותו חכמים כדרך שכופים על המצוות, ויש אומרים שזהו חלק מתנאי הכתובה.</p>
+        </div>
 
-    .text-body {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      text-align: right;
-      margin-bottom: 2rem;
-      color: var(--ink);
-    }
+        <div class="halacha-block">
+            <span class="label">ביאור הדין:</span>
+            <p>דין זה הוא חלוט ואינו תלוי באמידותו של האב. גם עני שבישראל חייב לזון את ילדיו הקטנים עד גיל שש, ואין בית הדין פוטר אותו מחמת דוחקו.</p>
+        </div>
 
-    @media (min-width: 768px) {
-      .text-body { font-size: 1.4rem; text-align: justify; }
-    }
+        <!-- סימן ב' -->
+        <div class="section-header">
+            <div class="section-number">ב</div>
+            <div class="section-text">חיוב האב במזונות קטנים (מגיל 6 ומעלה)</div>
+        </div>
 
-    .drop-cap {
-      float: right;
-      font-size: 3.5rem;
-      line-height: 0.8;
-      padding-left: 10px;
-      padding-top: 8px;
-      font-weight: 900;
-      color: var(--red-accent);
-    }
+        <div class="halacha-block">
+            <span class="label">מקור ומהות הדין:</span>
+            <p>מגיל שש ואילך, חיוב המזונות אינו תקנה חלוטה כבקטני קטנים, אלא הוא מדין <strong>צדקה</strong>. כמבואר ביו"ד סימן רנ"א לגבי סדרי קדימה בצדקה, שקרוביו קודמים לכל אדם.</p>
+        </div>
 
-    @media (min-width: 768px) {
-      .drop-cap { font-size: 4.5rem; padding-left: 15px; padding-top: 5px; }
-    }
-
-    /* קוביות תוכן מיוחדות */
-    .concept-box {
-      background: #f4f0e6;
-      border-right: 4px solid var(--gold-accent);
-      padding: 20px;
-      margin: 30px 0;
-      font-family: 'David Libre', serif;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
-    }
-
-    @media (min-width: 768px) {
-      .concept-box { font-size: 1.3rem; padding: 25px; }
-    }
-
-    .concept-title {
-      font-weight: 700;
-      color: var(--red-accent);
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-      font-family: 'Frank Ruhl Libre', serif;
-    }
-
-    .part-c-box {
-      border: 2px solid var(--ink);
-      padding: 25px 20px;
-      margin-top: 40px;
-      position: relative;
-    }
-
-    @media (min-width: 768px) {
-      .part-c-box { padding: 40px 30px; margin-top: 50px; }
-    }
-
-    .part-c-title {
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--paper);
-      padding: 0 15px;
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-
-    @media (min-width: 768px) {
-      .part-c-title { top: -20px; font-size: 1.5rem; padding: 0 20px; }
-    }
-
-    /* Print Styles */
-    @media print {
-      body { background: white; }
-      .sidebar, .no-print { display: none; }
-      .book-wrapper { box-shadow: none; margin: 0; width: 100%; max-width: none; display: block; border: none; }
-      .page-content { border: none; padding: 0; background-image: none; }
-      .vilna-border { border: 4px double black; padding: 20px; }
-    }
-  `;
-
-  return (
-    <div dir="rtl">
-      <style>{styles}</style>
-      
-      <div className="book-wrapper">
-        
-        {/* תפריט ניווט - הדמיה של מבנה הספר */}
-        <nav className="sidebar no-print">
-          <div className="hidden lg:block text-center mb-10 border-b border-[#c49d57]/30 pb-6">
-            <h2 className="font-torah text-3xl font-black text-[#c49d57] mb-2">ואלה המשפטים</h2>
-            <p className="font-modern text-sm text-[#a89f91]">ספר העזר המקיף לדיין ולטוען</p>
-          </div>
-
-          <div className="flex lg:flex-col items-center lg:items-stretch lg:space-y-2 w-full">
-            <button onClick={() => setActiveChapter('intro')} className={`nav-item ${activeChapter === 'intro' ? 'active' : ''}`}>
-              <Library size={18} className="shrink-0" /> <span className="whitespace-nowrap">מבוא וחזון</span>
-            </button>
+        <div class="halacha-block">
+            <span class="label">חילוקי הדין להלכה למעשה:</span>
+            <p>כיוון שהחיוב הוא מדין צדקה, הוא מותנה בשני תנאים מצטברים: אמידות האב ("אמיד") וצורך הילדים ("אינם אמודים").</p>
             
-            <div className="hidden lg:block text-[#c49d57] font-bold text-sm mt-6 mb-2 pr-4">חלק א' - משפטי אישות</div>
-            <button onClick={() => setActiveChapter('mezonot')} className={`nav-item ${activeChapter === 'mezonot' ? 'active' : ''}`}>
-              <BookOpen size={18} className="shrink-0" /> <span className="whitespace-nowrap">מזונות ומרד</span>
-            </button>
-            
-            <div className="hidden lg:block text-[#c49d57] font-bold text-sm mt-6 mb-2 pr-4">חלק ב' - חושן משפט</div>
-            <button onClick={() => setActiveChapter('mekach')} className={`nav-item ${activeChapter === 'mekach' ? 'active' : ''}`}>
-              <Scale size={18} className="shrink-0" /> <span className="whitespace-nowrap">מקח טעות</span>
-            </button>
-            
-            <div className="hidden lg:block text-[#c49d57] font-bold text-sm mt-6 mb-2 pr-4">חלק ג' - הלכה ודינא דמלכותא</div>
-            <button onClick={() => setActiveChapter('partC')} className={`nav-item ${activeChapter === 'partC' ? 'active' : ''}`}>
-              <ScrollText size={18} className="shrink-0" /> <span className="whitespace-nowrap">אשר תשים לפניהם</span>
-            </button>
-          </div>
-          
-          <button onClick={() => window.print()} className="hidden lg:flex mt-16 w-full justify-center items-center gap-2 bg-[#c49d57] text-[#1e1815] py-3 rounded font-bold hover:bg-white transition-colors">
-            <Printer size={18} /> הדפס פרק נוכחי
-          </button>
-        </nav>
+            <table class="halacha-table">
+                <thead>
+                    <tr>
+                        <th>מצב האב</th>
+                        <th>מצב הילדים</th>
+                        <th>פסק הדין</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>אינו אמוד</td>
+                        <td>אינם אמודים</td>
+                        <td class="font-bold text-red-700">פטור</td>
+                    </tr>
+                    <tr>
+                        <td>אינו אמוד</td>
+                        <td>אמודים (יש להם נכסים)</td>
+                        <td class="font-bold text-red-700">פטור</td>
+                    </tr>
+                    <tr>
+                        <td>אמוד (עשיר)</td>
+                        <td>אמודים</td>
+                        <td class="font-bold text-red-700">פטור</td>
+                    </tr>
+                    <tr>
+                        <td>אמוד</td>
+                        <td>אינם אמודים</td>
+                        <td class="font-bold text-green-700">חייב (מדין צדקה)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        {/* תוכן הספר */}
-        <main className="page-content">
-          <div className="vilna-border">
-            
-            {/* כפתור הדפסה למובייל */}
-            <div className="lg:hidden text-left mb-6 no-print">
-               <button onClick={() => window.print()} className="inline-flex items-center gap-2 bg-[#1e1815] text-[#c49d57] px-4 py-2 rounded text-sm font-modern">
-                 <Printer size={16} /> הדפס
-               </button>
+        <!-- סימן ג' -->
+        <div class="section-header">
+            <div class="section-number">ג</div>
+            <div class="section-text">דין "בן מרדן" וסרבנות שהות</div>
+        </div>
+
+        <div class="halacha-block">
+            <span class="label">יסוד הדין:</span>
+            <p>פסק הרמב"ם (אישות כא, יז): "אחר שש שנים יש לאב לומר - אם הוא אצלי אתן לו מזונות, ואם הוא אצל אמו לא אתן לו". <span class="note-ref">[*]</span></p>
+        </div>
+
+        <div class="halacha-block">
+            <span class="label">טעם וביאור:</span>
+            <p>החלקת מחוקק באר שהאב יכול להתנות את מתן הצדקה בכך שהבן יהיה אצלו כדי שיוכל לחנכו לתורה ולמצוות. כאשר הבן מסרב בלא טענה מוצדקת, פוקע חיוב הצדקה המיוחד של האב כלפיו.</p>
+        </div>
+
+        <!-- נוהג בתי הדין - הרב כהנא -->
+        <div class="kahana-box">
+            <h3 class="text-xl font-bold border-b border-gray-400 mb-4 pb-2">הנהגת בתי הדין כיום עפ"י דרכו של הגר"מ כהנא שליט"א</h3>
+            <div class="text-lg font-serif">
+                <p class="mb-3">
+                    בבתי הדין הרבניים כיום, ובראשם בשיטתו המנומקת של <strong>הגאון הרב מאיר כהנא שליט"א</strong> (אב"ד אשקלון), הגישה היא "איזון משאבים הלכתי" בשילוב תקנת הרבנות הראשית תש"ד.
+                </p>
+                <ul class="list-disc pr-6 space-y-2">
+                    <li><strong>הרחבת חיוב המזונות:</strong> על אף שמעיקר הדין המזונות מעל גיל 6 הם מדין צדקה, תקנת הרבנות הראשית הרחיבה את החיוב המוחלט עד גיל 15 (ויש אומרים 18).</li>
+                    <li><strong>שיטת הרב כהנא בחלוקת הנטל:</strong> הרב כהנא מדגיש כי כאשר שני ההורים משתכרים, יש לבחון את חיוב הצדקה של <strong>שני ההורים</strong>. מאחר שגם האם חייבת במצוות צדקה, אם היא אמידה, יש להטיל עליה חלק מנטל המזונות מדין צדקה, במיוחד במצבים של "משמורת משותפת".</li>
+                    <li><strong>מניעת ניצול:</strong> בתי הדין נוהגים בזהירות רבה בטענת "בן מרדן" כדי שלא להפוך את הילד לכלי משחק במאבק הגירושין, אך במקרים של סרבנות קשר קיצונית ומוכחת, משתמשים בנשק הפחתת המזונות ככלי חינוכי והלכתי.</li>
+                </ul>
             </div>
+        </div>
 
-            {/* ================= מבוא לחזון הספר ================= */}
-            {activeChapter === 'intro' && (
-              <div className="animate-in fade-in duration-500">
-                <div className="text-center">
-                  <h1 className="main-title">ואלה המשפטים</h1>
-                  <div className="sub-title">ביאור שורש הטעמים, עומק הדין והשלכות למעשה</div>
-                </div>
-                
-                <div className="text-body mt-8 md:mt-12">
-                  <span className="drop-cap">י</span>סוד כוונת חיבור זה הוא להיות כלי אומנותו של הדיין המושב על מדין, ושל הטוען המייצג בפניו. הספר נבנה בשיטה מתודולוגית סדורה המפרקת כל סוגיה משפטית לגורמיה: מבירור שורש הטעם, דרך העיון הלמדני ("יורו משפטיך"), ועד לפסיקה המעשית המותאמת לזמננו ("אשר תשים לפניהם").
-                </div>
-
-                <div className="concept-box">
-                  <span className="concept-title">מבנה סימן בספר:</span>
-                  <ul className="list-none pr-0 space-y-4">
-                    <li className="flex items-start gap-3">
-                      <ChevronLeft className="text-[#c49d57] shrink-0 mt-1" size={20} />
-                      <span><strong className="text-[#7a1f1f]">גוף ההלכה ושורש הטעם:</strong> ביאור בהיר בשפה קולחת של עצם הדין והבנת הרציונל העומד בבסיסו.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <ChevronLeft className="text-[#c49d57] shrink-0 mt-1" size={20} />
-                      <span><strong className="text-[#7a1f1f]">יורו משפטיך (עיון):</strong> בירור למדני בסברות הראשונים והאחרונים, ויישוב סתירות בפסיקה.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <ChevronLeft className="text-[#c49d57] shrink-0 mt-1" size={20} />
-                      <span><strong className="text-[#7a1f1f]">השלכות למעשה:</strong> כיצד שורש הטעם משפיע ישירות על מקרי קיצון.</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <ChevronLeft className="text-[#c49d57] shrink-0 mt-1" size={20} />
-                      <span><strong className="text-[#7a1f1f]">אשר תשים לפניהם:</strong> התמודדות בית הדין עם דינא דמלכותא לאור משנת הראב"ד.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            )}
-
-            {/* ================= דוגמה 1: מזונות (אבן העזר) ================= */}
-            {activeChapter === 'mezonot' && (
-              <div className="animate-in fade-in duration-500">
-                <div className="text-center">
-                  <div className="text-[#7a1f1f] font-bold text-sm md:text-lg mb-2 tracking-widest uppercase">חלק א' - משפטי אישות</div>
-                  <h1 className="main-title md:text-[3.5rem]">מזונות ילדים ודין המורד</h1>
-                </div>
-
-                <h2 className="section-title">א. ביאור הדין ושורש הטעמים בחילוקי הגילאים</h2>
-                <div className="text-body">
-                  <span className="drop-cap">ד</span>יני מזונות הילדים בנויים נדבך על גבי נדבך, כאשר בכל שכבת גיל משתנה "שורש הטעם", וממילא משתנות ההשלכות למעשה. 
-                  <br/><br/>
-                  <strong className="text-[#7a1f1f]">עד גיל שש (קטני קטנים):</strong> חיוב זה הוא "חובת הגוף" מוחלטת מתקנת חכמים. טעם הדין הוא שילדים אלו חסרי כל ישע, וחייהם תלויים באב. לפיכך, אין בוחנים את מצבו הכלכלי של האב כלל, ואף עני מרוד כופין אותו לזונם.
-                  <br/><br/>
-                  <strong className="text-[#7a1f1f]">מגיל שש ואילך:</strong> כאן משתנה שורש הדין והופך לחיוב מכוח <strong className="border-b border-[#c49d57]">תורת צדקה</strong> (תקנת אושא). משמעות הדבר היא אדירה למעשה: כיוון שזהו דין צדקה, אנו מתחילים לבחון את <strong className="text-[#7a1f1f]">האמידות</strong>. אם האב עני ואין לו - פטור מלזונם. ואם לילדים יש רכוש עצמאי - האב פטור, שכן אין נותנים צדקה לעשיר.
-                </div>
-
-                <div className="concept-box">
-                  <span className="concept-title">השלכה למעשה בבית הדין:</span>
-                  ההבנה שמעל גיל 6 החיוב הוא מדין צדקה היא הפתח לדיונים המודרניים על חלוקת הנטל בין האב לאם. אם האם אמידה (כפי שמצוי כיום בשוק העבודה), חובת הצדקה חלה גם עליה בהתאם ליכולותיה, וזוהי התשתית ההלכתית להתחשבות בהכנסות האישה בפסיקת מזונות (הלכת 919/15).
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 pt-8 border-t-[3px] border-double border-[#2b1f1a]">
-                  <div>
-                    <h3 className="font-torah font-bold text-xl md:text-2xl text-[#7a1f1f] mb-3">יורו משפטיך: עומק הסברא בפטור בן מורד</h3>
-                    <p className="font-iyun text-[1.1rem] md:text-lg leading-relaxed text-right md:text-justify text-[#2b1f1a]">
-                      הרמב"ם פסק שאם הבן (מעל גיל 6) אינו רוצה לשהות אצל אביו, האב פטור ממזונותיו. ולכאורה קשה: אם החיוב הוא מדין צדקה, וכי משום שעני הוא חצוף יפטר מליתן לו צדקה? 
-                      <br/><br/>
-                      אלא ששורש התקנה (כדברי הרשב"א) נשען על <strong>סמיכות דעתו</strong> של האב, שחפץ מעצמו לפרנס את קרוביו. כאשר הבן מורד באביו, <strong>פקעה האומדנא וסמיכות הדעת</strong>. החיוב לא נגוז כ'עונש', אלא משום שהבסיס לתקנת חכמים חדל מלהתקיים.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-torah font-bold text-xl md:text-2xl text-[#7a1f1f] mb-3">החילוק בדין הבת</h3>
-                    <p className="font-iyun text-[1.1rem] md:text-lg leading-relaxed text-right md:text-justify text-[#2b1f1a]">
-                      לאור יסוד זה, דיוקו של הרמב"ם מופלא: "והבת אצל אמה לעולם, ואפילו לאחר שש". כיוון שמקומה ההלכתי של הבת הוא אצל האם, הרי שאי-הגעתה לאב <strong>אינה מרידה</strong>. לכן 'סמיכות הדעת' לא פקעה, והאב חייב במזונותיה. אך אם תתחצף במישרין (כיבי"א), הרי שפקעה סמיכות הדעת ודינה כבן מורד.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* ================= דוגמה 2: מקח טעות (חושן משפט) ================= */}
-            {activeChapter === 'mekach' && (
-              <div className="animate-in fade-in duration-500">
-                <div className="text-center">
-                  <div className="text-[#7a1f1f] font-bold text-sm md:text-lg mb-2 tracking-widest uppercase">חלק ב' - חושן משפט</div>
-                  <h1 className="main-title md:text-[3.5rem]">דין מקח טעות ופגמים בעסקה</h1>
-                </div>
-
-                <h2 className="section-title">א. ביאור הדין ושורש הטעמים במקח טעות</h2>
-                <div className="text-body">
-                  <span className="drop-cap">כ</span>ל הלוקח מקח ונמצא בו מום שלא ידע עליו, המקח בטל ויכול להחזירו (חו"מ סי' רל"ב). 
-                  <br/><br/>
-                  <strong className="text-[#7a1f1f]">שורש הטעם:</strong> דין מקח טעות אינו 'קנס' על המוכר שמכר דבר פגום, אלא חסרון ב<strong>"גמירות דעתו"</strong> של הקונה. יורדים אנו לאומדנא דמוכח, שאף אדם בר דעת לא הסכים לשלם ממון שלם עבור חפץ פגום. משכך, כיוון שלא הייתה גמירות דעת אמיתית לקניית <i>החפץ כפי שהוא באמת</i> - הרי שמעשה הקניין חל על ריק, והעסקה בטלה מאליה.
-                </div>
-
-                <div className="concept-box">
-                  <span className="concept-title">השלכה למעשה בבתי הדין לממונות:</span>
-                  כפי שביארנו בפסק דין (תיק בוהדנה), כאשר החסרון הוא בגמירות הדעת, יש לבחון את <strong>נוהג השוק (מנהג הסוחרים)</strong>. אם הפגם הוא כזה שסוחרים נוהגים להעלים עין ממנו או לתקנו, המקח קיים. יתרה מזו, אם חתמו על חוזה שבו נכתב שהקונה בדק את הנכס וקונה אותו "As Is" (כפי שהוא), יש לבחון האם ויתור זה חל גם על מום נסתר.
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 pt-8 border-t-[3px] border-double border-[#2b1f1a]">
-                  <div>
-                    <h3 className="font-torah font-bold text-xl md:text-2xl text-[#7a1f1f] mb-3">יורו משפטיך: מום בגוף המקח</h3>
-                    <p className="font-iyun text-[1.1rem] md:text-lg leading-relaxed text-right md:text-justify text-[#2b1f1a]">
-                      יש לחקור האם כל פגם מבטל את המקח. נחלקו הפוסקים במכר דירה ונמצא שיש לשכן זכות מעבר בחצר, או רועש ממפעל סמוך. שורש הדיון: האם המום הוא <strong>בגוף החפץ הקנוי</strong>, או שזהו גורם <strong>חיצוני</strong> המפריע לשימוש? ככל שהמום בגוף המקח, ביטולו פשוט.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="font-torah font-bold text-xl md:text-2xl text-[#7a1f1f] mb-3">הלכה למעשה: מום הניתן לתיקון</h3>
-                    <p className="font-iyun text-[1.1rem] md:text-lg leading-relaxed text-right md:text-justify text-[#2b1f1a]">
-                      פסק הרמ"א שאם המום ניתן לתיקון, כגון בית שנמכר וחסרה בו דלת, יכול המוכר לומר "אתקן את הדלת והמקח יתקיים". והטעם שוב חוזר לשורש: לא פקעה גמירות דעתו של הקונה מלקנות בית, אלא מלקנות בית חסר דלת. משהשלים המוכר את החסר - חזרה העסקה לשלמותה המקורית.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* ================= דוגמה 3: אשר תשים לפניהם ================= */}
-            {activeChapter === 'partC' && (
-              <div className="animate-in fade-in duration-500">
-                <div className="text-center">
-                  <div className="text-[#7a1f1f] font-bold text-sm md:text-lg mb-2 tracking-widest uppercase">חלק ג' - הלכה מול דינא דמלכותא</div>
-                  <h1 className="main-title md:text-[3.5rem]">אשר תשים לפניהם</h1>
-                </div>
-
-                <div className="part-c-box mt-10 md:mt-16">
-                  <div className="part-c-title">התמודדות עם חוקי הכנסת ודינא דמלכותא</div>
-                  <div className="text-body mt-6">
-                    היבט קריטי בעבודת בתי הדין האזוריים בימינו הוא ההשקה (ולעיתים ההתנגשות) שבין דין התורה הטהור לבין חוקי המדינה, תקנות הציבור, ופסיקות בתי המשפט האזרחיים.
-                    <br/><br/>
-                    על פי משנתו ודרכו של יו"ר נציגות הדיינים, <strong>הראב"ד הגר"מ כהנא שליט"א</strong>, דיין מודרני מחויב להכיר את מציאות החיים והחוק, ולדעת כיצד הכלים ההלכתיים (כגון 'דינא דמלכותא דינא', 'מנהג המדינה' ו'סיטומתא') מאפשרים קליטה ויישום של תקנות חוקיות בתוך המסגרת ההלכתית.
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-10">
-                    <div className="bg-white p-6 shadow-sm border border-[#dcd3c1]">
-                      <h3 className="font-torah font-bold text-xl text-[#7a1f1f] mb-3 flex items-center gap-2">
-                        <FileText size={18}/> דיני ממונות ורישום מקרקעין
-                      </h3>
-                      <p className="font-modern text-[#4a3e35] leading-relaxed">
-                        כפי שראינו בחושן משפט, הלכה היא שקניין סודר או כסף קונה. אך כיום חוק המדינה דורש <strong>רישום בטאבו</strong>. בבתי הדין פוסקים כי עקב החוק, נוצר "מנהג סוחרים" שאין גמירות דעת לקניית נדל"ן ללא רישום בטאבו. לכן, החוק מעצב למעשה את המציאות עליה חלה ההלכה.
-                      </p>
-                    </div>
-
-                    <div className="bg-white p-6 shadow-sm border border-[#dcd3c1]">
-                      <h3 className="font-torah font-bold text-xl text-[#7a1f1f] mb-3 flex items-center gap-2">
-                        <Bookmark size={18}/> אישות, מזונות ופסיקות אזרחיות
-                      </h3>
-                      <p className="font-modern text-[#4a3e35] leading-relaxed">
-                        במקרים של חלוקת רכוש ומזונות, בית הדין פועל תחת "עינו הפקוחה" של החוק האזרחי. הראב"ד מתווה דרך של שימוש במונחים הלכתיים כגון "פשרה הקרובה לדין" או "אומדנא דדעת בני הזוג בנישואין כיום" כדי להחיל פסיקה צודקת.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-          </div>
-        </main>
-      </div>
+        <!-- מדור הביאורים -->
+        <div class="biurim-section">
+            <div class="biurim-title">ביאורים וציונים</div>
+            <div class="biur-text">
+                <p>
+                    <span class="dropcap">ל</span>פי פירוש החלקת מחוקק, נשאלת שאלת הגאון הרב דיכובסקי שליט"א: וכי אם עני הוא "חוצפן", האם פוקע ממנו דין צדקה? הרי מצוות צדקה חלה גם כלפי עניים שאינם הגונים. 
+                </p>
+                <p>
+                    אלא נראה לבאר בביאור נפלא, שחיוב מזונות הילדים מדין צדקה יסודו ב"אומדנא" של חכמים שירדו לסוף דעתו של האב. חכמים הבינו שנוח לו לאדם לתת את צדקתו לבניו קודם לאחרים. אולם, כאשר הבן מורד באביו ומסרב לשהות במחיצתו, פוקעת אותה "סמיכות דעת" של האב. אין אדם רוצה להעניק "צדקה מרצון" למי שמבזה אותו או מורד בו.
+                </p>
+                <p>
+                    וזהו החילוק בין בן לבת: בבת פסק השו"ע שהיא אצל אמה לעולם, ולכן גם אם אינה אצל אביה אינה נקראת מורדת, שהרי כך הוא הדין, ולכן סמיכות דעתו של האב קיימת וחייב לזונה. אך אם מתחצפת במישרין (כפי שדן ביביע אומר ח"ח אה"ע כב), גם בבת פטרינן לאב, שאין לך פגיעה בסמיכות דעת גדולה מזו.
+                </p>
+            </div>
+        </div>
+        
     </div>
-  );
-};
 
-export default App;
+    <script>
+        // הוספת אינטראקציה פשוטה להדפסה
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                console.log('מכין להדפסה תורנית...');
+            }
+        });
+    </script>
+</body>
+</html>
