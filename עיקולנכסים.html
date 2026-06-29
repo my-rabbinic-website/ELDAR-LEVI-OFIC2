@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>איזון אינטרסים בעיקול נכסים | הרב אלדר לוי</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- שילוב פונטים משופר: חיבו לכותרות מודרניות, פרנק ריל לטקסט תורני, אסיסטנט לממשק -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#0a0a0a',
+                        paper: '#111111'
+                    },
+                    fontFamily: { 
+                        serif: ['Frank Ruhl Libre', 'serif'],
+                        sans: ['Assistant', 'sans-serif'],
+                        heading: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* משתני מערכת לקריאה נוחה */
+        :root {
+            --bg-color: #080808;
+            --text-color: #e2e2e2;
+            --heading-color: #ffffff;
+            --gold-accent: #D4AF37;
+            --gold-subtle: rgba(212, 175, 55, 0.12);
+            --surface-color: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --base-font-size: 1.4rem;
+        }
+
+        /* מצב "קלף" / תורני בהיר */
+        body.theme-light {
+            --bg-color: #fbf9f4;
+            --text-color: #24221f;
+            --heading-color: #111111;
+            --gold-accent: #a37c17;
+            --gold-subtle: rgba(163, 124, 23, 0.1);
+            --surface-color: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color);
+            font-family: 'Assistant', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* טקסטורת רקע עדינה */
+        .paper-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04; pointer-events: none; z-index: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
+        body.theme-light .paper-grain { opacity: 0.5; }
+
+        /* טיפוגרפיה מרכזית של הפסיקה */
+        .article-body {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: var(--base-font-size);
+            line-height: 1.95; /* מרווח אופטימלי לעין */
+            text-align: justify;
+            color: var(--text-color);
+            transition: font-size 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-body p { margin-bottom: 2.2rem; }
+        
+        .article-body h2 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 700;
+            font-size: calc(var(--base-font-size) + 0.6rem);
+            color: var(--gold-accent);
+            margin-top: 4.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            scroll-margin-top: 120px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold-subtle), transparent);
+        }
+
+        /* עיטורים ותיבות */
+        .source-note {
+            float: left; width: 38%; margin-left: -18%; margin-right: 6%; margin-bottom: 20px;
+            font-family: 'Assistant', sans-serif; font-size: 0.95rem; line-height: 1.6;
+            color: var(--text-color); opacity: 0.85;
+            border-right: 3px solid var(--gold-accent); padding-right: 18px;
+            background: var(--surface-color); padding: 15px; border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 1400px) {
+            .source-note { float: none; width: 100%; margin: 30px 0; border-right: 4px solid var(--gold-accent); }
+        }
+
+        .drop-cap::first-letter {
+            font-size: 5rem; font-weight: 900; color: var(--gold-accent);
+            float: right; line-height: 0.85; margin-left: 15px; margin-top: 8px;
+            font-family: 'Frank Ruhl Libre', serif; text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+        }
+
+        /* חלונית כלים צפה */
+        .reading-controls {
+            position: fixed; left: 30px; top: 50%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 8px;
+            background: var(--surface-color); backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); padding: 8px; border-radius: 30px;
+            z-index: 90; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .control-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-color); font-weight: 600; transition: all 0.2s; font-size: 1rem;
+        }
+        .control-btn:hover { background: var(--gold-subtle); color: var(--gold-accent); }
+
+        @media (max-width: 1400px) {
+            .reading-controls { top: auto; bottom: 100px; left: 50%; transform: translateX(-50%); flex-direction: row; border-radius: 50px; padding: 6px 12px; }
+        }
+
+        /* הדפסה וייצוא PDF רשמי */
+        .print-only { display: none; }
+
+        @media print {
+            @page { size: A4; margin: 25mm 20mm; }
+            
+            body { 
+                background: white !important; 
+                color: black !important; 
+                font-family: 'Frank Ruhl Libre', serif !important; 
+            }
+            
+            .paper-grain, .no-print, header, footer, .interaction-bar, .visual-accents, .reading-controls, .toc-sidebar, #toast { 
+                display: none !important; 
+            }
+            
+            .print-only { display: block !important; }
+            
+            /* Letterhead (מכתבייה רשמית שמופיעה רק בהדפסה) */
+            .print-letterhead {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 2px solid black;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Assistant', sans-serif !important;
+            }
+            
+            .print-letterhead h3 { font-size: 16pt; font-weight: 800; margin: 0; color: black !important; }
+            .print-letterhead p { font-size: 11pt; margin: 0; color: #333 !important; }
+            
+            .reading-canvas { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            
+            /* עיצוב גופנים ל-PDF */
+            .article-body { font-size: 12.5pt !important; line-height: 1.7 !important; color: black !important; }
+            h1 { font-family: 'Frank Ruhl Libre', serif !important; font-size: 22pt !important; color: black !important; text-align: center; font-weight: bold; margin: 20px 0 !important; }
+            h2 { font-family: 'Assistant', sans-serif !important; font-size: 15pt !important; color: black !important; border-bottom: 1px solid #000 !important; padding-bottom: 4px; margin-top: 25pt !important; page-break-after: avoid; }
+            p { page-break-inside: avoid; orphans: 3; widows: 3; color: black !important; margin-bottom: 12pt !important; text-align: justify !important; }
+            
+            /* עיצוב המקורות להדפסה */
+            .source-note { 
+                float: none; width: 100%; margin: 15px 0; 
+                border: 1px solid #888 !important; border-right: 4px solid black !important;
+                padding: 12px !important; font-size: 10.5pt !important; 
+                background: #fafafa !important; page-break-inside: avoid; 
+                font-family: 'Assistant', sans-serif !important;
+            }
+            
+            /* קופסת ההחלטה - מסגרת כפולה רשמית */
+            .verdict-box { 
+                border: 4px double black !important; 
+                padding: 20px !important; 
+                margin-top: 30px !important; 
+                border-radius: 0 !important; 
+                background: transparent !important; 
+                page-break-inside: avoid; 
+            }
+            .verdict-box h3 { color: black !important; border: none !important; font-size: 14pt !important; margin-bottom: 15px !important; text-decoration: underline; }
+            
+            .text-gold, .siman-badge { color: black !important; border-color: black !important; background: transparent !important; }
+            .signature-img { filter: none !important; opacity: 1 !important; height: 70px !important; margin-top: 30px !important; }
+            .drop-cap::first-letter { color: black !important; text-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#D4AF37]/30">
+
+    <div class="paper-grain"></div>
+
+    <!-- Letterhead for PDF Export ONLY -->
+    <div class="print-only print-letterhead">
+        <div>
+            <h3>הרב אלדר לוי</h3>
+            <p>טוען רבני ודיין מוסמך ידין-ידין<br>מומחה לדיני ממונות, משפחה וירושה</p>
+        </div>
+        <div style="text-align: left;">
+            <p><strong>בס"ד</strong></p>
+            <p>תאריך: כ"א אדר תשפ"ו<br>מאמר מספר: 129</p>
+        </div>
+    </div>
+
+    <!-- Top Header (Screen) -->
+    <header class="no-print fixed top-0 w-full z-50 py-4 px-6 md:px-8 flex justify-between items-center bg-[var(--bg-color)]/95 backdrop-blur-md transition-all duration-500 border-b border-[var(--border-color)]">
+        <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית" class="flex items-center gap-3 group">
+            <div class="w-9 h-9 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--gold-accent)] group-hover:bg-[var(--gold-subtle)] transition-all">
+                <i class="fas fa-chevron-right text-xs"></i>
+            </div>
+            <span class="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--text-color)] opacity-70">חזרה למאגר</span>
+        </a>
+        <div class="text-xs font-bold text-[var(--text-color)] opacity-50 tracking-widest uppercase">בס"ד</div>
+    </header>
+
+    <!-- Personal Reading Controls (Floating) -->
+    <div class="reading-controls no-print" title="כלים לנוחות קריאה">
+        <button onclick="changeFontSize(0.1)" class="control-btn" title="הגדל טקסט">A+</button>
+        <button onclick="changeFontSize(-0.1)" class="control-btn" title="הקטן טקסט">A-</button>
+        <div class="w-full h-px bg-[var(--border-color)] my-1 hidden lg:block"></div>
+        <div class="w-px h-full bg-[var(--border-color)] mx-1 block lg:hidden"></div>
+        <button onclick="toggleTheme()" class="control-btn" title="מצב קלף / מצב לילה">
+            <i class="fas fa-book-open"></i>
+        </button>
+    </div>
+
+    <main class="relative z-10 pt-28 pb-40 px-6">
+        <div class="flex max-w-[1000px] mx-auto relative justify-center">
+            
+            <!-- Main Reading Canvas -->
+            <article class="reading-canvas max-w-[760px] w-full">
+                
+                <!-- Article Header -->
+                <div class="mb-14 text-center no-print">
+                    <div class="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[var(--gold-accent)] uppercase mb-6 bg-[var(--gold-subtle)] px-4 py-1.5 rounded-full border border-[var(--gold-accent)]">
+                        <span>חושן משפט</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--gold-accent)]"></span>
+                        <span>סעדים זמניים ועיקולים</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[var(--heading-color)] leading-[1.1] mb-8">
+                        איזון אינטרסים בעיקול נכסים: דין תעדוף אופן העיקול בין מניעת הפסד למניעת טרחה
+                    </h1>
+                    
+                    <div class="flex flex-wrap items-center justify-center gap-6 py-6 border-y border-[var(--border-color)] mt-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-feather-alt text-[var(--gold-accent)]"></i>
+                            <p class="text-sm font-bold text-[var(--heading-color)] tracking-wide">הרב אלדר לוי - דיין מוסמך</p>
+                        </div>
+                        <div class="w-1 h-1 rounded-full bg-[var(--border-color)]"></div>
+                        <div class="text-[var(--text-color)] opacity-60 text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> 10 דקות עיון
+                        </div>
+                    </div>
+                </div>
+
+                <!-- הכותרת להדפסה בלבד -->
+                <h1 class="print-only">איזון אינטרסים בעיקול נכסים: דין תעדוף בין מניעת הפסד למניעת טרחה</h1>
+
+                <!-- Article Content -->
+                <div class="article-body">
+                    
+                    <p class="drop-cap text-[var(--heading-color)] font-medium mb-12">
+                        כחלק מהליך פירוק השותפות וחלוקת הרכוש הנוהג בין בני זוג בהליכי גירושין, כאשר ישנה דירה בבעלות הזוג, מוטל על הצדדים לפרק את השותפות שביניהם בדירה – הן על ידי רכישת צד אחד המעוניין בכך, והן על ידי מכירה לצד שלישי. 
+                    </p>
+
+                    <h2>רקע תמציתי של המקרה</h2>
+                    <aside class="source-note">
+                        <strong>שאלת המפתח:</strong><br>
+                        האם מוטל על ביה"ד להיזדקק לבקשת האישה לתיעדוף אופן עיקול נכסי הבעל (כסף נזיל מול שעבוד נכס מקרקעין עתידי), מכוח טענת "מניעת טרחה", מעבר לעצם ההיענות לבקשת העיקול גופא?
+                    </aside>
+                    <p>
+                        במקרה דנן, האישה בחרה לרכוש את הדירה, ועליה לשלם לאיש את תמורת חלקו בה. ברם, כיוון שטרם תמו ההליכים הקשורים לחלוקת הרכוש ולהתחייבויות ההדדיות של הצדדים, וכיוון שהאישה חוששת שכאשר יגיע זמנו של האיש לשלם את חובותיו לא יהיה מניין לגבות ממנו (ומחמת טעמים נוספים), ביקשה האישה לעקל את הסכום המגיע לו עבור מכירת חלקו בדירה. לבקשתה זו נעתר בית הדין, והורה לעקל סכום מסוים מתוך הסך הכולל שעל האישה לשלם לאיש. 
+                    </p>
+                    <p>
+                        לאחר החלטה זו, טען האיש כי הוא זקוק לסכום הנ"ל לצורך רכישת דירה חדשה בבעלותו, שכן אינו רוצה להוסיף ולגור בדירה שכורה, ורק באמצעות הכסף המגיע לו מחלקו בדירה הנוכחית יעלה בידו לרכוש דירה אחרת. לדבריו, עיקול הסכום האמור ימנע ממנו את רכישת הדירה.
+                    </p>
+                    <p>
+                        בית הדין הציע פתרון המבקש לענות על דרישות שני הצדדים: סכום העיקול המבוקש על ידי האישה אכן יעוקל, אך האיש עדיין יוכל לעשות בו שימוש לרכישת הדירה החדשה, וזאת על ידי העתקת הרובץ והטלת העיקול על הדירה החדשה שירכוש. 
+                    </p>
+                    <p>
+                        אולם, האישה מתנגדת למתווה זה של בית הדין. טענתה היא כי אין ברצונה לטרוח בבוא העת בגביית החוב באמצעות הליכי מכירת דירה; רצונה הוא שאם וכאשר יתברר בסופם של ההליכים כי אין מניין לגבות את חובות האיש, היא תוכל לגבותם באופן הנוח ביותר – מחשבון בנק ייעודי שבו הכסף מעוקל במצב 'נזיל' וזמין לגבייה פשוטה.
+                    </p>
+
+                    <div class="my-14 py-10 px-10 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] relative">
+                        <i class="fas fa-quote-left absolute top-4 left-6 text-[var(--gold-accent)] opacity-20 text-4xl no-print"></i>
+                        <p class="text-[calc(var(--base-font-size)-0.1rem)] font-serif text-[var(--heading-color)] leading-relaxed italic relative z-10 mb-0 font-medium font-serif">
+                            "הדברים להלן נכתבו בקיצור נמרץ תוך מיקוד בתשובה עניינית לשאלה דנן. לפיכך, דינים מסתעפים אשר אינם נפקא מינה לדינא במקרה דנן, לא הובאו בתשובה."
+                        </p>
+                    </div>
+
+                    <h2>יסוד דין עיקול נכסים – עיכוב תשלום מחמת חשש</h2>
+                    <p>
+                        שורש הדין בעיקוב ממון מחמת חשש הפסד עתידי מקורו בגמרא במסכת בבא קמא (דף ח:-ט.):
+                    </p>
+                    <div class="my-6 py-4 px-6 bg-[var(--gold-subtle)] border-r-2 border-[var(--gold-accent)] font-serif italic text-lg text-[var(--heading-color)]">
+                        "אמר אביי: ראובן שמכר שדה לשמעון שלא באחריות, ויצאו עליה עסיקין (מערערים), עד שלא החזיק בה יכול לחזור בו, משהחזיק בה אין יכול לחזור בו. מאי טעמא? דאמר ליה: חייתא דקטרי סברת וקבלת. ומאימת הויא חזקה? מכי דייש אמצרי. ודווקא שלא באחריות, אבל באחריות לא. ואיכא דאמרי: אפילו באחריות נמי, דאמר ליה: אחוי טירפך ואשלם לך".
+                    </div>
+                    <p>
+                        ביאור הדברים: אדם שקנה קרקע ועדיין לא החזיק בה באופן שעל פי דין אין אפשרות לחזור מן המכירה, ויצאו מערערים על קרקע זו בטענה שהיא שייכת להם וכי המוכר גזלה מהם. כיוון שהקונה חושש שמא הצדק עמם והוא יפסיד את מעותיו, דנה הגמרא באילו תנאים הוא רשאי לחזור בו. הגמרא מביאה מחלוקת האם זכות זו קיימת רק כאשר המכר נעשה באחריות מצד המוכר, או שמא אף כשהמכר נעשה שלא באחריות רשאי הקונה לחזור בו.
+                    </p>
+                    <p>
+                        התוספות (שם ד"ה "משהחזיק בה") ביארו שהגמרא עוסקת במקרה שבו הקונה עדיין לא שילם את המעות. כלומר, הקונה החושש לאבד הן את השדה והן את מעותיו, רשאי לחזור בו מהליך הרכישה בעקבות הערעור שיצא על הקרקע. וזאת באופן בו הוא עדיין לא שילם למוכר את התשלום עבור העיסקה.
+                    </p>
+
+                    <h2>שיטת הרא"ש ופסקי ההלכה</h2>
+                    <aside class="source-note">
+                        <strong>הרחבה במקורות:</strong><br>
+                        ראו שו"ע חושן משפט סימן ע"ג סעיפים י'-יא', המבסס להלכה את היכולת לעכב מעות הנתבע בשעת הצורך.
+                    </aside>
+                    <p>
+                        על פי יסוד זה של דברי הגמרא, הגדיר הרא"ש בתשובותיו (כלל ה') שני סוגים של השהיית נכסי הנתבע בעקבות חששות גבייה עתידיים. בין אם החשש עולה מכוח טענת התובע ובין אם הוא עולה מאומדנת הדיין עצמו:
+                    </p>
+                    <p>
+                        <strong>א.</strong> עיכוב תשלום עתידי למוכר (השארת כספי הרכישה אצל הלוקח).<br>
+                        <strong>ב.</strong> עיכוב / עיקול של נכסי הנתבע הקיימים כבר כעת.
+                    </p>
+                    <p>
+                        להלן לשון הרא"ש בביאור סוגיה זו:
+                    </p>
+                    <div class="my-6 py-4 px-6 bg-[var(--gold-subtle)] border-r-2 border-[var(--gold-accent)] font-serif italic text-lg text-[var(--heading-color)]">
+                        "ונראה דמיירי שלא נתברר הערעור עדיין, אלא בא אדם וערער ואמר שדה זו גזלה ראובן ממני ואני רוצה להביא עדים, או יש לי חוב על ראובן ואני רוצה להביא השטר. ומשום דברים בעלמא לא יבטל שמעון כוחו של ראובן, אבל אם ראו ב"ד אמתלא בדברי המערער, כגון וכו'... אבל אי לא אמיד הוא ואין לו קרקע, כיון שיש אמתלא בערעור, אין לו לדיין להוציא המעות משמעון עד שיהא בטוח שלא יפסיד מעותיו אם יוציא המערער הקרקע מתחת ידו. ועל זה וכל כיוצא בזה נאמר: אין לו לדיין אלא מה שעיניו רואות, הכל לפי העניין. וכן מי שבא לפני ב"ד ואומר: יש לי תביעה על פלוני, ומצאתי לנכסיו במקום ידוע, ואני ירא שאם יבואו לידו יבריחם ולא אמצא מקום לגבות ממנו חובי, ומבקש שיעכבו ב"ד הנכסים עד שתתברר תביעתו".
+                    </div>
+                    <p>
+                        בתשובה נוספת (כלל צז, סימן ד) ציין הרא"ש שכן היא גם דעת הגאונים והרי"ף. וכן הכריע להלכה הב"י (חו''מ סימן עג', ד"ה "מי שיש לו שטר"):
+                    </p>
+                    <p>
+                        "קדוש הוא הדין, וכיוון דהרי"ף והרא"ש מסכימים לדעה אחת ומסתבר טעמייהו, הכי נקטינן. וכבר פסקתי כן בתשובה (אבקת רוכל סימן קסב) הלכה למעשה והסכימו עמי חברי".
+                    </p>
+                    <p>
+                        וכדברים הללו נפסק להלכה בשולחן ערוך (שם, סעיפים י'–יא'). ועיין עוד ברמ"א (שם, סעיף י) בשם מהרא"י (סימן סד) שכתב דהוא הדין בכל מקום שנראה לבית הדין לעכב מעות הנתבע, רשאי לעשות כן, ע"כ. כיון שיתר פרטי דינים אלו אינם נוגעים ישירות לעיקר השאלה בנידון דידן, הרי שאכמ"ל.
+                    </p>
+                    <p>
+                        נמצאנו למדים עד כה, כי במקרה שבו הקונה טרם העביר למוכר את כספי התמורה, ובינתיים יצאו מערערים על המקח בטענה שהחפץ הנמכר נגזל מידם ואינו שייך למוכר ומחמת כן חושש הקונה לשלם למוכר, מתוך דאגה שאם יימצא שהמערערים צודקים בטענתם, הוא ייאלץ להשיב להם את החפץ, ומאידך גיסא שמא לא ימצא ממה לגבות את כספו בחזרה מן המוכר לאחר ביטול המכירה. במצב כזה, על בית הדין לשקול אם יש מקום לעכב את תשלום דמי המקח עד לבירור העניין.
+                    </p>
+
+                    <h2>עיקר דין עיקול נכסים – עשיית הצדק ואיזון בין הצדדים</h2>
+                    <p>
+                        עיקר יסודו של דין עיקול נכסים נתקן על מנת לעשות צדק ולהציל עשוק מיד עושקו, וכדברי הרמב"ם בהלכות מלווה ולווה (פרק כ', הלכה ד'):
+                    </p>
+                    <p class="font-bold text-[var(--gold-accent)] italic">
+                        "כללו של דבר: כל שיעשה הדיין מדברים אלו וכוונתו לרדוף הצדק בלבד שנצטוינו לרדפו, ולא לעבור הדין על אחד מבעלי דינין – הרי זה מורשה לעשות ומקבל שכר".
+                    </p>
+                    <p>
+                        מכאן, שאם עיכוב התשלום שנועד להסיר את חששו של התובע יגרום לנתבע נזק שאינו מידתי ביחס לחשש העתידי של התובע (כפי שנראה לעיני הדיין), הרי שבכהאי גוונא אין לדיין לעכב את התשלום.
+                    </p>
+                    <p>
+                        וכן עיקרון זה מבואר להדיא בתשובת רבינו ירוחם (נתיב א', חלק ח') וז"ל:
+                    </p>
+                    <div class="my-6 py-4 px-6 bg-[var(--gold-subtle)] border-r-2 border-[var(--gold-accent)] font-serif italic text-lg text-[var(--heading-color)]">
+                        "ואלו הדברים תלוין בראות עיני הדיינים; אם יש בדבר הפסד לתובע אם לא יעכבו ויוכל להפסיד חובו כשיבוא זמנו, או אם יש פסידא לנתבע אם יתפסו ממונו עד שיגיע זמן השטר. כל זה יש לדקדק לדיין הדן אלו העניינים, והכל לפי העניין להציל העשוק".
+                    </div>
+                    <p>
+                        מבואר אפוא, שעיקר תקנה זו של עיקול נכסים מסורה להכרעת הדיין ולפי ראות עיניו, תוך שקלול קפדני בין מניעת הפסד לתובע לבין גרימת נזק לנתבע – בין אם על ידי הטלת העיקול ובין אם על ידי הימנעות ממנו. יסוד הדין נשען על שקילת מאזן הנוחות, הרווח וההפסד של שני הצדדים, כדי להגיע למסקנה המאזנת והנכונה ביותר, כאשר טובת שני בעלי הדין ניצבת לנגד עיני הדיין.
+                    </p>
+
+                    <h2>סיכום ומסקנה לדינא</h2>
+                    <p>
+                        על פי יסודות אלו נמצא בנד"ד: כיוון שבית הדין מצא לנכון לקבל את אמתלאת האישה ולעכב את התשלום לאיש מחמת החשש (אף שייתכן שיהיה לבסוף ממה לגבות), הרי שבכך כבר הוסר חשש הנזק העתידי שעלול היה להיגרם לה.
+                    </p>
+                    <p>
+                        משהוסר החשש היסודי, אין עוד מקום להיזקק לבקשה משנית של האישה, שכל עיקרה נועד למנוע ממנה את "טרחת הגבייה" העתידית (במקרה שלא יימצאו נכסים אחרים לאיש). דברים אלו שאין להיזדקק לבקשתה זו הינם נכונים באופן עקרוני, אף מבלי לדון בנזק שייגרם לנתבע אם הכסף יישאר מעוקל בחשבון בנק ניטרלי.
+                    </p>
+                    <p>
+                        לפיכך קל וחומר הוא במקרה דנן, אשר הוכח כי עיקול הכסף בחשבון נזיל עלול למנוע מהאיש לחלוטין את האפשרות לרכוש דירה בבעלותו. ואף שבית הדין החליט שיש מקום להיעתר לעצם הבקשה לעיקול, מכל מקום מכך שמצא בית הדין פתרון המאזן נכונה בין זכויות שני הצדדים ומביא לעשיית הצדק (מתוקף הסמכות הרחבה שניתנה לו בתקנה זו), הרי שדי בכך ואין לך בו אלא חידושו.
+                    </p>
+
+                    <!-- Ruling Box -->
+                    <div class="verdict-box bg-[var(--surface-color)] border border-[var(--border-color)] rounded-2xl p-8 md:p-12 mt-16">
+                        <div class="flex items-center gap-4 mb-8 no-print">
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                            <h3 class="text-[var(--gold-accent)] font-bold uppercase tracking-[0.2em] text-lg text-center m-0">החלטה למעשה</h3>
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                        </div>
+                        <h3 class="print-only text-center font-bold text-xl mb-6 underline">פסק הדין והחלטה למעשה</h3>
+                        
+                        <div class="space-y-8">
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-1">א.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium">
+                                    אין לקבל את בקשת האישה להטיל את העיקול למצב 'נזיל' בחשבון בנק, שכן מטרתה מניעת טרחה בלבד מול פגיעה קשה וודאית במדורו של האיש.
+                                </p>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-1">ב.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium">
+                                    יש לקבל את בקשת האיש ולהורות כי סכום העיקול יועתק וירבוץ כבטוחה על הדירה החדשה לכשירכשה.
+                                </p>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-1">ג.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium">
+                                    בדרך זו לא תסוכל יכולתו של האיש לרכוש קורת גג משלו, ויחד עם זאת, תוכל האישה להיות בטוחה בקבלת כספה הראוי לה בבוא העת.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Signature -->
+                    <div class="mt-20 pt-16 border-t border-[var(--border-color)] flex flex-col items-center text-center page-break-avoid">
+                        <div class="w-20 h-20 mb-6 rounded-full border border-[var(--gold-accent)] flex items-center justify-center relative opacity-80 no-print">
+                            <i class="fas fa-stamp text-[var(--gold-accent)] opacity-30 text-4xl absolute"></i>
+                            <span class="text-[8px] font-bold text-[var(--gold-accent)] uppercase tracking-tighter relative z-10 leading-none">נאמן למקור<br>ביה"ד</span>
+                        </div>
+                        <div class="text-sm uppercase tracking-[0.2em] text-[var(--text-color)] opacity-60 mb-2 font-bold">נכתב ונחתם פה עיה"ק נתיבות ת"ו</div>
+                        <div class="font-serif text-3xl md:text-4xl text-[var(--heading-color)] font-bold mb-2">הרב אלדר לוי</div>
+                        <p class="text-base text-[var(--gold-accent)] font-bold tracking-widest uppercase">דיין וטוען רבני מוסמך</p>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+        <!-- Floating Bottom Action Bar -->
+        <div class="interaction-bar fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1 sm:gap-2 bg-black/90 backdrop-blur-xl border border-white/10 px-4 sm:px-6 py-2.5 rounded-full z-50 shadow-[0_10px_30px_rgba(0,0,0,0.6)] transition-all duration-500 fade-on-scroll no-print w-max text-white">
+            <button onclick="downloadPDF()" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-300 hover:text-[#D4AF37] transition-colors px-3 py-2 rounded-full hover:bg-white/5" title="שמור והדפס פסק דין">
+                <i class="fas fa-file-pdf text-base"></i>
+                <span class="hidden sm:inline">PDF</span>
+            </button>
+            <button onclick="shareArticle()" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-300 hover:text-[#D4AF37] transition-colors px-3 py-2 rounded-full hover:bg-white/5" title="שתף">
+                <i class="fas fa-share-nodes text-base"></i>
+                <span class="hidden sm:inline">שיתוף</span>
+            </button>
+            <div class="w-px h-5 bg-white/20 mx-1 sm:mx-2"></div>
+            <a href="https://wa.me/972528219928" class="bg-[#D4AF37] text-black px-6 sm:px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                לייעוץ הלכתי
+            </a>
+        </div>
+    </main>
+
+    <!-- Visual Accents (Hidden in Light Mode) -->
+    <div class="visual-accents fixed top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div class="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[var(--gold-accent)] blur-[150px] rounded-full opacity-10"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="no-print">הודעה</div>
+
+    <script>
+        // --- Reading Controls Logic ---
+        let currentFontSize = 1.4; // גודל התחלתי ב-rem
+        
+        function changeFontSize(change) {
+            currentFontSize += change;
+            if(currentFontSize < 1.1) currentFontSize = 1.1;
+            if(currentFontSize > 2.0) currentFontSize = 2.0;
+            document.documentElement.style.setProperty('--base-font-size', `${currentFontSize}rem`);
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+            const isLight = document.body.classList.contains('theme-light');
+            showToast(isLight ? "מצב קלף הופעל לקריאה ממושכת" : "מצב לילה הופעל");
+        }
+
+        // --- Focus Mode & Scroll Logic ---
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            
+            // עמעום הכפתורים בזמן גלילה
+            if (winScroll > 100) {
+                document.querySelector('.interaction-bar').style.opacity = '0.3';
+                document.querySelector('.reading-controls').style.opacity = '0.3';
+            } else {
+                document.querySelector('.interaction-bar').style.opacity = '1';
+                document.querySelector('.reading-controls').style.opacity = '1';
+            }
+
+            document.querySelector('.interaction-bar').addEventListener('mouseenter', function() { this.style.opacity = '1'; });
+            document.querySelector('.reading-controls').addEventListener('mouseenter', function() { this.style.opacity = '1'; });
+        });
+
+        // --- Toast Notification ---
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.className = "show no-print";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 4000);
+        }
+
+        // --- Download PDF Logic (Super Clean) ---
+        function downloadPDF() {
+            // החלפה זמנית למצב בהיר כדי להבטיח שהדפדפן מתמודד היטב עם ההדפסה
+            const wasDark = !document.body.classList.contains('theme-light');
+            document.body.classList.add('theme-light'); 
+            
+            showToast("מכין מסמך רשמי להורדה. בחר 'שמירה כ-PDF' (Save as PDF)");
+            
+            setTimeout(() => {
+                window.print();
+                // החזרת המצב הקודם אחרי ההדפסה
+                if(wasDark) document.body.classList.remove('theme-light');
+            }, 1200);
+        }
+
+        // --- Share API Logic ---
+        async function shareArticle() {
+            const shareData = {
+                title: 'איזון אינטרסים בעיקול נכסים | הרב אלדר לוי',
+                text: 'קראו את פסק הדין המלא מאת הרב אלדר לוי - דיין מוסמך וטוען רבני.',
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    await navigator.clipboard.writeText(window.location.href);
+                    showToast('הקישור הועתק בהצלחה לשיתוף!');
+                }
+            } catch (err) {
+                console.error('Error sharing:', err);
+            }
+        }
+    </script>
+</body>
+</html>
