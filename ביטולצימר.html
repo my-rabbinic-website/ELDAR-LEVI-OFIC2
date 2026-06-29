@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פסק דין: ביטול עסקת שכירות צימר | הרב אלדר לוי</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#0a0a0a',
+                        paper: '#111111'
+                    },
+                    fontFamily: { 
+                        serif: ['Frank Ruhl Libre', 'serif'],
+                        sans: ['Assistant', 'sans-serif'],
+                        heading: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #080808;
+            --text-color: #e2e2e2;
+            --heading-color: #ffffff;
+            --gold-accent: #D4AF37;
+            --gold-subtle: rgba(212, 175, 55, 0.12);
+            --surface-color: rgba(25, 25, 25, 0.6);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --base-font-size: 1.4rem;
+        }
+
+        body.theme-light {
+            --bg-color: #fbf9f4;
+            --text-color: #24221f;
+            --heading-color: #111111;
+            --gold-accent: #a37c17;
+            --gold-subtle: rgba(163, 124, 23, 0.1);
+            --surface-color: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color);
+            font-family: 'Assistant', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .paper-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04; pointer-events: none; z-index: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
+        body.theme-light .paper-grain { opacity: 0.5; }
+
+        .article-body {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: var(--base-font-size);
+            line-height: 1.95;
+            text-align: justify;
+            color: var(--text-color);
+            transition: font-size 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-body p { margin-bottom: 2.2rem; }
+        
+        .article-body h2 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 700;
+            font-size: calc(var(--base-font-size) + 0.6rem);
+            color: var(--gold-accent);
+            margin-top: 4.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            scroll-margin-top: 120px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold-subtle), transparent);
+        }
+
+        .source-note {
+            float: left; width: 38%; margin-left: -18%; margin-right: 6%; margin-bottom: 20px;
+            font-family: 'Assistant', sans-serif; font-size: 0.95rem; line-height: 1.6;
+            color: var(--text-color); opacity: 0.85;
+            border-right: 3px solid var(--gold-accent); padding-right: 18px;
+            background: var(--surface-color); padding: 15px; border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 1400px) {
+            .source-note { float: none; width: 100%; margin: 30px 0; border-right: 4px solid var(--gold-accent); }
+        }
+
+        .drop-cap::first-letter {
+            font-size: 5rem; font-weight: 900; color: var(--gold-accent);
+            float: right; line-height: 0.85; margin-left: 15px; margin-top: 8px;
+            font-family: 'Frank Ruhl Libre', serif; text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+        }
+
+        .reading-controls {
+            position: fixed; left: 30px; top: 50%; transform: translateY(-50%);
+            display: flex; flex-direction: column; gap: 8px;
+            background: var(--surface-color); backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); padding: 8px; border-radius: 30px;
+            z-index: 90; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .control-btn {
+            width: 42px; height: 42px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-color); font-weight: 600; transition: all 0.2s; font-size: 1rem;
+        }
+        .control-btn:hover { background: var(--gold-subtle); color: var(--gold-accent); }
+
+        @media (max-width: 1400px) {
+            .reading-controls { top: auto; bottom: 100px; left: 50%; transform: translateX(-50%); flex-direction: row; border-radius: 50px; padding: 6px 12px; }
+        }
+
+        #toast {
+            visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center;
+            border-radius: 30px; padding: 16px; position: fixed; z-index: 100; left: 50%; bottom: 30px;
+            transform: translateX(-50%); font-size: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid var(--gold-accent);
+        }
+        #toast.show { visibility: visible; -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s; animation: fadein 0.5s, fadeout 0.5s 3.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
+        .print-only { display: none; }
+
+        @media print {
+            @page { size: A4; margin: 25mm 20mm; }
+            
+            body { 
+                background: white !important; 
+                color: black !important; 
+                font-family: 'Frank Ruhl Libre', serif !important; 
+            }
+            
+            .paper-grain, .no-print, header, footer, .interaction-bar, .visual-accents, .reading-controls, .toc-sidebar, #toast { 
+                display: none !important; 
+            }
+            
+            .print-only { display: block !important; }
+            
+            .print-letterhead {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 2px solid black;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Assistant', sans-serif !important;
+            }
+            
+            .print-letterhead h3 { font-size: 16pt; font-weight: 800; margin: 0; color: black !important; }
+            .print-letterhead p { font-size: 11pt; margin: 0; color: #333 !important; }
+            
+            .reading-canvas { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            
+            .article-body { font-size: 12.5pt !important; line-height: 1.7 !important; color: black !important; }
+            h1 { font-family: 'Frank Ruhl Libre', serif !important; font-size: 22pt !important; color: black !important; text-align: center; font-weight: bold; margin: 20px 0 !important; }
+            h2 { font-family: 'Assistant', sans-serif !important; font-size: 15pt !important; color: black !important; border-bottom: 1px solid #000 !important; padding-bottom: 4px; margin-top: 25pt !important; page-break-after: avoid; }
+            p { page-break-inside: avoid; orphans: 3; widows: 3; color: black !important; margin-bottom: 12pt !important; text-align: justify !important; }
+            
+            .source-note { 
+                float: none; width: 100%; margin: 15px 0; 
+                border: 1px solid #888 !important; border-right: 4px solid black !important;
+                padding: 12px !important; font-size: 10.5pt !important; 
+                background: #fafafa !important; page-break-inside: avoid; 
+                font-family: 'Assistant', sans-serif !important;
+            }
+            
+            .verdict-box { 
+                border: 4px double black !important; 
+                padding: 20px !important; 
+                margin-top: 30px !important; 
+                border-radius: 0 !important; 
+                background: transparent !important; 
+                page-break-inside: avoid; 
+            }
+            .verdict-box h3 { color: black !important; border: none !important; font-size: 14pt !important; margin-bottom: 15px !important; text-decoration: underline; }
+            
+            .text-gold, .siman-badge { color: black !important; border-color: black !important; background: transparent !important; }
+            .signature-img { filter: none !important; opacity: 1 !important; height: 70px !important; margin-top: 30px !important; }
+            .drop-cap::first-letter { color: black !important; text-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#D4AF37]/30">
+
+    <div class="paper-grain"></div>
+
+    <!-- Letterhead for PDF Export ONLY -->
+    <div class="print-only print-letterhead">
+        <div>
+            <h3>הרב אלדר לוי</h3>
+            <p>טוען רבני ודיין מוסמך ידין-ידין<br>מומחה לדיני ממונות, משפחה וירושה</p>
+        </div>
+        <div style="text-align: left;">
+            <p><strong>בס"ד</strong></p>
+            <p>תאריך: ט' תמוז ה'תשפ"ו<br>פסק דין מספר: 504-ב'</p>
+        </div>
+    </div>
+
+    <!-- Top Header (Screen) -->
+    <header class="no-print fixed top-0 w-full z-50 py-4 px-6 md:px-8 flex justify-between items-center bg-[var(--bg-color)]/95 backdrop-blur-md transition-all duration-500 border-b border-[var(--border-color)]">
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-9 h-9 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--gold-accent)] group-hover:bg-[var(--gold-subtle)] transition-all">
+                <i class="fas fa-chevron-right text-xs"></i>
+            </div>
+            <span class="text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--text-color)] opacity-70">חזרה למאגר פסקי הדין</span>
+        </a>
+        <div class="text-xs font-bold text-[var(--text-color)] opacity-50 tracking-widest uppercase">בס"ד | בירור הלכתי</div>
+    </header>
+
+    <!-- Personal Reading Controls (Floating) -->
+    <div class="reading-controls no-print" title="כלים לנוחות קריאה">
+        <button onclick="changeFontSize(0.1)" class="control-btn" title="הגדל טקסט">A+</button>
+        <button onclick="changeFontSize(-0.1)" class="control-btn" title="הקטן טקסט">A-</button>
+        <div class="w-full h-px bg-[var(--border-color)] my-1 hidden lg:block"></div>
+        <div class="w-px h-full bg-[var(--border-color)] mx-1 block lg:hidden"></div>
+        <button onclick="toggleTheme()" class="control-btn" title="מצב קלף / מצב לילה">
+            <i class="fas fa-book-open"></i>
+        </button>
+    </div>
+
+    <main class="relative z-10 pt-28 pb-40 px-6">
+        <div class="flex max-w-[1000px] mx-auto relative justify-center">
+            
+            <!-- Main Reading Canvas -->
+            <article class="reading-canvas max-w-[760px] w-full">
+                
+                <!-- Article Header -->
+                <div class="mb-14 text-center no-print">
+                    <div class="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[var(--gold-accent)] uppercase mb-6 bg-[var(--gold-subtle)] px-4 py-1.5 rounded-full border border-[var(--gold-accent)]">
+                        <span>חושן משפט</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--gold-accent)]"></span>
+                        <span>דיני שכירות ואונס מלחמה</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-black text-[var(--heading-color)] leading-[1.1] mb-8">
+                        פסק דין: ביטול עסקת שכירות צימר עקב מצב ביטחוני ומכת מדינה
+                    </h1>
+                    
+                    <div class="flex flex-wrap items-center justify-center gap-6 py-6 border-y border-[var(--border-color)] mt-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-gavel text-[var(--gold-accent)]"></i>
+                            <p class="text-sm font-bold text-[var(--heading-color)] tracking-wide">הרב אלדר לוי - דיין מוסמך</p>
+                        </div>
+                        <div class="w-1 h-1 rounded-full bg-[var(--border-color)]"></div>
+                        <div class="text-[var(--text-color)] opacity-60 text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> 6 דקות עיון הלכתי
+                        </div>
+                    </div>
+                </div>
+
+                <!-- הכותרת להדפסה בלבד -->
+                <h1 class="print-only text-center font-bold text-2xl mb-6">פסק דין: תביעה להשבת כספים עקב ביטול שכירות צימר</h1>
+
+                <!-- Interactive Flowchart for Decision Steps (Screen Only) -->
+                <div class="no-print my-8 p-6 bg-[var(--surface-color)] border border-[var(--border-color)] rounded-2xl">
+                    <h3 class="text-sm font-bold text-[var(--gold-accent)] uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <i class="fas fa-project-diagram"></i>
+                        מפת קבלת החלטות: ביטול שכירות בראי ההלכה
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center text-xs">
+                        <div class="p-3 bg-blue-950/20 rounded-lg border border-blue-900/30">
+                            <p class="font-bold text-blue-400 mb-1">1. השלמת קניין השכירות</p>
+                            <p class="opacity-85"><strong>הדין:</strong> בשכירות, קניין כסף לבדו קונה לחלוטין ללא צורך בשטר. העסקה תקפה ומחייבת.</p>
+                        </div>
+                        <div class="p-3 bg-amber-950/20 rounded-lg border border-amber-900/30">
+                            <p class="font-bold text-amber-400 mb-1">2. תוקף התנאים והמועד</p>
+                            <p class="opacity-85"><strong>הסדר:</strong> התנאי המקורי של "מתי שירצה מלבד קיץ וחגים" עומד בעינו. אין הגבלה רטרואקטיבית.</p>
+                        </div>
+                        <div class="p-3 bg-red-950/20 rounded-lg border border-red-900/30">
+                            <p class="font-bold text-red-400 mb-1">3. טענת מכת מדינה</p>
+                            <p class="opacity-85"><strong>הכרעה:</strong> העיר נתיבות אינה נחשבת לאזור סכנה המגדיר מכת מדינה. אין עילה מוצדקת להשבה.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <div class="article-body">
+                    
+                    <p class="drop-cap text-[var(--heading-color)] font-medium mb-12">
+                        בפני בית הדין עומדת תביעת השבת כספים שהגיש שוכר צימר (התובע, מ') כנגד בעל הצימר (הנתבע), לאחר שביקש לבטל את עסקת השכירות ולקבל את כספו בחזרה. התובע שילם את מלוא דמי השכירות מראש, וטוען כעת לביטול רטרואקטיבי של העסקה, הן בשל הזמן הרב שעבר והן בשל פחדם של ילדיו מהמצב הביטחוני והמלחמה השוררת בדרום הארץ.
+                    </p>
+
+                    <h2>א. דרכי קניין בשכירות קרקע לעומת מכר</h2>
+                    <aside class="source-note">
+                        <strong>שולחן ערוך חושן משפט סימן שט"ו סעיף א':</strong><br>
+                        "שכירות קרקע נשכר בדרכים שהוא נקנה בהם". קניין השכירות דינו כקניין קבוע לזמן קצוב, אשר אינו ניתן לחרטה חד-צדדית לאחר העברת המעות.
+                    </aside>
+                    <p>
+                        יסוד הדין ההלכתי בקניין שכירות מוסדר במסכת בבא קמא (דף עט. ע"א): כשם שהקרקע נקנית בכסף, בשטר ובחזקה – כך שכירות נקנית בכסף, בשטר ובחזקה. וכך נפסק להלכה בשולחן ערוך (חושן משפט סימן שט"ו סעיף א'): "שכירות קרקע נשכר בדרכים שהוא נקנה בהם".
+                    </p>
+                    <p>
+                        בדין דרך קניית קרקע במכר, פסק השולחן ערוך (שם סימן ק"צ סעיף ז') כי במקום שבו נהגו לכתוב שטר בנוסף לתשלום המעות, הרי שאם רק נתן מעות וטרם נכתב השטר – לא קנה הלוקח את הקרקע ויכולים לחזור בהם. לכאורה, ניתן היה לטעון בנדון דידן שמאחר שהצדדים לא חתמו על שטר שכירות מסודר, רשאי התובע לחזור בו.
+                    </p>
+                    <p>
+                        אולם, הבחנה מהותית קיימת בין מכר לשכירות. הבאור לכך מובא בדברי בית יוסף (סימן קצ"ה ד"ה 'כשם שקרקע נקנה'), שכתב שאפילו במקום שבו נהגו לכתוב שטר במכר, בשכירות קרקע קונה בכסף לבדו. דהיינו, שדווקא במכר קבוע אין דעתו של הלוקח סומכת עד שייכתב השטר, אולם בשכירות לזמן קצוב דעתו של השוכר סומכת על מעשה קניין הכסף לבדו.
+                    </p>
+                    <p>
+                        כדעה זו פסק הרמ"א להלכה (שם סעיף ט'): "שקנין השכירות סגי ליה בכסף לחוד". הסמ"ע (שם ס"ק כ') הוסיף לבאר את טעם ההלכה: "דשכירות לאו מדרך העולם לכתוב עליו שטר, דסמכה דעת השוכר בלא שטר כיון דלימים קצובים שכרוהו". 
+                    </p>
+                    <p>
+                        <strong>העולה מן האמור:</strong> מאחר שהתובע שילם לנתבע את מלוא דמי השכירות מראש, הרי שבכך הושלם קניין השכירות לחלוטין. התובע אינו רשאי לחזור בו מן העסקה באופן חד-צדדי, ואינו זכאי להשבת כספו.
+                    </p>
+
+                    <h2>ב. תנאים בשכירות וגבולות מימוש הזכות</h2>
+                    <p>
+                        משקבענו כי העסקה שרירה וקיימת, יש לבחון את תנאי מימוש השהות בצימר. השולחן ערוך פוסק (חושן משפט סימן שט"ו סעיף ב'): "כשם שמתנה אדם כל תנאי שירצה במקח, כך מתנה בשכירות".
+                    </p>
+                    <p>
+                        מן העדויות ודברי הצדדים בדיון עולה כי הותנה מראש שהשוכר יהא רשאי לממש את ימי השהות שלו בצימר "מתי שירצה", למעט תקופת הקיץ ותקופת החגים העמוסות. תנאי זה שריר וקיים, והסכמתו של הנתבע מחייבת אותו.
+                    </p>
+                    <p>
+                        מאידך גיסא, טענת הנתבע כי עבר זמן רב מדי מאז ביצוע העסקה ולכן זכותו של התובע פקעה – נדחית. כל עוד לא הגבילו הצדדים מראש ובמפורש את זמן מימוש השהות, אין הנתבע יכול להגבילו רטרואקטיבית כעת, אלא על פי דרך בני האדם המקובלת והסבירה. זכותו של התובע לממש את ימי שהותו בצימר שרירה וקיימת בהתאם לתנאים המקוריים שסוכמו.
+                    </p>
+
+                    <h2>ג. טענת מכת מדינה ואונס עקב המצב הביטחוני בדרום</h2>
+                    <p>
+                        התובע טוען עוד כי יש לבטל את העסקה עקב המלחמה השוררת בדרום הארץ ופחדם של ילדיו. דין זה מוסדר בדיני אונס ומכת מדינה בשכירות (חושן משפט סימן שכ"א).
+                    </p>
+                    <p>
+                        אולם, אין לקבל טענה זו כעילה להשבת כספים, מכמה סיבות מהותיות:
+                    </p>
+                    <p>
+                        בראש ובראשונה, כפי שקיבלנו והכרענו מפי מורנו ורבנו אב בית הדין, הגאון הגדול <strong>הגר"ר אהרון שלי"ט"א</strong>, העיר נתיבות (ת"ו) אינה מוגדרת כמקום סכנה המונע שהיית בני אדם כתוצאה מן המלחמה. קביעה זו שונה מהותית מיישובי עוטף עזה או יישובי גבול הצפון שפונו מתושביהם בצו ממשלתי וצבאי, שבהם אכן מתקיים גדר של "מכת מדינה" המאפשר ביטול מוחלחל ודרישת השבת כספים.
+                    </p>
+                    <p>
+                        בנוסף, הטענה כי הילדים מפחדים לנסוע לדרום, עם כל ההבנה האנושית והנפשית למצוקתם, אינה עילה משפטית-הלכתית המוגדרת כאונס המבטל קניין שהושלם במעות. פחד אישי אינו מקנה זכות השבה כלכלית מהמשכיר שעמד בהתחייבותו והעמיד את הצימר לרשותם כשהוא ראוי לשימוש.
+                    </p>
+
+                    <div class="my-14 py-10 px-10 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] relative">
+                        <i class="fas fa-quote-left absolute top-4 left-6 text-[var(--gold-accent)] opacity-20 text-4xl no-print"></i>
+                        <p class="text-[calc(var(--base-font-size)-0.1rem)] font-serif text-[var(--heading-color)] leading-relaxed italic relative z-10 mb-0 font-medium">
+                            "הקניין הממוני הושלם במלואו בתשלום המעות. מאחר שהמצב הביטחוני בנתיבות אינו מוגדר כמכת מדינה הפוטרת מחיובים, ומאחר שפחד אישי אינו מבטל הסכם קיים – זכות השכירות נותרת ביד התובע למימוש עתידי, אך אין לו זכות לקבלת החזר כספי."
+                        </p>
+                    </div>
+
+                    <!-- Ruling Box -->
+                    <div class="verdict-box bg-[var(--surface-color)] border border-[var(--border-color)] rounded-2xl p-8 md:p-12 mt-16">
+                        <div class="flex items-center gap-4 mb-8 no-print">
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                            <h3 class="text-[var(--gold-accent)] font-bold uppercase tracking-[0.2em] text-lg text-center m-0">הכרעת הדין למעשה</h3>
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                        </div>
+                        <h3 class="print-only text-center font-bold text-xl mb-6 underline">הכרעה סופית למעשה</h3>
+                        
+                        <div class="space-y-8">
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-1">א.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium">
+                                    <strong>דחיית דרישת ההשבה:</strong> התובע מרדכי אינו זכאי לקבל את כספו בחזרה, מאחר שהעסקה נחתמה ונקנתה בכסף כדין קניין שכירות קרקע.
+                                </p>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-1">ב.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium">
+                                    <strong>שמירת זכות השהות העתידית:</strong> התובע רשאי לממש את זכותו לשהות בצימר בהתאם לתנאים המקוריים שסוכמו (מתי שירצה למעט תקופות הקיץ והחגים), ואין הנתבע יכול למנוע זאת ממנו בטענה שעבר זמן רב.
+                                </p>
+                            </div>
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-1">ג.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium">
+                                    <strong>היעדר מכת מדינה:</strong> מאחר והעיר נתיבות אינה מוגדרת כמקום סכנה ביטחונית הפוטר מקיום הסכמים, טענת האונס עקב המלחמה נדחית.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Signature -->
+                    <div class="mt-20 pt-16 border-t border-[var(--border-color)] flex flex-col items-center text-center page-break-avoid">
+                        <div class="w-20 h-20 mb-6 rounded-full border border-[var(--gold-accent)] flex items-center justify-center relative opacity-80 no-print">
+                            <i class="fas fa-stamp text-[var(--gold-accent)] opacity-30 text-4xl absolute"></i>
+                            <span class="text-[8px] font-bold text-[var(--gold-accent)] uppercase tracking-tighter relative z-10 leading-none">נאמן למקור<br>ביה"ד</span>
+                        </div>
+                        <div class="text-sm uppercase tracking-[0.2em] text-[var(--text-color)] opacity-60 mb-2 font-bold font-sans">נכתב ונחתם פה עיה"ק נתיבות ת"ו</div>
+                        <div class="font-serif text-3xl md:text-4xl text-[var(--heading-color)] font-bold mb-2">הרב אלדר לוי</div>
+                        <p class="text-base text-[var(--gold-accent)] font-bold tracking-widest uppercase font-sans">דיין וטוען רבני מוסמך</p>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+        <!-- Floating Bottom Action Bar -->
+        <div class="interaction-bar fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-1 sm:gap-2 bg-black/90 backdrop-blur-xl border border-white/10 px-4 sm:px-6 py-2.5 rounded-full z-50 shadow-[0_10px_30px_rgba(0,0,0,0.6)] transition-all duration-500 fade-on-scroll no-print w-max text-white">
+            <button onclick="downloadPDF()" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-300 hover:text-[#D4AF37] transition-colors px-3 py-2 rounded-full hover:bg-white/5" title="שמור והדפס פסק דין">
+                <i class="fas fa-file-pdf text-base"></i>
+                <span class="hidden sm:inline">הורדה כ-PDF</span>
+            </button>
+            <button onclick="shareArticle()" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-300 hover:text-[#D4AF37] transition-colors px-3 py-2 rounded-full hover:bg-white/5" title="שתף">
+                <i class="fas fa-share-nodes text-base"></i>
+                <span class="hidden sm:inline">שיתוף פסק דין</span>
+            </button>
+            <div class="w-px h-5 bg-white/20 mx-1 sm:mx-2"></div>
+            <!-- קישור טלפוני ישיר מעודכן במקום קישור לוואטסאפ -->
+            <a href="tel:0534192798" class="bg-[#D4AF37] text-black px-6 sm:px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform shadow-[0_0_15px_rgba(212,175,55,0.3)] flex items-center gap-2">
+                <i class="fas fa-phone-alt"></i>
+                חיוג לייעוץ הלכתי
+            </a>
+        </div>
+    </main>
+
+    <!-- Visual Accents (Hidden in Light Mode) -->
+    <div class="visual-accents fixed top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div class="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[var(--gold-accent)] blur-[150px] rounded-full opacity-10"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="no-print">הודעה</div>
+
+    <script>
+        // --- Reading Controls Logic ---
+        let currentFontSize = 1.4; // גודל התחלתי ב-rem
+        
+        function changeFontSize(change) {
+            currentFontSize += change;
+            if(currentFontSize < 1.1) currentFontSize = 1.1;
+            if(currentFontSize > 2.0) currentFontSize = 2.0;
+            document.documentElement.style.setProperty('--base-font-size', `${currentFontSize}rem`);
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+            const isLight = document.body.classList.contains('theme-light');
+            showToast(isLight ? "מצב קלף הופעל לקריאה ממושכת" : "מצב לילה הופעל");
+        }
+
+        // --- Focus Mode & Scroll Logic ---
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            
+            // עמעום הכפתורים בזמן גלילה
+            if (winScroll > 100) {
+                document.querySelector('.interaction-bar').style.opacity = '0.3';
+                document.querySelector('.reading-controls').style.opacity = '0.3';
+            } else {
+                document.querySelector('.interaction-bar').style.opacity = '1';
+                document.querySelector('.reading-controls').style.opacity = '1';
+            }
+
+            document.querySelector('.interaction-bar').addEventListener('mouseenter', function() { this.style.opacity = '1'; });
+            document.querySelector('.reading-controls').addEventListener('mouseenter', function() { this.style.opacity = '1'; });
+        });
+
+        // --- Toast Notification ---
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.className = "show no-print";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 4000);
+        }
+
+        // --- Download PDF Logic ---
+        function downloadPDF() {
+            const wasDark = !document.body.classList.contains('theme-light');
+            document.body.classList.add('theme-light'); 
+            
+            showToast("מכין פסק דין רשמי להורדה. בחר באפשרות 'שמירה כ-PDF'");
+            
+            setTimeout(() => {
+                window.print();
+                if(wasDark) document.body.classList.remove('theme-light');
+            }, 1200);
+        }
+
+        // --- Share API Logic ---
+        async function shareArticle() {
+            const shareData = {
+                title: 'פסק דין: ביטול עסקת שכירות צימר ומכת מדינה | הרב אלדר לוי',
+                text: 'קראו את פסק הדין המלא והנימוקים המפורטים מאת הרב אלדר לוי.',
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    const dummy = document.createElement('input');
+                    document.body.appendChild(dummy);
+                    dummy.value = window.location.href;
+                    dummy.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(dummy);
+                    showToast('הקישור הועתק בהצלחה לשיתוף!');
+                }
+            } catch (err) {
+                console.error('Error sharing:', err);
+            }
+        }
+    </script>
+</body>
+</html>
