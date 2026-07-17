@@ -229,17 +229,14 @@
     }
     </script>
     
-    <!-------- Performance Hints --------------------------->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
-    <!-- Fonts & Libraries -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
-    <!-- Tailwind Script -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -248,7 +245,6 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap"></noscript>
 
-    <!-- Tailwind Config -->
     <script>
         if (typeof tailwind !== 'undefined') {
             tailwind.config = {
@@ -259,11 +255,12 @@
                                 light: '#fdf7e3',
                                 DEFAULT: '#D4AF37',
                                 dark: '#a68726',
+                                luxury: '#f1d26f'
                             },
                             dark: {
-                                DEFAULT: '#070707',
-                                light: '#111111',
-                                accent: '#1a1a1a'
+                                DEFAULT: '#050505',
+                                light: '#0e0e0e',
+                                accent: '#151515'
                             }
                         },
                         fontFamily: {
@@ -306,55 +303,69 @@
     </script>
 
     <style>
-        body { font-family: 'Assistant', sans-serif; background-color: #070707; color: #f5f5f5; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Assistant', sans-serif; background-color: #050505; color: #f5f5f5; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; }
         h1, h2, h3, h4, h5, .heebo-font { font-family: 'Heebo', sans-serif; letter-spacing: -0.02em; }
         
-        /* Gradients & Text - Upgraded Luxury Look */
-        .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #fff1ba 50%, #b89324 100%); }
+        /* Premium Gold Gradients */
+        .gold-gradient { background: linear-gradient(135deg, #b89324 0%, #ffe8a1 30%, #D4AF37 70%, #856511 100%); }
         .gold-gradient-text { 
-            background: linear-gradient(to right, #D4AF37, #ffe8a1, #D4AF37);
+            background: linear-gradient(to right, #D4AF37 0%, #fff0c2 50%, #D4AF37 100%);
             background-size: 200% auto;
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
             animation: text-shimmer 4s linear infinite;
         }
         
-        /* Glassmorphism - Refined for premium feel */
+        /* Sophisticated Micro-reflective Glass Panels */
         .glass { 
-            background: rgba(20, 20, 20, 0.45); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(14, 14, 14, 0.65); 
+            backdrop-filter: blur(25px); 
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(212, 175, 55, 0.18); 
-            box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), 0 4px 20px rgba(0,0,0,0.35);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.55);
+            transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .glass-hover { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        @media (hover: hover) and (pointer: fine) {
-            .glass-hover:hover { 
-                background: rgba(30, 30, 30, 0.65); 
-                border-color: rgba(212, 175, 55, 0.6); 
-                transform: translateY(-8px); 
-                box-shadow: 0 25px 50px rgba(0,0,0,0.85), 0 0 30px rgba(212,175,55,0.22); 
-            }
-            .glow-effect-card { position: relative; overflow: hidden; }
-            .glow-effect-card::before {
-                content: "";
-                position: absolute;
-                top: 0; left: 0; right: 0; bottom: 0;
-                border-radius: inherit;
-                background: radial-gradient(400px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(212, 175, 55, 0.15), transparent 45%);
-                z-index: 0;
-                pointer-events: none;
-                opacity: 0;
-                transition: opacity 0.5s ease;
-            }
-            .glow-effect-card:hover::before { opacity: 1; }
-            .group-hover-effect:hover { transform: scale(1.03); }
+        .glass-hover:hover { 
+            background: rgba(22, 22, 22, 0.8); 
+            border-color: rgba(212, 175, 55, 0.6); 
+            transform: translateY(-6px); 
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.25); 
         }
-        
+
+        .glow-effect-card { position: relative; overflow: hidden; }
+        .glow-effect-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.15), transparent 45%);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .glow-effect-card:hover::before { opacity: 1; }
         .glow-effect-card > * { position: relative; z-index: 1; }
+
+        /* Premium Golden Border Beam */
+        .border-beam {
+            position: relative;
+        }
+        .border-beam::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+            border-radius: inherit;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .border-beam:hover::after {
+            opacity: 1;
+        }
         
-        /* Image Glow & Mesh */
+        /* Glow animations */
         .image-glow { position: relative; }
         .image-glow::before {
             content: ''; position: absolute; top: -5%; left: -5%; right: -5%; bottom: -5%;
@@ -363,17 +374,19 @@
         }
         @keyframes pulse-glow { 0% { opacity: 0.5; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1.05); } }
 
+        /* Premium Geometric Grid Pattern Overlay */
         .bg-mesh {
+            background-color: #050505;
             background-image: 
-                radial-gradient(circle at 15% 25%, rgba(212, 175, 55, 0.05), transparent 30%),
-                radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.05), transparent 30%);
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05), transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05), transparent 40%);
         }
 
-        /* Scrollbar */
+        /* Scrollbar styling */
         ::-webkit-scrollbar { width: 6px; }
         @media (min-width: 768px) { ::-webkit-scrollbar { width: 8px; } }
-        ::-webkit-scrollbar-track { background: #070707; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #a68726, #D4AF37); border-radius: 10px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #856511, #D4AF37, #ffe8a1); border-radius: 10px; }
 
         /* Timeline Fixes */
         .timeline-line::before {
@@ -388,7 +401,7 @@
         }
 
         input, textarea, select { font-size: 16px !important; }
-        .input-glow:focus { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); border-color: rgba(212,175,55,0.7); }
+        .input-glow:focus { box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); border-color: rgba(212,175,55,0.7); }
 
         /* Preloader */
         #preloader { transition: opacity 0.8s ease-out; }
@@ -408,20 +421,41 @@
             .particle { position: absolute; bottom: -10px; width: 3px; height: 3px; background-color: rgba(212, 175, 55, 0.45); border-radius: 50%; box-shadow: 0 0 12px rgba(212, 175, 55, 0.8); animation: float-particle 15s infinite linear; }
         }
         
-        /* Subtly overlay pattern for extra luxury feel */
         .luxury-texture {
             position: absolute;
             inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 0;
         }
 
-        /* Interactive Tabs and custom sliders */
-        .tab-btn.active {
-            background: linear-gradient(135deg, #D4AF37 0%, #b89324 100%);
-            color: #070707;
-            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+        /* Shiny / Shimmer overlay for gold buttons */
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-25deg);
+            transition: 0.75s;
+        }
+        .shimmer-btn:hover::before {
+            left: 125%;
+            transition: 0.75s;
+        }
+
+        /* Elegant Double Gold Frame */
+        .double-gold-frame {
+            border: 2px solid #D4AF37;
+            padding: 4px;
+            background-color: transparent;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
@@ -498,7 +532,7 @@
                 <a href="tel:0528219928" class="hidden sm:flex items-center gap-2 text-gold hover:text-white transition-colors text-sm font-bold dir-ltr bg-white/5 px-4 py-2 rounded-full border border-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
                     052-8219928 <i class="fas fa-phone-alt text-xs" aria-hidden="true"></i>
                 </a>
-                <a href="#contact" class="hidden md:flex gold-gradient px-6 py-2.5 rounded-full text-dark font-black text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white group-hover-effect">
+                <a href="#contact" class="shimmer-btn hidden md:flex gold-gradient px-6 py-2.5 rounded-full text-dark font-black text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white group-hover-effect">
                     סיוע הלכתי-משפטי
                 </a>
                 
@@ -528,12 +562,12 @@
 
     <main class="relative z-10">
 
-        <!-- Hero Section ------------------------>
+        <!-- Hero Section -->
         <section class="relative min-h-[100svh] md:min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
             <!-- Particles Background -->
             <div class="particles-container absolute inset-0 hidden md:block" id="particles" aria-hidden="true"></div>
 
-            <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/10 via-dark/95 to-dark opacity-80" aria-hidden="true"></div>
+            <div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/15 via-dark/95 to-dark opacity-80" aria-hidden="true"></div>
             <div class="absolute inset-0 z-0 bg-gradient-to-b md:bg-gradient-to-r from-dark via-dark/90 to-transparent" aria-hidden="true"></div>
             
             <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-10 md:gap-12 items-center">
@@ -560,9 +594,9 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 md:gap-5 mb-8 justify-center lg:justify-start">
-                        <a href="#contact" class="gold-gradient px-6 md:px-8 py-4 md:py-5 rounded-xl text-dark font-black text-base md:text-lg group-hover-effect shadow-[0_10px_30px_rgba(212,175,55,0.45)] flex items-center justify-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                        <a href="#contact" class="shimmer-btn gold-gradient px-6 md:px-8 py-4 md:py-5 rounded-xl text-dark font-black text-base md:text-lg group-hover-effect shadow-[0_10px_30px_rgba(212,175,55,0.45)] flex items-center justify-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white">
                             <i class="fas fa-gavel group-hover:rotate-[-15deg] transition-transform" aria-hidden="true"></i>
-                            הערכת סיכויים בתיק
+                            פגישת הערכת סיכויים בתיק
                         </a>
                         <a href="https://wa.me/972528219928" target="_blank" rel="noopener noreferrer" class="glass px-6 md:px-8 py-4 md:py-5 rounded-xl text-white font-bold text-base md:text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3 border-white/20 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
                             <i class="fab fa-whatsapp text-green-400 text-xl md:text-2xl group-hover:scale-110 transition-transform" aria-hidden="true"></i>
@@ -571,21 +605,25 @@
                     </div>
                     
                     <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-4 text-xs md:text-sm text-white/70 font-medium pb-4 lg:pb-0">
-                        <span class="flex items-center gap-1.5"><i class="fas fa-lock text-gold/80" aria-hidden="true"></i> 100% דיסקרטיות</span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-lock text-gold/80" aria-hidden="true"></i> 100% דיסקרטיות וחיסיון מלא</span>
                         <span class="hidden sm:block w-1.5 h-1.5 rounded-full bg-gold/40" aria-hidden="true"></span>
-                        <span class="flex items-center gap-1.5"><i class="fas fa-shield-alt text-gold/80" aria-hidden="true"></i> ללא התחייבות ראשונית</span>
+                        <span class="flex items-center gap-1.5"><i class="fas fa-shield-alt text-gold/80" aria-hidden="true"></i> סיוע ללא התחייבות ראשונית</span>
                     </div>
                 </div>
 
+                <!-- Right Side: Clean Portrait Container with Classic Double Gold Frame -->
                 <div class="lg:col-span-5 relative mt-6 lg:mt-0 max-w-[260px] sm:max-w-[320px] md:max-w-md mx-auto" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="relative w-full image-glow">
-                        <div class="relative rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-gold/40 shadow-[0_20px_50px_rgba(0,0,0,0.8)] aspect-[3/4] bg-dark-light transform lg:rotate-2 group-hover-effect transition-transform duration-500 glow-effect-card">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-gold/15 to-transparent mix-blend-overlay z-10 pointer-events-none" aria-hidden="true"></div>
-                            <img src="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk" alt="הרב אלדר לוי - טוען רבני ודיין מוסמך" class="w-full h-full object-cover object-top opacity-95 filter contrast-[1.1] brightness-[1.05] relative z-10" fetchpriority="high" decoding="async" onerror="this.src='https://placehold.co/400x533/111111/D4AF37?text=%D7%94%D7%A8%D7%91+%D7%90%D7%9C%D7%93%D7%A8+%D7%9C%D7%95%D7%99'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent z-10" aria-hidden="true"></div>
+                    <div class="relative w-full image-glow p-2">
+                        <div class="double-gold-frame rounded-2xl overflow-hidden">
+                            <div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-dark-light transform lg:rotate-1 group-hover-effect transition-transform duration-500 glow-effect-card">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-gold/15 to-transparent mix-blend-overlay z-10 pointer-events-none" aria-hidden="true"></div>
+                                <img src="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk" alt="הרב אלדר לוי - טוען רבני ודיין מוסמך" class="w-full h-full object-cover object-top opacity-95 filter contrast-[1.1] brightness-[1.05] relative z-10" fetchpriority="high" decoding="async" onerror="this.src='https://placehold.co/400x533/111111/D4AF37?text=%D7%94%D7%A8%D7%91+%D7%90%D7%9C%D7%93%D7%A8+%D7%9C%D7%95%D7%99'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent z-10" aria-hidden="true"></div>
+                            </div>
                         </div>
 
-                        <div class="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-8 glass p-3 md:p-4 rounded-2xl border-gold/50 shadow-2xl flex items-center gap-3 md:gap-4 bg-dark/95 backdrop-blur-xl z-20 group-hover-effect transition-transform animate-float-particle" style="animation-duration: 6s;" aria-hidden="true">
+                        <!-- Badge left bottom -->
+                        <div class="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-8 glass p-3 md:p-4 rounded-2xl border-gold/50 shadow-2xl flex items-center gap-3 md:gap-4 bg-dark/95 backdrop-blur-xl z-20" aria-hidden="true">
                             <div class="w-10 h-10 md:w-14 md:h-14 rounded-full gold-gradient flex items-center justify-center text-dark text-lg md:text-2xl shadow-inner border border-gold/50">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
@@ -595,7 +633,8 @@
                             </div>
                         </div>
 
-                        <div class="absolute top-8 -left-4 md:top-10 md:-left-10 glass px-3 md:px-5 py-2 md:py-4 rounded-2xl border-gold/40 shadow-2xl flex items-center gap-2 md:gap-3 bg-dark/95 backdrop-blur-xl z-20 group-hover-effect transition-transform" aria-hidden="true">
+                        <!-- Rating Badge -->
+                        <div class="absolute top-8 -left-4 md:top-10 md:-left-10 glass px-3 md:px-5 py-2 md:py-4 rounded-2xl border-gold/40 shadow-2xl flex items-center gap-2 md:gap-3 bg-dark/95 backdrop-blur-xl z-20" aria-hidden="true">
                             <div class="text-center">
                                 <div class="font-black text-white text-lg md:text-2xl leading-none heebo-font drop-shadow-md">5.0</div>
                                 <div class="flex text-gold text-[8px] md:text-[10px] mt-1 gap-0.5">
@@ -614,7 +653,7 @@
         </section>
 
         <!-- Stats Section -->
-        <section class="py-10 md:py-12 border-y border-gold/10 bg-dark-light/80 relative z-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.7)]" aria-label="נתוני המשרד">
+        <section class="py-10 md:py-14 border-y border-gold/10 bg-dark-light/80 relative z-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.7)]" aria-label="נתוני המשרד">
             <div class="container mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 text-center divide-x divide-x-reverse divide-gold/10">
                 <div data-aos="fade-up" class="group p-2">
                     <div class="text-3xl md:text-5xl font-black gold-gradient-text mb-1 md:mb-2 transform group-hover:scale-110 transition-transform heebo-font"><span class="counter" data-target="100">0</span>%</div>
@@ -659,81 +698,99 @@
             </div>
         </div>
 
-        <!-- Interactive Advantage Selector: Rabbinic Court vs. Family Court -->
-        <section class="py-16 md:py-20 bg-dark-light/40 relative border-b border-gold/10">
+        <!-- Authoritative Side-by-Side Court Comparison -->
+        <section class="py-20 md:py-28 bg-dark-light/30 relative border-b border-gold/10">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-10" data-aos="fade-up">
-                    <span class="text-gold font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-3 block">יתרון אסטרטגי מהותי</span>
-                    <h2 class="text-3xl md:text-4xl font-black heebo-font">בית הדין הרבני לעומת בית המשפט</h2>
-                    <p class="max-w-2xl mx-auto text-white/70 mt-2 text-sm md:text-base">הבנת שדה הקרב המשפטי הכרחית לקבלת ההחלטות הנכונה ביותר בתיק שלך.</p>
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-gold font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-3 block">ניתוח סמכויות והבדלים</span>
+                    <h2 class="text-3xl md:text-5xl font-black heebo-font">בית הדין הרבני לעומת בית המשפט</h2>
+                    <p class="max-w-2xl mx-auto text-white/70 mt-3 text-base md:text-lg">הבנת שדה המערכה ההלכתי והחוקי חיונית לקבלת ההחלטה המדויקת ביותר עבור עתידך.</p>
                 </div>
 
-                <div class="max-w-4xl mx-auto glass rounded-3xl p-6 md:p-8" data-aos="zoom-in">
-                    <!-- Tabs Header -->
-                    <div class="flex border-b border-white/10 mb-6 pb-2 justify-center gap-4">
-                        <button onclick="switchTab('rabbinic')" id="tab-rabbinic" class="tab-btn active px-5 py-2.5 rounded-xl font-bold text-sm md:text-base transition-all duration-300">
-                            ייצוג בבית הדין הרבני <i class="fas fa-balance-scale mr-1.5"></i>
-                        </button>
-                        <button onclick="switchTab('civil')" id="tab-civil" class="tab-btn px-5 py-2.5 rounded-xl text-white/70 hover:text-white font-bold text-sm md:text-base transition-all duration-300">
-                            בית המשפט לענייני משפחה <i class="fas fa-gavel mr-1.5"></i>
-                        </button>
+                <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto" data-aos="zoom-in">
+                    
+                    <!-- Column 1: Rabbinic Court -->
+                    <div class="glass rounded-3xl p-8 border-gold/30 relative overflow-hidden flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
+                        <div class="absolute top-0 left-0 w-32 h-32 bg-gold/5 rounded-br-full pointer-events-none"></div>
+                        <div>
+                            <div class="flex items-center gap-4 mb-6 border-b border-gold/20 pb-4">
+                                <div class="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center text-dark text-xl font-bold">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-black text-white heebo-font">בית הדין הרבני</h3>
+                                    <span class="text-xs text-gold font-bold uppercase tracking-wider">שפיטה על פי דין תורה ופסקי ההלכה</span>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-4 text-white/80 text-sm md:text-base">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-gold mt-1" aria-hidden="true"></i>
+                                    <span><strong>עוצמת הדין המהותי:</strong> דיון על פי השולחן ערוך, המאפשר לדיינים מרחב תמרון רחב המבוסס על צדק, שלום בית, והגנה על שלמות המשפחה.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-gold mt-1" aria-hidden="true"></i>
+                                    <span><strong>בלעדיות הכתובה:</strong> רק בית הדין הרבני מוסמך לפסוק בנושא חיוב או פטור מתשלום הכתובה – כלי בעל השפעה פיננסית דרמטית.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-gold mt-1" aria-hidden="true"></i>
+                                    <span><strong>דיני ממונות ובוררות:</strong> אפשרות לפתרון סכסוכים אזרחיים, עסקיים ושותפויות במהירות, ביעילות ותוך סודיות מוחלטת תחת כובע הבורר.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 bg-gold/10 p-4 rounded-xl border border-gold/30 text-center text-xs md:text-sm text-gold font-bold">
+                            בזכות בקיאותו של טוען רבני הבקיא בשפת הדיינים, ניתן להשיג יתרון אסטרטגי מכריע.
+                        </div>
                     </div>
 
-                    <!-- Tab Contents -->
-                    <div id="content-rabbinic" class="tab-content space-y-4">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-dark/60 p-5 rounded-2xl border border-gold/20">
-                                <h4 class="font-bold text-gold mb-2 text-base md:text-lg flex items-center gap-2">
-                                    <i class="fas fa-check-circle"></i> עוצמת הדין ההלכתי
-                                </h4>
-                                <p class="text-xs md:text-sm text-white/80 leading-relaxed">בבית הדין הרבני חוקי ההלכה ("שולחן ערוך") הם הקובעים. לדיינים יש מרחב שיקול דעת ייחודי מבוסס מקורות תורניים שאינו קיים אצל שופט אזרחי.</p>
+                    <!-- Column 2: Family Court -->
+                    <div class="glass rounded-3xl p-8 border-white/10 relative overflow-hidden flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.4)] bg-dark-light/20">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
+                                <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60 text-xl">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-black text-white/90 heebo-font">בית המשפט לענייני משפחה</h3>
+                                    <span class="text-xs text-white/50 font-bold uppercase tracking-wider">שפיטה אזרחית על פי חוקי המדינה</span>
+                                </div>
                             </div>
-                            <div class="bg-dark/60 p-5 rounded-2xl border border-gold/20">
-                                <h4 class="font-bold text-gold mb-2 text-base md:text-lg flex items-center gap-2">
-                                    <i class="fas fa-check-circle"></i> יתרון הכתובה והגירושין
-                                </h4>
-                                <p class="text-xs md:text-sm text-white/80 leading-relaxed">רק בית דין רבני מוסמך להכריע בנושא חיוב או פטור מכתובה. הבנה עמוקה בפסיקה רבנית מעניקה הגנה מושלמת או הישג דרמטי בתיק.</p>
-                            </div>
+                            
+                            <ul class="space-y-4 text-white/70 text-sm md:text-base">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-info-circle text-white/40 mt-1" aria-hidden="true"></i>
+                                    <span><strong>החוק היבש והנוקשה:</strong> שפיטה המבוססת על פרוטוקולים ותקדימים אזרחיים נוקשים, שלעיתים מתעלמים מניואנסים מסורתיים או דתיים של המשפחה.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-info-circle text-white/40 mt-1" aria-hidden="true"></i>
+                                    <span><strong>איזון משאבים אוטומטי:</strong> חלוקת רכוש טכנית ומחייבת מבלי להתחשב בהתנהלות מוסרית, xxxxxx xx xxxxxx xxx xx שהיו משנים את התמונה.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-info-circle text-white/40 mt-1" aria-hidden="true"></i>
+                                    <span><strong>היעדר סמכות גירושין:</strong> בית המשפט אינו יכול להורות על מתן או קבלת גט, דבר שעלול להוביל לכפל הליכים ארוך ומתיש בשתי ערכאות במקביל.</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="bg-gold/10 p-4 rounded-xl border border-gold/40 text-center mt-4">
-                            <p class="text-xs md:text-sm text-gold font-bold">החלטות דיינים מושפעות ישירות מההופעה והשפה ההלכתית המוגשת להם בדיון.</p>
+                        <div class="mt-8 bg-white/5 p-4 rounded-xl border border-white/10 text-center text-xs md:text-sm text-white/50">
+                            פנייה נמהרת לבית המשפט ללא בניית אסטרטגיה מקדימה עלולה לעלות באיבוד זכויות קריטיות.
                         </div>
                     </div>
 
-                    <div id="content-civil" class="tab-content hidden space-y-4">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-[#111] p-5 rounded-2xl border border-white/5">
-                                <h4 class="font-bold text-white/90 mb-2 text-base md:text-lg flex items-center gap-2">
-                                    <i class="fas fa-info-circle text-white/40"></i> החוק היבש
-                                </h4>
-                                <p class="text-xs md:text-sm text-white/70 leading-relaxed">שופטים אזרחיים כפופים לחוקים נוקשים ותקדימי בתי משפט, שלעיתים מתעלמים מניואנסים ומרכיבי מסורת או צדק הלכתי טבעי.</p>
-                            </div>
-                            <div class="bg-[#111] p-5 rounded-2xl border border-white/5">
-                                <h4 class="font-bold text-white/90 mb-2 text-base md:text-lg flex items-center gap-2">
-                                    <i class="fas fa-info-circle text-white/40"></i> אופן הליך חלוקת הרכוש
-                                </h4>
-                                <p class="text-xs md:text-sm text-white/70 leading-relaxed">חלוקה אוטומטית שאינה מתחשבת בהתנהגות הצדדים או בחובות כתובה שהיו משנות לחלוטין את מאזן הכוחות הכלכלי.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-center mt-4">
-                            <p class="text-xs md:text-sm text-white/60">במקרים רבים, ריצה חפוזה לבית משפט משפחתי ללא אסטרטגיה עלולה להוביל להפסד זכויות קריטיות.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Services -->
-        <section id="services" class="py-16 md:py-24 bg-[#0a0a0a] relative">
+        <section id="services" class="py-20 md:py-28 bg-[#0a0a0a] relative">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <div class="text-center mb-16" data-aos="fade-up">
                     <span class="text-gold font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-3 block">תחומי עיסוק משפטיים</span>
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 heebo-font">התמחויות ב<span class="gold-gradient-text">בתי הדין הרבניים</span></h2>
+                    <h2 class="text-3xl md:text-5xl font-black mb-6 heebo-font">התמחויות ב<span class="gold-gradient-text">בתי הדין הרבניים</span></h2>
                     <p class="max-w-2xl mx-auto text-white/80 text-base md:text-lg">ייצוג מקצועי הדורש בקיאות בדיני ישראל, יחד עם חשיבה משפטית טקטית לניהול הליכים מסובכים.</p>
                 </div>
                 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card" data-aos="fade-up">
+                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card border-beam" data-aos="fade-up">
                         <div class="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-gold/5 rounded-br-full transition-all duration-500 group-hover:scale-150 group-hover:bg-gold/15 pointer-events-none"></div>
                         <i class="fas fa-ring text-3xl md:text-4xl text-gold mb-5 md:mb-6 relative z-10 transform group-hover:-translate-y-2 transition-transform drop-shadow-md" aria-hidden="true"></i>
                         <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 heebo-font relative z-10">גירושין ודיני אישות</h3>
@@ -741,7 +798,7 @@
                         <div class="w-10 h-1 bg-gold/30 rounded-full group-hover:w-20 group-hover:bg-gold transition-all duration-300 relative z-10" aria-hidden="true"></div>
                     </article>
 
-                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden border-gold/40 shadow-[0_10px_30px_rgba(212,175,55,0.08)] glow-effect-card" data-aos="fade-up" data-aos-delay="100">
+                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden border-gold/40 shadow-[0_10px_30px_rgba(212,175,55,0.08)] glow-effect-card border-beam" data-aos="fade-up" data-aos-delay="100">
                         <div class="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-gold/5 rounded-br-full transition-all duration-500 group-hover:scale-150 group-hover:bg-gold/15 pointer-events-none"></div>
                         <i class="fas fa-scroll text-3xl md:text-4xl text-gold mb-5 md:mb-6 relative z-10 transform group-hover:-translate-y-2 transition-transform drop-shadow-md" aria-hidden="true"></i>
                         <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 heebo-font relative z-10">תביעות כתובה</h3>
@@ -749,7 +806,7 @@
                         <div class="w-10 h-1 bg-gold/30 rounded-full group-hover:w-20 group-hover:bg-gold transition-all duration-300 relative z-10" aria-hidden="true"></div>
                     </article>
 
-                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card" data-aos="fade-up" data-aos-delay="200">
+                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card border-beam" data-aos="fade-up" data-aos-delay="200">
                         <div class="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-gold/5 rounded-br-full transition-all duration-500 group-hover:scale-150 group-hover:bg-gold/15 pointer-events-none"></div>
                         <i class="fas fa-handshake text-3xl md:text-4xl text-gold mb-5 md:mb-6 relative z-10 transform group-hover:-translate-y-2 transition-transform drop-shadow-md" aria-hidden="true"></i>
                         <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 heebo-font relative z-10">דיני ממונות ובוררות</h3>
@@ -757,7 +814,7 @@
                         <div class="w-10 h-1 bg-gold/30 rounded-full group-hover:w-20 group-hover:bg-gold transition-all duration-300 relative z-10" aria-hidden="true"></div>
                     </article>
 
-                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card" data-aos="fade-up">
+                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card border-beam" data-aos="fade-up">
                         <div class="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-gold/5 rounded-br-full transition-all duration-500 group-hover:scale-150 group-hover:bg-gold/15 pointer-events-none"></div>
                         <i class="fas fa-file-signature text-3xl md:text-4xl text-gold mb-5 md:mb-6 relative z-10 transform group-hover:-translate-y-2 transition-transform drop-shadow-md" aria-hidden="true"></i>
                         <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 heebo-font relative z-10">צוואות וירושות</h3>
@@ -765,7 +822,7 @@
                         <div class="w-10 h-1 bg-gold/30 rounded-full group-hover:w-20 group-hover:bg-gold transition-all duration-300 relative z-10" aria-hidden="true"></div>
                     </article>
 
-                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card" data-aos="fade-up" data-aos-delay="100">
+                    <article class="glass p-6 md:p-8 rounded-[2rem] glass-hover group relative overflow-hidden glow-effect-card border-beam" data-aos="fade-up" data-aos-delay="100">
                         <div class="absolute top-0 left-0 w-24 h-24 md:w-32 md:h-32 bg-gold/5 rounded-br-full transition-all duration-500 group-hover:scale-150 group-hover:bg-gold/15 pointer-events-none"></div>
                         <i class="fas fa-balance-scale-right text-3xl md:text-4xl text-gold mb-5 md:mb-6 relative z-10 transform group-hover:-translate-y-2 transition-transform drop-shadow-md" aria-hidden="true"></i>
                         <h3 class="text-xl md:text-2xl font-black mb-3 md:mb-4 heebo-font relative z-10">בית הדין הגדול</h3>
@@ -773,7 +830,7 @@
                         <div class="w-10 h-1 bg-gold/30 rounded-full group-hover:w-20 group-hover:bg-gold transition-all duration-300 relative z-10" aria-hidden="true"></div>
                     </article>
 
-                    <button onclick="document.getElementById('contact').scrollIntoView();" class="w-full text-right gold-gradient p-6 md:p-8 rounded-[2rem] group relative overflow-hidden text-dark flex flex-col justify-center items-center text-center shadow-[0_15px_30px_rgba(212,175,55,0.3)] hover:scale-[1.02] transition-transform duration-300 glow-effect-card cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white" data-aos="fade-up" data-aos-delay="200">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" class="shimmer-btn w-full text-right gold-gradient p-6 md:p-8 rounded-[2rem] group relative overflow-hidden text-dark flex flex-col justify-center items-center text-center shadow-[0_15px_30px_rgba(212,175,55,0.3)] hover:scale-[1.02] transition-transform duration-300 glow-effect-card cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white" data-aos="fade-up" data-aos-delay="200">
                         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" aria-hidden="true"></div>
                         <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3 heebo-font relative z-10">המקרה מורכב?</h3>
                         <p class="font-bold mb-6 md:mb-8 text-sm md:text-base text-dark/90 relative z-10">אל תחכו שהצד השני יעשה את הצעד הראשון. בואו נבדוק איך מנצחים.</p>
@@ -785,7 +842,7 @@
             </div>
         </section>
 
-        <!-- Strategy Section - Updated Image -->
+        <!-- Strategy Section -->
         <section id="strategy" class="py-16 md:py-24 bg-dark overflow-hidden relative">
             <div class="absolute right-0 top-1/4 w-full md:w-1/3 h-1/2 bg-gold/5 blur-[100px] md:blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
             <div class="container mx-auto px-6 relative z-10">
@@ -825,7 +882,7 @@
                         <div class="glass p-2 md:p-3 rounded-[2rem] md:rounded-[2.5rem] border-gold/30 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] glow-effect-card bg-dark/50">
                             <div class="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden z-10 bg-dark">
                                 <div class="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent mix-blend-color z-10 pointer-events-none" aria-hidden="true"></div>
-                                <img src="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no" alt="מאזני צדק - ייצוג משפטי בבתי הדין" class="w-full h-auto object-cover aspect-[4/3] filter contrast-[1.1] brightness-[0.85] hover:brightness-[1] hover:scale-105 transition-all duration-700" loading="lazy" decoding="async">
+                                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=1200" alt="מאזני צדק - ייצוג משפטי בבתי הדין" class="w-full h-auto object-cover aspect-[4/3] filter contrast-[1.1] brightness-[0.85] hover:brightness-[1] hover:scale-105 transition-all duration-700" loading="lazy" decoding="async">
                             </div>
                             <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 left-4 md:left-8 glass p-4 md:p-6 rounded-xl md:rounded-2xl border-r-4 border-r-gold text-xs md:text-lg italic font-bold text-white bg-dark/95 backdrop-blur-xl shadow-2xl z-20">
                                 <i class="fas fa-quote-right text-gold/40 text-xl md:text-2xl absolute top-3 md:top-4 right-3 md:right-4 -z-10" aria-hidden="true"></i>
@@ -848,12 +905,12 @@
                         <a href="#articles" class="text-gold font-black border-b border-gold/40 pb-1 hover:border-gold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded inline-block text-sm md:text-base">לכל המאמרים והטיפים <i class="fas fa-arrow-left mr-1 md:mr-2" aria-hidden="true"></i></a>
                     </div>
                     <div class="lg:w-2/3 grid sm:grid-cols-2 gap-5 md:gap-6 w-full">
-                        <div class="glass p-5 md:p-6 rounded-xl md:rounded-2xl hover:bg-white/5 transition-colors border-gold/20 shadow-lg glow-effect-card" data-aos="zoom-in">
+                        <div class="glass p-5 md:p-6 rounded-xl md:rounded-2xl hover:bg-white/5 transition-colors border-gold/20 shadow-lg glow-effect-card border-beam" data-aos="zoom-in">
                             <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 relative z-10"><i class="fas fa-lightbulb text-xl" aria-hidden="true"></i></div>
                             <h3 class="font-bold mb-2 relative z-10 text-white text-sm md:text-base">מרוץ הסמכויות</h3>
                             <p class="text-xs md:text-sm text-white/70 leading-relaxed relative z-10">מי שפותח ראשון את התיק במקום הנכון קובע את "כללי המשחק" לכל אורך ההליך.</p>
                         </div>
-                        <div class="glass p-5 md:p-6 rounded-xl md:rounded-2xl hover:bg-white/5 transition-colors border-gold/20 shadow-lg glow-effect-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="glass p-5 md:p-6 rounded-xl md:rounded-2xl hover:bg-white/5 transition-colors border-gold/20 shadow-lg glow-effect-card border-beam" data-aos="zoom-in" data-aos-delay="100">
                             <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-4 relative z-10"><i class="fas fa-microphone-slash text-xl" aria-hidden="true"></i></div>
                             <h3 class="font-bold mb-2 relative z-10 text-white text-sm md:text-base">שתיקה היא כוח</h3>
                             <p class="text-xs md:text-sm text-white/70 leading-relaxed relative z-10">אל תמסרו פרטים לצד השני או ברשתות החברתיות. הכל מתועד ויכול לשמש נגדכם.</p>
@@ -863,180 +920,141 @@
             </div>
         </section>
         
-<!-- Reviews Section -->
-<section id="reviews" class="py-16 md:py-24 bg-dark relative overflow-hidden">
-    <style>
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-        }
-        
-        .carousel-track {
-            display: flex;
-            gap: 1.5rem;
-            width: max-content;
-            animation: scroll-rtl 32s linear infinite;
-            transition: animation-play-state 0.3s;
-        }
+        <!-- Reviews Section -->
+        <section id="reviews" class="py-16 md:py-24 bg-dark relative overflow-hidden">
+            <style>
+                .carousel-container {
+                    width: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                }
+                
+                .carousel-track {
+                    display: flex;
+                    gap: 1.5rem;
+                    width: max-content;
+                    animation: scroll-rtl 32s linear infinite;
+                    transition: animation-play-state 0.3s;
+                }
 
-        .carousel-track:hover {
-            animation-play-state: paused;
-        }
+                .carousel-track:hover {
+                    animation-play-state: paused;
+                }
 
-        @keyframes scroll-rtl {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-50% - 0.75rem)); } 
-        }
+                @keyframes scroll-rtl {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(calc(-50% - 0.75rem)); } 
+                }
 
-        .review-card {
-            width: 320px;
-            flex-shrink: 0;
-        }
+                .review-card {
+                    width: 320px;
+                    flex-shrink: 0;
+                }
 
-        @media (min-width: 768px) {
-            .review-card {
-                width: 380px;
-            }
-        }
-    </style>
+                @media (min-width: 768px) {
+                    .review-card {
+                        width: 380px;
+                    }
+                }
+            </style>
 
-    <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
-        <div class="text-center" data-aos="fade-up">
-            <div class="flex justify-center mb-4">
-                <div class="bg-white/5 border border-gold/30 px-4 md:px-5 py-1.5 md:py-2 rounded-full flex items-center gap-2 md:gap-3 shadow-lg backdrop-blur-md">
-                    <span class="text-white font-bold text-xs md:text-sm">לקוחות מאומתים מגוגל</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-4 h-4 md:w-[18px] md:h-[18px]" aria-hidden="true"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-                </div>
-            </div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 heebo-font">אמת מארץ תצמח..<br><span class="gold-gradient-text">הקשיבו לתוצאות</span></h2>
-        </div>
-    </div>
-
-    <div class="carousel-container" dir="rtl">
-        <div class="carousel-track">
-            <!-- קבוצת כרטיסיות ראשונה -->
-            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
-                <div>
-                    <div class="flex items-center justify-between mb-4 md:mb-6">
-                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-white/5 border border-gold/30 px-4 md:px-5 py-1.5 md:py-2 rounded-full flex items-center gap-2 md:gap-3 shadow-lg backdrop-blur-md">
+                            <span class="text-white font-bold text-xs md:text-sm">לקוחות מאומתים מגוגל</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-4 h-4 md:w-[18px] md:h-[18px]" aria-hidden="true"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
                         </div>
-                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
                     </div>
-                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
-                </div>
-                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">מ.א</div>
-                    <div>
-                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                        <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
-                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 heebo-font">אמת מארץ תצמח..<br><span class="gold-gradient-text">הקשיבו לתוצאות</span></h2>
                 </div>
             </div>
 
-            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] flex flex-col justify-between bg-gradient-to-b from-white/10 to-transparent relative">
-                <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
-                <div>
-                    <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
-                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="carousel-container" dir="rtl">
+                <div class="carousel-track">
+                    <!-- Feedback card list -->
+                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-4 md:mb-6">
+                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                            </div>
+                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-xl md:text-2xl text-gold/30" aria-hidden="true"></i>
+                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">מ.א</div>
+                            <div>
+                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                                <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
+                            </div>
+                        </div>
                     </div>
-                    <blockquote class="text-white/95 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
-                </div>
-                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-gold/20">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-gold/30 text-sm md:text-base" aria-hidden="true">ש.כ</div>
-                    <div>
-                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                        <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
-                <div>
-                    <div class="flex items-center justify-between mb-4 md:mb-6">
-                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] flex flex-col justify-between bg-gradient-to-b from-white/10 to-transparent relative">
+                        <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
+                        <div>
+                            <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
+                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-xl md:text-2xl text-gold/30" aria-hidden="true"></i>
+                            </div>
+                            <blockquote class="text-white/95 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-gold/20">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-gold/30 text-sm md:text-base" aria-hidden="true">ש.כ</div>
+                            <div>
+                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                                <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
+                            </div>
+                        </div>
                     </div>
-                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
-                </div>
-                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">א.ד</div>
-                    <div>
-                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                        <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- קבוצת כרטיסיות שניה (שכפול מדויק ליצירת אפקט ה-Loop) -->
-            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
-                <div>
-                    <div class="flex items-center justify-between mb-4 md:mb-6">
-                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                        <div>
+                            <div class="flex items-center justify-between mb-4 md:mb-6">
+                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                            </div>
+                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">א.ד</div>
+                            <div>
+                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                                <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
+                            </div>
+                        </div>
                     </div>
-                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
-                </div>
-                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">מ.א</div>
-                    <div>
-                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                        <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] flex flex-col justify-between bg-gradient-to-b from-white/10 to-transparent relative" aria-hidden="true">
-                <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
-                <div>
-                    <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
-                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <!-- Duplicate cards for smooth carousel loop -->
+                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                        <div>
+                            <div class="flex items-center justify-between mb-4 md:mb-6">
+                                <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                            </div>
+                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-xl md:text-2xl text-gold/30"></i>
-                    </div>
-                    <blockquote class="text-white/95 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
-                </div>
-                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-gold/20">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-gold/30 text-sm md:text-base">ש.כ</div>
-                    <div>
-                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                        <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
+                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">מ.א</div>
+                            <div>
+                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                                <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
-                <div>
-                    <div class="flex items-center justify-between mb-4 md:mb-6">
-                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
-                    </div>
-                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
-                </div>
-                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">א.ד</div>
-                    <div>
-                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                        <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Articles Section -->
         <section id="articles" class="py-16 md:py-24 bg-[#0a0a0a] relative overflow-hidden">
@@ -1107,7 +1125,7 @@
             </div>
         </section>
         
-       <!-- FAQ -->
+        <!-- FAQ -->
         <section id="faq" class="py-16 md:py-24 bg-dark">
             <div class="container mx-auto px-4 md:px-6 max-w-3xl">
                 <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
@@ -1148,7 +1166,7 @@
                             </span>
                         </summary>
                         <div class="px-5 md:px-6 pb-5 md:pb-6 text-white/80 text-sm md:text-base leading-relaxed border-t border-gold/10 pt-3 md:pt-4">
-                             הפנייה הראשונית והייעוץ המקדמי ניתנים ללא כל התחייבות. הם נועדו כדי לאפשר לכם להציג את נסיבות המקרה, לקבל הערכה ראשונית של המצב המשפטי ולהכיר את דרכי הפעולה האפשריות. אם אתם זקוקים להכוונה ראשונית או לבחינת המקרה שלכם, אתם מוזמנים לפנות אלינו בלב שקט. הייעוץ הראשוני אינו כרוך בהתחייבות, והוא הצעד הראשון שלכם לעבר מיצוי הזכויות שלכם.
+                             הפנייה הראשונית והייעוץ המקדמי ניתנים ללא כל התחייבות. הם נועדו כדי לאפשר לכם להציג את נסיבות המקרה, לקבל הערכה ראשונית של המצב המשפטי ולהכיר את דרכי הפעולה האפשריות. אם אתם זקוקים להכוונה ראשונית או לבחינת המקרה שלכם, אתם מוזמנים לפנות אלינו בלב שקט.
                         </div>
                     </details>
 
@@ -1167,30 +1185,38 @@
             </div>
         </section>
 
-        <!-- Interactive Lead Magnet / Form Trigger -->
-        <section id="check-urgency" class="py-16 md:py-24 bg-dark relative overflow-hidden">
+        <!-- Elegant Urgent Consultation Callout (No Calculators/Wizards) -->
+        <section id="consultation-callout" class="py-16 md:py-24 bg-dark relative overflow-hidden">
             <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-                <div class="glass p-6 sm:p-10 rounded-[2rem] md:rounded-[3rem] border-gold/40 relative overflow-hidden glow-effect-card shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                    <div class="absolute top-0 right-0 w-24 h-24 md:w-40 md:h-40 bg-gold/10 rounded-bl-full pointer-events-none z-0" aria-hidden="true"></div>
+                <div class="glass p-8 sm:p-12 rounded-[2rem] md:rounded-[3rem] border-gold/40 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#0c0c0c]">
+                    <div class="absolute top-0 right-0 w-24 h-24 md:w-40 md:h-40 bg-gold/5 rounded-bl-full pointer-events-none z-0" aria-hidden="true"></div>
+                    
                     <div class="relative z-10 text-center">
-                        <h2 class="text-2xl md:text-3xl font-black mb-4 md:mb-6 heebo-font text-white">סימולטור <span class="gold-gradient-text">התאמת המקרה שלך</span></h2>
+                        <span class="text-gold font-bold tracking-[0.15em] uppercase text-xs md:text-sm mb-4 block">הזדמנות להערכה מקצועית</span>
+                        <h2 class="text-3xl md:text-4xl font-black mb-4 heebo-font text-white">פגישת אבחון ואסטרטגיה לתיק שלך</h2>
+                        <p class="text-white/85 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-8">
+                            בדיונים בבתי הדין הרבניים, הכנה מוקדמת וגיבוש טיעונים הלכתיים נכונים הם שעושים את ההבדל בין הצלחה לכישלון. אל תשאיר את עתידך ורכושך ליד המקרה.
+                        </p>
                         
-                        <!-- Dynamic Progress Bar -->
-                        <div class="w-full bg-white/10 h-1.5 rounded-full mb-8 max-w-md mx-auto overflow-hidden">
-                            <div id="quiz-progress animate-pulse" class="h-full gold-gradient rounded-full w-1/3 transition-all duration-300"></div>
-                        </div>
-
-                        <div id="quiz-container" class="space-y-6 md:space-y-8" aria-live="polite">
-                            <p id="quiz-question" class="text-lg md:text-xl text-white font-bold">שאלה 1 מתוך 3: האם כבר נפתח תיק באחד מבתי הדין?</p>
-                            <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 max-w-md mx-auto">
-                                <button onclick="nextQuizStep('כן')" class="glass text-white px-8 md:px-10 py-3 md:py-4 rounded-xl hover:bg-gold hover:text-dark font-bold transition-all border-gold/40 focus-visible:ring-2 focus-visible:ring-gold min-h-[44px]">כן, נפתח כבר הליך</button>
-                                <button onclick="nextQuizStep('לא')" class="glass text-white px-8 md:px-10 py-3 md:py-4 rounded-xl hover:bg-gold hover:text-dark font-bold transition-all border-gold/40 focus-visible:ring-2 focus-visible:ring-gold min-h-[44px]">לא, עדיין לא התחלנו</button>
+                        <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-right mb-8">
+                            <div class="bg-dark/50 border border-gold/10 p-4 rounded-xl">
+                                <div class="text-gold text-lg mb-1"><i class="fas fa-lock"></i> חיסיון מלא</div>
+                                <p class="text-white/60 text-xs leading-relaxed">דיסקרטיות מוחלטת מובטחת כהלכה לכל שלב בתיק.</p>
+                            </div>
+                            <div class="bg-dark/50 border border-gold/10 p-4 rounded-xl">
+                                <div class="text-gold text-lg mb-1"><i class="fas fa-check-circle"></i> מיקוד מהיר</div>
+                                <p class="text-white/60 text-xs leading-relaxed">ניתוח מהיר של עילות הגירושין והשפעת הכתובה.</p>
+                            </div>
+                            <div class="bg-dark/50 border border-gold/10 p-4 rounded-xl">
+                                <div class="text-gold text-lg mb-1"><i class="fas fa-bullseye"></i> תוכנית עבודה</div>
+                                <p class="text-white/60 text-xs leading-relaxed">שרטוט אסטרטגי של הצעד הבא מול ערכאות השפיטה.</p>
                             </div>
                         </div>
-                        <div id="quiz-result" class="hidden animate-pulse">
-                            <p id="result-text" class="text-xl md:text-2xl font-black text-gold mb-3 md:mb-4 drop-shadow-md">המקרה שלך דורש אסטרטגיה דחופה!</p>
-                            <p class="text-white mb-6 md:mb-8 italic text-sm md:text-base">אל תתנו לצד השני לקבוע עובדות בשטח. השאירו פרטים למטה ונחזור אליכם תוך פחות מ-24 שעות.</p>
-                            <a href="#contact-form-anchor" class="gold-gradient text-dark px-6 md:px-8 py-3 rounded-full font-black shadow-[0_5px_15px_rgba(212,175,55,0.4)] focus-visible:ring-2 focus-visible:ring-white inline-block min-h-[44px]">עבור לטופס הפנייה <i class="fas fa-arrow-down mr-2" aria-hidden="true"></i></a>
+
+                        <div>
+                            <a href="#contact" class="shimmer-btn gold-gradient text-dark px-10 py-4 rounded-xl font-black shadow-[0_10px_25px_rgba(212,175,55,0.4)] focus:ring-2 focus:ring-white inline-block text-sm md:text-base transition-all">
+                                לתיאום פגישה מהירה וסודית <i class="fas fa-chevron-down mr-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1208,7 +1234,7 @@
                 <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
                     <div class="text-center lg:text-right">
                         <div class="inline-flex items-center justify-center lg:justify-start gap-2 text-gold text-[10px] md:text-xs font-bold mb-4 md:mb-6 bg-gold/10 px-4 py-1.5 rounded-full border border-gold/30 shadow-sm mx-auto lg:mx-0">
-                            <i class="fas fa-lock text-gold" aria-hidden="true"></i> סודיות רפואית-משפטית מובטחת
+                            <i class="fas fa-lock text-gold" aria-hidden="true"></i> סודיות מלאה מובטחת כהלכה
                         </div>
                         <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 heebo-font text-white leading-tight">נשמח להקשיב & <br class="hidden sm:block">לייעץ ולסייע</h2>
                         <p class="text-white/80 mb-8 md:mb-10 text-sm md:text-lg leading-relaxed">פגישת ייעוץ ראשונית יכולה לשנות את פני התיק כולו. השאירו פרטים ונחזור אליכם לשיחה דיסקרטית וללא התחייבות.</p>
@@ -1389,70 +1415,6 @@
                     card.style.setProperty('--mouse-y', `${y}px`);
                 });
             });
-        }
-
-        // Multi-tab advantage switch mechanism
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
-            
-            const selectedBtn = document.getElementById(`tab-${tabId}`);
-            const selectedContent = document.getElementById(`content-${tabId}`);
-            
-            if (selectedBtn && selectedContent) {
-                selectedBtn.classList.add('active');
-                selectedContent.classList.remove('hidden');
-            }
-        }
-
-        // Dynamic Quiz step machine
-        let quizStep = 1;
-        let userAnswers = {};
-
-        function nextQuizStep(answer) {
-            const container = document.getElementById('quiz-container');
-            const result = document.getElementById('quiz-result');
-            const question = document.getElementById('quiz-question');
-            const progressBar = document.querySelector('#quiz-progress');
-
-            if (quizStep === 1) {
-                userAnswers.hasCase = answer;
-                progressBar.style.width = '66%';
-                question.innerText = "שאלה 2 מתוך 3: האם מדובר בסכסוך שמעורב בו רכוש או ילדים?";
-                container.innerHTML = `
-                    <p class="text-lg md:text-xl text-white font-bold">${question.innerText}</p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 max-w-md mx-auto">
-                        <button onclick="nextQuizStep('כן')" class="glass text-white px-8 md:px-10 py-3 md:py-4 rounded-xl hover:bg-gold hover:text-dark font-bold transition-all border-gold/40 focus-visible:ring-2 focus-visible:ring-gold min-h-[44px]">כן, בהחלט</button>
-                        <button onclick="nextQuizStep('לא')" class="glass text-white px-8 md:px-10 py-3 md:py-4 rounded-xl hover:bg-gold hover:text-dark font-bold transition-all border-gold/40 focus-visible:ring-2 focus-visible:ring-gold min-h-[44px]">לא, משהו אחר</button>
-                    </div>
-                `;
-                quizStep = 2;
-            } else if (quizStep === 2) {
-                userAnswers.hasChildrenOrProperty = answer;
-                progressBar.style.width = '100%';
-                question.innerText = "שאלה 3 מתוך 3: האם קיים צורך מיידי בהוצאת צווי עיכוב או מניעה?";
-                container.innerHTML = `
-                    <p class="text-lg md:text-xl text-white font-bold">${question.innerText}</p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 max-w-md mx-auto">
-                        <button onclick="nextQuizStep('כן')" class="glass text-white px-8 md:px-10 py-3 md:py-4 rounded-xl hover:bg-gold hover:text-dark font-bold transition-all border-gold/40 focus-visible:ring-2 focus-visible:ring-gold min-h-[44px]">כן, יש דחיפות כזו</button>
-                        <button onclick="nextQuizStep('לא')" class="glass text-white px-8 md:px-10 py-3 md:py-4 rounded-xl hover:bg-gold hover:text-dark font-bold transition-all border-gold/40 focus-visible:ring-2 focus-visible:ring-gold min-h-[44px]">לא, אין לחץ של זמן</button>
-                    </div>
-                `;
-                quizStep = 3;
-            } else {
-                userAnswers.isUrgent = answer;
-                container.classList.add('hidden');
-                result.classList.remove('hidden');
-                
-                const resultTextElement = document.getElementById('result-text');
-                if (userAnswers.isUrgent === 'כן' || userAnswers.hasCase === 'כן') {
-                    resultTextElement.innerText = "המקרה שלך דורש אסטרטגיה מהירה ומיידית!";
-                } else {
-                    resultTextElement.innerText = "מומלץ לבצע תכנון מקדים לפני כל צעד!";
-                }
-                const contactLink = result.querySelector('a');
-                if(contactLink) contactLink.focus();
-            }
         }
 
         // Live stats counters implementation
