@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>חוות דעת הלכתית: חוסר כשרות שיפוטית וביטול העברה מחמת חוסר דעת ואונס</title>
+    
+    <!-- CDN External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#0e1117',
+                        paper: '#161b22'
+                    },
+                    fontFamily: {
+                        serif: ['Frank Ruhl Libre', 'serif'],
+                        sans: ['Assistant', 'sans-serif'],
+                        heading: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #e6edf3;
+            --heading-color: #ffffff;
+            --gold-accent: #c5a059;
+            --gold-subtle: rgba(197, 160, 89, 0.12);
+            --surface-color: rgba(22, 27, 34, 0.75);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --base-font-size: 1.3rem;
+        }
+
+        body.theme-light {
+            --bg-color: #fcfbf7;
+            --text-color: #1f2328;
+            --heading-color: #0f1419;
+            --gold-accent: #8c6b23;
+            --gold-subtle: rgba(140, 107, 35, 0.08);
+            --surface-color: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color);
+            font-family: 'Assistant', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .paper-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.03; pointer-events: none; z-index: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
+        body.theme-light .paper-grain { opacity: 0.25; }
+
+        .article-body {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: var(--base-font-size);
+            line-height: 1.95;
+            text-align: justify;
+            color: var(--text-color);
+            transition: font-size 0.2s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-body p { margin-bottom: 1.8rem; }
+
+        .article-body h2 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 800;
+            font-size: calc(var(--base-font-size) + 0.55rem);
+            color: var(--gold-accent);
+            margin-top: 3.2rem;
+            margin-bottom: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 110px;
+            border-bottom: 2px solid var(--gold-subtle);
+            padding-bottom: 8px;
+        }
+
+        .article-body h3 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 700;
+            font-size: calc(var(--base-font-size) + 0.2rem);
+            color: var(--heading-color);
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .drop-cap::first-letter {
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            color: var(--gold-accent);
+            float: right; 
+            line-height: 0.85; 
+            margin-left: 14px; 
+            margin-top: 4px;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .source-note {
+            float: left; 
+            width: 38%; 
+            margin-left: -16%; 
+            margin-right: 5%; 
+            margin-bottom: 20px;
+            font-family: 'Assistant', sans-serif; 
+            font-size: 0.95rem; 
+            line-height: 1.65;
+            color: var(--text-color); 
+            border-right: 3.5px solid var(--gold-accent); 
+            padding: 16px; 
+            background: var(--surface-color); 
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 1280px) {
+            .source-note { 
+                float: none; 
+                width: 100%; 
+                margin: 25px 0; 
+                border-right: 4px solid var(--gold-accent); 
+            }
+        }
+
+        .reading-controls {
+            position: fixed; 
+            left: 25px; 
+            top: 50%; 
+            transform: translateY(-50%);
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px;
+            background: var(--surface-color); 
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); 
+            padding: 8px; 
+            border-radius: 30px;
+            z-index: 90; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .control-btn {
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            color: var(--text-color); 
+            font-weight: 600; 
+            transition: all 0.2s; 
+            font-size: 0.95rem;
+        }
+        .control-btn:hover { 
+            background: var(--gold-subtle); 
+            color: var(--gold-accent); 
+        }
+
+        @media (max-width: 1024px) {
+            .reading-controls { 
+                top: auto; 
+                bottom: 25px; 
+                left: 50%; 
+                transform: translateX(-50%); 
+                flex-direction: row; 
+                border-radius: 50px; 
+                padding: 6px 16px; 
+            }
+        }
+
+        .print-only { display: none; }
+
+        @media print {
+            @page { size: A4; margin: 20mm 15mm; }
+            body { 
+                background: white !important; 
+                color: black !important; 
+                font-family: 'Frank Ruhl Libre', serif !important; 
+            }
+            .paper-grain, .no-print, header, .reading-controls { 
+                display: none !important; 
+            }
+            .print-only { display: block !important; }
+            
+            .print-letterhead {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 2px solid black;
+                padding-bottom: 12px;
+                margin-bottom: 25px;
+                font-family: 'Assistant', sans-serif !important;
+            }
+            .print-letterhead h3 { font-size: 16pt; font-weight: 800; margin: 0; color: black !important; }
+            .print-letterhead p { font-size: 10pt; margin: 0; color: #333 !important; }
+
+            .article-body { font-size: 11.5pt !important; line-height: 1.7 !important; color: black !important; }
+            h1 { font-family: 'Frank Ruhl Libre', serif !important; font-size: 17pt !important; color: black !important; text-align: center; font-weight: bold; margin: 15px 0 !important; }
+            h2 { font-family: 'Assistant', sans-serif !important; font-size: 13pt !important; color: black !important; border-bottom: 1px solid #000 !important; padding-bottom: 4px; margin-top: 16pt !important; page-break-after: avoid; }
+            h3 { font-family: 'Assistant', sans-serif !important; font-size: 11.5pt !important; color: black !important; font-weight: bold; page-break-after: avoid; }
+            p { page-break-inside: avoid; orphans: 3; widows: 3; color: black !important; margin-bottom: 10pt !important; text-align: justify !important; }
+
+            .source-note { 
+                float: none; width: 100%; margin: 12px 0; 
+                border: 1px solid #888 !important; border-right: 4px solid black !important;
+                padding: 10px !important; font-size: 10pt !important; 
+                background: #fafafa !important; page-break-inside: avoid; 
+                font-family: 'Assistant', sans-serif !important;
+            }
+
+            .verdict-box { 
+                border: 2px solid black !important; 
+                padding: 18px !important; 
+                margin-top: 25px !important; 
+                border-radius: 0 !important; 
+                background: transparent !important; 
+                page-break-inside: avoid; 
+            }
+            .verdict-box h3 { color: black !important; border: none !important; font-size: 13pt !important; margin-bottom: 12px !important; text-decoration: underline; }
+            .drop-cap::first-letter { color: black !important; }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#C5A059]/30">
+
+    <div class="paper-grain"></div>
+
+    <!-- כותרת מכתבייה להדפסה בלבד -->
+    <div class="print-only print-letterhead">
+        <div>
+            <h3>חוות דעת הלכתית-משפטית</h3>
+            <p>בירור גדרי כשרות משפטית, גמירות דעת, ואונס בדיני ממונות ומתנה</p>
+        </div>
+        <div style="text-align: left;">
+            <p><strong>בס"ד</strong></p>
+            <p>נושא: ביטול העברת זכויות בעיזבון<br>עילה: חוסר כשרות שיפוטית ואונס</p>
+        </div>
+    </div>
+
+    <!-- סרגל עליון במסך -->
+    <header class="no-print fixed top-0 w-full z-50 py-4 px-6 flex justify-between items-center bg-[var(--bg-color)]/90 backdrop-blur-md transition-all duration-300 border-b border-[var(--border-color)]">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--gold-accent)] bg-[var(--gold-subtle)]">
+                <i class="fas fa-balance-scale text-xs"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--text-color)] opacity-80">חוות דעת הלכתית-משפטית מורחבת</span>
+        </div>
+        <div class="text-xs font-bold text-[var(--text-color)] opacity-50 tracking-widest uppercase">בס"ד</div>
+    </header>
+
+    <!-- חלונית כלים צפה -->
+    <div class="reading-controls no-print" title="כלים לנוחות קריאה">
+        <button onclick="changeFontSize(0.1)" class="control-btn" title="הגדל טקסט">A+</button>
+        <button onclick="changeFontSize(-0.1)" class="control-btn" title="הקטן טקסט">A-</button>
+        <div class="w-full h-px bg-[var(--border-color)] my-1 hidden lg:block"></div>
+        <div class="w-px h-full bg-[var(--border-color)] mx-1 block lg:hidden"></div>
+        <button onclick="toggleTheme()" class="control-btn" title="החלף מצב תצוגה (כהה / קלף)">
+            <i class="fas fa-book-open"></i>
+        </button>
+        <button onclick="window.print()" class="control-btn" title="הדפסה / שמירה כ-PDF">
+            <i class="fas fa-print"></i>
+        </button>
+    </div>
+
+    <main class="relative z-10 pt-28 pb-32 px-6">
+        <div class="flex max-w-[1000px] mx-auto relative justify-center">
+
+            <!-- קנווס המאמר המרכזי -->
+            <article class="reading-canvas max-w-[780px] w-full">
+
+                <!-- כותרת המאמר למסך -->
+                <div class="mb-12 text-center no-print">
+                    <div class="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[var(--gold-accent)] uppercase mb-6 bg-[var(--gold-subtle)] px-4 py-1.5 rounded-full border border-[var(--gold-accent)]">
+                        <span>משפט עברי וחושן משפט</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--gold-accent)]"></span>
+                        <span>דיני קניינים, מתנה ומחילה</span>
+                    </div>
+
+                    <h1 class="text-3xl md:text-5xl font-heading font-black text-[var(--heading-color)] leading-tight mb-6">
+                        חוסר כשרות שיפוטית – ההיבט ההלכתי: ביטול העברה מחמת חוסר דעת, אונס ופתיות
+                    </h1>
+
+                    <p class="text-lg text-[var(--text-color)] opacity-85 font-sans max-w-2xl mx-auto leading-relaxed">
+                        בירור מקיף ועמוק בגדרי כשרות המבקשת לחתום על ויתור זכויות בעיזבון, ניתוח פסיקת הגמרא, הרמב"ם והשולחן ערוך, יסוד הרשב"א בגדר "כמאן דליתא", חידוש הרשב"ץ בדין סממן שטות במקח ומתנה, ודין מתנה מחמת אונס
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 py-4 border-y border-[var(--border-color)] mt-8 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-gavel text-[var(--gold-accent)]"></i>
+                            <span class="font-bold text-[var(--heading-color)]">ניתוח הלכתי מורחב</span>
+                        </div>
+                        <div class="w-1 h-1 rounded-full bg-[var(--border-color)]"></div>
+                        <div class="flex items-center gap-2 opacity-70">
+                            <i class="far fa-file-alt"></i>
+                            <span>חושן משפט: סימנים לה, רלה, רמא, רמב, רמג</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- כותרת להדפסה בלבד -->
+                <h1 class="print-only">חוסר כשרות שיפוטית – ההיבט ההלכתי: ביטול העברה מחמת חוסר דעת, אונס ופתיות</h1>
+
+                <!-- גוף המאמר -->
+                <div class="article-body">
+
+                    <!-- תוכן עניינים וראשי פרקים -->
+                    <div class="my-8 p-6 rounded-xl border border-[var(--border-color)] bg-[var(--surface-color)] font-sans">
+                        <h3 class="text-sm font-bold text-[var(--gold-accent)] uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <i class="fas fa-sitemap"></i> ראשי הפרקים והיסודות ההלכתיים:
+                        </h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs md:text-sm text-[var(--text-color)] opacity-90 font-medium">
+                            <li>• <strong>פרק א':</strong> הצורך לדון בכשרות המבקשת לחתום על ויתור</li>
+                            <li>• <strong>פרק ב':</strong> הטעם ההלכתי לפסלות מעשיו של חסר הדעת</li>
+                            <li>• <strong>פרק ג':</strong> הכלל: "אין ממכרו ממכר ואין מתנותיו קיימות"</li>
+                            <li>• <strong>פרק ד':</strong> יסוד הרשב"א: "אף על גב שאמר – כמאן דליתא דמי"</li>
+                            <li>• <strong>פרק ה':</strong> הרחבת הדין לפתאים, מבוהלים ומשובשי דעת</li>
+                            <li>• <strong>פרק ו':</strong> חידוש הרשב"ץ: סממן שטות כלשהו במקח ומתנה</li>
+                            <li>• <strong>פרק ז':</strong> הדרישה ההלכתי לגמירות דעת וקניין במתנה</li>
+                            <li>• <strong>פרק ח':</strong> ביטול מתנה מחמת אונס ודין "מוכחא מילתא"</li>
+                            <li>• <strong>פרק ט':</strong> אי-הגעת המבקשת לגיל עשרים כתנאי מצטבר</li>
+                        </ul>
+                    </div>
+
+                    <!-- פרק א -->
+                    <h2>א. הצורך לדון בכשרות המבקשת לחתום על ויתור</h2>
+
+                    <p class="drop-cap text-[var(--heading-color)] font-medium mb-6">
+                        בפתח הניתוח ההלכתי של הבקשה דנן, אנו באים לדון בשאלת כשרותה המשפטית-הלכתית של המבקשת לחתום על ויתור והעברת חלקה בעיזבון אמה המנוחה. העברה זו נעשתה תחת מסכת קשה ובלתי פוסקת של לחצים, אלימות ואיומים, ובזמן שהמבקשת הייתה שרויה במצב נפשי מעורער מאוד, כמפורט בהרחבה במסמכים ובעובדות המקרה.
+                    </p>
+
+                    <p>
+                        מן החומר העובדתי עולה כי קיימות ראיות אובייקטיביות, רפואיות ועדכניות בדבר פסלותה המשפטית-הלכתית דאז של המבקשת לבצע כל פעולת הקנאה, מחילה או ויתור על חלקה בעיזבון. ראיות אלו, המצביעות בבירור על היעדר כשרותה הנפשית והמשפטית בעת החתימה, הוסתרו או שלא הוצגו בשעתה בפני הערכאה המוסמכת והיועץ המשפטי שדן בעניין. על כן, חובה הלכתית מוחלטת לברר מחדש את תוקפה של אותה העברה לאור דיני התורה.
+                    </p>
+
+                    <!-- פרק ב -->
+                    <h2>ב. הטעם ההלכתי לפסלות מעשיו של חסר הדעת</h2>
+
+                    <aside class="source-note">
+                        <strong>מקורות מרכזיים:</strong><br>
+                        מסכת חגיגה (דף ג, ע"ב); בית יוסף חושן משפט, סימן לה, ד"ה שוטה פסול; רמב"ם הלכות עדות פרק ט.
+                    </aside>
+
+                    <p>
+                        <strong>הגדרת "שוטה" ודרישת המודעות:</strong> המשנה והגמרא במסכת חגיגה (דף ג, ע"ב) קובעות את גדרי השוטה: <em>"איזהו שוטה? היוצא יחידי בלילה, והלן בבית הקברות, והמקרע את כסותו..."</em>. על בסיס סוגיה זו נפסק להלכה, כי השוטה פסול לעשיית פעולות הלכתיות ומשפטיות רבות, וזאת מתוך עיקרון יסוד: **כל פעולה משפטית, הקנאה, מכר או מתנה, מחייבת מודעות מלאה, תבונה וגמירות דעת שלמה של העושה.**
+                    </p>
+
+                    <p>
+                        טעם הפסלות מבואר בהרחבה בדברי מרן כסף משנה בבית יוסף (חושן משפט, סימן לה, ד"ה שוטה פסול):
+                    </p>
+
+                    <div class="my-8 py-5 px-7 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] rounded-l-lg font-serif">
+                        <p class="text-[calc(var(--base-font-size)-0.05rem)] text-[var(--heading-color)] leading-relaxed italic mb-0">
+                            "הטעם לכך הוא פשוט, דכיון דלאו בר דעת הוא, לא סמכינן אסהדותיה ולא עביד מעשה... דכל מעשיו אינם כלום, לפי שאין לו דעת."
+                        </p>
+                    </div>
+
+                    <p>
+                        כלומר, היסוד המכונן של הפסלות אינו רק סממן חיצוני כזה או אחר, אלא **היעדר הדעת והתבונה** הנדרשים על פי תורתנו הקדושה בעת ביצוע הפעולה המשפטית. לפיכך, אם מתברר בדיעבד כי בעת ביצוע הפעולה הקניינית הייתה כשרותו הנפשית או התודעתית של האדם פגומה, דינה של הפעולה הוא בטלות מוחלטת למפרע.
+                    </p>
+
+                    <!-- פרק ג -->
+                    <h2>ג. הכלל ההלכתי: "אין ממכרו ממכר ואין מתנותיו קיימות"</h2>
+
+                    <p>
+                        <strong>ביטול פעולות מכר וקניין:</strong> הכלל ההלכתי הנחרץ בדיני ממונות הוא שפעולות מכר, מתנה וקניין שנעשו על ידי חסר דעת הן **בטלות מעיקרן (Void)**. כאלים וכאבן נמשלו מעשיו.
+                    </p>
+
+                    <p>
+                        כך מובא מפורשות בגמרא במסכת כתובות (דף כב, ע"א):
+                    </p>
+
+                    <div class="my-6 py-4 px-6 border-r-4 border-[var(--gold-accent)] bg-[var(--surface-color)] rounded-l-lg font-serif italic text-[var(--heading-color)]">
+                        "גבי בר שטיא דזבין נכסי... ואמר רבא: לא עשה ולא כלום."
+                    </div>
+
+                    <p>
+                        היינו, שפעולותיו של מי שאינו בר דעת – בין אם קנה, בין אם מכר, ובין אם נתן במתנה או מחל – אין להן תוקף הלכתי כלל וכלל. על בסיס זה פסק הרמב"ם (הלכות מכירה, פרק כט, הלכה ד):
+                    </p>
+
+                    <p class="font-serif italic bg-[var(--gold-subtle)] p-4 rounded-lg border-r-2 border-[var(--gold-accent)]">
+                        "צריכים בית דין להעמיד אפוטרופא לשוטה, כדרך שמעמידין לקטן, שאין מקחו מקח ואין ממכרו ממכר ואין מתנותיו קיימות."
+                    </p>
+
+                    <p>
+                        <strong>פסיקת השולחן ערוך והרחבת הדין:</strong> מרן השולחן ערוך פוסק הלכה זו בלשון זהב בחושן משפט (סימן רלה, סעיף כ):
+                    </p>
+
+                    <div class="my-8 p-6 border border-[var(--gold-accent)] bg-[var(--surface-color)] rounded-xl">
+                        <p class="font-serif font-bold text-[calc(var(--base-font-size)+0.05rem)] text-[var(--heading-color)] leading-relaxed m-0">
+                            "השוטה אין מקחו מקח ואין ממכרו ממכר ואין מתנותיו קיימות לא במטלטלין ולא בקרקע, ובית דין מעמידין אפוטרופוס לשוטים כדרך שממנים לקטנים."
+                        </p>
+                    </div>
+
+                    <p>
+                        ויודגש היטב: דין זה **אינו מוגבל רק לשוטה "גמור"** כהגדרתו הרפואית או הקלאסית. בהמשך הסעיפים (שם, סעיף כא) מבואר כי דינם שווה לחלוטין גם ל"אלו המבוהלים והנחפזים בדעתם", הן לעניין דיני מכר ומתנה והן לעניין כל הפעולות המשפטיות.
+                    </p>
+
+                    <p>
+                        <strong>יישום ישיר לענייננו:</strong> מעשיה של המבקשת, אשר בוצעו תחת מצוקה נפשית קשה, חרדה עמוקה, ולחץ בלתי הפיך השוללים לחלוטין את יסוד גמירות הדעת ויכולת השיפוט התקינה, בטלים ומבוטלים מעיקרם בהתאם לעיקרון יסוד זה.
+                    </p>
+
+                    <!-- פרק ד -->
+                    <h2>ד. אף על גב שאמר – דינו כמאן דליתא דמי (יסוד הרשב"א)</h2>
+
+                    <aside class="source-note">
+                        <strong>סוגיית קורדייקוס והרשב"א:</strong><br>
+                        משנה גיטין סז:; טור ושולחן ערוך אבן העזר סימן קכא; חידושי הרשב"א גיטין סז, ע"ב.
+                    </aside>
+
+                    <p>
+                        <strong>תקדים הלכתי: פסלות אמירת גט מחמת חוסר דעת:</strong> המשנה במסכת גיטין (דף סז, ע"ב) קובעת דין יסודי:
+                    </p>
+
+                    <p class="font-serif italic bg-[var(--gold-subtle)] p-4 rounded-lg border-r-2 border-[var(--gold-accent)]">
+                        "מי שאחזו קורדייקוס [חולי המבלבל את הדעת] ואמר: כתבו גט לאשתי – לא אמר כלום."
+                    </p>
+
+                    <p>
+                        דין זה נפסק להלכה על ידי הטור ומרן השולחן ערוך (אבן העזר, סימן קכא). מכלל דברי הפוסקים עולה בבירור, כי דינם של השוטה, של מי שאחזו קורדייקוס, ושל כל מי שדעתו מטושטשת מחמת חולי או מצוקה קיצונית – דין אחד הוא לעניין פסלות כל פעולותיהם.
+                    </p>
+
+                    <p>
+                        <strong>הטעם ההלכתי – היעדר ציווי מחייב (יסוד הרא"ש והרשב"א):</strong> הרשב"א בחידושיו (גיטין סז, ע"ב) עומד על העומק ההלכתי של משנה זו ומבאר:
+                    </p>
+
+                    <div class="my-8 py-5 px-7 border-r-4 border-[var(--gold-accent)] bg-[var(--surface-color)] rounded-l-lg font-serif">
+                        <p class="text-[calc(var(--base-font-size)-0.05rem)] text-[var(--heading-color)] leading-relaxed italic mb-0">
+                            "כאשר הבעל ציווה לכתוב גט לאשתו בזמן שהיה שרוי בחולי ובבלבול הדעת, אף על פי שהוציא את המילים המפורשות מפיו, נמצא שמהותית 'הבעל לא באמת צוה ליתן גט לאשתו'. מכיוון שאחז אותו חולי זה, אין דעתו עליו, ואין זה דיבורו שלו."
+                        </p>
+                    </div>
+
+                    <p>
+                        <strong>העיקרון המכונן:</strong> התורה הצריכה את האדם להיות בהבנתו, בדעתו ובצלילותו בעת שהוא מבצע פעולות משפטיות החלות מכוח רצונו. כאשר הוא אינו במצב תודעתי זה – אפילו הוציא מפיו אמירה מפורשת, ואפילו חתם ידו על שטר – הרי שדיבורו וחתימתו גרועים מרוח בעלמא, וחשובים **"כמאן דליתא דמי"** (כאילו לא נאמרו ולא נחתמו מעולם!).
+                    </p>
+
+                    <p>
+                        <strong>יישום יסוד הרשב"א לענייננו:</strong> יסוד נפלא זה של הרשב"א מאיר באור בהיר את ענייננו. כאשר אדם שרוי במצוקה נפשית חמורה, תחת איומים וכפייה השוללים את חופש רצונו, כל חתימה או אמירה מפיו אינה מבטאת את רצונו החופשי. לפיכך, חתימת המבקשת על כתב הויתור נחשבת הלכתית כמאן דליתא דמי – כאילו לא חתמה על הנייר מעולם.
+                    </p>
+
+                    <!-- פרק ה -->
+                    <h2>ה. הרחבת דין הפסלות מחמת חוסר דעת לפתאים ומבוהלים</h2>
+
+                    <p>
+                        <strong>העיקרון המשותף:</strong> מתוך העיון בסוגיות עולה קו משותף וחד-משמעי: קיימת זהות משפטית מלאה בין "שוטה גמור" לבין אדם שאינו שוטה גמור, אך **"תכונת הפיסול"** אשר בגינה נפסל השוטה – דהיינו היעדר הדעת, המודעות וגמירות הדעת – מתקיימת בו באותה עת. מכאן הרחיבו חכמים והפוסקים את דין הפסלות לכל מי שפגום בדעתו בעת הפעולה.
+                    </p>
+
+                    <aside class="source-note">
+                        <strong>שיקול דעת הדיין:</strong><br>
+                        שו"ע חושן משפט סימן לה סעיף י; שם סימן רלה סעיף כא; תשובות הרא"ש.
+                    </aside>
+
+                    <p>
+                        <strong>הגדרת חסר הדעת מסורה לשיקול דעת הדיין:</strong> בשולחן ערוך (חושן משפט, סימן לה, סעיף י) מובא הדין של אלו שאינם מבינים ומכירים בדברים כראוי. מרן השולחן ערוך מקבע כלל יסוד בפסיקה:
+                    </p>
+
+                    <div class="my-6 p-5 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] font-serif font-bold text-[var(--heading-color)]">
+                        "ודבר זה לפי מה שיראה לדיין, שאי אפשר לכוון הדעת בכתב."
+                    </div>
+
+                    <p>
+                        דבר זה מלמדנו, שאין הגדרה מצומצמת ונוקשה של מעשה ספציפי שרק בגינו מוגדר אדם כחסר דעת, אלא בית הדין והדיין מחויבים להפעיל את שיקול דעתם הרחב בהתאם לנסיבות, לראיות ולמצב העובדתי המוצג בפניהם.
+                    </p>
+
+                    <p>
+                        <strong>קריטריונים ברורים במעשים קיצוניים:</strong> לצד ההכרעה המסורה לשיקול דעת הדיין, קיימים מצבים עובדתיים מובהקים וקיצוניים שבהם נקבע דין האדם כחסר דעת באופן ברור, מבלי שיהיה בדבר כל ספק. המצוקה הנפשית הקשה שבה הייתה שרויה המבקשת, שהותה במקלטים ובמקומות מחסה, וכפיפותה לאיומים ולאלימות קשה בזמן ביצוע העברת הזכויות – מהווים אינדיקציות מוחלטות וברורות לפגם מהותי בכשרותה לבצע את פעולת הקניין.
+                    </p>
+
+                    <!-- פרק ו -->
+                    <h2>ו. הרחבת דין השוטה במקורות הפסיקה: פתאים, מבוהלים ומשובשי דעת</h2>
+
+                    <p>
+                        בהתאם לעיקרון המחייב דעת צלולה ושלמה בעושה מעשה קניין או מתנה, מצינו בראשונים ובפוסקים הרחבה מפורשת של הגדרת חסרי הדעת:
+                    </p>
+
+                    <p>
+                        <strong>פסיקת הרמב"ם (הלכות עדות, פרק ט, הלכה י):</strong>
+                    </p>
+
+                    <div class="my-6 p-5 border-r-2 border-[var(--gold-accent)] bg-[var(--surface-color)] font-serif italic text-[var(--heading-color)]">
+                        "ולא שוטה שהולך ערום ומשבר כלים וזורק אבנים בלבד, אלא כל מי שנטרפה דעתו ונמצא דעתו משובשת תמיד בדבר מן הדברים, אף על פי שהוא מדבר ושואל כעניין בשאר הדברים – הרי זה פסול ובכלל שוטה יחשב."
+                    </div>
+
+                    <p>
+                        <strong>פסיקת ספר העיטור, הטור והשולחן ערוך (חו"מ סימן לה, סעיף י):</strong><br>
+                        ספר העיטור (הלכות עדות) קובע כי הפתאים והנחפזים שאינם מבינים עיקר דבריהם צריכים חקירה, שכן אף הם בכלל שוטים. וכן נפסק להלכה בשולחן ערוך:
+                    </p>
+
+                    <p class="font-serif italic bg-[var(--gold-subtle)] p-4 rounded-lg border-r-2 border-[var(--gold-accent)]">
+                        "הפתאים ביותר שאינן מכירין דברים שסותרין זה את זה ולא יבינו ענייני הדבר כדרך שמבינים שאר עם הארץ, וכן המבוהלים והנחפזים בדעתם והמשתגעים ביותר – הרי אלו בכלל השוטים."
+                    </p>
+
+                    <p>
+                        <strong>הבחנת ה"פרישה" (סימן לה, ס"ק יא):</strong> ה'פרישה' מסביר בטוב טעם את ההבדל: בעוד ש"שוטה" הוא מי שדעתו משובשת בדבר מסוים והוא מתנהג שלא כדרך העולם, הרי ש"פתאים ומבוהלים" הם אנשים שאינם מבינים עומק העניין ואינם מסוגלים לעמוד על השלכות מעשיהם מחמת בלבול, מצוקה או חולשת הדעת.
+                    </p>
+
+                    <!-- פרק ז -->
+                    <h2>ז. חידוש הרשב"ץ: סממן שטות כלשהו פוסל במקח ומתנה</h2>
+
+                    <aside class="source-note">
+                        <strong>חידוש הרשב"ץ:</strong><br>
+                        ספר 'יבין שמועה' להרשב"ץ (תיקון סופרים, שער טז); בבא בתרא קנח, ע"ב.
+                    </aside>
+
+                    <p>
+                        יסוד הלכתי מכריע ומשמעותי ביותר לענייננו מצינו בדברי גאון עוזנו **הרשב"ץ בספרו 'יבין שמועה'** (תיקון סופרים, שער טז). הרשב"ץ מחדש חילוק יסודי ופוסק כי יש להבחין חדה בין דיני נפשות/איסורים (כגון גיטין וקידושין) לבין דיני ממונות, מקח וממכר ומתנה:
+                    </p>
+
+                    <div class="my-8 py-6 px-8 border-r-4 border-[var(--gold-accent)] bg-[var(--surface-color)] rounded-l-lg font-serif">
+                        <p class="text-[calc(var(--base-font-size)-0.02rem)] text-[var(--heading-color)] leading-relaxed italic mb-0">
+                            "לעניות דעתי, רק לגיטין וקידושין אזלינן לחומרא – היינו שאין מחשיבים אותו לשוטה עד שיהיו בו כל סימני שטות גמורים. אבל בענייני מקח וממכר ומתנה, נראה שלא בעינן שטות כל כך! אלא אפילו שטות כלשהי... ואף על פי שאין זו שטות יתירה, מכל מקום ממכרו אינו ממכר ומתנותיו אינן מתנה."
+                        </p>
+                    </div>
+
+                    <p>
+                        הרשב"ץ מוכיח יסוד זה מהסוגיה במסכת בבא בתרא (דף קנח, ע"ב) לגבי ההוא דאכל וזרק גרעיני תמרים לפני רבא, ואף שאין זו שטות מוחלטת, נפסק שאין מתנותיו מתנה. הרשב"ץ מסכם בבהירות: **לפוסל אדם מלעשות מקח, ממכר, מתנה או ויתור – כלל לא נדרשת שטות גמורה, אלא די ב'סימן שטות' או חוסר דעת מועט בעת הפעולה!**
+                    </p>
+
+                    <p>
+                        <strong>מסקנה הלכתית חותכת:</strong> מצבה הנפשי של המבקשת בעת חתימתה – שכלל מצוקה קשה, חרדות, תלות מוחלטת, וכפייה מחמת איומים – עולה עשרת מונים על ה"סימן שטות" המוזכר בדברי הרשב"ץ, ועל כן פוסל ומבטל את ויתורה באופן מוחלט.
+                    </p>
+
+                    <!-- פרק ח -->
+                    <h2>ח. הדרישה ההלכתי לגמירות דעת וקניין במתנה</h2>
+
+                    <p>
+                        על פי תורת הקניינים בחושן משפט, העברת בעלות ללא תמורה ("מתנה") מחייבת ביצוע פעולת קניין ספציפית ומפורשת בליווי **גמירות דעת שלמה ומוחלטת** של הנותן.
+                    </p>
+
+                    <p>
+                        שכן מבואר בשולחן ערוך (חושן משפט, סימן רמא): <em>"קניין כל דבר כקניינו... ומתנה מחייבת כוונת הקנאה מושלמת"</em>. וכן בדין זכייה (חושן משפט, סימן רמג). מקום שבו נדרשת הקנאה, אם הנותן אינו בר דעת או שדעתו משובשת עליו, הקניין **אינו חל כלל** והחפץ או הזכות נשארים בבעלותו המקורית. (וראה עוד בדין 'דבר שאינו ברשותו', שו"ע חו"מ סימנים רט ו-רצא).
+                    </p>
+
+                    <!-- פרק ט -->
+                    <h2>ט. ביטול מתנה מחמת אונס ודין "מוכחא מילתא"</h2>
+
+                    <aside class="source-note">
+                        <strong>מתנה מחמת אונס:</strong><br>
+                        שולחן ערוך חושן משפט סימן רמב סעיף א'; גמרא בבא בתרא דף מ, ע"א.
+                    </aside>
+
+                    <p>
+                        <strong>מתנה מחמת אונס בטלה אף בלא מודעה:</strong> נדבך מרכזי נוסף המביא לבטלותה המוחלטת של העברת הזכויות הוא העיקרון ההלכתי של **מתנה שניתנה מחמת אונס**.
+                    </p>
+
+                    <p>
+                        מרן השולחן ערוך פוסק מפורשות בחושן משפט (סימן רמב, סעיף א):
+                    </p>
+
+                    <div class="my-8 p-6 border border-[var(--gold-accent)] bg-[var(--surface-color)] rounded-xl font-serif">
+                        <p class="font-bold text-[calc(var(--base-font-size)+0.02rem)] text-[var(--heading-color)] leading-relaxed m-0">
+                            "הנותן מתנה מחמת שאנסוהו ליתן – אינה מתנה! ואפילו קיבל עליו אחריות נכסים בשטר, ואפילו אם אינו מוסר 'מודעא' [הודעה מראש על האונס] – אם ידעינן באונס, אינה מתנה."
+                        </p>
+                    </div>
+
+                    <p>
+                        <strong>הוכחת האונס – "מוכחא מילתא":</strong> בגמרא במסכת בבא בתרא (דף מ, ע"א) מובא תקדים לגבי אדם שנתן את כל נכסיו במתנה מחמת נסיבות דוחקות, ואמר רבא: <em>"לא מר קנה ולא מר קנה, מפני שמוכחא מילתא דמחמת אונסא הוא"</em>.
+                    </p>
+
+                    <p>
+                        מכאן נפסק להלכה, כי כדי לבטל מתנה מחמת אונס **אין צורך במסירת מודעא מפורשת בפני עדים**, אלא די בכך שמתוך נסיבות העניין מודע ונראית הדבר – "מוכחא מילתא" – שהנתינה נעשתה מתוך כפייה, איומים או מצוקה קשה ולא מתוך רצון חופשי.
+                    </p>
+
+                    <p>
+                        <strong>יישום מובהק לענייננו:</strong> המסכת העובדתית, חוות הדעת המקצועיות, והאיומים והאלימות שהופעלו על המבקשת בעת העברת חלקה בירושה לטובת אביה – מהווים גילוי דעת נחרץ ובירור של "מוכחא מילתא" שההעברה הייתה מחמת אונס וכפייה, ועל כן היא בטלה ומבוטלת כחראס הנשבר.
+                    </p>
+
+                    <!-- פרק י -->
+                    <h2>י. טעם מצטבר: אי-הגעת המבקשת לגיל עשרים בשעת החתימה</h2>
+
+                    <p>
+                        לכל האמור לעיל מצטרף טעם הלכתי כבד משקל נוסף: **גילה הצעיר של המבקשת בעת ביצוע הויתור.**
+                    </p>
+
+                    <p>
+                        בשולחן ערוך (חושן משפט, סימן רלה, סעיף ט) נפסק הדין לגבי כשרות למכור ולתת נכסי מקרקעין:
+                    </p>
+
+                    <p class="font-serif italic bg-[var(--gold-subtle)] p-4 rounded-lg border-r-2 border-[var(--gold-accent)]">
+                        "כשהוא בן עשרים שנה שלימות והביא שתי שערות, מוכר בין במטלטלים בין בקרקעות... ואפילו אינו יודע בטיב משא ומתן."
+                    </p>
+
+                    <p>
+                        סעיף זה מעמיד תנאי חדיד ומחייב בדין התורה: **הגעה לגיל עשרים שנה שלמות כתנאי לכשרות גמורה לעשיית פעולות מכר ומתנה במקרקעין**, בפרט באדם שאינו מנוסה ובקי בטיב משא ומתן.
+                    </p>
+
+                    <p>
+                        בנדון דידן, במועד העברת הזכויות (10/09/2008), הייתה המבקשת **טרם מלאו לה עשרים שנה**. אי-עמידה בתנאי הגיל המינימלי שקבעה ההלכה, כשהיא מצטרפת למצבה הנפשי הרעוע, לחוסר הדעת, ולאונס והכפייה שהופעלו עליה – מהווה עילה מצטברת ומכרעת לפסול ולבטל את שטר הויתור מעיקרו.
+                    </p>
+
+                    <!-- קופסת פסק הדין והמסקנה -->
+                    <div class="verdict-box bg-[var(--surface-color)] border border-[var(--border-color)] rounded-2xl p-6 md:p-10 mt-14">
+                        <div class="flex items-center gap-4 mb-6 no-print">
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                            <h3 class="text-[var(--gold-accent)] font-bold uppercase tracking-widest text-lg text-center m-0">סיכום ומסקנות חוות הדעת ההלכתית</h3>
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                        </div>
+
+                        <h3 class="print-only text-center font-bold text-xl mb-6 underline">מסקנות חוות הדעת להלכה ולמעשה</h3>
+
+                        <div class="space-y-6 font-sans">
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">א.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>היעדר כשרות משפטית וחוסר דעת:</strong> המבקשת בעת חתימתה על כתב הויתור לא הייתה "בר דעת" כהגדרתו בהלכה, ודינה כדין פתיה או חסרת דעת שאין "מתנותיו קיימות" (שו"ע חו"מ סי' רלה סעיף כ).
+                                </p>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">ב.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>ביטול מעשה כמאן דליתא (הרשב"א והרשב"ץ):</strong> בהתאם ליסוד הרשב"א (גיטין סז:), דיבוריה וחתימתה של המבקשת בעת מצוקתה נחשבים הלכתית כמאן דליתא דמי. כמו כן, עפ"י חידוש הרשב"ץ ב'יבין שמועה', במקח ומתנה די ב"סממן שטות" כלשהו כדי לבטל את הפעולה לחלוטין.
+                                </p>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">ג.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>מתנה מחמת אונס ("מוכחא מילתא"):</strong> הלחצים, האיומים והאלימות שהופעלו על המבקשת יוצרים בירור מוחלט ד"מוכחא מילתא" שההעברה הייתה מחמת אונס, ועל כן המתנה בטלה ומבוטלת אף בלא מסירת מודעא (שו"ע חו"מ סי' רמב).
+                                </p>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">ד.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>אי-הגעה לגיל עשרים:</strong> הייות המבקשת פחות מגיל 20 במועד החתימה מהווה נימוק הלכתי מצטבר (שו"ע חו"מ סי' רלה סעיף ט) הפוסל את פעולת הוויתור והעברת הזכויות בקרקע.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- חתימה וסיום -->
+                    <div class="mt-16 pt-10 border-t border-[var(--border-color)] flex flex-col items-center text-center">
+                        <div class="w-16 h-16 mb-4 rounded-full border border-[var(--gold-accent)] flex items-center justify-center relative opacity-85 no-print">
+                            <i class="fas fa-stamp text-[var(--gold-accent)] opacity-40 text-3xl"></i>
+                        </div>
+                        <div class="text-xs uppercase tracking-widest text-[var(--text-color)] opacity-60 mb-2 font-bold">והאמת והשלום אהבו — האמור לפענ"ד כתבתי וחתמתי</div>
+                        <div class="font-serif text-2xl text-[var(--heading-color)] font-bold">חוות דעת הלכתית-משפטית מורחבת</div>
+                        <div class="text-sm text-[var(--gold-accent)] font-sans mt-1">בירור גדרי חוסר כשרות, אונס וגמירות דעת בדיני ממונות</div>
+                    </div>
+
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        let currentFontSize = 1.3;
+
+        function changeFontSize(delta) {
+            currentFontSize = Math.min(Math.max(currentFontSize + delta, 0.95), 1.85);
+            document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'rem');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+        }
+    </script>
+</body>
+</html>
