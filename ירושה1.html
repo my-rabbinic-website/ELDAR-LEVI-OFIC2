@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>חוות דעת הלכתית: חוסר כשרות שיפוטית וביטול העברה מחמת חוסר דעת ואונס</title>
     
- <script>
+    <!-- CDN External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -239,7 +244,18 @@
 
     <!-- כותרת מכתבייה להדפסה בלבד -->
     <div class="print-only print-letterhead">
-        <xxx>	            <xx>xxxx xxx xxxxxx-xxxxxx</xx>	            <x>xxxxx xxxx xxxxx xxxxxx, xxxxxx xxx, xxxxx xxxxx xxxxxx xxxxx</x>	        </xxx>	        <xxx xxxxx="xxxx-xxxxx: xxxx;">	            <x><xxxxxx>xx"x</xxxxxx></x>	            <x>xxxx: xxxxx xxxxx xxxxxx xxxxxxx<xx>xxxx: xxxx xxxxx xxxxxxx xxxxx</x>	        </xxx>	    </xxx>		    <!-- xxxx xxxxx xxxx -->	    <xxxxxx xxxxx="xx-print fixed top-0 w-full z-50 py-4 px-6 flex justify-between items-center bg-[var(--bg-color)]/90 backdrop-blur-md transition-all duration-300 border-b border-[var(--border-color)]">
+        <div>
+            <h3>חוות דעת הלכתית-משפטית</h3>
+            <p>בירור גדרי כשרות משפטית, גמירות דעת, ואונס בדיני ממונות ומתנה</p>
+        </div>
+        <div style="text-align: left;">
+            <p><strong>בס"ד</strong></p>
+            <p>נושא: ביטול העברת זכויות בעיזבון<br>עילה: חוסר כשרות שיפוטית ואונס</p>
+        </div>
+    </div>
+
+    <!-- סרגל עליון במסך -->
+    <header class="no-print fixed top-0 w-full z-50 py-4 px-6 flex justify-between items-center bg-[var(--bg-color)]/90 backdrop-blur-md transition-all duration-300 border-b border-[var(--border-color)]">
         <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--gold-accent)] bg-[var(--gold-subtle)]">
                 <i class="fas fa-balance-scale text-xs"></i>
@@ -277,7 +293,11 @@
                         <span>דיני קניינים, מתנה ומחילה</span>
                     </div>
 
-                    <h1 class="text-3xl md:text-5xl font-heading font-black text-[var(--xxxxxxx-xxxxx)] xxxxxxx-xxxxx xx-x">	                        xxxx xxxxx xxxxxxx x xxxxx xxxxxx: xxxxx xxxxx xxxx xxxx xxx, xxxx xxxxxx	                    </xx>		                    <x xxxxx="text-lg text-[var(--text-color)] opacity-85 font-sans max-w-2xl mx-auto leading-relaxed">
+                    <h1 class="text-3xl md:text-5xl font-heading font-black text-[var(--heading-color)] leading-tight mb-6">
+                        חוסר כשרות שיפוטית – ההיבט ההלכתי: ביטול העברה מחמת חוסר דעת, אונס ופתיות
+                    </h1>
+
+                    <p class="text-lg text-[var(--text-color)] opacity-85 font-sans max-w-2xl mx-auto leading-relaxed">
                         בירור מקיף ועמוק בגדרי כשרות המבקשת לחתום על ויתור זכויות בעיזבון, ניתוח פסיקת הגמרא, הרמב"ם והשולחן ערוך, יסוד הרשב"א בגדר "כמאן דליתא", חידוש הרשב"ץ בדין סממן שטות במקח ומתנה, ודין מתנה מחמת אונס
                     </p>
 
@@ -294,7 +314,11 @@
                     </div>
                 </div>
 
-                <!-- xxxxx xxxxxx xxxx -->	                <xx xxxxx="xxxxx-xxxx">xxxx xxxxx xxxxxxx x xxxxx xxxxxx: xxxxx xxxxx xxxx xxxx xxx, xxxx xxxxxx</xx>		                <!-- xxx xxxxx -->	                <div class="article-body">
+                <!-- כותרת להדפסה בלבד -->
+                <h1 class="print-only">חוסר כשרות שיפוטית – ההיבט ההלכתי: ביטול העברה מחמת חוסר דעת, אונס ופתיות</h1>
+
+                <!-- גוף המאמר -->
+                <div class="article-body">
 
                     <!-- תוכן עניינים וראשי פרקים -->
                     <div class="my-8 p-6 rounded-xl border border-[var(--border-color)] bg-[var(--surface-color)] font-sans">
@@ -626,8 +650,12 @@
                         <div class="w-16 h-16 mb-4 rounded-full border border-[var(--gold-accent)] flex items-center justify-center relative opacity-85 no-print">
                             <i class="fas fa-stamp text-[var(--gold-accent)] opacity-40 text-3xl"></i>
                         </div>
-                        <div class="text-xs uppercase tracking-widest text-[var(--text-color)] opacity-60 mb-2 font-bold">והאמת והשלום אהבו — האמור לפענ"ד כתבתי | אלדר לוי</div>
-                        <div class="font-serif text-2xl text-[var(--heading-color)] font-bold">חוות דעת הלכתית-משפטית מורחבת</div>	                        <xxx xxxxx="xxxx-xx xxxx-[xxx(--xxxx-xxxxxx)] xxxx-xxxx xx-x">xxxxx xxxx xxxx xxxxx, xxxx xxxxxxx xxx xxxxx xxxxxx</xxx>	                    </xxx>		                </div>
+                        <div class="text-xs uppercase tracking-widest text-[var(--text-color)] opacity-60 mb-2 font-bold">והאמת והשלום אהבו — האמור לפענ"ד כתבתי וחתמתי</div>
+                        <div class="font-serif text-2xl text-[var(--heading-color)] font-bold">חוות דעת הלכתית-משפטית מורחבת</div>
+                        <div class="text-sm text-[var(--gold-accent)] font-sans mt-1">בירור גדרי חוסר כשרות, אונס וגמירות דעת בדיני ממונות</div>
+                    </div>
+
+                </div>
             </article>
 
         </div>
