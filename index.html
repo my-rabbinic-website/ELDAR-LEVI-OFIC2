@@ -882,7 +882,7 @@
                         <div class="glass p-2 md:p-3 rounded-[2rem] md:rounded-[2.5rem] border-gold/30 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] glow-effect-card bg-dark/50">
                             <div class="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden z-10 bg-dark">
                                 <div class="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent mix-blend-color z-10 pointer-events-none" aria-hidden="true"></div>
-                                <img src="https://d3m9l0v76dty0.cloudfront.net/system/photos/13378495/original/f841551a59461566707d664b140229a0.jpg" alt="מאזני צדק - ייצוג משפטי בבתי הדין" class="w-full h-auto object-cover aspect-[4/3] filter contrast-[1.1] brightness-[0.85] hover:brightness-[1] hover:scale-105 transition-all duration-700" loading="lazy" decoding="async">
+                                <img src="https://img.haarets.co.il/bs/0000019b-7999-d019-a9df-7fbf4ad40001/32/4b/a2e81fdc4807900a758c13f00cf2/555.jpg?precrop=2200,1279,x0,y132&width=420&height=244&cmsprod" alt="מאזני צדק - ייצוג משפטי בבתי הדין" class="w-full h-auto object-cover aspect-[4/3] filter contrast-[1.1] brightness-[0.85] hover:brightness-[1] hover:scale-105 transition-all duration-700" loading="lazy" decoding="async">
                             </div>
                             <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 left-4 md:left-8 glass p-4 md:p-6 rounded-xl md:rounded-2xl border-r-4 border-r-gold text-xs md:text-lg italic font-bold text-white bg-dark/95 backdrop-blur-xl shadow-2xl z-20">
                                 <i class="fas fa-quote-right text-gold/40 text-xl md:text-2xl absolute top-3 md:top-4 right-3 md:right-4 -z-10" aria-hidden="true"></i>
@@ -921,45 +921,47 @@
         </section>
         
         <!-- Reviews Section -->
-        <section id="reviews" class="py-16 md:py-24 bg-dark relative overflow-hidden">
-            <style>
-                .carousel-container {
-                    width: 100%;
-                    overflow: hidden;
-                    position: relative;
-                    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-                    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-                }
-                
-                .carousel-track {
-                    display: flex;
-                    gap: 1.5rem;
-                    width: max-content;
-                    animation: scroll-rtl 32s linear infinite;
-                    transition: animation-play-state 0.3s;
-                }
+       <section class="py-12">
+         <style>
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* הוספת מסכות צד (Fade) למראה יוקרתי יותר */
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+        
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            /* אנימציה אינסופית - 40 שניות לסיבוב */
+            animation: scroll-rtl 40s linear infinite;
+        }
 
-                .carousel-track:hover {
-                    animation-play-state: paused;
-                }
+        /* עצירת האנימציה כשמעבירים את העכבר על הקרוסלה */
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
 
-                @keyframes scroll-rtl {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(calc(-50% - 0.75rem)); } 
-                }
+        /* הגדרת תנועה מימין לשמאל עבור אתר בעברית */
+        @keyframes scroll-rtl {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); } 
+        }
 
-                .review-card {
-                    width: 320px;
-                    flex-shrink: 0;
-                }
-
-                @media (min-width: 768px) {
-                    .review-card {
-                        width: 380px;
-                    }
-                }
-            </style>
-
+        .review-card {
+            width: 320px; /* רוחב קבוע לכל כרטיסיה כדי לשמור על אחידות */
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .review-card {
+                width: 400px;
+            }
+        }
+    </style>
+           
             <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
                 <div class="text-center" data-aos="fade-up">
                     <div class="flex justify-center mb-4">
@@ -972,89 +974,252 @@
                 </div>
             </div>
 
-            <div class="carousel-container" dir="rtl">
-                <div class="carousel-track">
-                    <!-- Feedback card list -->
-                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
-                            </div>
-                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
+    <div class="carousel-container" dir="rtl">
+        <div class="carousel-track gap-6 md:gap-8">
+            
+            <!-- ================= קבוצת כרטיסיות ראשונה ================= -->
+            
+            <!-- כרטיסיה 1 (מקורי) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">מ.א</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
-                            </div>
-                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
                     </div>
-
-                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] flex flex-col justify-between bg-gradient-to-b from-white/10 to-transparent relative">
-                        <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-gold/30" aria-hidden="true"></i>
-                            </div>
-                            <blockquote class="text-white/95 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
-                        </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-gold/20">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-gold/30 text-sm md:text-base" aria-hidden="true">ש.כ</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
-                            </div>
-                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע המשפטי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
-                        </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">א.ד</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Duplicate cards for smooth carousel loop -->
-                    <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
-                        <div>
-                            <div class="flex items-center justify-between mb-4 md:mb-6">
-                                <div class="flex text-gold text-xs md:text-sm gap-0.5">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                                <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
-                            </div>
-                            <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
-                        </div>
-                        <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
-                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">מ.א</div>
-                            <div>
-                                <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
-                                <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
-                            </div>
-                        </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי להכבוד הרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הוא מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">מ.א</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- כרטיסיה 2 (מקורי) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] flex flex-col justify-between bg-gradient-to-b from-white/10 to-transparent relative">
+                <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-gold/30" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/95 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר בהלכה ובחוק ובעצם היותו מתמחה לכהן כדיין שראה מאות דיונים מעיני הדיינים, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-gold/20">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-gold/30 text-sm md:text-base" aria-hidden="true">ש.כ</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסיה 3 (מקורי) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע ההלכתי והמשפטי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">א.ד</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסיה 4 (חדש) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"השירות שקיבלתי היה יוצא דופן. ניהול התיק נעשה במקצועיות רבה וביסודיות עד לפרטים הקטנים ביותר. התוצאה הסופית הייתה מעולה לשביעות רצוני המלאה."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">י.מ</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חודשיים</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסיה 5 (חדש) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"לאחר חודשים של תסכול, הרב אלדר לקח את המושכות והביא לסיום מהיר של הסכסוך. ממליץ לכל מי שמחפש ייצוג הולם ומקצועי ללא פשרות."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-teal-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">ד.ל</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני 5 חודשים</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסיה 6 (חדש) -->
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5" aria-hidden="true">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10" aria-hidden="true"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מענה מהיר, יחס אנושי והבנה עמוקה של החוק. הרב אלדר הוא איש המקצוע שתרצו לצידכם כשהעניינים מסתבכים. תודה על הכל!"</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base" aria-hidden="true">נ.ב</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני שבועיים</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= שכפול קבוצת הכרטיסיות ליצירת רצף אינסופי ================= -->
+            
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"הגעתי לכבוד הרב אלדר שבור אחרי שעורך דין קודם עשה טעויות בתיק. הרב אלדר מיד קלט את הנקודות החלשות וניצח את התיק בדיון אחד. מקצוען ברמה הכי גבוהה!"</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">מ.א</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חודש</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.2)] flex flex-col justify-between bg-gradient-to-b from-white/10 to-transparent relative" aria-hidden="true">
+                <div class="absolute -top-3 md:-top-4 right-6 md:right-8 bg-gold text-dark text-[10px] md:text-xs font-black px-3 md:px-4 py-1 md:py-1.5 rounded-full shadow-lg">המלצה נבחרת</div>
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6 mt-2">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-gold/30"></i>
+                    </div>
+                    <blockquote class="text-white/95 text-sm md:text-base leading-relaxed mb-6 font-medium">"בזכות ההבנה של הרב אלדר שליט'א בהלכה בחוק ובמשפט, קיבלתי את מה שמגיע לי למרות שהצד השני סירב לשלם. הוא פשוט ידע איזה שאלות לשאול בחקירה. ממליצה בחום."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-gold/20">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-purple-900/40 flex items-center justify-center font-black text-white border border-gold/30 text-sm md:text-base">ש.כ</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני 3 חודשים</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מעבר לידע ההלכתי והמשפטי המטורף, הרב אלדר ליווה אותי אישית בשעות הכי קשות. הרגשתי שיש לי גב חזק שלא יוותר על הילדים שלי."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-emerald-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">א.ד</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חצי שנה</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"השירות שקיבלתי היה יוצא דופן. ניהול התיק נעשה במקצועיות רבה וביסודיות עד לפרטים הקטנים ביותר. התוצאה הסופית הייתה מעולה לשביעות רצוני המלאה."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">י.מ</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני חודשיים</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"לאחר חודשים של תסכול, הרב אלדר לקח את המושכות והביא לסיום מהיר של הסכסוך. ממליץ לכל מי שמחפש ייצוג הולם ומקצועי ללא פשרות."</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-teal-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">ד.ל</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני 5 חודשים</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card glass p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-gold/20 flex flex-col justify-between transition-transform duration-300" aria-hidden="true">
+                <div>
+                    <div class="flex items-center justify-between mb-4 md:mb-6">
+                        <div class="flex text-gold text-xs md:text-sm gap-0.5">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <i class="fas fa-quote-left text-xl md:text-2xl text-white/10"></i>
+                    </div>
+                    <blockquote class="text-white/80 text-sm md:text-base leading-relaxed mb-6">"מענה מהיר, יחס אנושי והבנה עמוקה של החוק. הרב אלדר הוא איש המקצוע שתרצו לצידכם כשהעניינים מסתבכים. תודה על הכל!"</blockquote>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 pt-4 border-t border-white/5">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-900/40 flex items-center justify-center font-black text-white border border-white/10 text-sm md:text-base">נ.ב</div>
+                    <div>
+                        <div class="text-xs md:text-sm font-bold text-white">לקוח/ה מאומת/ת</div>
+                        <div class="text-[10px] md:text-xs text-white/50">לפני שבועיים</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <!-- Articles Section -->
         <section id="articles" class="py-16 md:py-24 bg-[#0a0a0a] relative overflow-hidden">
@@ -1064,7 +1229,7 @@
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">מרכז ידע <span class="text-[#d4af37]">ומאמרים</span></h2>
                     <div class="w-16 md:w-24 h-1 bg-[#d4af37] mx-auto mb-4 md:mb-6" aria-hidden="true"></div>
                     <p class="text-white/80 max-w-2xl mx-auto text-sm md:text-base">מאגר פסקי דין ומאמרים הלכתיים ברמה הגבוהה ביותר בארץ מאת הרב אלדר לוי, דיין וטוען רבני מוסמך. כתיבה תורנית מעמיקה, ניתוח סוגיות מורכבות ומדריכים מעשיים להתנהלות נכונה בבית הדין הרבני.</p>
-                </div>-8">
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     
