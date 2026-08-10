@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="google-site-verification" content="cm8d_DCwtIbzViB0Aos14jc2TJzLiWT1aMGyUKQjQDU"/>
+    <title>בירור הלכה: תשלומי נזק בגין הדבקה במחלה - הרב אלדר לוי</title>
+    
+    <!-- External CDN Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#0d1117',
+                        paper: '#161b22'
+                    },
+                    fontFamily: {
+                        serif: ['Frank Ruhl Libre', 'serif'],
+                        sans: ['Assistant', 'sans-serif'],
+                        heading: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Variables for Dynamic Dark/Light Parchment Themes */
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #e6edf3;
+            --heading-color: #ffffff;
+            --gold-accent: #c5a059;
+            --gold-subtle: rgba(197, 160, 89, 0.12);
+            --surface-color: rgba(22, 27, 34, 0.82);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --base-font-size: 1.3rem;
+        }
+
+        body.theme-light {
+            --bg-color: #fcfbf7;
+            --text-color: #1f2328;
+            --heading-color: #0f1419;
+            --gold-accent: #8c6b23;
+            --gold-subtle: rgba(140, 107, 35, 0.08);
+            --surface-color: rgba(255, 255, 255, 0.92);
+            --border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-color);
+            font-family: 'Assistant', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Parchment Grain Texture Background */
+        .paper-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.03; pointer-events: none; z-index: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
+        body.theme-light .paper-grain { opacity: 0.25; }
+
+        /* Typography and Article Layout */
+        .article-body {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: var(--base-font-size);
+            line-height: 1.95;
+            text-align: justify;
+            color: var(--text-color);
+            transition: font-size 0.2s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-body p { margin-bottom: 1.8rem; }
+
+        .article-body h2 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 800;
+            font-size: calc(var(--base-font-size) + 0.55rem);
+            color: var(--gold-accent);
+            margin-top: 3.5rem;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 110px;
+            border-bottom: 2px solid var(--gold-subtle);
+            padding-bottom: 8px;
+        }
+
+        .article-body h3 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 700;
+            font-size: calc(var(--base-font-size) + 0.2rem);
+            color: var(--heading-color);
+            margin-top: 2.2rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .drop-cap::first-letter {
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            color: var(--gold-accent);
+            float: right; 
+            line-height: 0.85; 
+            margin-left: 14px; 
+            margin-top: 4px;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .source-note {
+            float: left; 
+            width: 38%; 
+            margin-left: -16%; 
+            margin-right: 5%; 
+            margin-bottom: 20px;
+            font-family: 'Assistant', sans-serif; 
+            font-size: 0.95rem; 
+            line-height: 1.65;
+            color: var(--text-color); 
+            border-right: 3.5px solid var(--gold-accent); 
+            padding: 16px; 
+            background: var(--surface-color); 
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 1280px) {
+            .source-note { 
+                float: none; 
+                width: 100%; 
+                margin: 25px 0; 
+                border-right: 4px solid var(--gold-accent); 
+            }
+        }
+
+        /* Reading Controls Float Menu */
+        .reading-controls {
+            position: fixed; 
+            left: 25px; 
+            top: 50%; 
+            transform: translateY(-50%);
+            display: flex; 
+            flex-direction: column; 
+            gap: 8px;
+            background: var(--surface-color); 
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); 
+            padding: 8px; 
+            border-radius: 30px;
+            z-index: 90; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .control-btn {
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            color: var(--text-color); 
+            font-weight: 600; 
+            transition: all 0.2s; 
+            font-size: 0.95rem;
+        }
+        .control-btn:hover { 
+            background: var(--gold-subtle); 
+            color: var(--gold-accent); 
+        }
+
+        @media (max-width: 1024px) {
+            .reading-controls { 
+                top: auto; 
+                bottom: 25px; 
+                left: 50%; 
+                transform: translateX(-50%); 
+                flex-direction: row; 
+                border-radius: 50px; 
+                padding: 6px 16px; 
+            }
+        }
+
+        .print-only { display: none; }
+
+        @media print {
+            @page { size: A4; margin: 20mm 15mm; }
+            body { 
+                background: white !important; 
+                color: black !important; 
+                font-family: 'Frank Ruhl Libre', serif !important; 
+            }
+            .paper-grain, .no-print, header, .reading-controls { 
+                display: none !important; 
+            }
+            .print-only { display: block !important; }
+            
+            .print-letterhead {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-bottom: 2px solid black;
+                padding-bottom: 12px;
+                margin-bottom: 25px;
+                font-family: 'Assistant', sans-serif !important;
+            }
+            .print-letterhead h3 { font-size: 16pt; font-weight: 800; margin: 0; color: black !important; }
+            .print-letterhead p { font-size: 10pt; margin: 0; color: #333 !important; }
+
+            .article-body { font-size: 11.5pt !important; line-height: 1.7 !important; color: black !important; }
+            h1 { font-family: 'Frank Ruhl Libre', serif !important; font-size: 17pt !important; color: black !important; text-align: center; font-weight: bold; margin: 15px 0 !important; }
+            h2 { font-family: 'Assistant', sans-serif !important; font-size: 13pt !important; color: black !important; border-bottom: 1px solid #000 !important; padding-bottom: 4px; margin-top: 16pt !important; page-break-after: avoid; }
+            h3 { font-family: 'Assistant', sans-serif !important; font-size: 11.5pt !important; color: black !important; font-weight: bold; page-break-after: avoid; }
+            p { page-break-inside: avoid; orphans: 3; widows: 3; color: black !important; margin-bottom: 10pt !important; text-align: justify !important; }
+
+            .source-note { 
+                float: none; width: 100%; margin: 12px 0; 
+                border: 1px solid #888 !important; border-right: 4px solid black !important;
+                padding: 10px !important; font-size: 10pt !important; 
+                background: #fafafa !important; page-break-inside: avoid; 
+                font-family: 'Assistant', sans-serif !important;
+            }
+
+            .verdict-box { 
+                border: 2px solid black !important; 
+                padding: 18px !important; 
+                margin-top: 25px !important; 
+                border-radius: 0 !important; 
+                background: transparent !important; 
+                page-break-inside: avoid; 
+            }
+            .verdict-box h3 { color: black !important; border: none !important; font-size: 13pt !important; margin-bottom: 12px !important; text-decoration: underline; }
+            .drop-cap::first-letter { color: black !important; }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#C5A059]/30">
+
+    <div class="paper-grain"></div>
+
+    <!-- Letterhead for Print/PDF Export -->
+    <div class="print-only print-letterhead">
+        <div>
+            <h3>בירור הלכה תורני: דיני ממונות ונזיקין</h3>
+            <p>חובת תשלומי מזיק בהדבקת מחלה מדבקת / קורונה ללא עטיית מסכה</p>
+        </div>
+        <div style="text-align: left;">
+            <p><strong>בס"ד</strong></p>
+            <p>תחום: חושן משפט - סימנים שעח, שפה, שפו, תיט, תכ, רחצ, שצה<br>בירור הלכתי מעורך ומורחב</p>
+        </div>
+    </div>
+
+    <!-- Web Navigation Header -->
+    <header class="no-print fixed top-0 w-full z-50 py-4 px-6 flex justify-between items-center bg-[var(--bg-color)]/90 backdrop-blur-md transition-all duration-300 border-b border-[var(--border-color)]">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--gold-accent)] bg-[var(--gold-subtle)]">
+                <i class="fas fa-gavel text-xs"></i>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[var(--text-color)] opacity-80">בירור הלכה מורחב | דיני ממונות ונזיקין</span>
+        </div>
+        <div class="text-xs font-bold text-[var(--text-color)] opacity-50 tracking-widest uppercase">בס"ד</div>
+    </header>
+
+    <div class="reading-controls no-print" title="כלים לנוחות קריאה">
+        <button onclick="changeFontSize(0.1)" class="control-btn" title="הגדל טקסט">A+</button>
+        <button onclick="changeFontSize(-0.1)" class="control-btn" title="הקטן טקסט">A-</button>
+        <div class="w-full h-px bg-[var(--border-color)] my-1 hidden lg:block"></div>
+        <div class="w-px h-full bg-[var(--border-color)] mx-1 block lg:hidden"></div>
+        <button onclick="toggleTheme()" class="control-btn" title="החלף מצב תצוגה (כהה / קלף)">
+            <i class="fas fa-book-open"></i>
+        </button>
+        <button onclick="window.print()" class="control-btn" title="הדפסה / שמירה כ-PDF">
+            <i class="fas fa-print"></i>
+        </button>
+    </div>
+
+    <main class="relative z-10 pt-28 pb-32 px-6">
+        <div class="flex max-w-[1000px] mx-auto relative justify-center">
+
+            <article class="reading-canvas max-w-[800px] w-full">
+
+                <!-- Article Header for Screen -->
+                <div class="mb-12 text-center no-print">
+                    <div class="inline-flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-[var(--gold-accent)] uppercase mb-6 bg-[var(--gold-subtle)] px-4 py-1.5 rounded-full border border-[var(--gold-accent)]">
+                        <span>חושן משפט</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--gold-accent)]"></span>
+                        <span>דיני נזיקין והיזק שאינו ניכר</span>
+                    </div>
+
+                    <h1 class="text-3xl md:text-5xl font-heading font-black text-[var(--heading-color)] leading-tight mb-6">
+                        בירור הלכה: חובת תשלומי מזיק בהדבקת מחלה מדבקת ללא עטיית מסכה
+                    </h1>
+
+                    <p class="text-lg text-[var(--text-color)] opacity-85 font-sans max-w-2xl mx-auto leading-relaxed">
+                        חקירה מקיפה ביסוד אדם מועד לעולם, גדר היזק שאינו ניכר וקנס חכמים, חילוק בין מזיד לשוגג, דין גרמא בנזיקין, והכלל "המוציא מחברו עליו הראיה" בספק הדבקה
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center gap-6 py-4 border-y border-[var(--border-color)] mt-8 text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-book-journal-whills text-[var(--gold-accent)]"></i>
+                            <span class="font-bold text-[var(--heading-color)]">תשובה הלכתית מפורטת</span>
+                        </div>
+                        <div class="w-1 h-1 rounded-full bg-[var(--border-color)]"></div>
+                        <div class="flex items-center gap-2 opacity-70">
+                            <i class="far fa-file-alt"></i>
+                            <span>בבא קמא כו. | גיטין נב: | שו"ע חו"מ שעח, שפה, שפו, תיט, תכ, רחצ, שצה</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Print Title -->
+                <h1 class="print-only">בירור הלכה: חובת תשלומי מזיק בהדבקת מחלה מדבקת ללא עטיית מסכה</h1>
+
+                <div class="article-body">
+
+                    <!-- Question and Short Answer Banner Box -->
+                    <div class="my-6 p-6 rounded-2xl border-2 border-[var(--gold-accent)] bg-[var(--surface-color)] font-sans shadow-lg">
+                        <div class="mb-4 pb-3 border-b border-[var(--border-color)]">
+                            <h3 class="text-lg font-bold text-[var(--gold-accent)] flex items-center gap-2 m-0">
+                                <i class="fas fa-question-circle"></i> השאלה:
+                            </h3>
+                            <p class="text-base text-[var(--heading-color)] leading-relaxed mt-2 mb-0 font-medium">
+                                חולה במחלת הקורונה (או בכל מחלה מדבקת אחרת) שנדרש מהחולה לעטות מסכה על פניו עפ"י הנחיות גורמי הרפואה והמומחים בעניין, לא לבש מסכה כראוי ודיבר עם חברו, ובכך הדביק אותו במחלת הקורונה או במחלה שנשא. האם חייב המדביק בכל נזק, צער, רפואה ושבת שיארעו לנדבק?
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[var(--gold-accent)] flex items-center gap-2 m-0">
+                                <i class="fas fa-check-circle"></i> התשובה בקצרה:
+                            </h3>
+                            <p class="text-base text-[var(--heading-color)] leading-relaxed mt-2 mb-0 font-bold bg-[var(--gold-subtle)] p-3 rounded-lg border-r-4 border-[var(--gold-accent)]">
+                                אף על פי שהחולה נהג שלא כהוגן ועבר על אזהרת חכמים וחובת הזהירות ("ונשמרתם מאוד לנפשותיכם"), **אין לחייב את החולה בתשלומי נזק שארע לנדבק בדיני אדם** – בין אם ידוע בבירור שהלה הדביקו (משום שהוי היזק שאינו ניכר בשוגג, וכן הוי גרמא בנזיקין), וכל שכן אם לא ידוע בבירור ממי נדבק (מכוח הכלל "המוציא מחברו עליו הראיה").
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Table of Contents -->
+                    <div class="my-8 p-6 rounded-xl border border-[var(--border-color)] bg-[var(--surface-color)] font-sans">
+                        <h3 class="text-sm font-bold text-[var(--gold-accent)] uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <i class="fas fa-sitemap"></i> ראשי הפרקים והיסודות ההלכתיים בדיון:
+                        </h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs md:text-sm text-[var(--text-color)] opacity-90 font-medium">
+                            <li>• <strong>פרק א':</strong> יסוד אדם המזיק וחובתו - "אדם מועד לעולם"</li>
+                            <li>• <strong>פרק ב':</strong> גדר היזק שאינו ניכר וטעם תקנת חכמים</li>
+                            <li>• <strong>פרק ג':</strong> החילוק היסודי בין מתכוון להזיק (מזיד) לשוגג</li>
+                            <li>• <strong>פרק ד':</strong> חמישה דברים בחובל בחברו והגדרת הדבקה כ"גרמא"</li>
+                            <li>• <strong>פרק ה':</strong> הכלל "המוציא מחברו עליו הראיה" בספק זהות המדביק</li>
+                            <li>• <strong>פרק ו':</strong> סיכום ומסקנות להלכה ולמעשה בדיני אדם ובדיני שמיים</li>
+                        </ul>
+                    </div>
+
+                    <h2>א. יסוד חיוב אדם המזיק - "אדם מועד לעולם"</h2>
+
+                    <aside class="source-note">
+                        <strong>מקורות מרכזיים:</strong><br>
+                        מסכת בבא קמא (דף כו, ע"א); רמב"ם הלכות חובל ומזיק פרק א הלכה יא; שולחן ערוך חושן משפט סימן שעח סעיף א'.
+                    </aside>
+
+                    <p class="drop-cap text-[var(--heading-color)] font-medium mb-6">
+                        המקור היסודי בדיני אדם המזיק מובא במשנה ובגמרא במסכת בבא קמא (דף כו, ע"א): <em>"אדם מועד לעולם – בין ער בין ישן... הזיק, משלם מן המיטב"</em>. וכן נפסק להלכה ברמב"ם (הלכות חובל ומזיק פרק א, הלכה יא) ובשולחן ערוך (חושן משפט, סימן שעח, סעיף א'):
+                    </p>
+
+                    <div class="my-8 py-5 px-7 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] rounded-l-lg font-serif">
+                        <p class="text-[calc(var(--base-font-size)-0.05rem)] text-[var(--heading-color)] leading-relaxed italic mb-0">
+                            "אדם שהזיק, אף על פי שלא נהנה, חייב לשלם נזק שלם – בין שהיה שוגג, בין שהיה אנוס, משום שאדם מועד לעולם. כיצד? נפלת כד מכדו ולא החליק בה, אלא הוזק בה אדם או כלי – חייב."
+                        </p>
+                    </div>
+
+                    <p>
+                        לפי יסוד זה, לכאורה היה מקום לומר שאפילו אם החולה לא התכוון להזיק ולא ידע במדויק את עוצמת סכנת ההדבקה, כיוון שאדם מועד לעולם והזיק את חברו בהעברת הנגיף – יהא חייב בתשלומי הנזק. אולם, כאשר נבחן את אופי הנזק של נגיף או מחלה מדבקת, ניוכח כי קיימים גדרים הלכתיים מיוחדים הפוטרים אותו מחיוב זה, כפי שיבואר להלן.
+                    </p>
+
+                    <h2>ב. גדר היזק שאינו ניכר וטעם תקנת חכמים</h2>
+
+                    <aside class="source-note">
+                        <strong>מקורות מרכזיים:</strong><br>
+                        מסכת גיטין (דף נב, ע"ב); רמב"ם הלכות חובל ומזיק פרק ז הלכות א-ב; שולחן ערוך חושן משפט סימן שפה סעיף א'.
+                    </aside>
+
+                    <p>
+                        סוגיה מרכזית בדיני נזיקין היא סוגיית **"היזק שאינו ניכר"**. בגמרא במסכת גיטין (דף נב, ע"ב) מבואר הדין במטמא, במדמע (מערב תרומה בחולין) ובמנסך יין לעבודה זרה. במקרים אלו, החפץ או הנכס אינו משנה את מראהו החיצוני, אך ערכו נפגע או נאסר בשימוש.
+                    </p>
+
+                    <p>
+                        דין זה הוכרע בשולחן ערוך (חושן משפט, סימן שפה, סעיף א'):
+                    </p>
+
+                    <div class="my-8 p-6 border border-[var(--gold-accent)] bg-[var(--surface-color)] rounded-xl">
+                        <p class="font-serif font-bold text-[calc(var(--base-font-size)+0.05rem)] text-[var(--heading-color)] leading-relaxed m-0">
+                            "היזק שאינו ניכר, כגון המטמא טהורות של חברו, או שערב בהן תרומה... מן התורה הוא פטור, לפי שאין ההיזק ניכר! אך חכמים קנסוהו לשלם ממיטב כדין כל המזיקים. והטעם לכך – כדי שלא ירגיל האדם את עצמו להזיק לאחר בהיזק שאינו ניכר."
+                        </p>
+                    </div>
+
+                    <p>
+                        נגיף הקורונה או כל וירוס ומחלה מדבקת הנכנסים לגוף האדם – הינם בגדר **"היזק שאינו ניכר"** מובהק. בשעת ההדבקה, בעת שהמדביק מדבר עם חברו, אין שום רושם, פצע או שינוי גשמי הניכר בעין בגופו של הנדבק. הנגיף הוא מיקרוסקופי ובלתי נראה, ורק לאחר ימי דגירה מתפתחים תסמיני המחלה. לפיכך, מדאורייתא היזק זה פטור!
+                    </p>
+
+                    <h2>ג. החילוק בין מתכוון להזיק (מזיד) לבין שוגג בהיזק שאינו ניכר</h2>
+
+                    <p>
+                        לאור הגדרת ההדבקה כהיזק שאינו ניכר, מגיע החילוק הדרמטי שנפסק להלכה בשולחן ערוך (סימן שפה סעיף א'):
+                    </p>
+
+                    <div class="my-6 py-4 px-6 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] font-serif italic text-[var(--heading-color)]">
+                        "ומכל מקום בדין זה, אם היה שוגג או אנוס – הרי הוא פטור! שלא קנסו חכמים אלא במזיד."
+                    </div>
+
+                    <p>
+                        **נמצאנו למדים היסוד דלהלן:**
+                    </p>
+
+                    <ul class="space-y-4 my-6 font-sans text-base">
+                        <li class="flex items-start gap-3 bg-[var(--surface-color)] p-4 rounded-lg border border-[var(--border-color)]">
+                            <span class="text-[var(--gold-accent)] font-bold text-lg">•</span>
+                            <div>
+                                <strong>אם חולה הקורונה התכוון להזיק במזיד:</strong> כגון שדעתו הייתה לרעה במכוון להדביק את חברו ולגרום לו למחלה – הרי שחכמים קנסו מזיד בהיזק שאינו ניכר, ויהיה חייב לשלם לו כפי דיני חובל ומזיק המבוארים בשו"ע חושן משפט (סימנים תיט ותכ).
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3 bg-[var(--surface-color)] p-4 rounded-lg border border-[var(--border-color)]">
+                            <span class="text-[var(--gold-accent)] font-bold text-lg">•</span>
+                            <div>
+                                <strong>אם חולה הקורונה לא התכוון להזיק (שוגג / פושע בדרגת רשלנות):</strong> כגון שלא עטה מסכה מתוך זלזול, עצלות, אי-נוחות או חוסר תשומת לב – אף שנהג שלא כהוגן ועבר על אזהרות המומחים והוראות ההלכה, מכל מקום כיוון שלא התכוון להזיק במזיד, **הרי הוא פטור מתשלומי נזק בדיני אדם**, מכיוון שחכמים לא קנסו בשוגג בהיזק שאינו ניכר!
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>ד. חמישה דברים בחובל והגדרת ההדבקה כ"גרמא בנזיקין"</h2>
+
+                    <aside class="source-note">
+                        <strong>מקורות מרכזיים:</strong><br>
+                        משנה בבא קמא (דף פג, ע"א); שו"ע חושן משפט סימן תיט סעיף א, וסימן תכ סעיף א; סימן שפו סעיף א.
+                    </aside>
+
+                    <p>
+                        גם אם נבוא לדון מצד דין **"חובל בחברו"**, הנה בשולחן ערוך (חושן משפט, סימן תיט סעיף א, וסימן תכ סעיף א) נפסק שחייב החובל בחברו בחמישה דברים: **נזק, צער, רפואה, שבת ובושת**.
+                    </p>
+
+                    <p>
+                        אולם, חמישה דברים אלו נאמרו אך ורק כאשר האדם חובל בגופו של חברו **במעשה בידיים ישיר** (כגון המכה את חברו באגרוף, בסכין או באבן). לעומת זאת, אדם המדבר עם חברו ופולט הבל פה או נתז רוק שבו מצוי נגיף, אין זו חבלה ישירה בידיים, אלא **"גרמא בנזיקין"** (גרימת נזק עקפה).
+                    </p>
+
+                    <p>
+                        הכלל הנפסק בשולחן ערוך (חושן משפט, סימן שפו, סעיף א') קובע:
+                    </p>
+
+                    <div class="my-6 p-5 border-r-4 border-[var(--gold-accent)] bg-[var(--surface-color)] font-serif italic text-[var(--heading-color)]">
+                        "גרמא בנזיקין – פטור בדיני אדם וחייב בדיני שמיים."
+                    </div>
+
+                    <p>
+                        בנדון דידן, ההדבקה נעשית על ידי יציאת נגיפים לאוויר והתקבלותם בגופו של הנדבר לאחר זמן, דרך מערכת הנשימה והתפתחות ביולוגית של המחלה בגוף. תהליך זה מוגדר הלכתית כגרמא מובהק, ועל כן אינו מחייב בתשלומי חבלות בדיני אדם.
+                    </p>
+
+                    <h2>ה. ספק בזהות המדביק והכלל "המוציא מחברו עליו הראיה"</h2>
+
+                    <aside class="source-note">
+                        <strong>ספק בטענת נזק:</strong><br>
+                        מסכת בבא קמא (דף מו, ע"א); שולחן ערוך חושן משפט סימן רחצ סעיף א, סימן שצה סעיף א, וסימן עה סעיף א.
+                    </aside>
+
+                    <p>
+                        ועוד יתר על כן יש לומר בנדון דידן, דברוב כהאי גוונא, **הנדבק אינו יודע בוודאות מוחלטת שהוא נדבק דווקא מאותו חולה שדיבר עמו ללא מסכה!**
+                    </p>
+
+                    <p>
+                        שהרי נגיף הקורונה ומחלות מדבקות כיוצא בהן עוברים באוויר במרחבים ציבוריים, בחנויות, בתחבורה ציבורית, בבתי כנסת או מנשאים תסמיניים ושאינם תסמיניים אחרים. יתכן מאוד שהנדבק נחשף לנגיף מאדם אחר לגמרי מבלי שתרגיש בדבר.
+                    </p>
+
+                    <p>
+                        קיימא לן בכללי הדין והראיות במשפט העברי, שאין התובע (הניזק) יכול להוציא ממון מהנתבע (המזיק) אלא בראיה ברורה וברורה שהלה הוא זה שהזיקו, כמבואר בגמרא במסכת בבא קמא (דף מו, ע"א):
+                    </p>
+
+                    <div class="my-8 py-5 px-7 border-r-4 border-[var(--gold-accent)] bg-[var(--gold-subtle)] rounded-l-lg font-serif">
+                        <p class="text-[calc(var(--base-font-size)-0.05rem)] text-[var(--heading-color)] leading-relaxed italic mb-0">
+                            "זה אומר שורך הזיק וזה אומר לא כי... זה כלל גדול בדין: המוציא מחברו עליו הראיה."
+                        </div>
+
+                    <p>
+                        וכן נפסק להלכה בשולחן ערוך (חושן משפט, סימן רחצ סעיף א, וסימן שצה סעיף א, וסימן עה סעיף א). בהיעדר הוכחה רפואית-עובדתית מוחלטת (כגון ריצוף גנטי נדיר וחד-משמעי הפוסל כל אפשרות אחרת), הטענה נותרת בגדר ספק, ועל כן אין להוציא ממון מספק.
+                    </p>
+
+                    <!-- Verdict Box -->
+                    <div class="verdict-box bg-[var(--surface-color)] border border-[var(--border-color)] rounded-2xl p-6 md:p-10 mt-14">
+                        <div class="flex items-center gap-4 mb-6 no-print">
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                            <h3 class="text-[var(--gold-accent)] font-bold uppercase tracking-widest text-lg text-center m-0">סיכום ופסק הדין להלכה ולמעשה</h3>
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                        </div>
+
+                        <h3 class="print-only text-center font-bold text-xl mb-6 underline">פסק הדין והחלטה למעשה</h3>
+
+                        <div class="space-y-6 font-sans">
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">א.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>פטור בדיני אדם (היזק שאינו ניכר בשוגג):</strong> מכיוון שהדבקת נגיף היא היזק שאינו ניכר מדאורייתא, וחכמים קנסו בהיזק שאינו ניכר אך ורק כשהמזיק התכוון להזיק במזיד (שו"ע חו"מ סימן שפה סעיף א'), הרי שאם החולה לא התכוון להזיק במזיד – הוא פטור מתשלומי נזק בדיני אדם.
+                                </p>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">ב.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>פטור מצד דין "גרמא בנזיקין":</strong> העברת מחלה מדבקת באמצעות דיבור והבל פה אינה חבלה ישירה בידיים, אלא גרמא בנזיקין (שו"ע חו"מ סימן שפו סעיף א'), ובגרמא אין מחייבים בתשלומי חבלות בדיני אדם.
+                                </p>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">ג.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>פטור מחמת ספק הדבקה ("המוציא מחברו עליו הראיה"):</strong> ככל שאין הוכחה רפואית-עובדתית מוחלטת שההדבקה אירעה אך ורק מאותו אדם ולא מגורם אחר במרחב, חל הכלל היסודי "המוציא מחברו עליו הראיה" (שו"ע חו"מ סימן רחצ וסימן שצה) ואין לחייב מספק.
+                                </p>
+                            </div>
+
+                            <div class="flex gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-2xl mt-0.5">ד.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-base">
+                                    <strong>חובת הקהל והאיסור ההלכתי:</strong> אף על פי שמצד דיני ממונות הלה פטור מתשלומים, עיוות זה של אי-עטיית מסכה בעת מחלה מדבקת מהווה זלזול באיסור "ונשמרתם מאוד לנפשותיכם" ובמצוות "לא תעמוד על דם רעך", ועל החולה לעשות תשובה על שהביא עצמו לידי מכשול והזק חברו.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rabbinical Stamp / Footer Signoff -->
+                    <div class="mt-16 pt-10 border-t border-[var(--border-color)] flex flex-col items-center text-center">
+                        <div class="w-16 h-16 mb-4 rounded-full border border-[var(--gold-accent)] flex items-center justify-center relative opacity-85 no-print">
+                            <i class="fas fa-stamp text-[var(--gold-accent)] opacity-40 text-3xl"></i>
+                        </div>
+                        <div class="text-xs uppercase tracking-widest text-[var(--text-color)] opacity-60 mb-2 font-bold">האמור לפענ"ד כתבתי והשי"ת יאיר עינינו בתורתו הקדושה</div>
+                        <div class="font-serif text-2xl text-[var(--heading-color)] font-bold">בירור הלכה תורני - דיני נזיקין</div>
+                        <div class="text-sm text-[var(--gold-accent)] font-sans mt-1">חושן משפט: הלכות חובל ומזיק והיזק שאינו ניכר</div>
+                    </div>
+
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <script>
+        let currentFontSize = 1.3;
+
+        function changeFontSize(delta) {
+            currentFontSize = Math.min(Math.max(currentFontSize + delta, 0.95), 1.85);
+            document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'rem');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+        }
+    </script>
+</body>
+</html>
