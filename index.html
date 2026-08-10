@@ -956,46 +956,68 @@
         </section>
         
         <!-- Reviews Section -->
-       <section class="py-12">
-         <style>
-        .carousel-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            /* הוספת מסכות צד (Fade) למראה יוקרתי יותר */
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-        }
-        
+<style>
+    .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 0; /* מרווח כדי לאפשר לאפקט הריחוף לבלוט מבלי להיחתך */
+        /* אפקט השתלבות (Fade) בצדדים למראה יוקרתי */
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+    
+    .carousel-track {
+        display: flex;
+        width: max-content;
+        /* אנימציה אינסופית - שינוי כיוון התנועה */
+        animation: scroll-reverse 40s linear infinite;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
         .carousel-track {
-            display: flex;
-            width: max-content;
-            /* אנימציה אינסופית - 40 שניות לסיבוב */
-            animation: scroll-rtl 40s linear infinite;
+            gap: 2rem;
         }
+    }
 
-        /* עצירת האנימציה כשמעבירים את העכבר על הקרוסלה */
-        .carousel-track:hover {
-            animation-play-state: paused;
-        }
+    /* עצירת האנימציה בעת מעבר עכבר לנוחות קריאה */
+    .carousel-track:hover {
+        animation-play-state: paused;
+    }
 
-        /* הגדרת תנועה מימין לשמאל עבור אתר בעברית */
-        @keyframes scroll-rtl {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(50%); } 
-        }
+    /* תנועה הפוכה (לצד השני) */
+    @keyframes scroll-reverse {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } 
+    }
 
+    /* עיצוב יוקרתי ומרשים לכרטיסיות */
+    .review-card {
+        width: 320px;
+        flex-shrink: 0;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(212, 175, 55, 0.15); /* מסגרת זהב עדינה */
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    /* אפקט ריחוף - הכרטיסיה מתרוממת ומקבלת הילת זהב */
+    .review-card:hover {
+        transform: translateY(-10px);
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    
+    @media (min-width: 768px) {
         .review-card {
-            width: 320px; /* רוחב קבוע לכל כרטיסיה כדי לשמור על אחידות */
-            flex-shrink: 0;
+            width: 400px;
         }
-        
-        @media (min-width: 768px) {
-            .review-card {
-                width: 400px;
-            }
-        }
-    </style>
+    }
+</style>
            
             <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
                 <div class="text-center" data-aos="fade-up">
