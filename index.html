@@ -955,29 +955,30 @@
             </div>
         </section>
         
-        <!-- Reviews Section -->
 <style>
     .carousel-container {
         width: 100%;
         overflow: hidden;
         position: relative;
-        padding: 20px 0; /* מרווח כדי לאפשר לאפקט הריחוף לבלוט מבלי להיחתך */
-        /* אפקט השתלבות (Fade) בצדדים למראה יוקרתי */
+        /* אפקט השתלבות (Fade) משופר למראה יוקרתי */
         mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        padding: 2rem 0;
     }
     
     .carousel-track {
         display: flex;
         width: max-content;
-        /* אנימציה אינסופית - שינוי כיוון התנועה */
-        animation: scroll-reverse 40s linear infinite;
-        gap: 1.5rem;
+        /* אנימציה אינסופית וחלקה */
+        animation: scroll-rtl 40s linear infinite;
+        gap: 2rem;
+        padding-left: 2rem;
     }
 
     @media (min-width: 768px) {
         .carousel-track {
-            gap: 2rem;
+            gap: 2.5rem;
+            padding-left: 2.5rem;
         }
     }
 
@@ -986,39 +987,24 @@
         animation-play-state: paused;
     }
 
-        /* הגדרת תנועה מימין לשמאל עבור אתר בעברית */
-        @keyframes scroll-rtl {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(50%); } 
-        }
-
-    /* עיצוב יוקרתי ומרשים לכרטיסיות */
-    .review-card {
-        width: 320px;
-        flex-shrink: 0;
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(212, 175, 55, 0.15); /* מסגרת זהב עדינה */
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* תנועה המותאמת לאתר בעברית (מימין לשמאל) */
+    @keyframes scroll-rtl {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(50%); } 
     }
-    
-    /* אפקט ריחוף - הכרטיסיה מתרוממת ומקבלת הילת זהב */
-    .review-card:hover {
-        transform: translateY(-10px);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    .premium-review-card {
+        width: 340px;
+        flex-shrink: 0;
     }
     
     @media (min-width: 768px) {
-        .review-card {
-            width: 400px;
+        .premium-review-card {
+            width: 420px;
         }
     }
 </style>
-           
+        
             <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
                 <div class="text-center" data-aos="fade-up">
                     <div class="flex justify-center mb-4">
