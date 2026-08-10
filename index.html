@@ -986,11 +986,11 @@
         animation-play-state: paused;
     }
 
-    /* תנועה הפוכה (לצד השני) */
-    @keyframes scroll-reverse {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); } 
-    }
+        /* הגדרת תנועה מימין לשמאל עבור אתר בעברית */
+        @keyframes scroll-rtl {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); } 
+        }
 
     /* עיצוב יוקרתי ומרשים לכרטיסיות */
     .review-card {
