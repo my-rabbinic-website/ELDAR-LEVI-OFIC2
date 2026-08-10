@@ -955,55 +955,47 @@
             </div>
         </section>
         
-<style>
-    .carousel-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        /* אפקט השתלבות (Fade) משופר למראה יוקרתי */
-        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-        padding: 2rem 0;
-    }
-    
-    .carousel-track {
-        display: flex;
-        width: max-content;
-        /* אנימציה אינסופית וחלקה */
-        animation: scroll-rtl 40s linear infinite;
-        gap: 2rem;
-        padding-left: 2rem;
-    }
-
-    @media (min-width: 768px) {
+        <!-- Reviews Section -->
+       <section class="py-12">
+         <style>
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* הוספת מסכות צד (Fade) למראה יוקרתי יותר */
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+        
         .carousel-track {
-            gap: 2.5rem;
-            padding-left: 2.5rem;
+            display: flex;
+            width: max-content;
+            /* אנימציה אינסופית - 40 שניות לסיבוב */
+            animation: scroll-rtl 40s linear infinite;
         }
-    }
 
-    /* עצירת האנימציה בעת מעבר עכבר לנוחות קריאה */
-    .carousel-track:hover {
-        animation-play-state: paused;
-    }
-
-    /* תנועה המותאמת לאתר בעברית (מימין לשמאל) */
-    @keyframes scroll-rtl {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(50%); } 
-    }
-
-    .premium-review-card {
-        width: 340px;
-        flex-shrink: 0;
-    }
-    
-    @media (min-width: 768px) {
-        .premium-review-card {
-            width: 420px;
+        /* עצירת האנימציה כשמעבירים את העכבר על הקרוסלה */
+        .carousel-track:hover {
+            animation-play-state: paused;
         }
-    }
-</style>
+
+        /* הגדרת תנועה מימין לשמאל עבור אתר בעברית */
+        @keyframes scroll-rtl {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); } 
+        }
+
+        .review-card {
+            width: 320px; /* רוחב קבוע לכל כרטיסיה כדי לשמור על אחידות */
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .review-card {
+                width: 400px;
+            }
+        }
+    </style>
         
             <div class="container mx-auto px-6 relative z-10 mb-12 md:mb-16">
                 <div class="text-center" data-aos="fade-up">
