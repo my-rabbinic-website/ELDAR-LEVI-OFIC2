@@ -65,63 +65,169 @@
     <meta name="twitter:image" content="https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk">
 
     <!-- נתונים מובנים למנועי חיפוש (Schema.org JSON-LD) -->
-    <script type="application/ld+json">
+   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "WebSite",
+      "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#website",
+      "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
+      "name": "הרב אלדר לוי - טוען רבני מומלץ ודיין מוסמך",
+      "publisher": { "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#legalservice" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#person",
+      "name": "הרב אלדר לוי",
+      "jobTitle": "טוען רבני, דיין מוסמך ומגשר",
+      "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "נתיבות",
+        "addressCountry": "IL"
+      },
+      "knowsAbout": [
+        "דיני משפחה", 
+        "הליכי גירושין", 
+        "ייצוג בבית דין רבני", 
+        "חלוקת רכוש בגירושין", 
+        "משמורת ילדים", 
+        "תביעת כתובה", 
+        "בוררות הלכתית", 
+        "דיני ממונות"
+      ]
+    },
+    {
+      "@type": ["LegalService", "LocalBusiness"],
+      "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#legalservice",
+      "name": "הרב אלדר לוי - משרד טוען רבני ודיני משפחה",
+      "alternateName": "משרד בוטיק לדיני משפחה, גירושין ובוררות עסקי",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no",
+      "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
+      "telephone": "+972-52-8219928",
+      "email": "tifarteha@gmail.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "ILS",
+      "paymentAccepted": "מזומן, כרטיס אשראי, העברה בנקאית",
+      "description": "משרד בוטיק בנתיבות המתמחה בייצוג אסטרטגי בהליכי גירושין ודיני משפחה. חלופה מקצועית והלכתית לעורך דין לגירושין. ניהול תיקים מורכבים בבתי הדין הרבניים, בוררות, דיני ממונות וגישור על ידי הרב אלדר לוי, טוען רבני ודיין מוסמך.",
+      "founder": { "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#person" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+972-52-8219928",
+        "contactType": "customer service",
+        "availableLanguage": ["Hebrew"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "יצחק שמיר 15",
+        "addressLocality": "נתיבות",
+        "addressRegion": "מחוז הדרום",
+        "postalCode": "8776100",
+        "addressCountry": "IL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 31.416667,
+        "longitude": 34.583333
+      },
+      "areaServed": [
+        { "@type": "State", "name": "מחוז הדרום" },
+        { "@type": "City", "name": "נתיבות" },
+        { "@type": "City", "name": "באר שבע" },
+        { "@type": "City", "name": "אשדוד" },
+        { "@type": "City", "name": "אשקלון" },
+        { "@type": "City", "name": "ירושלים" },
+        { "@type": "City", "name": "תל אביב" }
+      ],
+      "openingHoursSpecification": [
         {
-          "@type": "WebPage",
-          "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#webpage",
-          "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
-          "name": "הרב אלדר לוי - ייצוג משפטי בדיני משפחה",
-          "description": "משרד בוטיק המעניק ייצוג משפטי מקצועי ואסטרטגי."
-        },
-        {
-          "@type": ["LegalService", "LocalBusiness"],
-          "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#organization",
-          "name": "משרד הרב אלדר לוי - ייצוג בדיני משפחה",
-          "image": "https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk",
-          "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
-          "telephone": "+972-52-8219928",
-          "email": "tifarteha@gmail.com",
-          "priceRange": "השווים לכל נפש",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "נתיבות",
-            "addressCountry": "IL"
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "08:00",
+          "closes": "21:00"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "תחומי התמחות ושירותים משפטיים",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ייצוג משפטי בהליכי גירושין",
+              "description": "ליווי וייצוג מקצועי בתיקי גירושין, חלוקת רכוש, משמורת מזונות ותביעות כתובה - המעניק יתרון מובהק בבית הדין הרבני."
+            }
           },
-          "openingHours": "Su-Th 09:00-21:00",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "11250"
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "בוררות הלכתית ודיני ממונות",
+              "description": "פתרון סכסוכים עסקיים ואישיים במסגרת בוררות דיסקרטית, מהירה ודינמית על פי ההלכה, על ידי דיין מוסמך."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ייצוג בבתי הדין הרבניים",
+              "description": "הופעה, הגשת כתבי בי-דין וניהול דיונים אסטרטגי בפני ערכאות בתי הדין הרבניים בכל רחבי הארץ."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#breadcrumb",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ראשי - טוען רבני, ייצוג בגירושין ובוררות",
+        "item": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/"
+      }]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "מה ההבדל בין עורך דין לגירושין לבין טוען רבני?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "בעוד עורך דין לגירושין מתמחה בעיקר בחוק האזרחי, טוען רבני מתמחה בהלכה היהודית ובפסיקות בתי הדין הרבניים. מכיוון שתיקי גירושין נידונים בבית הדין הרבני, ייצוג על ידי טוען רבני מעניק יתרון אסטרטגי אדיר בהבנת הלך הרוח של הדיינים, בפרט במאבקי משמורת ותביעות כתובה."
           }
         },
         {
-          "@type": "Person",
-          "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#person",
-          "name": "הרב אלדר לוי",
-          "jobTitle": "טוען רבני",
-          "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
-          "image": "https://lh3.googleusercontent.com/d/1jsZzClwy3vWfrDE2Bu260lzWXucQ7YYk",
-          "worksFor": {
-            "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#organization"
+          "@type": "Question",
+          "name": "מתי נכון לפנות לייעוץ משפטי לקראת תהליך גירושין?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "מיד כשמתעורר חשש לסכסוך ממשי. בדיני משפחה בישראל קיים 'מרוץ סמכויות' בין בית המשפט לענייני משפחה לבית הדין הרבני. פנייה מוקדמת לטוען רבני מאפשרת תכנון אסטרטגי נכון, פתיחת התיק בערכאה הנוחה לכם, ומיצוי מלא של הזכויות שלכם בחלוקת הרכוש והמזונות."
           }
         },
         {
-          "@type": "WebSite",
-          "@id": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/#website",
-          "url": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/",
-          "name": "הרב אלדר לוי",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
+          "@type": "Question",
+          "name": "מהם היתרונות של הליך בוררות בדיני ממונות על פני תביעה בבית משפט?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "הליך בוררות אצל דיין מוסמך מאפשר פתרון סכסוכים עסקיים בצורה הרבה יותר מהירה, חסכונית ודיסקרטית. ההליך מנוהל על פי דין תורה, נמנע מהסחבת הבירוקרטית בבתי המשפט, ומסתיים בפסק בוררות בעל תוקף משפטי מלא הניתן לאכיפה בהוצאה לפועל."
           }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 
     <!-- Premium Google Fonts ------------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
