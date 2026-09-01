@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תביעת גירושין לדוגמא - הרב אלדר לוי</title>
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/231389679?v=4&size=192" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap"></noscript>
+
+    <script>
+        if (typeof tailwind !== 'undefined') {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: {
+                                light: '#fdf7e3',
+                                DEFAULT: '#D4AF37',
+                                dark: '#a68726',
+                                luxury: '#f1d26f'
+                            },
+                            dark: {
+                                DEFAULT: '#050505',
+                                light: '#0e0e0e',
+                                accent: '#151515'
+                            }
+                        },
+                        fontFamily: {
+                            assistant: ['Assistant', 'sans-serif'],
+                            heebo: ['Heebo', 'sans-serif'],
+                        },
+                        animation: {
+                            'blob': 'blob 10s infinite',
+                            'text-shimmer': 'text-shimmer 3s ease-out infinite alternate',
+                            'marquee': 'marquee 35s linear infinite',
+                            'float-particle': 'float-particle 15s linear infinite',
+                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        },
+                        keyframes: {
+                            blob: {
+                                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                                '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                            },
+                            'text-shimmer': {
+                                '0%': { backgroundPosition: '0% 50%' },
+                                '100%': { backgroundPosition: '100% 50%' }
+                            },
+                            marquee: {
+                                '0%': { transform: 'translateX(0%)' },
+                                '100%': { transform: 'translateX(100%)' }
+                            },
+                            'float-particle': {
+                                '0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0' },
+                                '10%': { opacity: '0.6' },
+                                '90%': { opacity: '0.6' },
+                                '100%': { transform: 'translateY(-1000px) rotate(360deg)', opacity: '0' }
+                            }
+                        }
+                    }
+                }
+            };
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Assistant', sans-serif; background-color: #050505; color: #f5f5f5; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4, h5, .heebo-font { font-family: 'Heebo', sans-serif; letter-spacing: -0.02em; }
+
+        /* Premium Gold Gradients */
+        .gold-gradient { background: linear-gradient(135deg, #b89324 0%, #ffe8a1 30%, #D4AF37 70%, #856511 100%); }
+        .gold-gradient-text { 
+            background: linear-gradient(to right, #D4AF37 0%, #fff0c2 50%, #D4AF37 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            animation: text-shimmer 4s linear infinite;
+        }
+
+        /* Sophisticated Micro-reflective Glass Panels */
+        .glass { 
+            background: rgba(14, 14, 14, 0.65); 
+            backdrop-filter: blur(25px); 
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.18); 
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.55);
+            transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-hover:hover { 
+            background: rgba(22, 22, 22, 0.8); 
+            border-color: rgba(212, 175, 55, 0.6); 
+            transform: translateY(-6px); 
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.25); 
+        }
+
+        .glow-effect-card { position: relative; overflow: hidden; }
+        .glow-effect-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.15), transparent 45%);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .glow-effect-card:hover::before { opacity: 1; }
+        .glow-effect-card > * { position: relative; z-index: 1; }
+
+        /* Premium Golden Border Beam */
+        .border-beam { position: relative; }
+        .border-beam::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+            border-radius: inherit;
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .border-beam:hover::after { opacity: 1; }
+
+        /* Glow animations */
+        .image-glow { position: relative; }
+        .image-glow::before {
+            content: ''; position: absolute; top: -5%; left: -5%; right: -5%; bottom: -5%;
+            background: radial-gradient(circle, rgba(212,175,55,0.22) 0%, transparent 65%);
+            z-index: -1; border-radius: 50%; animation: pulse-glow 5s infinite alternate ease-in-out;
+        }
+        @keyframes pulse-glow { 0% { opacity: 0.5; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1.05); } }
+
+        /* Premium Geometric Grid Pattern Overlay */
+        .bg-mesh {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05), transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05), transparent 40%);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 6px; }
+        @media (min-width: 768px) { ::-webkit-scrollbar { width: 8px; } }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #856511, #D4AF37, #ffe8a1); border-radius: 10px; }
+
+        input, textarea, select { font-size: 16px !important; }
+        .input-glow:focus { box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); border-color: rgba(212,175,55,0.7); }
+
+        /* Preloader */
+        #preloader { transition: opacity 0.8s ease-out; }
+        .loaded #preloader { opacity: 0; pointer-events: none; display: none; }
+
+        html { scroll-behavior: smooth; }
+
+        .luxury-texture {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Shiny / Shimmer overlay for gold buttons */
+        .shimmer-btn { position: relative; overflow: hidden; }
+        .shimmer-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-25deg); transition: 0.75s;
+        }
+        .shimmer-btn:hover::before { left: 125%; transition: 0.75s; }
+
+        /* --- Article Specific Styles (Dark Mode Adapted) --- */
+        .article-card {
+            background: rgba(14, 14, 14, 0.65);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+        .article-card h2 {
+            color: #D4AF37;
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding-bottom: 12px;
+        }
+        .article-card h2::before {
+            content: '\f105';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #D4AF37;
+            font-size: 1.2rem;
+        }
+        .article-card p {
+            margin-bottom: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .article-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .article-list li {
+            position: relative;
+            padding-right: 2.5rem;
+            margin-bottom: 1rem;
+            background: rgba(212, 175, 55, 0.03);
+            padding: 1rem 1.5rem 1rem 3rem;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            transition: background 0.3s ease;
+        }
+        .article-list li:hover {
+            background: rgba(212, 175, 55, 0.08);
+        }
+        .article-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 1.2rem;
+            color: #D4AF37;
+        }
+        .highlight-gold {
+            color: #D4AF37;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        .strategy-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(14, 14, 14, 0.9) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 2rem;
+            border-radius: 1.2rem;
+            margin-top: 2rem;
+            border-right: 4px solid #D4AF37;
+            position: relative;
+            overflow: hidden;
+        }
+        .strategy-box::after {
+            content: '\f0eb';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 400;
+            position: absolute;
+            left: -20px;
+            bottom: -20px;
+            font-size: 8rem;
+            color: rgba(212, 175, 55, 0.05);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1 bg-dark/50 z-[100]" aria-hidden="true">
+        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_12px_rgba(212,175,55,0.8)]"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
+        <div class="relative w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-8">
+            <span class="text-dark text-4xl font-black transform -rotate-45 font-heebo">E</span>
+        </div>
+        <div class="text-gold text-sm tracking-widest uppercase font-bold animate-bounce text-center px-4">צדק צדק תרדוף...</div>
+    </div>
+
+    <!-- Animated Background Blobs -->
+    <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
+        <div class="absolute top-0 -left-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/10 rounded-full mix-blend-screen filter blur-[90px] md:blur-[120px] animate-blob"></div>
+        <div class="absolute top-1/2 -right-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/5 rounded-full mix-blend-screen filter blur-[90px] md:blur-[120px] animate-blob" style="animation-delay: 2s;"></div>
+    </div>
+    <div class="luxury-texture fixed inset-0 w-full h-full"></div>
+
+    <!-- Header / Navbar -->
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 px-4 md:px-8 border-b border-transparent bg-dark/60 backdrop-blur-md">
+        <div class="container mx-auto flex justify-between items-center relative z-20">
+            <!-- Logo -->
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg pr-1" aria-label="לדף הבית">
+                <div class="relative w-10 h-10 md:w-12 md:h-12 gold-gradient rounded-xl flex items-center justify-center transform rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg shadow-gold/20">
+                    <span class="text-dark text-lg md:text-xl font-black transform -rotate-45 group-hover:rotate-0 transition-all duration-500 heebo-font" aria-hidden="true">E.L</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-2xl font-black gold-gradient-text tracking-tight leading-none heebo-font">הרב אלדר לוי</span>
+                    <span class="text-[8px] md:text-[10px] text-white/70 tracking-[0.15em] font-bold mt-0.5">דיין מוסמך וטוען רבני</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8" aria-label="תפריט ניווט ראשי">
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                    מאמרים
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/my-rabbinic-law-site/" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                    בוררות 
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בסיעתאדשמיא" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                    דיני משפחה
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/הסכמים-צוואות" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                      הסכמים וצוואות
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/עיסוק" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                    המלצות
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                    למייצגים
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-3 md:gap-4">
+                <a href="tel:0534192798" class="hidden sm:flex items-center gap-2 text-gold hover:text-white transition-colors text-sm font-bold dir-ltr bg-white/5 px-4 py-2 rounded-full border border-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+                    שיחה ישירה <i class="fas fa-phone-alt text-xs" aria-hidden="true"></i>
+                </a>
+                <a href="#contact" class="shimmer-btn hidden md:flex gold-gradient px-6 py-2.5 rounded-full text-dark font-black text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white group-hover-effect">
+                    סיוע הלכתי-משפטי
+                </a>
+
+                <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 glass rounded-full flex items-center justify-center text-gold border-gold/40 hover:bg-gold/10 transition-colors z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold" aria-label="פתח תפריט ניווט">
+                    <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-dark/98 backdrop-blur-3xl z-[40] translate-x-full transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-6 md:gap-8 lg:hidden" aria-hidden="true">
+        <nav class="flex flex-col items-center gap-6 text-center w-full px-6">
+            <a href="https://my-rabbinic-website.github.io/my-rabbinic-law-site/" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">בוררות עיסקית</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בסיעתאדשמיא" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">דיני משפחה</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית.html" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">פס'ד ומאמרים</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/עיסוק" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">המלצות</a>
+            <a href="#faq" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">שאלות נפוצות</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/הסכמים-צוואות" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">הסכמים וצוואות</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">למייצגים</a>        
+        </nav>
+        <div class="w-20 h-px bg-gold/40 my-2" aria-hidden="true"></div>
+        <a href="#contact" class="mobile-link gold-gradient px-8 py-4 rounded-full text-dark font-black text-lg shadow-xl shadow-gold/20 w-[80%] max-w-xs text-center">
+            קבע פגישת ייעוץ
+        </a>
+    </div>
+
+    <main class="relative z-10 pt-32 pb-10">
+        <!-- אזור Hero המותאם לעיצוב הכהה -->
+        <section class="relative py-12 md:py-20 px-4">
+            <div class="container mx-auto text-center z-10 relative">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-sm font-bold mb-6 backdrop-blur-sm">
+                    מדריך משפטי
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black gold-gradient-text mb-6">תביעת גירושין לדוגמא</h1>
+                <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto font-light leading-relaxed">
+                    מה כותבים בכתב תביעת גירושין? המדריך המלא לבניית אסטרטגיה משפטית נכונה ויסודית.
+                </p>
+                <div class="w-24 h-1 gold-gradient mx-auto mt-10 rounded-full"></div>
+            </div>
+        </section>
+
+        <!-- תוכן מרכזי -->
+        <div class="container mx-auto px-4 max-w-4xl relative z-10 mt-8">
+            
+            <!-- כרטיסייה 1: פרטים טכניים -->
+            <div class="article-card">
+                <h2 class="heebo-font">פרטים טכניים והתנהלות בני הזוג</h2>
+                <p>כתב התביעה יתחיל בפרטים הטכניים. כמו מה היה תאריך הנישואין. האם נולדו ילדים או שלזוג אין ילדים.</p>
+                <ul class="article-list">
+                    <li>אם יש ילדים, יש לפרט את הפרטים שלהם (כמו תאריך לידה). האם הצדדים חיים עדיין ביחד או שנפרדו.</li>
+                    <li>אם הזוג כבר לא חי ביחד, מתי זה קרה ומי עזב את הבית.</li>
+                </ul>
+                <p>השלב הזה הוא חשוב מאוד, כי המטרה היא לשדר מה הייתה ההתנהלות של בני הזוג בחיי הנישואין. כמו כן, מפרטים כמה שבן/בת הזוג פגע/ה בכם.</p>
+            </div>
+
+            <!-- כרטיסייה 2: פירוט התביעות -->
+            <div class="article-card">
+                <h2 class="heebo-font">פירוט נושאי התביעות</h2>
+                <p>לאחר שלב זה, צריך לפרט את כל נושאי התביעות. זה בדרך כלל יכיל דרישה לחלוקת רכוש ואיזון משאבים, לאחריות הורית ולמזונות הילדים.</p>
+                <p>כל אחד מהנושאים הללו הוא נושא בפני עצמו ומצריך השקעה רבה בניתוח המצב הספציפי בו אתם נמצאים. כל אחד מהנושאים הללו ייכתבו בנפרד, תוך סקירה של כל התביעות שלכם בנושא וגם הפרטים סביב אותו נושא.</p>
+                
+                <ul class="article-list">
+                    <li><span class="highlight-gold">מזונות ילדים:</span> חשוב לשים דגש על כל העלויות היכולות להיות. למשל על טיפולים רפואיים חריגים אם יהיו, על חוגי העשרה ותנועות נוער, על טיולים ועוד.</li>
+                    <li><span class="highlight-gold">חלוקת רכוש:</span> יש לפרט את כל הרכוש הידוע, את פרטי חשבון הבנק ושאר הנכסים כולל הזכויות הסוציאליות. כמו כן יש לפרט את פרטי הדירה המשותפת (אם יש).</li>
+                </ul>
+                
+                <p>יש גם דרכים לפתור חוסר ידע אודות פרטים שלא ידועים לכם. כך למשל אם אין לכם מידע מדויק על היקף הנכסים, ואתם חוששים שבן/בת הזוג שלכם מנסה להעלים חלק מהנכסים, יש דרך להתמודד עם התופעה.</p>
+            </div>
+
+            <!-- כרטיסייה 3: הוכחות -->
+            <div class="article-card">
+                <h2 class="heebo-font">הוכחות הטענות</h2>
+                <p>חשוב להדגיש שבשלב הראשון אין לכם צורך להוכיח כל טענה. אמנם תצטרכו לדייק מאוד מה להציג בתחילת ההליך ומה לא. אולם לא תצטרכו לבסס את הטענות בשלב הראשוני. בשלבים בהמשך בדרך כלל תצטרכו להוכיח את כל מה שטענתם בהתחלה.</p>
+                <p>לכן הטיעונים צריכים להיות מדויקים, ברורים וחד משמעיים. אולם מבלי לפרט יותר מדי, מה שאף עלול לפגוע בתוצאה הסופית.</p>
+            </div>
+
+            <!-- כרטיסייה 4: אסטרטגיה -->
+            <div class="article-card">
+                <h2 class="heebo-font">חשיבות ההליך והכנת האסטרטגיה</h2>
+                <p>שלב כתיבת התביעה הוא מאוד חשוב. בו תצטרכו לשים לב על כלל הפרטים ולנמק כל תביעה מדוע לדעתכם אתם זכאים לה.</p>
+                
+                <div class="strategy-box">
+                    <p>ישנם אנשים שחושבים שיגישו לבד את התביעה. הדבר משול לאדם שרוצה לבנות בניין רב קומות, ואומר לעצמו שיתחיל לבנות לבד את ה-10 קומות הראשונות, ורק לאחר מכן הוא יפנה לאיש מקצוע שיעזור לו. ברור שבניין כזה הוא בסכנה להתמוטט כל רגע.</p>
+                    <p class="mt-4 text-gold font-bold text-xl">כך הוא הדבר גם בייצוג משפטי.</p> 
+                    <p>יש צורך לבנות את הדברים בצורה יסודית, מנומקת מבחינה משפטית. לכן יש חשיבות קריטית כבר בתחילת ההליך כדי שתיבנה לכם אסטרטגיה מנצחת בתיק שלכם.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer & Contact Form -->
+    <footer id="contact" class="bg-[#050505] pt-16 md:pt-20 pb-8 md:pb-10 border-t border-gold/30 overflow-hidden relative mt-10">
+        <div class="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gold/5 blur-[120px] md:blur-[180px] rounded-full pointer-events-none" aria-hidden="true"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="glass p-6 md:p-10 lg:p-14 rounded-[2rem] md:rounded-[3rem] border-gold/40 mb-16 md:mb-20 max-w-5xl mx-auto shadow-[0_30px_70px_rgba(0,0,0,0.8)] bg-gradient-to-br from-[#111] to-dark">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+                    <div class="text-center lg:text-right">
+                        <div class="inline-flex items-center justify-center lg:justify-start gap-2 text-gold text-[10px] md:text-xs font-bold mb-4 md:mb-6 bg-gold/10 px-4 py-1.5 rounded-full border border-gold/30 shadow-sm mx-auto lg:mx-0">
+                            <i class="fas fa-lock text-gold" aria-hidden="true"></i> סודיות מלאה מובטחת כהלכה
+                        </div>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 heebo-font text-white leading-tight">נשמח להקשיב & <br class="hidden sm:block">לייעץ ולסייע</h2>
+                        <p class="text-white/80 mb-8 md:mb-10 text-sm md:text-lg leading-relaxed">פגישת ייעוץ ראשונית יכולה לשנות את פני התיק כולו. השאירו פרטים ונחזור אליכם לשיחה דיסקרטית וללא התחייבות.</p>
+
+                        <div class="space-y-4 md:space-y-6 flex flex-col items-center lg:items-start">
+                            <a href="tel:0528219928" class="flex items-center gap-4 md:gap-5 text-lg md:text-xl font-bold text-white hover:text-gold transition-colors w-fit group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:pr-2">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gold/15 flex items-center justify-center text-gold group-hover-effect border border-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                                    <i class="fas fa-phone-alt text-lg md:text-xl" aria-hidden="true"></i>
+                                </div>
+                                <span class="dir-ltr text-xl md:text-2xl tracking-wider">052-8219928</span>
+                            </a>
+                            <a href="mailto:tifarteha@gmail.com" class="flex items-center gap-4 md:gap-5 text-base md:text-lg font-light text-white hover:text-gold transition-colors w-fit group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:pr-2">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 flex items-center justify-center text-white/90 group-hover-effect border border-white/10">
+                                    <i class="fas fa-envelope text-lg md:text-xl" aria-hidden="true"></i>
+                                </div>
+                                tifarteha@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <form action="https://formspree.io/f/xlgpwvye" method="POST" class="space-y-4 md:space-y-5 bg-[#0a0a0a]/90 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gold/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1.5 gold-gradient" aria-hidden="true"></div>
+                        <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6 text-center text-white">פנייה ישירה</h3>
+
+                        <div>
+                            <label for="name" class="sr-only">שם מלא</label>
+                            <input type="text" id="name" name="name" placeholder="שם מלא (ניתן בראשי תיבות)" required class="input-glow w-full bg-dark/50 border border-white/20 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white focus:border-gold outline-none transition-all placeholder:text-white/40 min-h-[44px]">
+                        </div>
+                        <div>
+                            <label for="phone" class="sr-only">מספר טלפון</label>
+                            <input type="tel" id="phone" name="phone" placeholder="מספר טלפון לחזרה" required class="input-glow w-full bg-dark/50 border border-white/20 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white focus:border-gold outline-none transition-all placeholder:text-white/40 min-h-[44px] dir-rtl">
+                        </div>
+                        <div>
+                            <label for="email" class="sr-only">אימייל לחזרה</label>
+                            <input type="email" id="email" name="email" placeholder="אימייל לחזרה" required class="input-glow w-full bg-dark/50 border border-white/20 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white focus:border-gold outline-none transition-all placeholder:text-white/40 min-h-[44px] dir-rtl">
+                        </div>
+                        <div>
+                            <label for="message" class="sr-only">נושא הפנייה</label>
+                            <textarea id="message" name="message" placeholder="תאור קצר של המקרה..." rows="3" class="input-glow w-full bg-dark/50 border border-white/20 rounded-xl px-4 py-3 md:px-5 md:py-4 text-white focus:border-gold outline-none transition-all placeholder:text-white/40 min-h-[44px] resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full gold-gradient py-3 md:py-4 rounded-xl text-dark font-black text-base md:text-lg hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] group-hover-effect transition-all flex items-center justify-center gap-2 md:gap-3 mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white min-h-[44px]">
+                            לתיאום פגישה <i class="fas fa-paper-plane text-xs md:text-sm" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Sitemap -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-10 md:mb-12 border-t border-white/10 pt-10 md:pt-16">
+                <div>
+                    <h4 class="font-bold text-gold mb-4 md:mb-6 text-lg md:text-xl heebo-font drop-shadow-sm">ניווט</h4>
+                    <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-white/80">
+                        <li><a href="#header" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">ראשי</a></li>
+                        <li><a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בוררות" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">בוררות</a></li>
+                        <li><a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">סיוע למייצגים</a></li>
+                        <li><a href="#reviews" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">המלצות מלקוחות</a></li>
+                        <li><a href="https://my-rabbinic-website.github.io/safrut-tifarteha/" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">ספרות משפטית</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gold mb-4 md:mb-6 text-lg md:text-xl heebo-font drop-shadow-sm">שירותים</h4>
+                    <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-white/80">
+                        <li><a href="#" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">דיני משפחה וגירושין</a></li>
+                        <li><a href="#" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">הסכמי ממון וחיים משותפים</a></li>
+                        <li><a href="#" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">צוואות וירושות</a></li>
+                        <li><a href="#" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">בוררות עסקית</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center text-white/50 text-sm pb-8 border-t border-white/10 pt-8 mt-4">
+                <p>&copy; 2024 כל הזכויות שמורות להרב אלדר לוי - משרד טוען רבני וגישור.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+            }, 500); // Small delay to ensure smooth transition
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress-bar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
