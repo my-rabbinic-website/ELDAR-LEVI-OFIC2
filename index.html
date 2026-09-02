@@ -306,42 +306,48 @@
 }
 </script>
     
- <!-- Google Search Favicon -->
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/231389679?v=4&size=192" type="image/png" sizes="192x192">
-    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no">
+<!-- Favicons ----------------------------->
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/231389679?v=4&size=192" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s270-c-no">
 
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
+    <!-- Font Awesome -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
+    <!-- Tailwind CSS Script -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- AOS CSS -->
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
     
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap"></noscript>
-
-    <script>
+    <!-- Google Fonts (Optimized for Hebrew) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap&subset=hebrew" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap&subset=hebrew"></noscript> <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap"></noscript>
+                      
+    <!-- Rating Badgeשודרג ---------->
+<script>
         if (typeof tailwind !== 'undefined') {
             tailwind.config = {
                 theme: {
                     extend: {
                         colors: {
                             gold: {
-                                light: '#fdf7e3',
+                                light: '#fef1cb',
                                 DEFAULT: '#D4AF37',
-                                dark: '#a68726',
+                                dark: '#997a00',
                                 luxury: '#f1d26f'
                             },
                             dark: {
-                                DEFAULT: '#050505',
-                                light: '#0e0e0e',
-                                accent: '#151515'
+                                DEFAULT: '#030303',
+                                light: '#0a0a0a',
+                                accent: '#121212'
                             }
                         },
                         fontFamily: {
@@ -349,8 +355,8 @@
                             heebo: ['Heebo', 'sans-serif'],
                         },
                         animation: {
-                            'blob': 'blob 10s infinite',
-                            'text-shimmer': 'text-shimmer 3s ease-out infinite alternate',
+                            'blob': 'blob 12s infinite alternate cubic-bezier(0.4, 0, 0.2, 1)',
+                            'text-shimmer': 'text-shimmer 3.5s ease-out infinite alternate',
                             'marquee': 'marquee 35s linear infinite',
                             'float-particle': 'float-particle 15s linear infinite',
                             'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -358,8 +364,8 @@
                         keyframes: {
                             blob: {
                                 '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                                '33%': { transform: 'translate(30px, -50px) scale(1.05)' },
+                                '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
                                 '100%': { transform: 'translate(0px, 0px) scale(1)' }
                             },
                             'text-shimmer': {
@@ -372,8 +378,8 @@
                             },
                             'float-particle': {
                                 '0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0' },
-                                '10%': { opacity: '0.6' },
-                                '90%': { opacity: '0.6' },
+                                '10%': { opacity: '0.8' },
+                                '90%': { opacity: '0.8' },
                                 '100%': { transform: 'translateY(-1000px) rotate(360deg)', opacity: '0' }
                             }
                         }
@@ -384,170 +390,169 @@
     </script>
 
     <style>
-        body { font-family: 'Assistant', sans-serif; background-color: #050505; color: #f5f5f5; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; }
+        /* Base Styles */
+        body { font-family: 'Assistant', sans-serif; background-color: #030303; color: #f5f5f5; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, .heebo-font { font-family: 'Heebo', sans-serif; letter-spacing: -0.02em; }
         
-        /* Premium Gold Gradients */
-        .gold-gradient { background: linear-gradient(135deg, #b89324 0%, #ffe8a1 30%, #D4AF37 70%, #856511 100%); }
+        /* Premium Gold Gradients - שודרג למראה מתכתי עמוק */
+        .gold-gradient { 
+            background: linear-gradient(135deg, #a68726 0%, #D4AF37 25%, #fff0c2 50%, #D4AF37 75%, #856511 100%); 
+            background-size: 200% 200%; 
+        }
         .gold-gradient-text { 
-            background: linear-gradient(to right, #D4AF37 0%, #fff0c2 50%, #D4AF37 100%);
+            background: linear-gradient(to right, #D4AF37 0%, #fff0c2 40%, #ffffff 50%, #fff0c2 60%, #D4AF37 100%);
             background-size: 200% auto;
             -webkit-background-clip: text; 
+            background-clip: text;
             -webkit-text-fill-color: transparent; 
             animation: text-shimmer 4s linear infinite;
         }
         
-        /* Sophisticated Micro-reflective Glass Panels */
+        /* Sophisticated Micro-reflective Glass Panels - תאורה ושבירת אור משופרת */
         .glass { 
-            background: rgba(14, 14, 14, 0.65); 
-            backdrop-filter: blur(25px); 
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(212, 175, 55, 0.18); 
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 10px 30px rgba(0, 0, 0, 0.55);
-            transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(10, 10, 10, 0.65); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(212, 175, 55, 0.15); 
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .glass-hover:hover { 
-            background: rgba(22, 22, 22, 0.8); 
-            border-color: rgba(212, 175, 55, 0.6); 
-            transform: translateY(-6px); 
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.25); 
+            background: rgba(18, 18, 18, 0.85); 
+            border-color: rgba(212, 175, 55, 0.5); 
+            transform: translateY(-5px) scale(1.01); 
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2); 
         }
 
-        .glow-effect-card { position: relative; overflow: hidden; }
+        /* Hover Glow Effects */
+        .glow-effect-card { position: relative; overflow: hidden; border-radius: inherit; }
         .glow-effect-card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             border-radius: inherit;
-            background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.15), transparent 45%);
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.12), transparent 40%);
+            z-index: 0; pointer-events: none; opacity: 0; transition: opacity 0.6s ease;
         }
         .glow-effect-card:hover::before { opacity: 1; }
         .glow-effect-card > * { position: relative; z-index: 1; }
 
         /* Premium Golden Border Beam */
-        .border-beam {
-            position: relative;
-        }
+        .border-beam { position: relative; }
         .border-beam::after {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
-            border-radius: inherit;
-            z-index: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+            content: ''; position: absolute; inset: -1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+            border-radius: inherit; z-index: -1; opacity: 0; transition: opacity 0.5s ease;
         }
-        .border-beam:hover::after {
-            opacity: 1;
-        }
+        .border-beam:hover::after { opacity: 1; }
         
-        /* Glow animations */
-        .image-glow { position: relative; }
+        /* Image Glow Animations */
+        .image-glow { position: relative; z-index: 1; }
         .image-glow::before {
-            content: ''; position: absolute; top: -5%; left: -5%; right: -5%; bottom: -5%;
-            background: radial-gradient(circle, rgba(212,175,55,0.22) 0%, transparent 65%);
-            z-index: -1; border-radius: 50%; animation: pulse-glow 5s infinite alternate ease-in-out;
+            content: ''; position: absolute; inset: -8%;
+            background: radial-gradient(circle, rgba(212,175,55,0.25) 0%, transparent 70%);
+            z-index: -1; border-radius: 50%; animation: pulse-glow 4s infinite alternate ease-in-out;
         }
-        @keyframes pulse-glow { 0% { opacity: 0.5; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1.05); } }
+        @keyframes pulse-glow { 0% { opacity: 0.4; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1.1); } }
 
         /* Premium Geometric Grid Pattern Overlay */
         .bg-mesh {
-            background-color: #050505;
+            background-color: #030303;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05), transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05), transparent 40%);
+                radial-gradient(circle at 15% 25%, rgba(212, 175, 55, 0.04), transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.04), transparent 45%);
+            background-attachment: fixed;
         }
 
-        /* Scrollbar styling */
-        ::-webkit-scrollbar { width: 6px; }
+        /* Scrollbar Styling - אלגנטי ונקי יותר */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         @media (min-width: 768px) { ::-webkit-scrollbar { width: 8px; } }
-        ::-webkit-scrollbar-track { background: #050505; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #856511, #D4AF37, #ffe8a1); border-radius: 10px; }
+        ::-webkit-scrollbar-track { background: #030303; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #856511, #D4AF37, #ffe8a1, #D4AF37, #856511); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #a68726, #f1d26f, #ffffff, #f1d26f, #a68726); }
 
         /* Timeline Fixes */
         .timeline-line::before {
             content: ''; position: absolute; top: 0; bottom: 0; right: 28px; width: 2px;
-            background: linear-gradient(to bottom, rgba(212,175,55,0), #D4AF37 20%, #D4AF37 80%, rgba(212,175,55,0));
+            background: linear-gradient(to bottom, transparent, #D4AF37 15%, #D4AF37 85%, transparent);
         }
-
         @media (max-width: 768px) {
             .timeline-line::before { right: 20px; }
             .timeline-item-icon { right: -42px !important; }
             h1 { font-size: clamp(2.5rem, 8vw, 3.5rem) !important; word-break: keep-all; }
         }
 
-        input, textarea, select { font-size: 16px !important; }
-        .input-glow:focus { box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); border-color: rgba(212,175,55,0.7); }
+        /* Form Inputs */
+        input, textarea, select { font-size: 16px !important; outline: none; }
+        .input-glow { transition: all 0.3s ease; }
+        .input-glow:focus { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); border-color: #D4AF37; background-color: rgba(21, 21, 21, 0.9); }
 
-        /* Preloader */
-        #preloader { transition: opacity 0.8s ease-out; }
+        /* General UX & Preloader */
+        html { scroll-behavior: smooth; }
+        #preloader { transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
         .loaded #preloader { opacity: 0; pointer-events: none; display: none; }
         
-        details > summary { list-style: none; outline: none; }
+        details > summary { list-style: none; outline: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
-        details > summary:focus-visible { box-shadow: 0 0 0 2px #D4AF37; border-radius: 0.5rem; }
-        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
-        @keyframes sweep { 0% {opacity: 0; transform: translateY(-10px)} 100% {opacity: 1; transform: translateY(0)} }
+        details > summary:focus-visible { box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.8); border-radius: 0.5rem; }
+        details[open] summary ~ * { animation: sweep 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes sweep { 0% {opacity: 0; transform: translateY(-15px)} 100% {opacity: 1; transform: translateY(0)} }
 
-        html { scroll-behavior: smooth; }
-
-        /* Particles - only desktop */
+        /* Particles - Desktop only */
         @media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
-            .particles-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
-            .particle { position: absolute; bottom: -10px; width: 3px; height: 3px; background-color: rgba(212, 175, 55, 0.45); border-radius: 50%; box-shadow: 0 0 12px rgba(212, 175, 55, 0.8); animation: float-particle 15s infinite linear; }
+            .particles-container { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+            .particle { position: absolute; bottom: -10px; width: 3px; height: 3px; background-color: rgba(212, 175, 55, 0.5); border-radius: 50%; box-shadow: 0 0 15px rgba(212, 175, 55, 0.9); animation: float-particle 15s infinite linear; }
         }
         
+        /* Luxury Texture Overlay */
         .luxury-texture {
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 0; mix-blend-mode: overlay;
         }
 
-        /* Shiny / Shimmer overlay for gold buttons */
-        .shimmer-btn {
-            position: relative;
-            overflow: hidden;
-        }
+        /* Shimmer Overlay for Buttons - שופר למראה נוצץ יותר */
+        .shimmer-btn { position: relative; overflow: hidden; z-index: 1; }
         .shimmer-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: skewX(-25deg);
-            transition: 0.75s;
+            content: ''; position: absolute; top: 0; left: -100%; width: 40%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transform: skewX(-25deg); transition: all 0.75s ease; z-index: -1;
         }
-        .shimmer-btn:hover::before {
-            left: 125%;
-            transition: 0.75s;
-        }
+        .shimmer-btn:hover::before { left: 125%; transition: all 0.75s ease; }
 
-        /* Elegant Double Gold Frame */
+        /* Elegant Double Gold Frame - מסגרת כפולה אמיתית */
         .double-gold-frame {
-            border: 2px solid #D4AF37;
-            padding: 4px;
-            background-color: transparent;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+            position: relative;
+            border: 1px solid #D4AF37;
+            padding: 8px;
+            background-color: rgba(5, 5, 5, 0.8);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+        .double-gold-frame::before {
+            content: ''; position: absolute;
+            top: 4px; left: 4px; right: 4px; bottom: 4px;
+            border: 1px dashed rgba(212, 175, 55, 0.5);
+            pointer-events: none;
+        }
+        
+        /* Scroll Progress Head Glow - נקודת אור בקצה פס הגלילה */
+        #scroll-progress-bar { position: relative; }
+        #scroll-progress-bar::after {
+            content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+            width: 10px; height: 10px; background: #ffffff; border-radius: 50%;
+            box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.8); opacity: 0.9;
         }
     </style>
 </head>
+
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1 bg-dark/50 z-[100]" aria-hidden="true">
-        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_12px_rgba(212,175,55,0.8)]"></div>
+    <!-- Scroll Progress Bar - שודרג עם הילה ונקודת תאורה -->
+    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1.5 bg-dark/80 backdrop-blur-sm z-[100]" aria-hidden="true">
+        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_15px_rgba(212,175,55,1)]"></div>
     </div>
 
-<!-- Preloader - משודרג ------>
+<!-- Preloader - משודרג -------------->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center transition-opacity duration-700">
         <!-- הלוגו - תואם לעיצוב החדש בהדר -->
         <div class="relative w-20 h-20 md:w-24 md:h-24 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-10 border-2 border-white/20">
@@ -810,7 +815,7 @@
                     <article class="group glass rounded-xl overflow-hidden hover:border-[#d4af37]/60 transition-all duration-500 shadow-[0_10px_30px_rgba(0,0,0,0.5)] bg-[#111]/80" data-aos="fade-up" data-aos-delay="200">
                         <div class="h-48 md:h-52 overflow-hidden relative border-b border-gold/20">
                             <div class="absolute inset-0 bg-[#d4af37]/10 group-hover:bg-transparent transition-colors z-10" aria-hidden="true"></div>
-                            <img src="https://yt3.ggpht.com/8KAVByqQGp0GyFQ56KpgFlWv7gwg8VB4OExsl594DTyV-zDtGyGYaDEfjAs9loWE3sFBU5oePA=s88-c-k-c0x00ffffff-no-rj" alt="מאמר בנושא הצהרת אבהות וקביעת מעמד יוחסין " class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
+                            <img src="https://plus.unsplash.com/premium_photo-1695942301071-a70004b9e916?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGxlZ2FsfGVufDB8fDB8fHww" alt="מאמר בנושא הצהרת אבהות וקביעת מעמד יוחסין " class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async">
                             <span class="absolute top-3 right-3 md:top-4 md:right-4 gold-gradient text-dark text-[10px] md:text-xs font-bold px-3 py-1 rounded-full z-20 shadow-lg">בירור יוחסין</span>
                         </div>
                         <div class="p-5 md:p-6 flex flex-col h-[calc(100%-12rem)] md:h-[calc(100%-13rem)]">
