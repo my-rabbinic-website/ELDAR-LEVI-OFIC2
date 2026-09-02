@@ -547,92 +547,112 @@
         <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_12px_rgba(212,175,55,0.8)]"></div>
     </div>
 
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
-        <div class="relative w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-8">
-            <span class="text-dark text-4xl font-black transform -rotate-45 font-heebo">E</span>
+<!-- Preloader - משודרג ------>
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center transition-opacity duration-700">
+        <!-- הלוגו - תואם לעיצוב החדש בהדר -->
+        <div class="relative w-20 h-20 md:w-24 md:h-24 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-10 border-2 border-white/20">
+            <div class="absolute inset-1.5 border border-white/30 rounded-xl"></div>
+            <span class="text-dark text-3xl md:text-4xl font-black transform -rotate-45 heebo-font" aria-hidden="true">E.L</span>
         </div>
-        <div class="text-gold text-sm tracking-widest uppercase font-bold animate-bounce text-center px-4">צדק צדק תרדוף...</div>
+        
+        <!-- טקסט טעינה ומיתוג -->
+        <div class="flex flex-col items-center gap-3">
+            <div class="text-gold text-lg md:text-xl tracking-[0.15em] font-black heebo-font text-center px-4">
+                הרב אלדר לוי
+            </div>
+            <div class="text-white/80 text-sm md:text-base tracking-widest font-bold animate-pulse text-center px-4">
+                צדק צדק תרדוף...
+            </div>
+        </div>
     </div>
-   
-    <!-- Animated Background Blobs -------->
-    <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
-        <div class="absolute top-0 -left-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/10 rounded-full mix-blend-screen filter blur-[90px] md:blur-[120px] animate-blob"></div>
-        <div class="absolute top-1/2 -right-1/4 w-72 md:w-96 h-72 md:h-96 bg-gold/5 rounded-full mix-blend-screen filter blur-[90px] md:blur-[120px] animate-blob" style="animation-delay: 2s;"></div>
-    </div>
-    <div class="luxury-texture fixed inset-0 w-full h-full"></div>
     
-    <!-- Header / Navbar -->
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 px-4 md:px-8 border-b border-transparent">
+    <!-- Animated Background Blobs - משודרג -------->
+    <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
+        <!-- בלוב שמאלי עליון -->
+        <div class="absolute top-0 -left-1/4 w-72 md:w-[30rem] h-72 md:h-[30rem] bg-gold/15 rounded-full mix-blend-screen filter blur-[100px] md:blur-[140px] animate-blob"></div>
+        
+        <!-- בלוב ימני אמצעי -->
+        <div class="absolute top-1/2 -right-1/4 w-72 md:w-[30rem] h-72 md:h-[30rem] bg-gold/10 rounded-full mix-blend-screen filter blur-[100px] md:blur-[140px] animate-blob" style="animation-delay: 2s;"></div>
+        
+        <!-- בלוב תחתון מרכזי (חדש - לאיזון) -->
+        <div class="absolute -bottom-32 left-1/2 -translate-x-1/2 w-72 md:w-[25rem] h-72 md:h-[25rem] bg-gold/10 rounded-full mix-blend-screen filter blur-[100px] md:blur-[120px] animate-blob" style="animation-delay: 4s;"></div>
+    </div>
+    
+    <!-- Luxury Texture -->
+    <div class="luxury-texture fixed inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-overlay z-0"></div>
+       
+    <!-- headere -->
+   <header id="header" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 px-4 md:px-8 bg-dark/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20">
         <div class="container mx-auto flex justify-between items-center relative z-20">
-            <!-- Logo -->
-            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg pr-1" aria-label="לדף הבית">
-                <div class="relative w-10 h-10 md:w-12 md:h-12 gold-gradient rounded-xl flex items-center justify-center transform rotate-45 group-hover:rotate-0 transition-all duration-500 shadow-lg shadow-gold/20">
-                    <span class="text-dark text-lg md:text-xl font-black transform -rotate-45 group-hover:rotate-0 transition-all duration-500 heebo-font" aria-hidden="true">E.L</span>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg pr-1" aria-label="לדף הבית">
+                <div class="relative w-12 h-12 md:w-14 md:h-14 gold-gradient rounded-xl flex items-center justify-center transform rotate-45 group-hover:rotate-90 transition-all duration-700 shadow-[0_0_15px_rgba(212,175,55,0.3)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] border-2 border-white/20 hover:border-white/40">
+                    <div class="absolute inset-1 border border-white/30 rounded-lg"></div>
+                    <span class="text-dark text-xl md:text-2xl font-black transform -rotate-45 group-hover:-rotate-90 transition-all duration-700 heebo-font" aria-hidden="true">E.L</span>
                 </div>
-                <div class="flex flex-col">
-                    <span class="text-lg md:text-2xl font-black gold-gradient-text tracking-tight leading-none heebo-font">הרב אלדר לוי</span>
-                    <span class="text-[8px] md:text-[10px] text-white/70 tracking-[0.15em] font-bold mt-0.5">דיין מוסמך וטוען רבני</span>
+                <div class="flex flex-col transform group-hover:-translate-x-1 transition-transform duration-300">
+                    <span class="text-xl md:text-2xl font-black gold-gradient-text tracking-tight leading-none heebo-font">הרב אלדר לוי</span>
+                    <span class="text-[9px] md:text-[11px] text-white/80 tracking-[0.2em] font-bold mt-1 uppercase">דיין מוסמך וטוען רבני</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-8" aria-label="תפריט ניווט ראשי">
-                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
-                    מאמרים
-                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="https://my-rabbinic-website.github.io/my-rabbinic-law-site/" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
-                    בוררות 
-                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בסיעתאדשמיא" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="תפריט ניווט ראשי">
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בסיעתאדשמיא" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
                     דיני משפחה
                     <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/הסכמים-צוואות" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
-                      הסכמים וצוואות
+                <a href="https://my-rabbinic-website.github.io/my-rabbinic-law-site/" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
+                    בוררות עסקית
                     <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/עיסוק" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
-                    המלצות
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/הסכמים-צוואות" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
+                    הסכמים וצוואות
                     <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
                 </a>
-                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded">
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
                     למייצגים
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית.html" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
+                    פסקי דין ומאמרים
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#faq" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
+                    שאלות נפוצות
+                    <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/עיסוק" class="text-sm font-bold text-white/80 hover:text-gold transition-colors relative group focus-visible:outline-none focus-visible:text-gold rounded py-1">
+                    המלצות
                     <span class="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
                 </a>
             </nav>
 
-            <!-- CTA & Mobile Toggle -->
-            <div class="flex items-center gap-3 md:gap-4">
-                <a href="tel:0534192798" class="hidden sm:flex items-center gap-2 text-gold hover:text-white transition-colors text-sm font-bold dir-ltr bg-white/5 px-4 py-2 rounded-full border border-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
+            <div class="flex items-center gap-3 md:gap-5">
+                <a href="tel:0534192798" class="hidden sm:flex items-center gap-2 text-gold hover:text-white transition-all duration-300 text-sm font-bold dir-ltr bg-white/5 hover:bg-gold/10 px-5 py-2.5 rounded-full border border-gold/20 hover:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
                     שיחה ישירה <i class="fas fa-phone-alt text-xs" aria-hidden="true"></i>
                 </a>
-                <a href="#contact" class="shimmer-btn hidden md:flex gold-gradient px-6 py-2.5 rounded-full text-dark font-black text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white group-hover-effect">
+                <a href="#contact" class="shimmer-btn hidden md:flex gold-gradient px-7 py-2.5 rounded-full text-dark font-black text-sm shadow-[0_0_15px_rgba(212,175,55,0.4)] hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] hover:scale-105 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white group-hover-effect">
                     סיוע הלכתי-משפטי
                 </a>
                 
-                <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 glass rounded-full flex items-center justify-center text-gold border-gold/40 hover:bg-gold/10 transition-colors z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold" aria-label="פתח תפריט ניווט">
-                    <i class="fas fa-bars text-lg" aria-hidden="true"></i>
+                <button id="mobileMenuBtn" class="lg:hidden w-12 h-12 glass rounded-full flex items-center justify-center text-gold border border-gold/40 hover:bg-gold/10 hover:scale-105 transition-all duration-300 z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold" aria-label="פתח תפריט ניווט">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobileMenu" class="fixed inset-0 bg-dark/98 backdrop-blur-3xl z-[40] translate-x-full transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-6 md:gap-8 lg:hidden" aria-hidden="true">
-        <nav class="flex flex-col items-center gap-6 text-center w-full px-6">
-            <a href="https://my-rabbinic-website.github.io/my-rabbinic-law-site/" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">בוררות עיסקית</a>
-            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בסיעתאדשמיא" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">דיני משפחה</a>
-            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית.html" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">פס'ד ומאמרים</a>
-            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/עיסוק" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">המלצות</a>
-            <a href="#faq" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">שאלות נפוצות</a>
-            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/הסכמים-צוואות" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">הסכמים וצוואות</a>
-            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="mobile-link text-2xl font-black text-white hover:text-gold transition-colors block w-full py-2">למייצגים</a>        
+        <nav class="flex flex-col items-center gap-5 text-center w-full px-6 overflow-y-auto max-h-[70vh]">
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/בסיעתאדשמיא" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">דיני משפחה</a>
+            <a href="https://my-rabbinic-website.github.io/my-rabbinic-law-site/" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">בוררות עסקית</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/הסכמים-צוואות" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">הסכמים וצוואות</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/סייוע-מייצגים" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">למייצגים</a>        
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/ספרותתורנית.html" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">פסקי דין ומאמרים</a>
+            <a href="#faq" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">שאלות נפוצות</a>
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/עיסוק" class="mobile-link text-2xl font-black text-white hover:text-gold transition-all duration-300 block w-full py-2 hover:scale-105">המלצות</a>
         </nav>
-        <div class="w-20 h-px bg-gold/40 my-2" aria-hidden="true"></div>
-        <a href="#contact" class="mobile-link gold-gradient px-8 py-4 rounded-full text-dark font-black text-lg shadow-xl shadow-gold/20 w-[80%] max-w-xs text-center">
+        <div class="w-24 h-px bg-gold/40 my-2" aria-hidden="true"></div>
+        <a href="#contact" class="mobile-link gold-gradient px-10 py-4 rounded-full text-dark font-black text-lg shadow-[0_0_20px_rgba(212,175,55,0.3)] w-[85%] max-w-xs text-center hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:scale-105 transition-all duration-300">
             קבע פגישת ייעוץ
         </a>
     </div>
