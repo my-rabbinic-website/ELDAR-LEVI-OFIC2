@@ -664,7 +664,7 @@
 
     <main class="relative z-10">
 
-        <!-- Hero Section -->    
+        <!-- Hero Sectionמעלזהשודרג -->    
         <section class="relative min-h-[100svh] md:min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
             <!-- Particles Background -->
             <div class="particles-container absolute inset-0 hidden md:block" id="particles" aria-hidden="true"></div>
@@ -754,7 +754,7 @@
             </div>
         </section>
 
-        <!-- Stats Section -->
+        <!-- Stats Section ------->
         <section class="py-10 md:py-14 border-y border-gold/10 bg-dark-light/80 relative z-20 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.7)]" aria-label="נתוני המשרד">
             <div class="container mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 text-center divide-x divide-x-reverse divide-gold/10">
                 <div data-aos="fade-up" class="group p-2">
@@ -1659,196 +1659,240 @@
         </a>
     </div>
 
-    <!-- Scripts -->
+<!-- Scriptsמכאן ולמטה שודרג בגימיני חשבון רעות -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        (function() {
+            "use strict";
 
-        // Particle configuration for elegant desktop backgrounds
-        if (window.innerWidth > 768 && window.matchMedia && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const particlesContainer = document.getElementById('particles');
-            if(particlesContainer) {
+            // 1. עדכון שנת זכויות יוצרים
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // 2. מערכת חלקיקים (Particles) לרקע יוקרתי (לדסקטופ בלבד)
+            const initParticles = () => {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (window.innerWidth <= 768 || prefersReducedMotion) return;
+
+                const container = document.getElementById('particles');
+                if (!container) return;
+
+                const fragment = document.createDocumentFragment();
                 for (let i = 0; i < 30; i++) {
                     const particle = document.createElement('div');
-                    particle.classList.add('particle');
+                    particle.className = 'particle';
                     particle.style.left = `${Math.random() * 100}%`;
                     particle.style.animationDuration = `${Math.random() * 12 + 10}s`;
                     particle.style.animationDelay = `${Math.random() * 10}s`;
-                    particlesContainer.appendChild(particle);
+                    fragment.appendChild(particle);
                 }
-            }
-        }
+                container.appendChild(fragment);
+            };
 
-        // Window scroll tracking for layout headers and indicators
-        const scrollProgressBar = document.getElementById('scroll-progress-bar');
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            if(scrollProgressBar) scrollProgressBar.style.width = scrollPercentage + '%';
-        }, { passive: true });
+            // 3. אפקט כתיבה אוטומטית (Typewriter)
+            const initTypewriter = () => {
+                const textElement = document.getElementById("typed-text");
+                if (!textElement) return;
 
-        // Typed text animation loop
-        const words = ["גירושין ומשמורת", "תביעות כתובה", "דיני ממונות ובוררות", "צוואות וירושות", "ייצוג אסטרטגי"];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typedTextElement = document.getElementById("typed-text");
+                const words = ["גירושין ומשמורת", "תביעות כתובה", "דיני ממונות ובוררות", "צוואות וירושות", "ייצוג אסטרטגי"];
+                let wordIndex = 0, charIndex = 0, isDeleting = false;
 
-        function typeEffect() {
-            if(!typedTextElement) return;
-            const currentWord = words[wordIndex];
-            if (isDeleting) {
-                typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
+                const typeEffect = () => {
+                    const currentWord = words[wordIndex];
+                    
+                    if (isDeleting) {
+                        charIndex--;
+                    } else {
+                        charIndex++;
+                    }
 
-            let typeSpeed = isDeleting ? 40 : 80;
+                    textElement.textContent = currentWord.substring(0, charIndex);
 
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 400; 
-            }
-            setTimeout(typeEffect, typeSpeed);
-        }
-        
-        // Luxury card hover mouse tracking
-        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelectorAll('.glow-effect-card').forEach(card => {
-                card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--mouse-x', `${x}px`);
-                    card.style.setProperty('--mouse-y', `${y}px`);
-                });
-            });
-        }
+                    let typeSpeed = isDeleting ? 40 : 80;
 
-        // Live stats counters implementation
-        function initCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200;
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        typeSpeed = 2000; // השהייה בסיום המילה
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        typeSpeed = 400; // השהייה לפני תחילת מילה חדשה
+                    }
 
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
+                    setTimeout(typeEffect, typeSpeed);
+                };
+                
+                typeEffect();
+            };
+
+            // 4. אנימציית מספרים חכמה (Counters with Easing)
+            const initCounters = () => {
+                const counters = document.querySelectorAll('.counter');
+                if (counters.length === 0) return;
+
+                // פונקציית האטה מרשימה לספירה (Ease-Out)
+                const easeOutExpo = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+                const duration = 2000; // משך האנימציה באלפיות שניה
+
+                const observer = new IntersectionObserver((entries, obs) => {
                     entries.forEach(entry => {
-                        if(entry.isIntersecting) {
-                            const target = +entry.target.getAttribute('data-target');
-                            let count = 0;
-                            const inc = target / speed;
+                        if (entry.isIntersecting) {
+                            const target = parseInt(entry.target.getAttribute('data-target'), 10);
+                            if (isNaN(target)) return;
 
-                            const updateCount = () => {
-                                if (count < target) {
-                                    count += inc;
-                                    entry.target.innerText = Math.ceil(count);
-                                    requestAnimationFrame(updateCount);
+                            let startTime = null;
+                            const updateCounter = (currentTime) => {
+                                if (!startTime) startTime = currentTime;
+                                const progress = Math.min((currentTime - startTime) / duration, 1);
+                                
+                                const currentCount = Math.ceil(target * easeOutExpo(progress));
+                                entry.target.innerText = currentCount;
+
+                                if (progress < 1) {
+                                    requestAnimationFrame(updateCounter);
                                 } else {
                                     entry.target.innerText = target;
                                 }
                             };
-                            updateCount();
-                            observer.unobserve(entry.target);
+                            
+                            requestAnimationFrame(updateCounter);
+                            obs.unobserve(entry.target);
                         }
                     });
                 }, { threshold: 0.5 });
 
                 counters.forEach(counter => observer.observe(counter));
-            } else {
-                counters.forEach(counter => {
-                    counter.innerText = counter.getAttribute('data-target');
+            };
+
+            // 5. אפקט הארה במעבר עכבר (Glow Hover Effect)
+            const initGlowEffect = () => {
+                const cards = document.querySelectorAll('.glow-effect-card');
+                const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                
+                if (!canHover || prefersReducedMotion || cards.length === 0) return;
+
+                cards.forEach(card => {
+                    let ticking = false;
+                    card.addEventListener('mousemove', e => {
+                        if (!ticking) {
+                            requestAnimationFrame(() => {
+                                const rect = card.getBoundingClientRect();
+                                const x = e.clientX - rect.left;
+                                const y = e.clientY - rect.top;
+                                card.style.setProperty('--mouse-x', `${x}px`);
+                                card.style.setProperty('--mouse-y', `${y}px`);
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    });
                 });
-            }
-        }
+            };
 
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-            
-            if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                const isMobile = window.innerWidth < 768;
-                AOS.init({ 
-                    duration: isMobile ? 800 : 1000, 
-                    once: true, 
-                    offset: isMobile ? 20 : 50, 
-                    easing: 'ease-out-cubic' 
+            // 6. ניהול אירועי גלילה (Scroll) - מד התקדמות ותפריט עליון
+            const initScrollFeatures = () => {
+                const progressBar = document.getElementById('scroll-progress-bar');
+                const header = document.getElementById('header');
+                const scrollTopBtn = document.getElementById('scrollTopBtn');
+                
+                let ticking = false;
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                            
+                            // עדכון מד התקדמות
+                            if (progressBar) {
+                                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                                progressBar.style.width = `${scrollPercentage}%`;
+                            }
+
+                            // עדכון עיצוב התפריט העליון וכפתור חזרה למעלה
+                            if (scrollTop > 50) {
+                                header?.classList.add('bg-dark/95', 'backdrop-blur-2xl', 'shadow-2xl', 'py-2', 'md:py-2', 'border-gold/20');
+                                header?.classList.remove('py-3', 'md:py-4', 'border-transparent');
+                                
+                                scrollTopBtn?.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                                scrollTopBtn?.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                            } else {
+                                header?.classList.remove('bg-dark/95', 'backdrop-blur-2xl', 'shadow-2xl', 'py-2', 'md:py-2', 'border-gold/20');
+                                header?.classList.add('py-3', 'md:py-4', 'border-transparent');
+                                
+                                scrollTopBtn?.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                                scrollTopBtn?.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                            }
+                            
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+
+                // כפתור חזרה למעלה
+                scrollTopBtn?.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
-            }
-            
-            initCounters();
-            typeEffect(); 
-        });
+            };
 
-        // Top navigation backdrop control
-        const header = document.getElementById('header');
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        let lastScrollTop = 0;
-        
-        window.addEventListener('scroll', () => {
-            const st = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (st > 50) {
-                if(header) {
-                    header.classList.add('bg-dark/95', 'backdrop-blur-2xl', 'shadow-2xl', 'py-2', 'md:py-2', 'border-gold/20');
-                    header.classList.remove('py-3', 'md:py-4', 'border-transparent');
-                }
-                if(scrollTopBtn) {
-                    scrollTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-                }
-            } else {
-                if(header) {
-                    header.classList.remove('bg-dark/95', 'backdrop-blur-2xl', 'shadow-2xl', 'py-2', 'md:py-2', 'border-gold/20');
-                    header.classList.add('py-3', 'md:py-4', 'border-transparent');
-                }
-                if(scrollTopBtn) {
-                    scrollTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-                }
-            }
-            lastScrollTop = st <= 0 ? 0 : st;
-        }, { passive: true });
+            // 7. תפריט מובייל
+            const initMobileMenu = () => {
+                const btn = document.getElementById('mobileMenuBtn');
+                const menu = document.getElementById('mobileMenu');
+                const links = document.querySelectorAll('.mobile-link');
+                let isOpen = false;
 
-        if(scrollTopBtn) {
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                const toggleMenu = () => {
+                    isOpen = !isOpen;
+                    if (isOpen) {
+                        menu?.classList.remove('translate-x-full');
+                        if(btn) {
+                            btn.innerHTML = '<i class="fas fa-times text-xl" aria-hidden="true"></i>';
+                            btn.setAttribute('aria-expanded', 'true');
+                        }
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        menu?.classList.add('translate-x-full');
+                        if(btn) {
+                            btn.innerHTML = '<i class="fas fa-bars text-lg" aria-hidden="true"></i>';
+                            btn.setAttribute('aria-expanded', 'false');
+                        }
+                        document.body.style.overflow = '';
+                    }
+                };
+
+                btn?.addEventListener('click', toggleMenu);
+                links.forEach(link => link.addEventListener('click', toggleMenu));
+            };
+
+            // 8. הפעלה בעת טעינת החלון
+            window.addEventListener('load', () => {
+                document.body.classList.add('loaded');
+                
+                // אתחול AOS Animations
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (!prefersReducedMotion) {
+                    const isMobile = window.innerWidth < 768;
+                    AOS.init({ 
+                        duration: isMobile ? 800 : 1000, 
+                        once: true, 
+                        offset: isMobile ? 20 : 50, 
+                        easing: 'ease-out-cubic' 
+                    });
+                }
+
+                // הפעלת שאר הפונקציות
+                initParticles();
+                initTypewriter();
+                initCounters();
+                initGlowEffect();
+                initScrollFeatures();
+                initMobileMenu();
             });
-        }
 
-        // Mobile responsive menu toggle controller
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let menuOpen = false;
-
-        function toggleMenu() {
-            menuOpen = !menuOpen;
-            if(menuOpen) {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl" aria-hidden="true"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenu.classList.add('translate-x-full');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-lg" aria-hidden="true"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        }
-
-        if(mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', toggleMenu);
-        }
-        
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
+        })();
     </script>
 </body>
 </html>
