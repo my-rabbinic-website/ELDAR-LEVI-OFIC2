@@ -544,21 +544,24 @@
         }
     </style>
 </head>
+
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
-    <!-- Scroll Progress Bar -->
+    <!-- Scroll Progress Bar - שודרג עם הילה ונקודת תאורה -->
     <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1.5 bg-dark/80 backdrop-blur-sm z-[100]" aria-hidden="true">
         <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_15px_rgba(212,175,55,1)]"></div>
     </div>
 
-    <!-- Preloader -->
+<!-- Preloader - משודרג -------------->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center transition-opacity duration-700">
-        <!--  במסך נטעןןן תמונת הלוגו -->
-        <img src="https://lh3.googleusercontent.com/ogw/AF2bZyj-nGb2sRJXAK77WnFzk22AD7vPWympYVMIgWfNZuTZy4c=s512-c-mo" alt="Logo" 
-            class="w-20 h-20 md:w-28 md:h-28 object-contain animate-pulse mb-6 shadow-[0_0_40px_rgba(212,175,55,0.4)] rounded-xl" />
-
+        <!-- הלוגו - תואם לעיצוב החדש בהדר -->
+        <div class="relative w-20 h-20 md:w-24 md:h-24 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-10 border-2 border-white/20">
+            <div class="absolute inset-1.5 border border-white/30 rounded-xl"></div>
+            <span class="text-dark text-3xl md:text-4xl font-black transform -rotate-45 heebo-font" aria-hidden="true">E.L</span>
+        </div>
+        
         <!-- טקסט טעינה ומיתוג -->
-        <div class="flex flex-col items-center gap-2">
+        <div class="flex flex-col items-center gap-3">
             <div class="text-gold text-lg md:text-xl tracking-[0.15em] font-black heebo-font text-center px-4">
                 הרב אלדר לוי
             </div>
@@ -567,7 +570,7 @@
             </div>
         </div>
     </div>
-            
+    
     <!-- Animated Background Blobs - משודרג -------->
     <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
         <!-- בלוב שמאלי עליון -->
@@ -583,14 +586,14 @@
     <!-- Luxury Texture -->
     <div class="luxury-texture fixed inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-overlay z-0"></div>
        
-    <!-- headereהוחלף ללוגו -->
-    <header id="header" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 px-4 md:px-8 bg-dark/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20">
+    <!-- headere -->
+   <header id="header" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 px-4 md:px-8 bg-dark/90 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20">
         <div class="container mx-auto flex justify-between items-center relative z-20">
             <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg pr-1" aria-label="לדף הבית">
-            
-                <!-- תמונת הלוגו סרגל גליםם מעודכנת ברזולוציה גבוהה ובגודל מוגדל -->
-                <img src="https://photos.fife.usercontent.google.com/pw/AP1GczPVZRuIXbfXrTJV61QUJbxUu7LkAvbC5F-GYzSal1d0NyiU3MzEgbGc=w861-h688-s-no-gm?authuser=0" alt="לוגו" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl transition-transform duration-300 group-hover:scale-105" />
-
+                <div class="relative w-12 h-12 md:w-14 md:h-14 gold-gradient rounded-xl flex items-center justify-center transform rotate-45 group-hover:rotate-90 transition-all duration-700 shadow-[0_0_15px_rgba(212,175,55,0.3)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.6)] border-2 border-white/20 hover:border-white/40">
+                    <div class="absolute inset-1 border border-white/30 rounded-lg"></div>
+                    <span class="text-dark text-xl md:text-2xl font-black transform -rotate-45 group-hover:-rotate-90 transition-all duration-700 heebo-font" aria-hidden="true">E.L</span>
+                </div>
                 <div class="flex flex-col transform group-hover:-translate-x-1 transition-transform duration-300">
                     <span class="text-xl md:text-2xl font-black gold-gradient-text tracking-tight leading-none heebo-font">הרב אלדר לוי</span>
                     <span class="text-[9px] md:text-[11px] text-white/80 tracking-[0.2em] font-bold mt-1 uppercase">דיין מוסמך וטוען רבני</span>
@@ -853,59 +856,7 @@
             </div>
         </section>
 
-        <!-- Strategy Section -->
-        <section id="strategy" class="py-16 md:py-24 bg-dark overflow-hidden relative">
-            <div class="absolute right-0 top-1/4 w-full md:w-1/3 h-1/2 bg-gold/5 blur-[100px] md:blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
-                    <div data-aos="fade-left">
-                        <span class="text-gold font-bold tracking-[0.2em] text-xs md:text-sm mb-3 block uppercase">הפרוטוקול המנצח</span>
-                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-10 md:mb-12 leading-tight heebo-font">לא משאירים מקום <br class="hidden sm:block"><span class="gold-gradient-text">להפתעות בדיון</span></h2>
-                        
-                        <div class="space-y-8 md:space-y-10 timeline-line relative pr-8 md:pr-14">
-                            <div class="relative group" data-aos="fade-up">
-                                <div class="timeline-item-icon absolute -right-[40px] md:-right-[68px] top-0 w-8 h-8 md:w-12 md:h-12 rounded-full gold-gradient border-2 md:border-4 border-dark z-10 flex items-center justify-center shadow-[0_0_20px_rgba(212,175,55,0.5)] group-hover:scale-110 transition-transform">
-                                    <i class="fas fa-search text-dark text-xs md:text-base" aria-hidden="true"></i>
-                                </div>
-                                <h3 class="text-lg md:text-2xl font-black text-white mb-2 group-hover:text-gold transition-colors heebo-font">שלב א': צילום מצב מקיף</h3>
-                                <p class="text-white/80 text-sm md:text-base leading-relaxed">ניתוח מעמיק של התיק. איתור מסמכים, זיהוי נקודות תורפה של הצד השני, והבנת התמונה ההלכתית והמשפטית המלאה.</p>
-                            </div>
-                            
-                            <div class="relative group" data-aos="fade-up" data-aos-delay="100">
-                                <div class="timeline-item-icon absolute -right-[40px] md:-right-[68px] top-0 w-8 h-8 md:w-12 md:h-12 rounded-full glass bg-dark border-2 border-gold z-10 flex items-center justify-center group-hover:bg-gold/20 transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                                    <i class="fas fa-chess-board text-gold text-xs md:text-base" aria-hidden="true"></i>
-                                </div>
-                                <h3 class="text-lg md:text-2xl font-black text-gold mb-2 heebo-font">שלב ב': בניית אסטרטגיה אישית</h3>
-                                <p class="text-white/80 text-sm md:text-base leading-relaxed">החלטה מחושבת על אופן הפעולה – האם עדיף לפתוח בהליך מהיר, בקשות מקדמיות, ובאיזו דרך פעולה הסיכוי להבאת הצדק הוא הטוב ביותר.</p>
-                            </div>
-                            
-                            <div class="relative group" data-aos="fade-up" data-aos-delay="200">
-                                <div class="timeline-item-icon absolute -right-[40px] md:-right-[68px] top-0 w-8 h-8 md:w-12 md:h-12 rounded-full glass bg-dark border-2 border-gold z-10 flex items-center justify-center group-hover:bg-gold/20 transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                                    <i class="fas fa-microphone-alt text-gold text-xs md:text-base" aria-hidden="true"></i>
-                                </div>
-                                <h3 class="text-lg md:text-2xl font-black text-white mb-2 group-hover:text-gold transition-colors heebo-font">שלב ג': ייצוג נוכח ואגרסיבי</h3>
-                                <p class="text-white/80 text-sm md:text-base leading-relaxed">עמידה איתנה בדיוני ההוכחות מול הדיינים, חקירות נגדיות חדות לחישוף האמת, והגשת סיכומים מנצחים.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="relative lg:mr-8 mt-12 lg:mt-0 max-w-sm mx-auto lg:max-w-none" data-aos="zoom-in">
-                        <div class="glass p-2 md:p-3 rounded-[2rem] md:rounded-[2.5rem] border-gold/30 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] glow-effect-card bg-dark/50">
-                            <div class="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden z-10 bg-dark">
-                                <div class="absolute inset-0 bg-gradient-to-tr from-gold/20 to-transparent mix-blend-color z-10 pointer-events-none" aria-hidden="true"></div>
-                                <img src="https://img.haarets.co.il/bs/0000019b-7999-d019-a9df-7fbf4ad40001/32/4b/a2e81fdc4807900a758c13f00cf2/555.jpg?precrop=2200,1279,x0,y132&width=420&height=244&cmsprod" alt="מאזני צדק - ייצוג משפטי בבתי הדין" class="w-full h-auto object-cover aspect-[4/3] filter contrast-[1.1] brightness-[0.85] hover:brightness-[1] hover:scale-105 transition-all duration-700" loading="lazy" decoding="async">
-                            </div>
-                            <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 left-4 md:left-8 glass p-4 md:p-6 rounded-xl md:rounded-2xl border-r-4 border-r-gold text-xs md:text-lg italic font-bold text-white bg-dark/95 backdrop-blur-xl shadow-2xl z-20">
-                                <i class="fas fa-quote-right text-gold/40 text-xl md:text-2xl absolute top-3 md:top-4 right-3 md:right-4 -z-10" aria-hidden="true"></i>
-                                "תפקידי להציג בפני בית הדין רק את הצדק"
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Quick Tips -->
+       <!-- Quick Tips -->
         <section class="py-16 md:py-20 bg-dark-light border-y border-gold/10 overflow-hidden relative">
             <div class="absolute left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-gold/5 to-transparent pointer-events-none"></div>
             <div class="container mx-auto px-6 relative z-10">
@@ -1377,46 +1328,6 @@
             </div>
         </section>
 
-        <!-- Elegant Urgent Consultation Callout (No Calculators/Wizards) -->
-        <section id="consultation-callout" class="py-16 md:py-24 bg-dark relative overflow-hidden">
-            <div class="container mx-auto px-4 md:px-6 max-w-4xl">
-                <div class="glass p-8 sm:p-12 rounded-[2rem] md:rounded-[3rem] border-gold/40 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#0c0c0c]">
-                    <div class="absolute top-0 right-0 w-24 h-24 md:w-40 md:h-40 bg-gold/5 rounded-bl-full pointer-events-none z-0" aria-hidden="true"></div>
-                    
-                    <div class="relative z-10 text-center">
-                        <span class="text-gold font-bold tracking-[0.15em] uppercase text-xs md:text-sm mb-4 block">הזדמנות להערכה מקצועית</span>
-                        <h2 class="text-3xl md:text-4xl font-black mb-4 heebo-font text-white">פגישת אבחון ואסטרטגיה לתיק שלך</h2>
-                        <p class="text-white/85 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-8">
-                            בדיונים בבתי הדין הרבניים, הכנה מוקדמת וגיבוש טיעונים הלכתיים נכונים הם שעושים את ההבדל בין הצלחה לכישלון. אל תשאיר את עתידך ורכושך ליד המקרה.
-                        </p>
-                        
-                        <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-right mb-8">
-                            <div class="bg-dark/50 border border-gold/10 p-4 rounded-xl">
-                                <div class="text-gold text-lg mb-1"><i class="fas fa-lock"></i> חיסיון מלא</div>
-                                <p class="text-white/60 text-xs leading-relaxed">דיסקרטיות מוחלטת מובטחת כהלכה לכל שלב בתיק.</p>
-                            </div>
-                            <div class="bg-dark/50 border border-gold/10 p-4 rounded-xl">
-                                <div class="text-gold text-lg mb-1"><i class="fas fa-check-circle"></i> מיקוד מהיר</div>
-                                <p class="text-white/60 text-xs leading-relaxed">ניתוח מהיר של עילות הגירושין והשפעת הכתובה.</p>
-                            </div>
-                            <div class="bg-dark/50 border border-gold/10 p-4 rounded-xl">
-                                <div class="text-gold text-lg mb-1"><i class="fas fa-bullseye"></i> תוכנית עבודה</div>
-                                <p class="text-white/60 text-xs leading-relaxed">שרטוט אסטרטגי של הצעד הבא מול ערכאות השפיטה.</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a href="#contact" class="shimmer-btn gold-gradient text-dark px-10 py-4 rounded-xl font-black shadow-[0_10px_25px_rgba(212,175,55,0.4)] focus:ring-2 focus:ring-white inline-block text-sm md:text-base transition-all">
-                                לתיאום פגישה <i class="fas fa-chevron-down mr-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div id="contact-form-anchor"></div>
-    </main>
-
     <!-- Footer & Contact Form -->
     <footer id="contact" class="bg-[#050505] pt-16 md:pt-20 pb-8 md:pb-10 border-t border-gold/30 overflow-hidden relative">
         <div class="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gold/5 blur-[120px] md:blur-[180px] rounded-full pointer-events-none" aria-hidden="true"></div>
@@ -1438,11 +1349,11 @@
                                 </div>
                                 <span class="dir-ltr text-xl md:text-2xl tracking-wider">שיחה ישירה</span>
                             </a>
-                            <a href="mailto:tifarteha@gmail.com" class="flex items-center gap-4 md:gap-5 text-base md:text-lg font-light text-white hover:text-gold transition-colors w-fit group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:pr-2">
+                            <a href="mailto:office.rabbinical@gmail.com" class="flex items-center gap-4 md:gap-5 text-base md:text-lg font-light text-white hover:text-gold transition-colors w-fit group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-lg md:pr-2">
                                 <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 flex items-center justify-center text-white/90 group-hover-effect border border-white/10">
                                     <i class="fas fa-envelope text-lg md:text-xl" aria-hidden="true"></i>
                                 </div>
-                                אימייל ישיר
+                                office.rabbinical@gmail.com
                             </a>
                         </div>
                     </div>
@@ -1502,27 +1413,31 @@
                     <h4 class="font-bold text-gold mb-4 md:mb-6 text-lg md:text-xl heebo-font drop-shadow-sm">יצירת קשר</h4>
                     <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-white/80">
                         <li><a href="#contact" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">פגישת ייעוץ</a></li>
-                        <li><a href="tel:0534192798" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">077-8940842</a></li>
+                        <li><a href="tel:0534192798" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition min-h-[30px] inline-flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">053-4192798</a></li>
                         <li><a href="tel:0528219928" class="hover:text-gold transition dir-ltr inline-flex items-center min-h-[30px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">חיוג לייעוץ מהיר</a></li>
-                        <li><a href="mailto:tifarteha@gmail.com" class="hover:text-gold transition min-h-[30px] inline-flex items-center break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">Tifarteha@gmail.com</a></li>
+                        <li><a href="mailto:office.rabbinical@gmail.com" class="hover:text-gold transition min-h-[30px] inline-flex items-center break-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">office.rabbinical@gmail.com</a></li>
                         <li><a href="https://ul.waze.com/ul?from=place.w.22675770.226626631.2059594&utm_campaign=iframe_planning&utm_source=waze_website&utm_medium=lm_share_location" class="hover:text-gold transition dir-ltr inline-flex items-center min-h-[30px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded">יצחק שמיר 15, נתיבות</a></li>
                     </ul>
                 </div>
                 <div class="col-span-2 sm:col-span-1">
-                 <img src="https://lh3.googleusercontent.com/ogw/AF2bZyj-nGb2sRJXAK77WnFzk22AD7vPWympYVMIgWfNZuTZy4c=s512-c-mo" alt="לוגו" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl transition-transform duration-300 group-hover:scale-105" />                    
-                    <p class="text-xs md:text-sm text-white/80 leading-relaxed font-light text-center sm:text-right">
-                        משרד בוטיק המתמחה בייצוג אקסקלוסיבי ומנצח בבתי הדין הרבניים, שילוב עומק הלכתי וחשיבה אסטרטגית.
+                        מועדון הלקוחות 
+                        <span class="absolute -bottom-3 right-0 w-8 h-[1px] bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+                    </h3>
+                    <p class="text-gray-400 text-sm font-light mb-6 leading-relaxed" data-he="הצטרפו לקבלת מאמרים ועדכונים בזמן אמת, אשר יחסכו עבורכם זמן יקר והון." data-en="Join our exclusive registry to receive early commission access, private dedication invitations, and lifetime benefits.">
+                        הצטרפו לקבלת מאמרים ועדכונים בזמן אמת, אשר יחסכו עבורכם זמן יקר והון.
                     </p>
+                    <form action="https://formspree.io/f/xlgpwvye" method="POST" class="contact-form space-y-4 md:space-y-5 bg-[#0a0a0a] p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-white/10 shadow-inner relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1 gold-gradient" aria-hidden="true"></div>
+                        <h3 class="text-lg md:text-xl font-bold mb-4 md:mb-6 text-center text-white" data-he="פנייה מהירה" data-en="Direct Request">פנייה מהירה</h3>
+                        <input type="email" name="email" placeholder="כתובת דוא״ל" class="w-full bg-transparent border-b border-gray-700 text-white px-0 py-3 focus:outline-none focus:border-[#D4AF37] transition-colors text-sm placeholder-gray-600 font-light" required>
+                        <button type="submit" class="absolute left-4 bottom-3 text-[#D4AF37] hover:text-[#FCF6BA] font-light text-sm tracking-wider transition-colors flex items-center gap-2">
+                            <span data-he="שלח פנייה" data-en="Submit Application">שלח פנייה</span>
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </button>
+                    </form>
                 </div>
             </div>
-
-            <div class="text-center border-t border-white/10 pt-6 md:pt-8">
-                <p class="text-white/50 text-[10px] md:text-[12px] font-bold tracking-widest uppercase leading-loose">
-                    &copy; <span id="current-year">2026</span> הרב אלדר לוי | כל הזכויות שמורות 
-                </p>
-            </div>
         </div>
-    </footer>
 
     <!-- Fixed Floating Buttons -->
     <div class="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-4 md:right-6 z-[90] flex flex-col gap-3 md:gap-4">
@@ -1530,7 +1445,7 @@
             <i class="fas fa-arrow-up text-sm md:text-base" aria-hidden="true"></i>
         </button>
         
-        <a href="tel:0528219928" class="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 gold-gradient rounded-full text-dark text-xl md:text-2xl shadow-[0_4px_25px_rgba(212,175,55,0.6)] group-hover-effect transition-transform relative group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white" aria-label="חייג אלינו">
+        <a href="tel:0534192798" class="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 gold-gradient rounded-full text-dark text-xl md:text-2xl shadow-[0_4px_25px_rgba(212,175,55,0.6)] group-hover-effect transition-transform relative group focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white" aria-label="חייג אלינו">
             <i class="fas fa-phone-alt" aria-hidden="true"></i>
             <span class="absolute right-full mr-4 bg-dark text-gold text-xs px-3 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg border border-gold/30 hidden md:block font-bold" aria-hidden="true">חיוג לתיאום פגישה</span>
         </a>
