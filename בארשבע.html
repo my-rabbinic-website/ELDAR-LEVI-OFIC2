@@ -224,6 +224,36 @@
         }
     </script>
 
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#030712',
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#fbbf24',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Frank Ruhl Libre', 'David', 'Georgia', 'serif'],
+                        sans: ['Assistant', 'Rubik', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -270,7 +300,7 @@
 
             <a href="tel:0528219928" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-white px-5 py-2 rounded-lg font-semibold text-sm transition-all shadow-md border border-gold-400/30">
                 <i class="fa-solid fa-phone"></i>
-                <span>052-8219928</span>
+                <span>לחיוג מהיר</span>
             </a>
         </div>
     </header>
@@ -308,11 +338,11 @@
                         <i class="fa-solid fa-envelope"></i>
                         <span>להשארת פנייה דיסקרטית</span>
                     </a>
-                    <a href="https://wa.me/972528219928?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A8%D7%91%D7%99,%20%D7%90%D7%A0%D7%99%20%D7%A4%D7%95%D7%A0%D7%94%20%D7%9E%D7%94%D7%AA%D7%A8" 
+                    <a href="mailto:tifarteha@gmail.com" 
                        target="_blank" 
                        class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition-all flex items-center gap-2 border border-emerald-400/30">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>פנייה בוואטסאפ</span>
+                        <span>פנייה ישירה</span>
                     </a>
                 </div>
             </div>
@@ -510,7 +540,7 @@
 
             <div class="text-center">
                 <!-- כאן תוכל להטמיע את הקישור שלך לעמוד המאמרים המלא -->
-                <a href="#" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition-all border border-gold-500/40 text-base">
+                <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/מאמרים-ליווי" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition-all border border-gold-500/40 text-base">
                     <span>לכל המאמרים ופסקי הדין לחצו כאן</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
@@ -545,8 +575,8 @@
                 </div>
                 <div class="bg-navy-900/80 p-5 rounded-xl border border-slate-800 text-center shadow-md">
                     <i class="fa-solid fa-book-bookmark text-gold-400 text-2xl mb-2"></i>
-                    <h4 class="font-bold text-amber-50">"זהרי נדה"</h4>
-                    <p class="text-xs text-slate-400 mt-1">בירורי הלכות ופסיקות עיקריות</p>
+                    <h4 class="font-bold text-amber-50">"זהרי טהרה"</h4>
+                    <p class="text-xs text-slate-400 mt-1">בירורי הלכות טהרת המשפחה</p>
                 </div>
             </div>
         </div>
@@ -634,11 +664,11 @@
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 flex items-center justify-center font-bold text-sm">
-                            מ.ש
+                            ד.ש
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800 text-sm">משה ש.</h4>
-                            <span class="text-xs text-slate-400">לקוח משרד</span>
+                            <h4 class="font-bold text-slate-800 text-sm">דורית ש.</h4>
+                            <span class="text-xs text-slate-400">לקותח משרד</span>
                         </div>
                     </div>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
@@ -661,7 +691,7 @@
                 <p class="text-slate-300 text-sm mt-2">השאירו פרטים ליצירת קשר בדיסקרטיות מלאה. נחזור אליכם בהקדם.</p>
             </div>
 
-            <form action="https://formspree.io/f/hazpfer53@gmail.com" method="POST" class="space-y-4">
+            <form action="https://formspree.io/f/xoejylgq" method="POST" class="space-y-4">
                 <div>
                     <label for="name" class="block text-xs font-semibold text-amber-200 mb-1">שם מלא</label>
                     <input type="text" id="name" name="name" required placeholder="שם מלא" 
@@ -686,9 +716,9 @@
             </form>
 
             <div class="mt-8 pt-6 border-t border-slate-800 text-center text-xs text-slate-400 space-y-1">
-                <p><i class="fa-solid fa-location-dot text-gold-500 ml-1"></i> כתובת: רחוב יצחק שמיר 15/18, נתיבות</p>
-                <p><i class="fa-solid fa-envelope text-gold-500 ml-1"></i> מייל: Hazpfer53@gmail.com | Tifarteha@gmail.com</p>
-                <p><i class="fa-solid fa-phone text-gold-500 ml-1"></i> טלפון: 052-8219928</p>
+                <p><i class="fa-solid fa-location-dot text-gold-500 ml-1"></i>יצחק שמיר 15, נתיבות | העצמאות 1, באר שבע</p>
+                <p><i class="fa-solid fa-envelope text-gold-500 ml-1"></i> office.rabbinical@gmail.com</p>
+                <p><i class="fa-solid fa-phone text-gold-500 ml-1"></i>053-4192798 | 052-8219928</p>
             </div>
         </div>
     </section>
@@ -704,11 +734,11 @@
             <i class="fa-solid fa-phone"></i>
             <span>חייג עכשיו</span>
         </a>
-        <a href="https://wa.me/972528219928?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A8%D7%91%D7%99,%20%D7%90%D7%A0%D7%99%20%D7%A4%D7%95%D7%A0%D7%94%20%D7%9E%D7%94%D7%AA%D7%A8" 
+        <a href="mailto:tifarteha@gmail.com" 
            target="_blank" 
            class="flex-1 bg-emerald-600 text-white py-2.5 rounded-lg font-bold text-center text-sm flex items-center justify-center gap-2">
             <i class="fa-brands fa-whatsapp text-base"></i>
-            <span>וואטסאפ</span>
+            <span>מייל ישיר</span>
         </a>
     </div>
 
@@ -865,8 +895,3 @@
 
 </body>
 </html>
-
-
-
-
-    
