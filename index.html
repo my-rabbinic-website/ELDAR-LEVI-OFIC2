@@ -21,10 +21,10 @@
     <link rel="canonical" href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
     <link rel="alternate" hreflang="he-IL" href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
 
-    <meta name="geo.region" content="IL-D" />
-    <meta name="geo.placename" content="Netivot" />
-    <meta name="geo.position" content="31.4167;34.5833" />
-    <meta name="ICBM" content="31.4167, 34.5833" />
+    <meta name="geo.region" content="IL-D">
+    <meta name="geo.placename" content="Netivot">
+    <meta name="geo.position" content="31.4167;34.5833">
+    <meta name="ICBM" content="31.4167, 34.5833">
 
     <!-- Favicons & App Icons (Optimized for Google Search) -->
     <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s192-c-no" type="image/png" sizes="192x192">
@@ -51,6 +51,7 @@
     <!-- Google Fonts (Optimized for Hebrew) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap&subset=hebrew" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@300;400;500;700;800;900&display=swap&subset=hebrew"></noscript>
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/">
     <meta property="og:title" content="הרב אלדר לוי | דיין וטוען רבני - בוררות וייצוג בדיני משפחה">
@@ -219,7 +220,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
-        "reviewCount": "11668" 
+        "reviewCount": "11668"
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -327,70 +328,69 @@
 }
 </script>
     
-    <!-- Rating Badgeשודרג ---------->
 <script>
-        if (typeof tailwind !== 'undefined') {
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            gold: {
-                                light: '#fef1cb',
-                                DEFAULT: '#D4AF37',
-                                dark: '#997a00',
-                                luxury: '#f1d26f'
-                            },
-                            dark: {
-                                DEFAULT: '#030303',
-                                light: '#0a0a0a',
-                                accent: '#121212'
-                            }
+    if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#fef1cb',
+                            DEFAULT: '#D4AF37',
+                            dark: '#997a00',
+                            luxury: '#f1d26f'
                         },
-                        fontFamily: {
-                            assistant: ['Assistant', 'sans-serif'],
-                            heebo: ['Heebo', 'sans-serif'],
+                        dark: {
+                            DEFAULT: '#030303',
+                            light: '#0a0a0a',
+                            accent: '#121212'
+                        }
+                    },
+                    fontFamily: {
+                        assistant: ['Assistant', 'sans-serif'],
+                        heebo: ['Heebo', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 12s infinite alternate cubic-bezier(0.4, 0, 0.2, 1)',
+                        'text-shimmer': 'text-shimmer 3.5s ease-out infinite alternate',
+                        'marquee': 'marquee 35s linear infinite',
+                        'float-particle': 'float-particle 15s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.05)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
                         },
-                        animation: {
-                            'blob': 'blob 12s infinite alternate cubic-bezier(0.4, 0, 0.2, 1)',
-                            'text-shimmer': 'text-shimmer 3.5s ease-out infinite alternate',
-                            'marquee': 'marquee 35s linear infinite',
-                            'float-particle': 'float-particle 15s linear infinite',
-                            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'text-shimmer': {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '100%': { backgroundPosition: '100% 50%' }
                         },
-                        keyframes: {
-                            blob: {
-                                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                                '33%': { transform: 'translate(30px, -50px) scale(1.05)' },
-                                '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
-                                '100%': { transform: 'translate(0px, 0px) scale(1)' }
-                            },
-                            'text-shimmer': {
-                                '0%': { backgroundPosition: '0% 50%' },
-                                '100%': { backgroundPosition: '100% 50%' }
-                            },
-                            marquee: {
-                                '0%': { transform: 'translateX(0%)' },
-                                '100%': { transform: 'translateX(100%)' }
-                            },
-                            'float-particle': {
-                                '0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0' },
-                                '10%': { opacity: '0.8' },
-                                '90%': { opacity: '0.8' },
-                                '100%': { transform: 'translateY(-1000px) rotate(360deg)', opacity: '0' }
-                            }
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        'float-particle': {
+                            '0%': { transform: 'translateY(0) rotate(0deg)', opacity: '0' },
+                            '10%': { opacity: '0.8' },
+                            '90%': { opacity: '0.8' },
+                            '100%': { transform: 'translateY(-1000px) rotate(360deg)', opacity: '0' }
                         }
                     }
                 }
-            };
-        }
-    </script>
+            }
+        };
+    }
+</script>
 
     <style>
         /* Base Styles */
         body { font-family: 'Assistant', sans-serif; background-color: #030303; color: #f5f5f5; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         h1, h2, h3, h4, h5, .heebo-font { font-family: 'Heebo', sans-serif; letter-spacing: -0.02em; }
         
-        /* Premium Gold Gradients - שודרג למראה מתכתי עמוק */
+        /* Premium Gold Gradients */
         .gold-gradient { 
             background: linear-gradient(135deg, #a68726 0%, #D4AF37 25%, #fff0c2 50%, #D4AF37 75%, #856511 100%); 
             background-size: 200% 200%; 
@@ -404,7 +404,7 @@
             animation: text-shimmer 4s linear infinite;
         }
         
-        /* Sophisticated Micro-reflective Glass Panels - תאורה ושבירת אור משופרת */
+        /* Glass Panels */
         .glass { 
             background: rgba(10, 10, 10, 0.65); 
             backdrop-filter: blur(24px); 
@@ -451,7 +451,7 @@
         }
         @keyframes pulse-glow { 0% { opacity: 0.4; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1.1); } }
 
-        /* Premium Geometric Grid Pattern Overlay */
+        /* Geometric Grid Pattern Overlay */
         .bg-mesh {
             background-color: #030303;
             background-image: 
@@ -460,7 +460,7 @@
             background-attachment: fixed;
         }
 
-        /* Scrollbar Styling - אלגנטי ונקי יותר */
+        /* Scrollbar Styling */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         @media (min-width: 768px) { ::-webkit-scrollbar { width: 8px; } }
         ::-webkit-scrollbar-track { background: #030303; }
@@ -507,7 +507,7 @@
             pointer-events: none; z-index: 0; mix-blend-mode: overlay;
         }
 
-        /* Shimmer Overlay for Buttons - שופר למראה נוצץ יותר */
+        /* Shimmer Overlay for Buttons */
         .shimmer-btn { position: relative; overflow: hidden; z-index: 1; }
         .shimmer-btn::before {
             content: ''; position: absolute; top: 0; left: -100%; width: 40%; height: 100%;
@@ -516,7 +516,7 @@
         }
         .shimmer-btn:hover::before { left: 125%; transition: all 0.75s ease; }
 
-        /* Elegant Double Gold Frame - מסגרת כפולה אמיתית */
+        /* Elegant Double Gold Frame */
         .double-gold-frame {
             position: relative;
             border: 1px solid #D4AF37;
@@ -531,7 +531,7 @@
             pointer-events: none;
         }
         
-        /* Scroll Progress Head Glow - נקודת אור בקצה פס הגלילה */
+        /* Scroll Progress Head Glow */
         #scroll-progress-bar { position: relative; }
         #scroll-progress-bar::after {
             content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
@@ -540,7 +540,6 @@
         }
     </style>
 </head>
-
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
     <!-- Scroll Progress Bar - שודרג עם הילה ונקודת תאורה -->
