@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <meta name="google-site-verification" content="cm8d_DCwtIbzViB0Aos14jc2TJzLiWT1aMGyUKQjQDU"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#050505" media="(prefers-color-scheme: light)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+    <title>חוות דעת הלכתית: נימוקי פסק דין וטענות ערעור - הלכות מכירה ומום במקח | הרב אלדר לוי</title>
+    <meta name="description" content="חוות דעת הלכתית מעמיקה מאת הרב אלדר לוי - דיין וטוען רבני, בבירור דיני מכירה, טענת מום במקח, חזרה במקח לאחר הודעה, וספק היכן נתהווה המום לאור שולחן ערוך ופוסקי דורנו.">
+    <meta name="keywords" content="חוות דעת הלכתית, הלכות מכירה, מום במקח, טענת מום, שולחן ערוך, פתחי תשובה, טוען רבני, בוררות הלכתית, דיני ממונות, הרב אלדר לוי">
+    <meta name="author" content="הרב אלדר לוי">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/חוות-דעת-הלכתית-מום-במקח">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#0a0a0a',
+                        paper: '#111111'
+                    },
+                    fontFamily: {
+                        serif: ['Frank Ruhl Libre', 'serif'],
+                        sans: ['Assistant', 'sans-serif'],
+                        heading: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --bg-color: #080808;
+            --text-color: #e2e2e2;
+            --heading-color: #ffffff;
+            --gold-accent: #D4AF37;
+            --gold-subtle: rgba(212, 175, 55, 0.12);
+            --surface-color: rgba(25, 25, 25, 0.75);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --base-font-size: 1.2rem;
+        }
+
+        @media (min-width: 768px) {
+            :root {
+                --base-font-size: 1.35rem;
+            }
+        }
+
+        body.theme-light {
+            --bg-color: #fbf9f4;
+            --text-color: #24221f;
+            --heading-color: #111111;
+            --gold-accent: #a37c17;
+            --gold-subtle: rgba(163, 124, 23, 0.1);
+            --surface-color: rgba(255, 255, 255, 0.85);
+            --border-color: rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Assistant', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+        }
+
+        .paper-grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04; pointer-events: none; z-index: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+        }
+        body.theme-light .paper-grain { opacity: 0.3; }
+
+        .article-body {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: var(--base-font-size);
+            line-height: 1.9;
+            text-align: justify;
+            color: var(--text-color);
+            transition: font-size 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .article-body p { margin-bottom: 2rem; }
+        
+        .article-body h2 {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 700;
+            font-size: calc(var(--base-font-size) + 0.6rem);
+            color: var(--gold-accent);
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 100px;
+        }
+
+        .article-body h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold-subtle), transparent);
+        }
+
+        .source-note {
+            width: 100%;
+            margin: 2rem 0;
+            font-family: 'Assistant', sans-serif; 
+            font-size: 0.95rem; 
+            line-height: 1.6;
+            color: var(--text-color); 
+            opacity: 0.9;
+            border-right: 4px solid var(--gold-accent); 
+            background: var(--surface-color); 
+            padding: 1.25rem; 
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        @media (min-width: 1280px) {
+            .source-note.float-side {
+                float: left; 
+                width: 38%; 
+                margin-left: -18%; 
+                margin-right: 6%; 
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .drop-cap::first-letter {
+            font-size: 4rem; 
+            font-weight: 900; 
+            color: var(--gold-accent);
+            float: right; 
+            line-height: 0.8; 
+            margin-left: 12px; 
+            margin-top: 6px;
+            font-family: 'Frank Ruhl Libre', serif; 
+        }
+
+        @media (min-width: 768px) {
+            .drop-cap::first-letter {
+                font-size: 4.8rem;
+                margin-left: 15px;
+            }
+        }
+
+        .reading-controls {
+            position: fixed; 
+            bottom: 20px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            display: flex; 
+            flex-direction: row; 
+            gap: 10px;
+            background: var(--surface-color); 
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color); 
+            padding: 8px 16px; 
+            border-radius: 50px;
+            z-index: 90; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        @media (min-width: 1024px) {
+            .reading-controls {
+                top: 50%; 
+                bottom: auto;
+                left: 25px; 
+                transform: translateY(-50%);
+                flex-direction: column;
+                border-radius: 30px;
+                padding: 10px;
+            }
+        }
+
+        .control-btn {
+            width: 40px; height: 40px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-color); font-weight: 600; transition: all 0.2s; font-size: 0.95rem;
+            background: transparent;
+        }
+        .control-btn:hover { background: var(--gold-subtle); color: var(--gold-accent); }
+
+        .verdict-box {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .verdict-box {
+                padding: 2.5rem;
+            }
+        }
+
+        .print-only { display: none; }
+        
+        @media print {
+            @page { size: A4; margin: 20mm; }
+            body { background: white !important; color: black !important; font-family: 'Frank Ruhl Libre', serif !important; }
+            .paper-grain, .no-print, header, footer, .reading-controls { display: none !important; }
+            .print-only { display: block !important; }
+            .print-letterhead {
+                display: flex !important; justify-content: space-between; align-items: flex-start;
+                border-bottom: 2px solid black; padding-bottom: 15px; margin-bottom: 25px;
+                font-family: 'Assistant', sans-serif !important;
+            }
+            .article-body { font-size: 12pt !important; line-height: 1.6 !important; color: black !important; }
+            h1 { font-size: 20pt !important; color: black !important; text-align: center; }
+            h2 { font-size: 14pt !important; color: black !important; border-bottom: 1px solid #000 !important; }
+            .source-note { float: none !important; width: 100% !important; background: #f9f9f9 !important; border: 1px solid #ccc !important; border-right: 4px solid black !important; }
+            .verdict-box { border: 3px double black !important; background: transparent !important; }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#D4AF37]/30">
+    <div class="paper-grain"></div>
+    
+    <div class="print-only print-letterhead">
+        <div>
+            <h3 style="font-size: 14pt; font-weight: bold; margin: 0;">הרב אלדר לוי</h3>
+            <p style="font-size: 10pt; margin: 0;">טוען רבני ודיין מוסמך<br>מומחה למשפט עברי ודיני ממונות</p>
+        </div>
+        <div style="text-align: left;">
+            <p style="font-size: 10pt; margin: 0;"><strong>בס"ד</strong></p>
+            <p style="font-size: 10pt; margin: 0;">תאריך: י"ט בסיוון תשפ"ו</p>
+        </div>
+    </div>
+
+    <header class="no-print fixed top-0 w-full z-40 py-3 px-4 sm:px-8 flex justify-between items-center bg-[var(--bg-color)]/90 backdrop-blur-md border-b border-[var(--border-color)]">
+        <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-2 sm:gap-3 group">
+            <div class="w-8 h-8 rounded-full border border-[var(--border-color)] flex items-center justify-center text-[var(--gold-accent)] group-hover:bg-[var(--gold-subtle)] transition-all">
+                <i class="fas fa-chevron-right text-xs"></i>
+            </div>
+            <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] text-[var(--text-color)] opacity-80">חזרה למאגר</span>
+        </a>
+        <div class="text-xs font-bold text-[var(--text-color)] opacity-60 tracking-widest uppercase">בס"ד</div>
+    </header>
+
+    <div class="reading-controls no-print" title="כלים לנוחות קריאה">
+        <button onclick="changeFontSize(0.1)" class="control-btn" title="הגדל טקסט">A+</button>
+        <button onclick="changeFontSize(-0.1)" class="control-btn" title="הקטן טקסט">A-</button>
+        <div class="w-px h-6 bg-[var(--border-color)] my-auto hidden lg:block"></div>
+        <div class="w-6 h-px bg-[var(--border-color)] mx-auto block lg:hidden"></div>
+        <button onclick="toggleTheme()" class="control-btn" title="החלף מצב תצוגה">
+            <i class="fas fa-book-open"></i>
+        </button>
+    </div>
+
+    <main class="relative z-10 pt-24 sm:pt-28 pb-32 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[850px] mx-auto">
+            <article class="w-full">
+                
+                <div class="mb-10 sm:mb-14 text-center no-print">
+                    <div class="inline-flex items-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] font-bold tracking-[0.15em] text-[var(--gold-accent)] uppercase mb-4 sm:mb-6 bg-[var(--gold-subtle)] px-3.5 py-1.5 rounded-full border border-[var(--gold-accent)]">
+                        <span>חוות דעת הלכתית</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--gold-accent)]"></span>
+                        <span>נימוקי פסק דין וערעור</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-heading font-black text-[var(--heading-color)] leading-[1.2] mb-6">
+                        חוות דעת הלכתית לנימוקי פסק דין ולטענות ערעור<br>
+                        <span class="text-[var(--gold-accent)] text-lg sm:text-2xl md:text-3xl mt-3 block">הלכות מכירה - טענת מום במקח</span>
+                    </h1>
+                    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 py-4 sm:py-6 border-y border-[var(--border-color)] mt-6 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-feather-alt text-[var(--gold-accent)]"></i>
+                            <span class="font-bold text-[var(--heading-color)]">הרב אלדר לוי - דיין מוסמך</span>
+                        </div>
+                        <div class="w-1 h-1 rounded-full bg-[var(--border-color)] hidden sm:block"></div>
+                        <div class="text-[var(--text-color)] opacity-70 font-bold">
+                            <i class="far fa-clock ml-1"></i> 15 דקות עיון
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="print-only">חוות דעת הלכתית: הלכות מכירה - טענת מום במקח</h1>
+
+                <div class="article-body">
+                    
+                    <h2>הקדמה והבהרת מעמד חוות הדעת</h2>
+                    <p class="drop-cap text-[var(--heading-color)] font-medium">
+                        נתבקשתי מאת ה"ה פלוני שליט"א לחוות דעתי אודות נימוקי פסק הדין שניתן עבורו מאת ביה"ד 'פלוני', בתאריך י"ט בסיוון תשפ"ו (4/06/2026 למניינם). וכן אודות הטענות בהשגות הנמען ע"י הגשת ערעור פנימי לביה''ד הנ''ל ודחייתו.
+                    </p>
+                    <p>
+                        משכך יש להבהיר, כי אין בדברים אלו כדי לפסוק להלכה למעשה האם הנתבע פטור או חייב בתשלום הכסאות והאם התובע זכאי לבטל את המקח, שכן טענות הצדדים המלאות טרם שמעתי לעומקן מפי שני הצדדים.
+                    </p>
+                    <p>
+                        המסקנות נכתבו אך ורק על פי המוצג לפניי בקצירת האומר מתוך נימוקי פסק הדין, כתבי הערעור, והתכתובות שבין בית הדין לתובע. וזאת עמ"נ לבאר את המורם מהכרעת פסה"ד בנ"ד שפטרו את הצד הנתבע שכנדו של הנמען, ובכדי ליתובי דעתא דהמבקש ע"י ביאור הדינים וטעמיהם, עפ''י משאת הפנאי ובסיעתא דשמיא.
+                    </p>
+
+                    <h2>הרקע ותיאור העובדות בקצרה</h2>
+                    <aside class="source-note float-side">
+                        <strong>מקור הלכתי מרכזי:</strong><br>
+                        שולחן ערוך חושן משפט סימן רל"ב - דיני מקח טעות והונאה.
+                    </aside>
+                    <p>
+                        צד א' רכש ריהוט אצל צד ב', בכלל העסקה הגדולה 13 כיסאות, מחיר כל כסא כ- 1000 ₪ בחנות ראה כיסאות מסוימים, אך סיכמו על כיסאות אחרים שאותם הלקוח לא ראה, הכיסאות הגיעו לביתו, וכשבדק אותם, לא היה מרוצה, פנה לבעל החנות, ובעל החנות נתן פיצוי 2 כיסאות מיוחדים במחיר מוזל 1500 ₪ עבור שניהם.
+                    </p>
+                    <p>
+                        לטענתו לאחר זמן הכיסאות אינם יציבים ונשברים מהר, וכל מה שהסכים להשאיר אותם, כיון שאמר לו בעל החנות שיתן אחריות לשנתיים, הלקוח החזיר כמה מהם לתיקון, וכיסא אחד נשאר עדיין בחנות, ולא נמצא. התובע דורש פיצוי מלא עבור כל 13 הכיסאות. לטענת צד ב' : א. נתתי שנה אחריות כמו שכתוב בהזמנה. ב. השימושים שלו אינם סבירים. ג. קיבל שירות מעל ומעבר ופיצוי נוסף, אין הגיון שגם קיבל את הפיצוי, וגם כסף. ד. הזהרתי אותונת הכיסאות האלו עדינים. מודה שלא מצא כסא אחד ומוכן לשלם אלף.
+                    </p>
+
+                    <h2>ביאורים לסעיף א' | חזרה במקח לאחר הודעת המום</h2>
+                    <p>
+                        הנה מבואר בתיאור העובדות לפסק הדין, כי כאשר הכסאות הגיעו לבית הלוקח, הלוקח הודיע מיד למוכר על המום שלטענתו נמצא במקח. לכאורה, לפ''ז היה מקום להעלות בהו"א דאף אם נשתמש הלוקח במקח לאחר שידע במום, שמא כיוון שהודיע תחילה למוכר, שוב אין לראות בכך משום "מחילה", ומצי לחזור בו.
+                    </p>
+                    <p>
+                        אמנם, למעשה ביה"ד הכריע כי המוכר, שהוא המוחזק, יכול לטעון "קים לי" כדעת הסוברים שאפילו אם הודיע למוכר על המום, היות ונשתמש לאחר מכן במקח, הרי דשוב אינו יכול לחזור בו. הכרעה זו הינה עפ''י מח' הפוסקים המבוארת בפת''ש (חו"מ סי' רלב' ס"ק א') וכדלהלן:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 mb-6 pr-4 font-serif text-sm sm:text-base">
+                        <li><strong>לדעת המחנה אפרים:</strong> במקום שהודיע למוכר על המום, שוב לא אמרינן דמחל, ויכול לחזור בו אף אם נשתמש. והראיה לכך הינה מתשובת הריטב"א שכתב כן לעניין אונאה. לפיכך י''ל דה''ה גם לגבי טענת מום במקח, שאין לחלק.</li>
+                        <li><strong>תשובת גליא מסכתא (סעיף י'):</strong> בתשו' הנ''ל נתבקש הרב להכריע במעשה שארע. ומסקנתו שם הינה, שאף אם הודיע למוכר על המום, כיוון שנתמשמש לאחר מכן, שוב אינו יכול לחזור בו. ומהריטב"א אין ראיה לנ''ד, דהריטב"א מיירי בדין אונאה, ויש חילוק ברור בין טענת אונאה למום במקח (וכמבואר שם טעם חילוקו).</li>
+                    </ul>
+                    <p>
+                        <strong>הכרעת הפת"ש בדין זה:</strong><br>
+                        - י''ל דאילו הגליא מסכת היה רואה את מש''כ המחנ''א, דלא חילק בין הונאה למומין, הרי שסביר היה להניח דאף הוא לא היה מחלק כחילוק הנ''ל. לפיכך הדין באופן כללי הינו כמש''כ המחנ''א.<br>
+                        - אמנם- באופן בו הלוקח שילם תחילה למוכר את כל שכרו, ולאח'מ נתגלה המום והודיעו למוכר ונשתמש במום, הרי שבכה''ג אי אפשר להוציא את הממון מיד המוכר מכח פסק המחנ''א הנ''ל, משום שדברי הגליא מסכת דברי טעם הם ולכן אין להוציא ממון מיד המוכר המוחזק בו.
+                    </p>
+                    <p>
+                        <strong>יישום הדין לענייננו:</strong><br>
+                        עפ''י דברים אלו, הרי שבנד''ד נ"ל, דכיון שהלוקח כבר שילם למוכר את כל שכרו עבור הכסאות, יוצא איפה שאף לפת''ש שסובר שייתכן ואם הגליא מסכת היה רואה את מש''כ המחנ''א, היה סובר כי אף בטענת מום במקח יכול לחזור בו אם הודיע למוכר ואף שאח''כ נשתמש, אולם לדינא דזה יהיה באופן בו הלוקח עדיין לא שילם למוכר, וכפי דעת הרב הגדול בתשובת הגליא מסכת דהמעשה שם הוה באופן שבעה''ב עדיין לא שילם להחנווני המוכר, אך כאשר כבר שילם למוכר את כל שכרו בזה, כאמור, אין להוציא מיד המוחזק. וממילא ה''ה כאן, דהתובע כבר שילם למוכר את כל שכרו, ולפיכך א''י להחזיר את המקח ולחייב את המוכר להחזיר לו את כספו.<br>
+                        וכמו''כ, עפ''י דברים אלו יש לבאר גם, שאף ללא טענת "קים לי" דהמוכר כדעת הגליא מסכתא, אין הלוקח יכול להחזיר את המקח, הואיל והתובע כבר שילם למוכר את מלוא שכרו עבור הכסאות, ולכן אף לשיטת הפת"ש הסובר שייתכן והגליא מסכת היה חוזר בו אילו ראה את המחנה אפרים, מ"מ היינו דווקא כשהלוקח עדיין לא שילם, אבל היות וכבר שילם- הרי שאין להוציא את הממון מיד המוחזק.
+                    </p>
+
+                    <h2>ביאורים לסעיף ב' | ספק היכן נתהווה המום שבמקח</h2>
+                    <p>
+                        בנימוק לסעיף זה, הנה דכבוד ביה''ד ציין את המבואר בסי' רלב' סעי' יא'. וז"ל השו"ע שם:<br>
+                        <em>"המוכר בהמה לחבירו לטבחה ושחטה ונמצאת טרפה אם נודע בודאי שהיתה טריפה כשלקחה כגון שנקבו בית הכוסות והוגלד פי המכה שאז ידוע שיש לו ג' ימים שניקב אם קנה תוך ג' ימים הוי מקח טעות וצריך להחזיר הדמים ואם לא קנאה תוך ג' ימים או שקנאה תוך ג' ימים ולא הוגלד פי המכה דאז הוי ספק אם ניקב תוך ג' אם לאו על הלוקח להביא ראיה ואם לא יפסיד ויתן הדמים אם הם עדיין ביד"</em>
+                    </p>
+                    <p>
+                        הנה מדברי השו''ע ומביאור דברי הסמ"ע (שם ס"ק כה'), עולה דכאשר יישנו ספק היכן נתהווה המום בבהמה, דשמא ניקוב בית הכוסות שגורם לה להיות טריפה, התרחש ברשות המוכר וא''כ המקח בטל, ושמא ארע זה ברשות הלוקח וא''י לטעון טענת מום במקח. דבכה''ג הדין הינו, שלא רק אם כבר שילם מוכר ללוקח את שכרו, דאין להוציא מהמוכר, אלא אף אם עדיין הלוקח לא שילם למוכר, הרי שכל וללוקח אין ראיה ברורה שהבהמה נטרפה ברשות מוכר, הפסיד הלוקח ועליו ליתן את המעות למוכר. שי"ל דכאן היה (התגלה המום) וממילא גם כאן נתהווה (נוצר) המום.<br>
+                        אולם, הנה בסעיף ט"ו, פוסק השו''ע, שכאשר ישנו ספק במקום התהוות המום במקח, והמקח המדובר הינו גבינות, אזי בכה''ג אמרינן דהמוציא מחברו עליו הראיה. כלומר, שאם הקונה עדיין לא שילם את המעות למוכר, וכעת המום התגלה בבית הלוקח אך אין וודאות כי אצלו הוא נוצר, שייתכן והיה מעופש עוד לפני כן ברשות המוכר, הרי שבמצב כזה על המוכר להביא ראיה שהעיפוש נוצר אצל לקוח. ובלאו הכי, אין יכול להוציא ממנו ממון, משום שבהאי לא אמרינן ''כאן היה כאן נתהווה''. ובשונה מסעי' יא' שבכה''ג מוציאים מלוקח.
+                    </p>
+                    <p>
+                        <strong>בהסבר בחילוקי הדינים הללו:</strong> מבאר הסמ''ע (ס"ק לה') שהדבר תלוי האם לאותו המקח הנידון יישנה חזקת כשרות או לא. והיינו, בבהמה יש חזקת כשרות, דרוב בהמות כשרות הן. ולפיכך, כאשר יישנו ספק בדין הבשר שלפנינו, הרי דיש להעמידו על חזקתו הראשונה, והיינו דרוב בהמות כשרות וכנ''ל. והכלל הוא, דהיכא שישנו ספק היכן נוצר המום במקח עם חזקת כשרות, הרי די"ל דאותו המום היכן שהוא היה (נתגלה), הרי שממילא כאן הוא גם נתהווה. דחזקת הכשרות הראשונה כביכול משמשת כחומת מגן מפני הכפשת מומים שנתהוו אצלה. אך כאשר רואים לנגד עיניינו את המום, אזי אף דסליקא לה הכשרות מהבהמה, אך עכ"פ מנעה אותה החזקה מלפסול למפרע. ומאידך, כאשר אין לאותו המקח חזקת כשרות, וממילא אין לומר 'כאן היה כאן נתהווה', הרי שבכך נותר הדין שבכל ספק ממון - המוציא מחברו עליו הראיה.
+                    </p>
+                    <p>
+                        <strong>יישום הדין בנידוננו:</strong><br>
+                        לפי דברים אלו, הנה דיוצא אפוא בנד"ד, שכיון שהתובע כבר שילם את כל הסכום למוכר ורק לאח"מ נולד הספק. הרי שבכך אין אנו צריכים כלל לדון אם לכסאות אלו יישנה חזקת כשרות או לאו. וכיו"ב, א"צ גם למש"כ ביה"ד הנכבד להביא ראיה מהדברי מלכיאל על גדר החזקה הראשונית של חפץ היוצא מבית האומן וכיו"ב. וה הטעם שא"צ לכך, הינו משום דאף אי אמרינן שלכסאות אלו אין חזקת כשרות, כלומר דליתא למש"כ בשו"ת דברי מלכיאל, הרי דמ"מ הדין בנ''ד הינו דהממע"ה. וממילא כל שהלוקח אינו מביא ראיה ברורה לכך שהמום אכן נתהווה ברשות המוכר, הרי שאינו יכול להוציא את מה שכבר ששילם.
+                    </p>
+                    <p class="text-xs sm:text-sm opacity-90 bg-surface-color p-3.5 sm:p-4 rounded-lg border-r-4 border-[var(--gold-accent)] my-6">
+                        <em>(הערה: הנה מה שהביא התובע ראיה מבינה מלאכותית – פשוט וודאי שאין להביא מזה שום ראיה הלכתית כלל. הראיה צריכה להיות אך ורק על ידי מתן חוות דעת מקצועית ומוסמכת מאת מומחים ובקיאים בטיב רהיטים, ובפרט בדגם הספציפי של כסאות דנדוננו)</em>
+                    </p>
+
+                    <h2>ביאורים לסעיף ג' | טענת שיהוי בהחזרת המקח</h2>
+                    <p>
+                        הנה עד כאן נתבאר, דדין זה של חזרת המקח עקב המום שיש בו, הינו דווקא באופן שלאחר שידע במום יותר לא השתמש בו הלוקח. דאילו נשתמש בו, הרי שבזה גילה דעתו שאין לו בעיה במום שנתגלה והרי הוא המום כנמחל למוכר עי''כ. להלן נחלקו הפוסקים האם דווקא שימוש פיזי פוסל את החזרה, או שמא כל שגילה דעתו שאינו מקפיד במום הנמצא במקח, אזי אעפ''י שלא נתשמש בו, שוב אינו יכול לחזור בו.
+                    </p>
+                    <p>
+                        הסמ"ע (שם ס''ק י') מביא בשם המגיד משנה, שלא רק שימוש ממש פוסל, אלא אף בדבר שלא השתמש בו פיזית, אך יכול היה להבחין לאלתר במום (כגון שיכול היה לטעום או לבדוק מיד ולא הקפיד לעשות כן), הרי זה כמי שמחל. הפת"ש (חו"מ סי' רלב' סק"א) כתב את דברי הסמ"ע הנ"ל בשם המ"מ, והביא מחלוקת אחרונים האם בדינו זה של המ"מ יסכימו גם הרמב"ם, הראש והרי"ף, או שמא דין זה חלוק הוא על סברת עמודי ההוראה וכתב בזה''ל:<br>
+                        <em>"דין זה שכתב הסמ"ע בשם המ"מ... אכן יש לחלק דאם קודם גמר המקח היה יכול להבחינו... אבל אם כבר גמר המקח ונתגלה בו מום אף אם אח'כ שתק זמן מה יכול לחזור בו..."</em>
+                    </p>
+                    <p>
+                        <strong>סיכום מחלוקת שיטות הראשונים:</strong><br>
+                        הנה מבואר שבאופן בו הלוקח אמנם לא נשתמש לאחר התוודה למום, אך מכל מקום ס"ס יכל הוא להבחין לאלתר במום שבמקח ברכשו, ואעפ"כ לא עשה זאת, הרי שיישנם הסוברים שלדעת הראשונים י"ל שאעפ"כ רשאי הלוקח לחזור בו. משום שכל שלא נשתמש ממש, אף שיכל להבחין בטיב המקח וכו', הרי שעדיין יכול לחזור בו. ודעת השבו"י באמת י"ל שאין מחלוקת כלל. והינו- אם יכל לוקח להבחין באותו המום קודם גמר המקח, אזי אף אם לא נשתמש, שוב אינו יכול להחזיר, וזו כונת המ"מ. ואילו באופן בו יכל לוקח להבחין רק לאחר גמר המקח, ולא נשתמש, ושהה מלהחזירו מיד כיון שיודע שיש לו זמן להחזירו מתי שירצה, המקרה כזה גם המ"מ יודה שאכתי רשאי להחזירו.
+                    </p>
+                    <p>
+                        <strong>שימוש מחמת חסרון ידיעה:</strong><br>
+                        וכאן יש להדגיש את המבואר בפת"ש (שם): דאפילו אם הלוקח נשתמש בחפץ לאחר שידע מהמום, ועשה זאת מחמת חסרון ידיעה (כלומר שלא ידע את ההלכה החמורה שאם ישתמש בו שוב אינו יכול להחזיר בו), אעפ''כ אינו יכול לחזור בו. והטעם לכך הינו משום דחכמים לא נתנו דבריהם לשיעורים. לפיכך, משום האי טעמא, הרי שאין מתחשבים בחוסר ידיעתו לעניין פקיעת זכות הביטול.
+                    </p>
+                    <p>
+                        <strong>טענת שיהוי בהחזרת המקח:</strong><br>
+                        הנה מבואר איפוא מכל הנ''ל, דטענת שיהוי בהחזרת המקח לאחר ההבחנה במום שיש בו, הינה יכולה להתקבל רק באופן שלא נשתמש ממש במקח. כלומר, רשאי לטעון שאכן ידע זמן רב במום שנמצא במקח, אך הטעם לכך שהוא לא החזירו מיד למוכר הינה משום שידע שיש בידו לחזור אימת שירצה בטענת מום במקח, ולכן אינו צריך להיות בהול להחזיר את המקח עמ''נ שיוכל לחזור בו לגמרי. וכמבואר שטענה זו היא אכן טענה מתקבלת. אולם, כ''ז לא נאמר אלא כאשר ידע ונשתהה מלהחזיר, אך ביני וביני לא עשה בו שום שימוש, אולם הכא בנ''ד מדובר שהתובע כן נשתמש בכסאות.
+                    </p>
+                    <p>
+                        <strong>יישום הדין לענייננו:</strong><br>
+                        טענתו של התובע, לפיה השהה התובע את החזרת הכסאות כיוון שידע שיש לו אחריות לשנתיים, לכאורה היה מקום לדון בה אילו לא היה משתמש בכסאות בפועל. אולם בנדוננו, הנה דס''ס התובע השתמש בפועל בכסאות, לאחר שנודע לו (לטענתו) על המום, ובכך הוה כגילה דעתו דמחילה הוא דאחל.
+                    </p>
+
+                    <!-- קופסת פסק הדין -->
+                    <div class="verdict-box">
+                        <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 no-print">
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                            <h3 class="text-[var(--gold-accent)] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-base sm:text-lg text-center m-0">מסקנא דדינא</h3>
+                            <div class="h-[1px] flex-grow bg-[var(--border-color)]"></div>
+                        </div>
+                        <h3 class="print-only text-center font-bold text-xl mb-6 underline">מסקנא דדינא</h3>
+                        
+                        <div class="space-y-6 sm:space-y-8">
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-xl sm:text-2xl mt-1">א.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-sm sm:text-base">דאין בטענות ובהשגות התובע בכדי לבטל את עצם פסה''ד ולחייב את הנתבע בביטול המקח והחזר כספי.</p>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <span class="text-[var(--gold-accent)] font-black font-serif text-xl sm:text-2xl mt-1">ב.</span>
+                                <p class="text-[var(--heading-color)] leading-relaxed m-0 font-medium text-sm sm:text-base">עיקר הטעם להכרעה נחרצת זו הינה בעיקר מכח שתי סיבות עיקריות, אשר הינן מעוגנות היטב בליבת הביאורים לעיל, והיינו: א. דתביעת הלוקח נעשתה לאחר שהלוקח כבר שילם למוכר את מלוא שכרו עבור הכסאות. ב. משום שהלוקח המשיך להשתמש בכסאות אף לאחר שהכיר במומם, הרי שעי''כ י''ל דהלוקח מחל על המום שבהם וממילא ה''ז גמר וקנה.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- חתימה -->
+                    <div class="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-[var(--border-color)] flex flex-col items-center text-center page-break-avoid">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 mb-4 sm:mb-6 rounded-full border border-[var(--gold-accent)] flex items-center justify-center relative opacity-80 no-print">
+                            <i class="fas fa-stamp text-[var(--gold-accent)] opacity-30 text-3xl sm:text-4xl absolute"></i>
+                            <span class="text-[7px] sm:text-[8px] font-bold text-[var(--gold-accent)] uppercase tracking-tighter relative z-10 leading-none">עיניינו בתורתו הקדושה<br>והשי''ת יאיר</span>
+                        </div>
+                        <div class="text-xs sm:text-sm font-bold text-[var(--heading-color)] mb-1">הדברים נכתבו לפענ"ד והשי"ת יאיר עינינו בתורתו הקדושה, אכי"ר</div>
+                        <div class="text-xs sm:text-sm uppercase tracking-[0.2em] text-[var(--text-color)] opacity-60 font-bold">אלדר לוי - 053-4192798</div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <script>
+        function changeFontSize(delta) {
+            const article = document.querySelector('.article-body');
+            let currentSize = parseFloat(window.getComputedStyle(article).getPropertyValue('--base-font-size')) || 1.3;
+            currentSize = Math.max(1.0, Math.min(1.9, currentSize + delta));
+            article.style.setProperty('--base-font-size', currentSize + 'rem');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('theme-light');
+        }
+    </script>
+</body>
+</html>
