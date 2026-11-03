@@ -830,12 +830,12 @@
                         <div class="double-gold-frame rounded-2xl overflow-hidden">
                             <div class="relative rounded-xl overflow-hidden aspect-[3/4] bg-dark-light transform lg:rotate-1 group-hover-effect transition-transform duration-500 glow-effect-card">
                                 <div class="absolute inset-0 bg-gradient-to-tr from-gold/15 to-transparent mix-blend-overlay z-10 pointer-events-none" aria-hidden="true"></div>
-                                <img src="https://lh3.googleusercontent.com/ogw/AF2bZyj-nGb2sRJXAK77WnFzk22AD7vPWympYVMIgWfNZuTZy4c=s1024-c-mo" alt="הרב אלדר לוי - טוען רבני ודיין מוסמך" class="w-full h-full object-cover object-top opacity-95 filter contrast-[1.1] brightness-[1.05] relative z-10" fetchpriority="high" decoding="async" onerror="this.src='https://placehold.co/400x533/111111/D4AF37?text=%D7%94%D7%A8%D7%91+%D7%90%D7%9C%D7%93%D7%A8+%D7%9C%D7%95%D7%99'">
+                                <img src="https://pics.paypal.com/00/p/N2ZlY2Q5MWEtZDc2Mi00OWQzLWEzNzgtNWNmYTM5ZWZhN2Qx/image_3.JPG" alt="הרב אלדר לוי - טוען רבני ודיין מוסמך" class="w-full h-full object-cover object-top opacity-95 filter contrast-[1.1] brightness-[1.05] relative z-10" fetchpriority="high" decoding="async" onerror="this.src='https://placehold.co/400x533/111111/D4AF37?text=%D7%94%D7%A8%D7%91+%D7%90%D7%9C%D7%93%D7%A8+%D7%9C%D7%95%D7%99'">
                                 <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/30 to-transparent z-10" aria-hidden="true"></div>
                             </div>
                         </div>
 
-                        <!-- Badge left bottom -->
+                        <!-- Badge left bottomקישור תמונהה  https://lh3.googleusercontent.com/ogw/AF2bZyj-nGb2sRJXAK77WnFzk22AD7vPWympYVMIgWfNZuTZy4c=s1024-c-mo-->
                         <div class="absolute -bottom-5 -right-3 md:-bottom-6 md:-right-8 glass p-3 md:p-4 rounded-2xl border-gold/50 shadow-2xl flex items-center gap-3 md:gap-4 bg-dark/95 backdrop-blur-xl z-20" aria-hidden="true">
                             <div class="w-10 h-10 md:w-14 md:h-14 rounded-full gold-gradient flex items-center justify-center text-dark text-lg md:text-2xl shadow-inner border border-gold/50">
                                 <i class="fas fa-balance-scale"></i>
@@ -1445,8 +1445,66 @@
             </div>
         </section>
 
-    <!-- Footer & Contact Form -->
-    <footer id="contact" class="bg-[#050505] pt-16 md:pt-20 pb-8 md:pb-10 border-t border-gold/30 overflow-hidden relative">
+    <!-- Form & Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-[#0a0a0a] relative">
+            <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+                <div class="text-center mb-10" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">פנייה וקביעת <span class="text-gold">פגישת ייעוץ</span></h2>
+                    <p class="text-white/70 text-sm md:text-base leading-relaxed">לתיאום פגישה מקצועית, מענה לשאלות או ייעוץ משפטי-הלכתי ישיר מול משרד הרב אלדר לוי.</p>
+                </div>
+
+                <!-- Form Card -->
+                <div class="glass p-6 md:p-10 rounded-2xl border border-gold/30 mb-10 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <form action="https://formspree.io/f/xlgpwvye" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-white text-sm font-bold mb-2">שם מלא <span class="text-gold">*</span></label>
+                                <input type="text" id="fullName" name="name" required placeholder="הכנס שם מלא" class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-gold focus:ring-1 focus:ring-gold transition-all">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-white text-sm font-bold mb-2">טלפון ליצירת קשר <span class="text-gold">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="052-8219928" class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-gold focus:ring-1 focus:ring-gold transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-white text-sm font-bold mb-2">נושא הפנייה</label>
+                            <select id="subject" name="subject" class="w-full bg-[#121212] border border-white/20 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold transition-all">
+                                <option value="דיני משפחה וגירושין">דיני משפחה וגירושין</option>
+                                <option value="בוררות עסקית ודיני ממונות">בוררות עסקית ודיני ממונות</option>
+                                <option value="הסכמים וצוואות">הסכמים וצוואות</option>
+                                <option value="סיוע למייצגים ועורכי דין">סיוע למייצגים ועורכי דין</option>
+                                <option value="אחר">אחר</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-white text-sm font-bold mb-2">תוכן הפנייה <span class="text-gold">*</span></label>
+                            <textarea id="message" name="message" rows="4" required placeholder="תאר בקצרה את נושא הפנייה..." class="w-full bg-white/5 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-gold focus:ring-1 focus:ring-gold transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="shimmer-btn w-full gold-gradient py-4 rounded-xl text-dark font-black text-lg shadow-lg hover:scale-[1.02] transition-all duration-300">
+                            שליחת פנייה בטוחה <i class="fas fa-paper-plane mr-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Direct Contact Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="tel:0528219928" class="gold-gradient px-8 py-3.5 rounded-full text-dark font-black text-base shadow-lg hover:scale-105 transition-all text-center">
+                        <i class="fas fa-phone-alt ml-2"></i> 052-8219928
+                    </a>
+                    <a href="mailto:tifarteha@gmail.com" class="glass px-8 py-3.5 rounded-full text-white font-bold text-base border border-gold/40 hover:bg-gold/10 transition-all text-center">
+                        <i class="far fa-envelope ml-2 text-gold"></i> office.rabbinical@gmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+        
+      <!--   Footer & Contact Form -->
+   <!--  <footer id="contact" class="bg-[#050505] pt-16 md:pt-20 pb-8 md:pb-10 border-t border-gold/30 overflow-hidden relative">
         <div class="absolute bottom-0 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gold/5 blur-[120px] md:blur-[180px] rounded-full pointer-events-none" aria-hidden="true"></div>
 
         <div class="container mx-auto px-4 md:px-6 relative z-10">
@@ -1474,6 +1532,8 @@
                             </a>
                         </div>
                     </div>
+                    https://formspree.io/f/xlgpwvye
+                    
                     
                     <form action="https://formspree.io/f/xlgpwvye" method="POST" class="space-y-4 md:space-y-5 bg-[#0a0a0a]/90 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border border-gold/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-1.5 gold-gradient" aria-hidden="true"></div>
