@@ -666,20 +666,25 @@
 </head>
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
+    <!-- Preloader -->
+<div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
+    <div class="relative w-11 h-11 md:w-13 md:h-13 rounded-xl overflow-hidden border border-gold/40 shadow-md group-hover:scale-105 transition-all duration-300">
+        <img src="https://pics.paypal.com/00/p/ZjI4ZGIwMzEtZDBlYy00ZDRhLWJmY2YtOGYzYjc4NGVlMTdm/image_3.PNG" alt="לוגו הרב אלדר לוי" class="w-full h-full object-cover">
+    </div>
+    <div class="text-gold text-lg tracking-[0.15em] font-black heebo-font mt-3">הרב אלדר לוי</div>
+    <div class="text-white/60 text-xs tracking-widest mt-1">דיין וטוען רבני מוסמך</div>
+</div>
     <!-- Scroll Progress Bar - שודרג עם הילה ונקודת תאורה -->
-    <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1.5 bg-dark/80 backdrop-blur-sm z-[100]" aria-hidden="true">
+    <!--  <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1.5 bg-dark/80 backdrop-blur-sm z-[100]" aria-hidden="true">
         <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_15px_rgba(212,175,55,1)]"></div>
     </div>
 
-<!-- Preloader - משודרג -------------->
     <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center transition-opacity duration-700">
-        <!-- הלוגו - תואם לעיצוב החדש בהדר -->
         <div class="relative w-20 h-20 md:w-24 md:h-24 gold-gradient rounded-2xl flex items-center justify-center transform rotate-45 shadow-[0_0_40px_rgba(212,175,55,0.4)] animate-pulse mb-10 border-2 border-white/20">
             <div class="absolute inset-1.5 border border-white/30 rounded-xl"></div>
             <span class="text-dark text-3xl md:text-4xl font-black transform -rotate-45 heebo-font" aria-hidden="true">E.L</span>
         </div>
         
-        <!-- טקסט טעינה ומיתוג -->
         <div class="flex flex-col items-center gap-3">
             <div class="text-gold text-lg md:text-xl tracking-[0.15em] font-black heebo-font text-center px-4">
                 הרב אלדר לוי
@@ -690,19 +695,14 @@
         </div>
     </div>
     
-    <!-- Animated Background Blobs - משודרג -------->
     <div class="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-0" aria-hidden="true">
-        <!-- בלוב שמאלי עליון -->
         <div class="absolute top-0 -left-1/4 w-72 md:w-[30rem] h-72 md:h-[30rem] bg-gold/15 rounded-full mix-blend-screen filter blur-[100px] md:blur-[140px] animate-blob"></div>
         
-        <!-- בלוב ימני אמצעי -->
         <div class="absolute top-1/2 -right-1/4 w-72 md:w-[30rem] h-72 md:h-[30rem] bg-gold/10 rounded-full mix-blend-screen filter blur-[100px] md:blur-[140px] animate-blob" style="animation-delay: 2s;"></div>
         
-        <!-- בלוב תחתון מרכזי (חדש - לאיזון) -->
         <div class="absolute -bottom-32 left-1/2 -translate-x-1/2 w-72 md:w-[25rem] h-72 md:h-[25rem] bg-gold/10 rounded-full mix-blend-screen filter blur-[100px] md:blur-[120px] animate-blob" style="animation-delay: 4s;"></div>
     </div>
     
-    <!-- Luxury Texture -->
     <div class="luxury-texture fixed inset-0 w-full h-full pointer-events-none opacity-40 mix-blend-overlay z-0"></div>
        
     <!-- headere -->
