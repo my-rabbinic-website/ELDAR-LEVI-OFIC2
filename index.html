@@ -26,11 +26,6 @@
     <meta name="geo.position" content="31.4167;34.5833">
     <meta name="ICBM" content="31.4167, 34.5833">
 
-    <!-- Favicons & App Icons (Optimized for Google Search) -->
-    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s192-c-no" type="image/png" sizes="192x192">
-    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s32-c-no" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s180-c-no">
-
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -540,10 +535,42 @@
             box-shadow: 0 0 15px 5px rgba(212, 175, 55, 0.8); opacity: 0.9;
         }
     </style>
+
+    <!-- Favicons & App Icons (Optimized for Google Search) -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s192-c-no" type="image/png" sizes="192x192">
+    <link rel="icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s32-c-no" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/a/ACg8ocJ7REA2K7ynuPms-F1oiXScY1BcZdYT3sO2jgrcN2oTowvxmH1j=s180-c-no">
 </head>
 <body class="bg-mesh relative overflow-x-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]">
 
+    <!-- Scroll Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-dark/80 z-[100]" aria-hidden="true">
+        <div id="scroll-progress-bar" class="h-full gold-gradient w-0 transition-all duration-150"></div>
+    </div>
+
     <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
+        <div class="relative w-20 h-20 gold-gradient rounded-2xl flex items-center justify-center shadow-[0_0_45px_rgba(212,175,55,0.4)] mb-8 border-2 border-white/20 overflow-hidden">
+            <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/&size=256" alt="לוגו הרב אלדר לוי" class="w-full h-full object-cover">
+        </div>
+        <div class="text-gold text-lg tracking-[0.15em] font-black heebo-font">הרב אלדר לוי</div>
+        <div class="text-white/60 text-xs tracking-widest mt-2">דיין וטוען רבני מוסמך</div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 py-3 md:py-4 px-4 md:px-8 bg-dark/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/" class="flex items-center gap-3 group focus:outline-none" aria-label="לדף הבית">
+                <div class="relative w-11 h-11 md:w-13 md:h-13 rounded-xl overflow-hidden border border-gold/40 shadow-md group-hover:scale-105 transition-all duration-300">
+                    <img src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://my-rabbinic-website.github.io/ELDAR-LEVI-OFIC2/&size=256" alt="לוגו הרב אלדר לוי" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg md:text-xl font-black gold-gradient-text tracking-tight heebo-font">הרב אלדר לוי</span>
+                    <span class="text-[9px] md:text-[10px] text-white/80 tracking-widest font-bold uppercase">דיין מוסמך וטוען רבני</span>
+                </div>
+            </a>
+            
+    <!-- Preloader ---
 <div id="preloader" class="fixed inset-0 z-[9999] bg-dark flex flex-col items-center justify-center">
     <div class="relative w-13 h-13 md:w-15 md:h-15 rounded-xl overflow-hidden border border-gold/40 shadow-md group-hover:scale-105 transition-all duration-300">
         <img src="https://pics.paypal.com/00/p/YTJjNzI5MTctMDhhOS00ZDk5LWFhMDAtMzZjZWJlMTFhZDAz/image_3.PNG" alt="לוגו הרב אלדר לוי" class="w-full h-full object-cover">
@@ -551,7 +578,8 @@
     <div class="text-gold text-lg tracking-[0.15em] font-black heebo-font mt-3">הרב אלדר לוי</div>
     <div class="text-white/60 text-xs tracking-widest mt-1">דיין וטוען רבני מוסמך</div>
 </div>
-    <!-- Scroll Progress Bar - שודרג עם הילה ונקודת תאורה -->
+  
+            <!----------- Scroll Progress Bar - שודרג עם הילה ונקודת תאורה -->
     <!--  <div id="scroll-progress-container" class="fixed top-0 left-0 w-full h-1.5 bg-dark/80 backdrop-blur-sm z-[100]" aria-hidden="true">
         <div id="scroll-progress-bar" class="h-full gold-gradient w-0 rounded-r-full transition-all duration-150 ease-out shadow-[0_0_15px_rgba(212,175,55,1)]"></div>
     </div>
